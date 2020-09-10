@@ -1,11 +1,11 @@
 /** @jsx jsx */
-import { Styled, jsx } from "theme-ui"
+import { Styled, jsx, Container, Divider } from "theme-ui"
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import "normalize.css"
-
 import Header from "./header"
+import Footer from "./footer"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -19,26 +19,24 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <Styled.root>
+    <Container
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        minHeight: "100vh",
+        padding:2
+      }}
+    >
       <Header siteTitle={data.site.siteMetadata.title} />
-      <div
+      <main
         sx={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: 3,
-          paddingTop: 0,
+          flex: '1 1 auto',
         }}
       >
-        <main>{children}</main>
-        <footer>
-          <Styled.p>
-            © {new Date().getFullYear()}, Built with
-            {` `}
-            <a href="https://www.gatsbyjs.org">Gatsby</a>
-          </Styled.p>
-        </footer>
-      </div>
-    </Styled.root>
+        {children}
+      </main>
+      <Footer />
+    </Container>
   )
 }
 

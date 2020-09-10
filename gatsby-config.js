@@ -1,8 +1,18 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
+    title: `Ahiravan`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
+    social: [
+      {
+        name: `Twitter`,
+        url: `https://twitter.com/gatsbyjs`,
+      },
+      {
+        name: `GitHub`,
+        url: `https://github.com/gatsbyjs`,
+      },
+    ],
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -11,6 +21,13 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    "gatsby-theme-ui-blog",
+    {
+      resolve: `gatsby-theme-blog-core`,
+      options: {
+        basePath: `/blog`,
       },
     },
     "gatsby-plugin-theme-ui",

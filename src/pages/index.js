@@ -10,7 +10,7 @@ import SEO from "../components/seo"
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <Styled.h1>Hi people</Styled.h1>
+    <Styled.h1 sx={{fontSize: 1}}>Hi people</Styled.h1>
     <Styled.p>Welcome to your new Gatsby site.</Styled.p>
     <Styled.p>Now go build something great.</Styled.p>
     <div sx={{ maxWidth: 300, marginBottom: [3] }}>
