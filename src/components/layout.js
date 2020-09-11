@@ -1,11 +1,10 @@
 /** @jsx jsx */
-import { Styled, jsx, Container, Divider } from "theme-ui"
-import React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import "normalize.css"
-import Header from "./header"
+import PropTypes from "prop-types"
+import { Container, jsx } from "theme-ui"
 import Footer from "./footer"
+import Header from "./header"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -24,13 +23,15 @@ const Layout = ({ children }) => {
         display: "flex",
         flexDirection: "column",
         minHeight: "100vh",
-        padding:2
+        padding: 2,
       }}
     >
       <Header siteTitle={data.site.siteMetadata.title} />
       <main
         sx={{
-          flex: '1 1 auto',
+          flex: "1 1 auto",
+          my: 4,
+          px: 4,
         }}
       >
         {children}

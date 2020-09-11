@@ -3,6 +3,7 @@ module.exports = {
     title: `Ahiravan`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
+    siteUrl: "https://amberley.blog/",
     social: [
       {
         name: `Twitter`,
@@ -16,6 +17,12 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    // {
+    //   resolve: `gatsby-theme-blog`,
+    //   options: {
+    //     basePath: `/blog`,
+    //   },
+    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -23,13 +30,7 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    "gatsby-theme-ui-blog",
-    {
-      resolve: `gatsby-theme-blog-core`,
-      options: {
-        basePath: `/blog`,
-      },
-    },
+
     "gatsby-plugin-theme-ui",
     `gatsby-theme-style-guide`,
     `gatsby-transformer-sharp`,
