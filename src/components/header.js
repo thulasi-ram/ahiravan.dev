@@ -1,8 +1,7 @@
 /** @jsx jsx */
-import { Styled, jsx, Flex, NavLink, useColorMode, IconButton } from "theme-ui"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import React from "react"
+import { Flex, IconButton, jsx, NavLink, useColorMode } from "theme-ui"
 
 const Header = ({ siteTitle }) => {
   const [colorMode, setColorMode] = useColorMode()
@@ -48,11 +47,10 @@ const Header = ({ siteTitle }) => {
             </svg>
             <h1
               sx={{
-                fontSize: 4,
+                fontSize: 6,
                 m: 0,
                 px: 2,
                 // fontFamily: 'logo'
-         
               }}
             >
               {siteTitle}
@@ -61,9 +59,9 @@ const Header = ({ siteTitle }) => {
         </Link>
         <div sx={{ mx: "auto" }} />
 
-        <NavLink href="#!">/Home</NavLink>
-        <NavLink href="#!">/Blog</NavLink>
-        <NavLink href="#!">/About</NavLink>
+        <NavLink href="/">/me</NavLink>
+        <NavLink href="/blog">/Blog</NavLink>
+
         {/* <Button
           sx={{
             textDecoration: "underline",
