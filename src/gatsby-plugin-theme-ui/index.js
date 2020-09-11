@@ -59,8 +59,9 @@ export default {
     }
   },
   "fonts": {
-    "body": "Menlo",
+    "body": "Sen",
     "heading": "inherit",
+    'logo': "WyvernWingsWydeBRK",
     "monospace": "Menlo, monospace"
   },
   "fontSizes": [
