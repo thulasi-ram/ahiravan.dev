@@ -1,1 +1,1 @@
-this is just a copy of the source code whcih shadows the files as is to pick from ../components/
+this is just a copy of the source code whcih shadows the  as is to pick post from ../components/

@@ -7,6 +7,7 @@
   "dependencies": {
     "@emotion/core": "^10.0.22",
     "@mdx-js/react": "^1.5.1",
+    "@svgr/webpack": "^5.4.0",
     "@theme-ui/components": "^0.3.1",
     "@theme-ui/presets": "^0.3.0",
     "gatsby": "^2.17.11",
@@ -14,7 +15,9 @@
     "gatsby-plugin-manifest": "^2.2.27",
     "gatsby-plugin-offline": "^3.0.19",
     "gatsby-plugin-react-helmet": "^3.1.14",
+    "gatsby-plugin-react-svg": "^3.0.0",
     "gatsby-plugin-sharp": "^2.2.37",
+    "gatsby-plugin-svgr": "^2.0.2",
     "gatsby-plugin-theme-ui": "^0.3.0",
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-filesystem": "^2.1.36",

@@ -18,6 +18,14 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include:`${__dirname}/src/svgs/`
+        }
+      }
+    },
+    {
       resolve: `gatsby-theme-blog-core`,
       options: {
         basePath: `/blog`,
@@ -59,6 +67,7 @@ module.exports = {
         }
       }
     },
+
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

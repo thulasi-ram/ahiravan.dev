@@ -49,7 +49,7 @@ export default {
     nav: {
       fontWeight: "body",
       px: 1,
-      margin: 2,
+      mx: 2,
       textTransform: "lowercase",
       "&:hover": {
         color: "background",
