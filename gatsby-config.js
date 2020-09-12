@@ -17,6 +17,13 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+
+    {
+      resolve: `gatsby-theme-blog-core`,
+      options: {
+        basePath: `/blog`,
+      },
+    },
     {
       resolve: "gatsby-plugin-react-svg",
       options: {
@@ -24,12 +31,6 @@ module.exports = {
           include:`${__dirname}/src/svgs/`
         }
       }
-    },
-    {
-      resolve: `gatsby-theme-blog-core`,
-      options: {
-        basePath: `/blog`,
-      },
     },
     {
       resolve: `gatsby-source-filesystem`,
