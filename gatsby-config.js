@@ -17,12 +17,12 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    // {
-    //   resolve: `gatsby-theme-blog`,
-    //   options: {
-    //     basePath: `/blog`,
-    //   },
-    // },
+    {
+      resolve: `gatsby-theme-blog-core`,
+      options: {
+        basePath: `/blog`,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
