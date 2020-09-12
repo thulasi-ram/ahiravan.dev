@@ -1,14 +1,10 @@
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import PostDate from "gatsby-theme-blog/src/components/post-date"
-import PostFooter from "gatsby-theme-blog/src/components/post-footer"
-import PostHero from "gatsby-theme-blog/src/components/post-hero"
+// import PostDate from "gatsby-theme-blog/src/components/post-date"
+// import PostFooter from "gatsby-theme-blog/src/components/post-footer"
+// import PostHero from "gatsby-theme-blog/src/components/post-hero"
 import { default as React} from "react"
-import Layout from "../../components/layout"
-import SEO from "../../components/seo"
-
-
-
-
+import Layout from "./layout"
+import SEO from "./seo"
 
 const Post = ({
   data: {
@@ -35,16 +31,16 @@ const Post = ({
 
     <article>
       <header>
-        <PostHero post={post} />
+        {/* <PostHero post={post} /> */}
         <h1>{post.title}</h1>
-        <PostDate>{post.date}</PostDate>
+        {/* <PostDate>{post.date}</PostDate> */}
       </header>
       <section>
         <MDXRenderer>{post.body}</MDXRenderer>
       </section>
     </article>
 
-    <PostFooter {...{ previous, next }} />
+    {/* <PostFooter {...{ previous, next }} /> */}
   </Layout>
 )
 
