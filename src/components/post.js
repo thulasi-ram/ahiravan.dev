@@ -34,7 +34,7 @@ const Post = ({
       <section>
         <MDXRenderer>{post.body}</MDXRenderer>
       </section>
-      <PostFooter {...{ previous, next }} />
+      <PostFooter {...{ previous, next, post }} />
     </article>
   </Layout>
 )
