@@ -14,7 +14,7 @@ const PostMeta = ({ post }) => {
       <span>
         {post.tags.map((tag, index) => {
           return (
-            <Fragment>
+            <Fragment key={"t1" + tag}>
               <Link href={"/tags/" + tag}>{tag}</Link>
               <span>{index < post.tags.length - 1 ? ", " : ""}</span>
             </Fragment>
