@@ -82,6 +82,16 @@ export default {
     body: 1.75,
     heading: 1.25,
   },
+  text: {
+    section: {
+      color: "background",
+      bg: "text",
+      fontSize: 3,
+      fontWeight: "body",
+      p: 1,
+      my: 2,
+    }
+  },
   textStyles: {
     heading: {
       fontFamily: "heading",
@@ -94,7 +104,7 @@ export default {
       fontWeight: "display",
       letterSpacing: "-0.03em",
       mt: 3,
-    },
+    }
   },
   styles: {
     Container: {

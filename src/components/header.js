@@ -25,12 +25,13 @@ const Header = ({ siteTitle }) => {
           sx={{
             color: `primary`,
             textDecoration: "none",
+            alignSelf: "flex-end"
           }}
         >
 
           <LogoSvg sx={{
-            width: "10.8em",
-            height: "4em"
+            width: "8em",
+            height: "2.5em"
           }}/>
 
         </Link>
