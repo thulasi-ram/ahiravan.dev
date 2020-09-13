@@ -3,7 +3,7 @@ layout: post
 title: Demystifying celery - Part 1 - Customizing
 tags: [programming, blog]
 permalink: /:title
-date: 2019-04-15
+date: 2020-06-20
 ---
 
 Celery is touted as the async task processor in python. Its resilient, its fast and moreover has large set of utilities and deals with multiple messaging systems.
@@ -22,7 +22,7 @@ Although celery makes it needlessly difficult they luckily provide us with a bar
 [custom-message-consumers - celery docs](https://docs.celeryproject.org/en/stable/userguide/extending.html#custom-message-consumers)
 the part we are most concerned is 
 
-```
+```python
 my_queue = Queue('custom', Exchange('custom'), 'routing_key')
 
 app = Celery(broker='amqp://')
@@ -41,7 +41,6 @@ class MyConsumerStep(bootsteps.ConsumerStep):
         message.ack()
 app.steps['consumer'].add(MyConsumerStep)
 ```
-{: .lang-python}
 
 
 This can pickup a message thats not published by celery. But what about decode error? What about my retries?
@@ -49,7 +48,7 @@ This can pickup a message thats not published by celery. But what about decode e
 #### Being Ambitious
 My first approach was to convert this message to a celery task such that the user is not aware by replicating some of celery's magic (this was discared see [here](#bailing_out). So inside the `MyConsumerStep` I have added the following
 
-```
+```python
 def __init__(*args, **kwargs):
 	self.parent = None
 
@@ -58,7 +57,6 @@ def start(self, parent):
     logger.info(f'Consuming from {queue_obj.name} key={queue_obj.routing_key}, exchange={queue_obj.exchange}')
     return super().start(parent)
 ```
-{: .lang-python}
 
 
 This parent here is the `celery.worker.Consumer` class. This class stores all the tasks that are in an app in a map called `strategies`.
@@ -68,7 +66,7 @@ Lets say I have a function called `process_message` and now I have to call it in
 
 My train of thought would be handle process_mesage as a task. I end up with the following handle messgae:
 
-```
+```python
 def handle_message(self, body, message):
     task = shared_task(process_message)
     strategy = self.task.start_strategy(self.parent.app, self.parent)
@@ -86,12 +84,11 @@ def handle_message(self, body, message):
     inside `process_message` like you would do for a bound task
     which gets very complicated quickly
 ```
-{: .lang-python}
 
-#### Bailing out {#bailing_out}
+#### Bailing out
 We would be using so many internals of celery that makes our code brittle. I bailed out here. I just republish the message here after converting it into a taks. 
 
-```
+```python
 def handle_message(self, body, message):
     task = shared_task(process_message)
     task.delay(body, message=message)
@@ -101,13 +98,12 @@ def handle_message(self, body, message):
 def process_message(body, **kwargs):
 	pass
 ```
-{: .lang-python}
 
 
 This gives us the ability to retain the retry mechanisms celery offers and as well as consuming a custom message. A properly honed out version of the above as `celery_consumer.py` by making it as reusable as possible but still encapsulating the internals
 
 
-```
+```python
 # celery_consumer.py
 
 import logging
@@ -219,12 +215,11 @@ def consume_from(*args, **kwargs):
     return decorator(*args, **kwargs)
 
 ```
-{: .lang-python}
 
 
 So now process message looks like
 
-```
+```python
 from celery_consumer import consume_from
 
 @consume_from(queue='custom_queue', routing_key='#')
@@ -238,7 +233,6 @@ def process_event(body):
 def process_event(body):
 	pass
 ```
-{: .lang-python}
 
 
 ### 2. Dead letter queues in celery go brrrrrrr
@@ -250,7 +244,7 @@ Enter dead letter queues, But there's no provision of deadletter queues in celer
 
 here is the `celery_dlq.py` file
 
-```
+```python
 # celery_dlq.py
 
 from celery import bootsteps
@@ -297,24 +291,24 @@ def setup_dlq(app, queue: Queue, dql_suffix='dead'):
 
     app.steps['worker'].add(DeclareDLXnDLQ)
 ```
-{: .lang-python}
 
 
 As you can see here we use a start and stop step to declare a dlq. More details can be found [here](https://medium.com/@hengfeng/how-to-create-a-dead-letter-queue-in-celery-rabbitmq-401b17c72cd3).
 When the celery app starts we can do something like this
-```
+
+
+```python
 app = Celery('amqp://')
 app.autodiscover_tasks()
 setup_default_dlq(app)
 ```
-{: .lang-python}
 
 
 This creates `celery.dead` exchange and queue for all the failed messages to live so we can inspect it later. 
 Now use this `setup_dlq` to our earlier `_make_consumer` to automatically declare if a flag is present.
 
 
-```
+```python
 def _make_consumer(func, **kwargs):
     from kombu import Queue
 
@@ -337,16 +331,15 @@ def _make_consumer(func, **kwargs):
 
     return _custom_consumer_factory(queue_obj, func, kwargs), queue_obj
 ```
-{: .lang-python}
 
 
 now process event looks like with an extra `setup_dlq=True`
 
-```
+```python
 @consume_from(queue='example', routing_key='com.example', setup_dlq=True)
 @shared_task(autoretry_for=(Exception,), retry_backoff=2)
 def process_event(body):
     print(f"Received yoyo: {body}")
 ```
-{: .lang-python}
+
 

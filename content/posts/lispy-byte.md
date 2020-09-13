@@ -4,7 +4,7 @@ title: Lispy Byte
 tags: [programming, thoughts]
 status: wip
 permalink: /:title
-date: 2019-04-15
+date: 2020-03-15
 ---
 
 My musings with lisp

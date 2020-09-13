@@ -4,7 +4,7 @@ title: Demystifying celery - Part 2 - Embracing
 tags: [programming, blog]
 status: wip
 permalink: /:title
-date: 2019-04-15
+date: 2020-07-19
 ---
 
 This post works upon internal library kombu used by celery for amqp transport mechanisms. For people that are not a option visit blog one where we [extend the functionality of celery](/demystifying-celery-part-1-customizing)
