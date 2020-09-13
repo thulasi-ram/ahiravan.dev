@@ -5,6 +5,13 @@
  */
 
 // You can delete this file if you're not using it
+
+exports.onCreateWebpackConfig = ({ actions }) => {
+    actions.setWebpackConfig({
+      devtool: 'eval-source-map',
+    })
+  }
+
 const { createFilePath } = require(`gatsby-source-filesystem`)
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
