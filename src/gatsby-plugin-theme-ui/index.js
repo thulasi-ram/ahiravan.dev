@@ -1,4 +1,6 @@
 // import { tailwind as baseStyles } from "@theme-ui/presets"
+// import code_theme from '@theme-ui/prism/presets/github.json'
+import code_theme from '@theme-ui/prism/presets/night-owl.json'
 
 // export default {
 //   ...baseStyles,
@@ -9,7 +11,7 @@
 
 export default {
   useCustomProperties: true,
-  initialColorMode: "dark",
+  initialColorMode: "default",
   colors: {
     text: "#000",
     background: "#fff",
@@ -158,16 +160,18 @@ export default {
       borderStyle: "solid",
       borderTopWidth: 0,
       borderLeftWidth: 0,
-      borderRightWidth: 8,
-      borderBottomWidth: 8,
+      borderRightWidth: 0,
+      borderBottomWidth: 0,
       overflow: "auto",
       code: {
         color: "inherit",
       },
+      "highlight": {
+        "background": "hsla(0, 0%, 30%, .5)"
+      }
     },
     code: {
-      fontFamily: "monospace",
-      fontSize: 1,
+      ...code_theme
     },
     inlineCode: {
       fontFamily: "monospace",
