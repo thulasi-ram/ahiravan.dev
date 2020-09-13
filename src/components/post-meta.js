@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { jsx, Link, Styled } from "theme-ui"
-import React from "react"
+import { Fragment } from "react"
+import { jsx, Link, Styled} from "theme-ui"
 const readingTime = require("reading-time")
 
 const PostMeta = ({ post }) => {
@@ -14,10 +14,10 @@ const PostMeta = ({ post }) => {
       <span>
         {post.tags.map((tag, index) => {
           return (
-            <>
+            <Fragment>
               <Link href={"/tags#" + tag}>{tag}</Link>
               <span>{index < post.tags.length - 1 ? ", " : ""}</span>
-            </>
+            </Fragment>
           )
         })}
       </span>

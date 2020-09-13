@@ -120,26 +120,27 @@ export default {
     },
     h1: {
       variant: "textStyles.display",
+      fontSize: 1,
     },
     h2: {
       variant: "textStyles.heading",
-      fontSize: 5,
+      fontSize: 6,
     },
     h3: {
       variant: "textStyles.heading",
-      fontSize: 4,
+      fontSize: 5,
     },
     h4: {
       variant: "textStyles.heading",
-      fontSize: 3,
+      fontSize: 4,
     },
     h5: {
       variant: "textStyles.heading",
-      fontSize: 2,
+      fontSize: 3,
     },
     h6: {
       variant: "textStyles.heading",
-      fontSize: 1,
+      fontSize: 2,
     },
     p: {
       fontSize: 2,
@@ -181,6 +182,10 @@ export default {
     },
     ul: {
       listStyleType: "square",
+      fontSize: 2
+    },
+    ol: {
+      fontSize: 2
     },
     table: {
       width: "100%",
@@ -192,18 +197,18 @@ export default {
         py: "4px",
         pr: "4px",
         pl: 0,
-        borderColor: "text",
+        borderColor: "muted",
         borderBottomStyle: "solid",
       },
     },
     th: {
-      backgroundColor: "muted",
+      // backgroundColor: "muted",
       verticalAlign: "bottom",
-      borderBottomWidth: 8,
+      borderBottomWidth: 2,
     },
     td: {
       verticalAlign: "top",
-      borderBottomWidth: 4,
+      borderBottomWidth: 1,
     },
     hr: {
       border: 0,
