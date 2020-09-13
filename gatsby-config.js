@@ -39,11 +39,10 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-
-    "gatsby-plugin-theme-ui",
     `gatsby-theme-style-guide`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-mdx`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -68,6 +67,12 @@ module.exports = {
         // }
       }
     },
+    { resolve: 'gatsby-plugin-theme-ui',
+      options: {
+        // prismPreset: 'night-owl',
+        // preset: '@theme-ui/preset-funk'
+      }
+    }
 
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

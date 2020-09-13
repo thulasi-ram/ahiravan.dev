@@ -1,15 +1,15 @@
 /** @jsx jsx */
 import { Link } from "gatsby"
-import { jsx, css, Flex, Heading, Styled } from "theme-ui"
+import { jsx, css, Flex, Styled } from "theme-ui"
 
 const PostFooter = ({ previous, next }) => (
   <footer sx={{
     marginTop: 5,
     marginBottom: 2
   }}>
-    <Flex>  
+    {/* <Flex>  
       <Heading variant="section"> RELATED POSTS </Heading>
-    </Flex>
+    </Flex> */}
   
     {(previous || next) && (
       <Flex
