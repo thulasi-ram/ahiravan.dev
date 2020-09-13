@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import React, { Fragment } from "react"
+import React from "react"
 import {jsx, Link, Styled, Heading } from "theme-ui"
 import Layout from "./layout"
 import SEO from "./seo"
@@ -21,7 +21,7 @@ const Posts = ({ location, posts, siteTitle, socialLinks }) => {
         <tbody sx={{fontSize: 2,}}>
           {posts.map(node => {
             return (
-              <Fragment key={node.slug}>
+              <React.Fragment key={node.slug}>
                 <tr>
                   <Styled.td>
                     <Link href={node.slug}>{node.title}</Link>
@@ -31,17 +31,17 @@ const Posts = ({ location, posts, siteTitle, socialLinks }) => {
                     {" "}
                     {node.tags.map((tag, index) => {
                       return (
-                        <Fragment>
-                          <Link href={"/tags#" + tag}>{tag}</Link>
+                        <React.Fragment>
+                          <Link href={"/tags/" + tag}>{tag}</Link>
                           <span>
                             {index < node.tags.length - 1 ? ", " : ""}
                           </span>
-                        </Fragment>
+                        </React.Fragment>
                       )
                     })}
                   </Styled.td>
                 </tr>
-              </Fragment>
+              </React.Fragment>
             )
           })}
         </tbody>
