@@ -1,29 +1,32 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
-import React from "react"
-import PropTypes from "prop-types"
-import { StaticQuery, graphql } from "gatsby"
+import { graphql, StaticQuery } from "gatsby"
+import { jsx, Link } from "theme-ui"
 import { SimilarArticlesFactory } from "../services/similar-articles-factory"
 
-function getPostsFromQuery (posts) {
-    console.log("ppppp", posts)
-    if (posts) {
-      return posts.edges
-        .map(edge => edge.node)
-        .map(node => Object.assign({}, node.frontmatter, node.fields, { excerpt: node.excerpt }))
-    }
-  
-    return []
+function getPostsFromQuery(posts) {
+  console.log("ppppp", posts)
+  if (posts) {
+    return posts.edges
+      .map(edge => edge.node)
+      .map(node =>
+        Object.assign({}, node.frontmatter, node.fields, {
+          excerpt: node.excerpt,
+        })
+      )
   }
+
+  return []
+}
 
 const SimilarArticlesComponent = ({ articles }) => (
   <section>
     <ul>
       {articles.map((article, i) => {
-          console.log("a", article)
-          return (
-          <React.Fragment key={article.article.slug}><li key={article.article.slug}>{article.article.slug}</li></React.Fragment>
-          )
+        return (
+        <li key={"k" + article.article.slug}>
+            <Link href={'/blog'+ article.article.slug}> {article.article.slug} </Link>
+        </li>
+        )
       })}
     </ul>
   </section>
@@ -35,15 +38,13 @@ export default props => (
       query SimilarArticles {
         posts: allMarkdownRemark(
           sort: { order: DESC, fields: [frontmatter___date] }
-          filter: {
-          }
+          filter: {}
           limit: 1000
         ) {
           edges {
             node {
               fields {
                 slug
-
               }
               frontmatter {
                 title
@@ -56,8 +57,7 @@ export default props => (
       }
     `}
     render={data => {
-      const { category, tags, currentArticleSlug } = props
-      console.log("s", currentArticleSlug)
+      const { tags, currentArticleSlug } = props
 
       // (2.) Marshall the response into articles
       const articles = getPostsFromQuery(data.posts)

@@ -10,7 +10,7 @@ const Posts = ({ location, posts, siteTitle, socialLinks }) => {
       <SEO title="Ahiravan's Blog" />
       <Heading as='h1'> Ahiravan's Blog </Heading>
 
-      <Styled.table class="table">
+      <Styled.table>
         <thead>
           <tr>
             <Styled.th>Post</Styled.th>
@@ -31,7 +31,7 @@ const Posts = ({ location, posts, siteTitle, socialLinks }) => {
                     {" "}
                     {node.tags.map((tag, index) => {
                       return (
-                        <React.Fragment>
+                        <React.Fragment key={tag + node.slug}>
                           <Link href={"/tags/" + tag}>{tag}</Link>
                           <span>
                             {index < node.tags.length - 1 ? ", " : ""}
