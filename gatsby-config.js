@@ -62,10 +62,10 @@ module.exports = {
         google: {
           families: ['Sen']
         },  
-        custom: {
-          families: ['Wyvern'],
-          urls: ["/fonts/fonts.css"]
-        }
+        // custom: {
+        //   families: ['Wyvern'],
+        //   urls: ["/fonts/fonts.css"]
+        // }
       }
     },
 
