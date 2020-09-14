@@ -1,5 +1,4 @@
 /** @jsx jsx */
-import { graphql, useStaticQuery } from "gatsby"
 import "normalize.css"
 import PropTypes from "prop-types"
 import { Container, jsx } from "theme-ui"
@@ -7,16 +6,6 @@ import Footer from "./footer"
 import Header from "./header"
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
   return (
     <Container
       sx={{
@@ -26,7 +15,7 @@ const Layout = ({ children }) => {
         padding: 2,
       }}
     >
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header />
       <main
         sx={{
           flex: "1 1 auto",

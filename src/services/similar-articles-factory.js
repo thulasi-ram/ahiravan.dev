@@ -1,5 +1,19 @@
 import { includes, orderBy } from 'lodash'
 
+export function getPostsFromQuery(posts) {
+  if (posts) {
+    return posts.edges
+      .map(edge => edge.node)
+      .map(node =>
+        Object.assign({}, node.frontmatter, node.fields, {
+          excerpt: node.excerpt,
+        })
+      )
+  }
+
+  return []
+}
+
 export class SimilarArticlesFactory {
   // (1.) Create by passing in articles, currentSlug
   constructor (articles, currentArticleSlug) {

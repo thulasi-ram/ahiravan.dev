@@ -10,8 +10,6 @@ import code_theme from '@theme-ui/prism/presets/night-owl.json'
 // }
 
 export default {
-  useCustomProperties: true,
-  initialColorMode: "default",
   colors: {
     text: "#000",
     background: "#fff",

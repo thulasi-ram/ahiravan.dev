@@ -9,7 +9,7 @@ const Footer = () => {
         flexWrap: "wrap",
         alignItems: "center",
         justifyContent: "center",
-        color: "primary",
+        color: "gray",
         borderTop: theme => `${theme.colors.primary} 1px solid`,
       }}
     >
