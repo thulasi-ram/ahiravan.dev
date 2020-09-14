@@ -10,7 +10,7 @@ export const SimilarArticlesComponent = ({ articles }) => {
         <Flex>
           <Heading variant="section"> RELATED POSTS </Heading>
         </Flex>
-        <ul sx={{ listStyleType: "none" }}>
+        <ul sx={{ listStyleType: "square" }}>
           {articles.map((article, i) => {
             return (
               <li key={"sa" + i}>
