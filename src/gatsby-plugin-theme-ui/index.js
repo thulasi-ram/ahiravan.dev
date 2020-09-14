@@ -1,6 +1,6 @@
 // import { tailwind as baseStyles } from "@theme-ui/presets"
 // import code_theme from '@theme-ui/prism/presets/github.json'
-import code_theme from '@theme-ui/prism/presets/night-owl.json'
+import code_theme from "@theme-ui/prism/presets/night-owl.json"
 
 // export default {
 //   ...baseStyles,
@@ -58,11 +58,21 @@ export default {
     },
     logo: {
       fontWeight: "medium",
-      // textTransform: 'lowercase',
       cursor: "pointer",
       "&:hover": {
         fontWeight: "heading",
       },
+    },
+    normal: {
+      color: "primary",
+      cursor: "pointer",
+      "&:hover": {
+        color: "background",
+        bg: "primary",
+      },
+      '&.active': {
+        color: 'primary',
+      }
     },
   },
   fonts: {
@@ -90,7 +100,7 @@ export default {
       fontWeight: "body",
       p: 1,
       my: 2,
-    }
+    },
   },
   textStyles: {
     heading: {
@@ -104,7 +114,7 @@ export default {
       fontWeight: "display",
       letterSpacing: "-0.03em",
       mt: 3,
-    }
+    },
   },
   styles: {
     Container: {
@@ -145,9 +155,14 @@ export default {
     },
     a: {
       color: "primary",
+      cursor: "pointer",
       "&:hover": {
-        color: "secondary",
+        color: "background",
+        bg: "primary",
       },
+      '&.active': {
+        color: 'primary',
+      }
     },
     pre: {
       fontFamily: "monospace",
@@ -165,12 +180,12 @@ export default {
       code: {
         color: "inherit",
       },
-      "highlight": {
-        "background": "hsla(0, 0%, 30%, .5)"
-      }
+      highlight: {
+        background: "hsla(0, 0%, 30%, .5)",
+      },
     },
     code: {
-      ...code_theme
+      ...code_theme,
     },
     inlineCode: {
       fontFamily: "monospace",
@@ -180,10 +195,10 @@ export default {
     },
     ul: {
       listStyleType: "square",
-      fontSize: 2
+      fontSize: 2,
     },
     ol: {
-      fontSize: 2
+      fontSize: 2,
     },
     table: {
       width: "100%",

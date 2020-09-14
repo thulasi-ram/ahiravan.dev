@@ -1,8 +1,10 @@
 /** @jsx jsx */
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import { Flex, IconButton, jsx, NavLink, useColorMode } from "theme-ui"
+import { Flex, IconButton, jsx, Styled, useColorMode } from "theme-ui"
 import LogoSvg from "../svgs/logo.svg"
+
+const navLink = { p: 0, mx: 3, textTransform: "lowercase", lineHeight: 1 }
 
 const Header = () => {
   const [colorMode, setColorMode] = useColorMode()
@@ -16,7 +18,7 @@ const Header = () => {
       <Flex
         as="nav"
         sx={{
-          alignItems: "center"
+          alignItems: "center",
         }}
       >
         <Link
@@ -25,20 +27,28 @@ const Header = () => {
           sx={{
             color: `primary`,
             textDecoration: "none",
-            alignSelf: "flex-end"
+            alignSelf: "flex-end",
           }}
         >
-
-          <LogoSvg sx={{
-            width: "8em",
-            height: "2.5em"
-          }}/>
-
+          <LogoSvg
+            sx={{
+              width: "8em",
+              height: "2.5em",
+            }}
+          />
         </Link>
         <div sx={{ mx: "auto" }} />
 
-        <NavLink href="/">/me</NavLink>
-        <NavLink href="/blog">/Blog</NavLink>
+        <Styled.a
+          as={Link}
+          sx={navLink}
+          to="/"
+        >
+          /me
+        </Styled.a>
+        <Styled.a as={Link} to="/blog" sx={navLink}>
+          /Blog
+        </Styled.a>
 
         <IconButton
           aria-label="Toggle dark mode"
@@ -64,9 +74,7 @@ const Header = () => {
               stroke="currentcolor"
               strokeWidth={2}
             />
-            <path
-              d="M 10 0 A 10 10 0 0 0 10 20 z"
-            ></path>
+            <path d="M 10 0 A 10 10 0 0 0 10 20 z"></path>
           </svg>
         </IconButton>
       </Flex>
