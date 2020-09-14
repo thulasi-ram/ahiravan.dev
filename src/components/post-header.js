@@ -4,9 +4,9 @@ import PostHero from "./post-hero"
 import PostMeta from "./post-meta"
 
 const PostHeader = ({ post }) => (
-  <header>
+  <header sx={{mb:4}}>
     <PostHero post={post} />
-    <h1>{post.title}</h1>
+    <h1 sx={{mb: 0}}>{post.title}</h1>
     <PostMeta post={post} />
   </header>
 )

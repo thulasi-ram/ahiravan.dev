@@ -1,17 +1,17 @@
 /** @jsx jsx */
 import { Link } from "gatsby"
-import { jsx, css, Flex, Styled, Heading, Box } from "theme-ui"
-import SimilarArticles from "../components/similar-articles"
+import { css, Flex, jsx, Styled } from "theme-ui"
+import SimilarArticles from "../templates/similar-articles"
 const PostFooter = ({ previous, next, post }) => (
-  <footer sx={{
-    marginTop: 5,
-    marginBottom: 2
-  }}>
-    <Box>
-      <Heading variant="section"> RELATED POSTS </Heading>
-      <SimilarArticles tags={post.tags} currentArticleSlug={post.slug}/>
-      </Box>  
-  
+  <footer
+    sx={{
+      marginTop: 5,
+      marginBottom: 2,
+      fontSize: 2
+    }}
+  >
+    <SimilarArticles tags={post.tags} currentArticleSlug={post.slug} />
+
     {(previous || next) && (
       <Flex
         as="ul"

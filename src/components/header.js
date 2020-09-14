@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 import { Flex, IconButton, jsx, NavLink, useColorMode } from "theme-ui"
 import LogoSvg from "../svgs/logo.svg"
 
-const Header = ({ siteTitle }) => {
+const Header = () => {
   const [colorMode, setColorMode] = useColorMode()
 
   return (
