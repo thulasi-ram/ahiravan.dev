@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import React from "react"
-import {jsx, Link, Styled, Heading } from "theme-ui"
+import { Link } from "gatsby"
+import {jsx, Styled, Heading } from "theme-ui"
 import Layout from "./layout"
 import SEO from "./seo"
 
@@ -19,22 +20,22 @@ const Posts = ({ location, posts, siteTitle, socialLinks }) => {
           </tr>
         </thead>
         <tbody sx={{fontSize: 2,}}>
-          {posts.map(node => {
+          {posts.map((node, i) => {
             return (
-              <React.Fragment key={node.slug}>
+              <React.Fragment key={'pst1' + i}>
                 <tr>
                   <Styled.td>
-                    <Link href={node.slug}>{node.title}</Link>
+                    <Styled.a as={Link} to={node.slug}>{node.title}</Styled.a>
                   </Styled.td>
                   <Styled.td>{node.date}</Styled.td>
                   <Styled.td>
                     {" "}
-                    {node.tags.map((tag, index) => {
+                    {node.tags.map((tag, j) => {
                       return (
-                        <React.Fragment key={tag + node.slug}>
-                          <Link href={"/tags/" + tag}>{tag}</Link>
+                        <React.Fragment key={'pst2' + j}>
+                          <Styled.a as={Link} href={"/tags/" + tag}>{tag}</Styled.a>
                           <span>
-                            {index < node.tags.length - 1 ? ", " : ""}
+                            {j < node.tags.length - 1 ? ", " : ""}
                           </span>
                         </React.Fragment>
                       )

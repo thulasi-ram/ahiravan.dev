@@ -2,7 +2,7 @@
 import { graphql, Link } from "gatsby"
 import kebabCase from "lodash/kebabCase"
 import PropTypes from "prop-types"
-import { jsx } from "theme-ui"
+import { jsx, Styled } from "theme-ui"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 const TagsPage = ({
@@ -16,10 +16,10 @@ const TagsPage = ({
       <h1>All Tags</h1>
       <ul>
         {group.map(tag => (
-          <li key={tag.fieldValue}>
-            <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
+          <li key={'tgs1' + tag.fieldValue}>
+            <Styled.a as={Link} to={`/tags/${kebabCase(tag.fieldValue)}/`}>
               {tag.fieldValue} ({tag.totalCount})
-            </Link>
+            </Styled.a>
           </li>
         ))}
       </ul>

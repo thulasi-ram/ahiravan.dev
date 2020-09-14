@@ -1,12 +1,13 @@
 /** @jsx jsx */
 import { Fragment } from "react"
-import { jsx, Link, Styled} from "theme-ui"
+import { jsx, Styled } from "theme-ui"
+import {Link} from "gatsby"
 const readingTime = require("reading-time")
 
 const PostMeta = ({ post }) => {
   const stats = readingTime(post.body)
   return (
-    <Styled.p sx={{mt: 0, color:'gray'}}>
+    <Styled.p sx={{ mt: 0, color: "gray" }}>
       <span>{post.date}</span>
       <span>&nbsp; • &nbsp;</span>
       <span>{stats.text}</span>
@@ -14,9 +15,15 @@ const PostMeta = ({ post }) => {
       <span>
         {post.tags.map((tag, index) => {
           return (
-            <Fragment key={"t1" + tag} sx={{color: 'gray'}}>
-              <Link sx={{color: 'gray'}} href={"/tags/" + tag}>{tag}</Link>
-              <span>{index < post.tags.length - 1 ? ", " : ""}</span>
+            <Fragment key={"pm" + index}>
+              <Styled.a 
+              as={Link} 
+              to={"/tags/" + tag}
+              sx={{ color: "inherit" }}
+              >
+                {tag}
+              </Styled.a>
+              <span sx={{ color: "inherit" }}>{index < post.tags.length - 1 ? ", " : ""}</span>
             </Fragment>
           )
         })}
