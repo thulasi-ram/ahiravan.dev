@@ -5,7 +5,7 @@ import { Flex, IconButton, jsx, Styled, useColorMode } from "theme-ui"
 import LogoSvg from "../svgs/logo.svg"
 import SunSvg from "../svgs/sun.svg"
 
-const navLink = { p: 0, mx: 3, textTransform: "lowercase", lineHeight: 1 }
+const navLink = { p: "1px", mx: 3, textTransform: "lowercase", lineHeight: 1 }
 
 const Header = () => {
   const [colorMode, setColorMode] = useColorMode()

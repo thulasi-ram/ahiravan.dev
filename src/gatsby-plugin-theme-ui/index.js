@@ -45,36 +45,6 @@ export default {
   sizes: {
     container: "768px",
   },
-  links: {
-    nav: {
-      fontWeight: "body",
-      px: 1,
-      mx: 2,
-      textTransform: "lowercase",
-      "&:hover": {
-        color: "background",
-        bg: "primary",
-      },
-    },
-    logo: {
-      fontWeight: "medium",
-      cursor: "pointer",
-      "&:hover": {
-        fontWeight: "heading",
-      },
-    },
-    normal: {
-      color: "primary",
-      cursor: "pointer",
-      "&:hover": {
-        color: "background",
-        bg: "primary",
-      },
-      '&.active': {
-        color: 'primary',
-      }
-    },
-  },
   fonts: {
     body: "Sen",
     heading: "inherit",

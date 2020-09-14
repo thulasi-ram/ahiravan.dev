@@ -34,11 +34,12 @@ export default props => (
 
       // (2.) Marshall the response into articles
       const articles = getPostsFromQuery(data.posts)
+      var currPostSlug = currentArticleSlug.replace("/blog", "");
 
       // (3.) Use a SimilarArticlesFactory to get my similar articles
       const similarArticles = new SimilarArticlesFactory(
         articles,
-        currentArticleSlug
+        currPostSlug
       )
         .setMaxArticles(4)
         .setCategory("dummy")
