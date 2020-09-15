@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import { Flex, IconButton, jsx, Styled, useColorMode, css } from "theme-ui"
+import { Flex, IconButton, jsx, Styled, useColorMode } from "theme-ui"
 import LogoSvg from "../svgs/logo.svg"
 import SunSvg from "../svgs/sun.svg"
 
