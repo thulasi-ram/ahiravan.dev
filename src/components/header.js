@@ -5,7 +5,15 @@ import { Flex, IconButton, jsx, Styled, useColorMode } from "theme-ui"
 import LogoSvg from "../svgs/logo.svg"
 import SunSvg from "../svgs/sun.svg"
 
-const navLink = { p: "1px", mx: 3, textTransform: "lowercase", lineHeight: 1 }
+const navLink = { 
+  p: "2.5px", 
+  ml: "2em", 
+  textTransform: "lowercase", 
+  lineHeight: 1,
+  fontWeight: 'bold',
+  width:'inherit',
+  height: 'inherit'
+}
 
 const Header = () => {
   const [colorMode, setColorMode] = useColorMode()
@@ -52,10 +60,9 @@ const Header = () => {
         </Styled.a>
 
         <IconButton
+        as={Styled.a}
           aria-label="Toggle dark mode"
-          sx={{
-            cursor: "pointer",
-          }}
+          sx={navLink}
           onClick={e => {
             setColorMode(colorMode === "default" ? "dark" : "default")
           }}

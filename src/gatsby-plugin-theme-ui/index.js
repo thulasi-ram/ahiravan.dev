@@ -125,10 +125,12 @@ export default {
     },
     a: {
       color: "primary",
+      fontSize: 2,
       cursor: "pointer",
       "&:hover": {
         color: "background",
         bg: "primary",
+        transition: "all .5s ease"
       },
       '&.active': {
         color: 'primary',
