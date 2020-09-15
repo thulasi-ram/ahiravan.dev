@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import { Flex, IconButton, jsx, Styled, useColorMode } from "theme-ui"
+import { Flex, IconButton, jsx, Styled, useColorMode, css } from "theme-ui"
 import LogoSvg from "../svgs/logo.svg"
 import SunSvg from "../svgs/sun.svg"
 
@@ -9,6 +9,7 @@ const navLink = {
   p: "2.5px",
   ml: "4",
   textTransform: "lowercase",
+  textDecoration: "none",
   lineHeight: 1,
   fontWeight: "bold",
   width: "inherit",
@@ -24,6 +25,22 @@ const animatecss = {
       to: { transform: "rotate(359deg)" },
     },
   },
+}
+
+const logocss = {
+  '& .shp1': {
+    fill: 'primary',
+  },
+  '& .shp0': {
+    fill: 'background',
+    transition: "all 1s ease"
+  },
+    "&:hover": {
+      '& .shp0': {
+        fill: 'primary',
+      }
+    },
+
 }
 
 const Header = () => {
@@ -49,6 +66,8 @@ const Header = () => {
             textDecoration: "none",
             alignSelf: "flex-end",
           }}
+          css={css(logocss)}
+
         >
           <LogoSvg
             sx={{
