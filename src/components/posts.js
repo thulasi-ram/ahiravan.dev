@@ -33,7 +33,7 @@ const Posts = ({ location, posts, siteTitle, socialLinks }) => {
                     {node.tags.map((tag, j) => {
                       return (
                         <React.Fragment key={'pst2' + j}>
-                          <Styled.a as={Link} href={"/tags/" + tag}>{tag}</Styled.a>
+                          <Styled.a as={Link} to={"/tags/" + tag}>{tag}</Styled.a>
                           <span>
                             {j < node.tags.length - 1 ? ", " : ""}
                           </span>
