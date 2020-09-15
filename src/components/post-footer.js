@@ -24,14 +24,14 @@ const PostFooter = ({ previous, next, post }) => (
       >
         <li>
           {previous && (
-            <Styled.a as={Link} to={previous.slug} rel="prev">
+            <Styled.a as={Link} to={previous.slug} rel="prev" sx={{fontWeight: 'bold'}}>
               ← {previous.title}
             </Styled.a>
           )}
         </li>
         <li>
           {next && (
-            <Styled.a as={Link} to={next.slug} rel="next">
+            <Styled.a as={Link} to={next.slug} rel="next"  sx={{fontWeight: 'bold'}}>
               {next.title} →
             </Styled.a>
           )}
