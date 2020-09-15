@@ -1,18 +1,29 @@
 /** @jsx jsx */
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import { Flex, IconButton, jsx, Styled, useColorMode } from "theme-ui"
+import { Flex, IconButton, jsx, Styled, useColorMode, css } from "theme-ui"
 import LogoSvg from "../svgs/logo.svg"
 import SunSvg from "../svgs/sun.svg"
 
-const navLink = { 
-  p: "2.5px", 
-  ml: "2em", 
-  textTransform: "lowercase", 
+const navLink = {
+  p: "2.5px",
+  ml: "4",
+  textTransform: "lowercase",
   lineHeight: 1,
-  fontWeight: 'bold',
-  width:'inherit',
-  height: 'inherit'
+  fontWeight: "bold",
+  width: "inherit",
+  height: "inherit",
+}
+
+const animatecss = {
+  "&:hover": {
+    cursor: "pointer",
+    animation: "rotation 5s infinite ease",
+    "@keyframes rotation": {
+      from: { transform: "rotate(0deg)" },
+      to: { transform: "rotate(359deg)" },
+    },
+  },
 }
 
 const Header = () => {
@@ -48,11 +59,7 @@ const Header = () => {
         </Link>
         <div sx={{ mx: "auto" }} />
 
-        <Styled.a
-          as={Link}
-          sx={navLink}
-          to="/"
-        >
+        <Styled.a as={Link} sx={navLink} to="/">
           /me
         </Styled.a>
         <Styled.a as={Link} to="/blog" sx={navLink}>
@@ -60,9 +67,9 @@ const Header = () => {
         </Styled.a>
 
         <IconButton
-        as={Styled.a}
           aria-label="Toggle dark mode"
           sx={navLink}
+          css={animatecss}
           onClick={e => {
             setColorMode(colorMode === "default" ? "dark" : "default")
           }}
