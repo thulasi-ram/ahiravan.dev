@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { Box, Card, Grid, jsx, Heading, Flex } from "theme-ui"
+import { Box, Card, Grid, jsx, Heading, Flex, Styled, Button } from "theme-ui"
 import Image from "../components/image"
 import SEO from "../components/seo"
 
@@ -19,15 +19,13 @@ const IndexPage = () => (
           <h1>Hi, I'm Thulasi</h1>
           <Heading>I build for all things web.</Heading>
 
-          <Grid columns={[2]} sx={{m: 4}}>
-            <a href="/"> RESUME </a>
-            <a href="/"> BLOG </a>
+          <Grid columns={[1]} sx={{m: 4}}>
+            <Button> RESUME </Button>
           </Grid>
         </Box>
       </Grid>
       <Card
         sx={{
-          background: "muted",
           m: 3,
           p: 3,
           width: ["90%", null, null],
@@ -37,14 +35,20 @@ const IndexPage = () => (
         }}
       >
         <Image/>
-        <p sx={{ mt: 0, textTransform: "uppercase" }}>
+        <p sx={{ mt: 0, textTransform: "uppercase", color: 'accent', fontSize: 2}}>
           Web Developer | Designer{" "}
         </p>
         <p> me{"{at}"}ahiravan.dev</p>
-        <Grid columns={[3]}>
-          <a href="/"> GITHUB </a>
-          <a href="/"> GITHUB </a>
-          <a href="/"> GITHUB </a>
+        <Grid columns={[3]} 
+        sx={{          
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+          }}
+          >
+        <Styled.a href="/" sx={{fontWeight: 'bold', textDecoration: "none", p: 1}}> GITHUB </Styled.a>
+        <Styled.a href="/" sx={{fontWeight: 'bold', textDecoration: "none", p: 1}}> TWITTER </Styled.a>
+        <Styled.a href="/" sx={{fontWeight: 'bold', textDecoration: "none", p: 1}}> LINKEDIN </Styled.a>
         </Grid>
       </Card>
     </Grid>

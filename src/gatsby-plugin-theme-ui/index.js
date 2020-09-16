@@ -19,6 +19,7 @@ export default {
     highlight: "#9f9f9f",
     gray: "#6c6c6c",
     accent: "#3f3f3f",
+    cardbg: "#fff",
     modes: {
       dark: {
         text: "#ffffff",
@@ -29,21 +30,21 @@ export default {
         highlight: "#3c3c3c",
         gray: "#999",
         accent: "#e0e0e0",
-        cards: {
-          primary: {
-            padding: 2,
-            borderRadius: 4,
-            background: "red",
-            boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.75)"
-          },
-        }
+        cardbg: "#212121",
       },
     },
   },
   buttons: {
     primary: {
-      color: "white",
+      color: "background",
       bg: "primary",
+      "&:hover": {
+        cursor: "pointer",
+      },
+      "&:active": {
+        bg: "accent",
+      }
+      ,
     },
     link: {
       color: "text",
@@ -212,6 +213,7 @@ export default {
   cards: {
     primary: {
       padding: 2,
+      bg: "cardbg",
       borderRadius: 4,
       boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.75)"
     },
