@@ -22,13 +22,21 @@ export default {
     modes: {
       dark: {
         text: "#ffffff",
-        background: "#060606",
+        background: "#121212",
         primary: "#ffffff",
         secondary: "#b2b2b2",
         muted: "#191919",
         highlight: "#3c3c3c",
         gray: "#999",
         accent: "#e0e0e0",
+        cards: {
+          primary: {
+            padding: 2,
+            borderRadius: 4,
+            background: "red",
+            boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.75)"
+          },
+        }
       },
     },
   },
@@ -201,7 +209,6 @@ export default {
     },
   },
   breakpoints: ["640px", "768px", "1024px"],
-
   cards: {
     primary: {
       padding: 2,
