@@ -46,7 +46,7 @@ export default {
     container: "768px",
   },
   fonts: {
-    body: "Sen",
+    body: 'Roboto Mono',
     heading: "inherit",
     logo: "WyvernWingsWydeBRK",
     monospace: "Menlo, monospace",
