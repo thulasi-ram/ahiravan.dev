@@ -8,14 +8,15 @@ import SEO from "./seo"
 import {CrumbBuilderFactory} from "../services/crumb-builder"
 
 const Post = ({
-  data: {
-    post,
-  },
+  post,
   location,
   previous,
   next,
 }) => {
 
+  if (!post){
+    return (<div></div>)
+  }
   const crumbs = new CrumbBuilderFactory()
   .addCrumb("/", 'home')
   .addCrumb("/blog", 'blog')

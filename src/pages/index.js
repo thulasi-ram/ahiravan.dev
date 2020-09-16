@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { Box, Card, Grid, jsx, Styled, Text, Heading, Flex } from "theme-ui"
+import { Box, Card, Grid, jsx, Heading, Flex } from "theme-ui"
 import Image from "../components/image"
 import SEO from "../components/seo"
 

@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
-import { jsx, Styled, Avatar } from "theme-ui"
+import { jsx } from "theme-ui"
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
