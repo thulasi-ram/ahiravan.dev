@@ -21,9 +21,9 @@ export default {
     accent: "#3f3f3f",
     modes: {
       dark: {
-        text: "#fff",
+        text: "#ffffff",
         background: "#060606",
-        primary: "#d2d2d2",
+        primary: "#ffffff",
         secondary: "#b2b2b2",
         muted: "#191919",
         highlight: "#3c3c3c",
@@ -215,5 +215,5 @@ export default {
       border: "1px solid",
       borderColor: "muted",
     },
-  },
+  }
 }

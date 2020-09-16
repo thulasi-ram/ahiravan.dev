@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
-import { jsx, Styled } from "theme-ui"
+import { jsx, Styled, Avatar } from "theme-ui"
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
@@ -28,11 +28,16 @@ const Image = () => {
   `)
 
   return (
-    <Styled.img
-      as={Img}
-      sx={{ height: "100px" }}
-      fluid={data.placeholderImage.childImageSharp.fluid}
-    />
+      <Img
+        sx={{ 
+          height: "100px",
+          width: "100px",
+          borderRadius: "200px",
+          border: "black 2px solid",
+          m: 4,
+           }}
+        fluid={data.placeholderImage.childImageSharp.fluid}
+      />
   )
 }
 
