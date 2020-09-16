@@ -17,7 +17,8 @@ const Post = ({
   previous,
   next,
 }) => (
-  <Layout location={location} title={title}>
+  // <Layout location={location} title={title}>
+  <div>
     <SEO
       title={post.title}
       description={post.excerpt}
@@ -36,7 +37,8 @@ const Post = ({
       </section>
       <PostFooter {...{ previous, next, post }} />
     </article>
-  </Layout>
+  {/* </Layout> */}
+  </div>
 )
 
 export default Post

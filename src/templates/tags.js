@@ -11,7 +11,7 @@ const Tags = ({ pageContext, data }) => {
     totalCount === 1 ? "" : "s"
   } tagged with "${tag}"`
   return (
-    <Layout>
+    <div>
       <h1>{tagHeader}</h1>
       <ul>
         {edges.map(({ node }) => {
@@ -25,7 +25,7 @@ const Tags = ({ pageContext, data }) => {
         })}
       </ul>
       <Styled.a as={Link} to="/tags">All tags</Styled.a>
-    </Layout>
+      </div>
   )
 }
 Tags.propTypes = {

@@ -10,8 +10,8 @@ const TagsPage = ({
     allMarkdownRemark: { group },
   },
 }) => (
-  <Layout>
-    <SEO title="Ahiravan.dev all tags" />
+  <div>
+      <SEO title="Ahiravan.dev all tags" />
     <div>
       <h1>All Tags</h1>
       <ul>
@@ -24,8 +24,8 @@ const TagsPage = ({
         ))}
       </ul>
     </div>
-  </Layout>
-)
+    </div>
+  )
 TagsPage.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
