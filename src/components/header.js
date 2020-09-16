@@ -14,6 +14,7 @@ const navLink = {
   fontWeight: "bold",
   width: "inherit",
   height: "inherit",
+  fontSize: "3"
 }
 
 const animatecss = {
@@ -21,8 +22,8 @@ const animatecss = {
     cursor: "pointer",
     animation: "rotation 5s infinite ease",
     "@keyframes rotation": {
-      from: { transform: "rotate(0deg)" },
-      to: { transform: "rotate(359deg)" },
+      from: { transform: "translateZ(0) rotate(0deg)" },
+      to: { transform: "translateZ(0) rotate(359deg)" },
     },
   },
 }
@@ -64,10 +65,10 @@ const Header = () => {
           to="/"
           title="Ahiravan's Home"
           sx={{
-            color: `primary`,
-            textDecoration: "none",
+            color: "primary",
             alignSelf: "center",
           }}
+          color={ani_color}
           css={css(logocss)}
 
         >
@@ -80,9 +81,6 @@ const Header = () => {
         </AniLink>
         <div sx={{ mx: "auto" }} />
 
-        <Styled.a as={AniLink} paintDrip sx={navLink} to="/" color={ani_color}>
-          /me
-        </Styled.a>
         <Styled.a as={AniLink} paintDrip to="/blog" sx={navLink} color={ani_color}>
           /Blog
         </Styled.a>
