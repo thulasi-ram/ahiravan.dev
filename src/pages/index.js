@@ -7,7 +7,7 @@ import SEO from "../components/seo"
 
 
 const IndexPage = () => (
-  <Layout>
+  <div>
     <SEO title="Home" />
     <Styled.h1 sx={{ fontSize: 1 }}>Hi people</Styled.h1>
     <Styled.p>Welcome to your new Gatsby site.</Styled.p>
@@ -18,7 +18,8 @@ const IndexPage = () => (
     <Styled.p>
       <Link to="/more/">Go to page 2</Link>
     </Styled.p>
-  </Layout>
+    </div>
+
 )
 
 export default IndexPage

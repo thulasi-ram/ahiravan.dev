@@ -7,7 +7,7 @@ import SEO from "./seo"
 
 const Posts = ({ location, posts, siteTitle, socialLinks }) => {
   return (
-    <Layout location={location} title={siteTitle}>
+    <div>
       <SEO title="Ahiravan's Blog" />
       <Heading as='h1'> Ahiravan's Blog </Heading>
 
@@ -47,7 +47,7 @@ const Posts = ({ location, posts, siteTitle, socialLinks }) => {
           })}
         </tbody>
       </Styled.table>
-    </Layout>
+      </div>
   )
 }
 
