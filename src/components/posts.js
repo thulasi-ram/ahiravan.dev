@@ -2,13 +2,21 @@
 import { Link } from "gatsby"
 import React from "react"
 import { Heading, jsx, Styled } from "theme-ui"
+import Breadcrumb from "./breadcrumb"
 import SEO from "./seo"
+import {CrumbBuilderFactory} from "../services/crumb-builder"
+
 
 const Posts = ({ location, posts, siteTitle, socialLinks }) => {
+  const crumbs = new CrumbBuilderFactory()
+  .addCrumb("/", 'home')
+  .addCrumb("/blog", 'blog').crumbs
+  
   return (
     <div>
       <SEO title="Ahiravan's Blog" />
       <Heading as="h1"> Ahiravan's Blog </Heading>
+      <Breadcrumb crumbs={crumbs} />
 
       <Styled.table>
         <thead>
