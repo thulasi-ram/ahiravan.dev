@@ -15,8 +15,8 @@ const Posts = ({ location, posts, siteTitle, socialLinks }) => {
   return (
     <div>
       <SEO title="Ahiravan's Blog" />
-      <Heading as="h1"> Ahiravan's Blog </Heading>
       <Breadcrumb crumbs={crumbs} />
+      <h1> All posts </h1>
 
       <Styled.table>
         <thead>
