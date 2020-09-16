@@ -130,11 +130,11 @@ export default {
       "&:hover": {
         color: "background",
         bg: "primary",
-        transition: "all .5s ease"
+        transition: "all .5s ease",
       },
-      '&.active': {
-        color: 'primary',
-      }
+      "&.active": {
+        color: "primary",
+      },
     },
     pre: {
       fontFamily: "monospace",
@@ -199,6 +199,21 @@ export default {
       border: 0,
       borderBottom: "8px solid",
       borderColor: "text",
+    },
+  },
+  breakpoints: ["640px", "768px", "1024px"],
+
+  cards: {
+    primary: {
+      padding: 2,
+      borderRadius: 4,
+      boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.75)"
+    },
+    compact: {
+      padding: 1,
+      borderRadius: 2,
+      border: "1px solid",
+      borderColor: "muted",
     },
   },
 }

@@ -1,6 +1,7 @@
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+/** @jsx jsx */
+import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
+import { jsx, Styled } from "theme-ui"
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
@@ -26,7 +27,13 @@ const Image = () => {
     }
   `)
 
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+  return (
+    <Styled.img
+      as={Img}
+      sx={{ height: "100px" }}
+      fluid={data.placeholderImage.childImageSharp.fluid}
+    />
+  )
 }
 
 export default Image

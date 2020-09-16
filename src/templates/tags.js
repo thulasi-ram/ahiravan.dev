@@ -2,7 +2,6 @@
 import { graphql, Link } from "gatsby"
 import PropTypes from "prop-types"
 import { jsx, Styled } from "theme-ui"
-import Layout from "../components/layout"
 
 const Tags = ({ pageContext, data }) => {
   const { tag } = pageContext
@@ -18,14 +17,18 @@ const Tags = ({ pageContext, data }) => {
           const { slug } = node.fields
           const { title } = node.frontmatter
           return (
-            <li key={'tgs2'+ slug}>
-              <Styled.a as={Link} to={'/blog'+ slug}>{title}</Styled.a>
+            <li key={"tgs2" + slug}>
+              <Styled.a as={Link} to={"/blog" + slug}>
+                {title}
+              </Styled.a>
             </li>
           )
         })}
       </ul>
-      <Styled.a as={Link} to="/tags">All tags</Styled.a>
-      </div>
+      <Styled.a as={Link} to="/tags">
+        All tags
+      </Styled.a>
+    </div>
   )
 }
 Tags.propTypes = {
