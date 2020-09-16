@@ -187,7 +187,6 @@ export default {
       },
     },
     th: {
-      // backgroundColor: "muted",
       verticalAlign: "bottom",
       borderBottomWidth: 2,
     },
@@ -208,12 +207,6 @@ export default {
       padding: 2,
       borderRadius: 4,
       boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.75)"
-    },
-    compact: {
-      padding: 1,
-      borderRadius: 2,
-      border: "1px solid",
-      borderColor: "muted",
     },
   }
 }

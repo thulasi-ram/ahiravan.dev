@@ -2,15 +2,28 @@
 import { graphql, Link } from "gatsby"
 import PropTypes from "prop-types"
 import { jsx, Styled } from "theme-ui"
+import {CrumbBuilderFactory} from "../services/crumb-builder"
+import Breadcrumb from "../components/breadcrumb"
 
 const Tags = ({ pageContext, data }) => {
+
+
+
   const { tag } = pageContext
+
+
+  const crumbs = new CrumbBuilderFactory()
+  .addCrumb("/", 'home')
+  .addCrumb("/tags", 'tags')
+  .addCrumb("/tags/" + tag, tag).crumbs
+
   const { edges, totalCount } = data.allMarkdownRemark
   const tagHeader = `${totalCount} post${
     totalCount === 1 ? "" : "s"
   } tagged with "${tag}"`
   return (
     <div>
+      <Breadcrumb crumbs={crumbs} />
       <h1>{tagHeader}</h1>
       <ul>
         {edges.map(({ node }) => {
