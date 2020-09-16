@@ -66,7 +66,7 @@ const Header = () => {
           sx={{
             color: `primary`,
             textDecoration: "none",
-            alignSelf: "flex-end",
+            alignSelf: "center",
           }}
           css={css(logocss)}
 

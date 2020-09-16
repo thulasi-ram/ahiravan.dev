@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { jsx } from "theme-ui"
-import Layout from "./layout"
 import PostFooter from "./post-footer"
 import PostHeader from "./post-header"
 import SEO from "./seo"
@@ -17,7 +16,6 @@ const Post = ({
   previous,
   next,
 }) => (
-  // <Layout location={location} title={title}>
   <div>
     <SEO
       title={post.title}
@@ -37,7 +35,6 @@ const Post = ({
       </section>
       <PostFooter {...{ previous, next, post }} />
     </article>
-  {/* </Layout> */}
   </div>
 )
 

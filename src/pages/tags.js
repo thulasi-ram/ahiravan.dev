@@ -3,7 +3,6 @@ import { graphql, Link } from "gatsby"
 import kebabCase from "lodash/kebabCase"
 import PropTypes from "prop-types"
 import { jsx, Styled } from "theme-ui"
-import Layout from "../components/layout"
 import SEO from "../components/seo"
 const TagsPage = ({
   data: {
@@ -11,12 +10,12 @@ const TagsPage = ({
   },
 }) => (
   <div>
-      <SEO title="Ahiravan.dev all tags" />
+    <SEO title="Ahiravan.dev all tags" />
     <div>
       <h1>All Tags</h1>
       <ul>
         {group.map(tag => (
-          <li key={'tgs1' + tag.fieldValue}>
+          <li key={"tgs1" + tag.fieldValue}>
             <Styled.a as={Link} to={`/tags/${kebabCase(tag.fieldValue)}/`}>
               {tag.fieldValue} ({tag.totalCount})
             </Styled.a>
@@ -24,8 +23,8 @@ const TagsPage = ({
         ))}
       </ul>
     </div>
-    </div>
-  )
+  </div>
+)
 TagsPage.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
