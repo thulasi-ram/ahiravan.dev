@@ -47,8 +47,6 @@ const logocss = {
 
 const Header = () => {
   const [colorMode, setColorMode] = useColorMode()
-  const ani_color = (colorMode === 'default' ? 'black':  'white')
-
   return (
     <header
       sx={{

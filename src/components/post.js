@@ -25,6 +25,7 @@ const Post = ({
     post.slug
     .replace("/blog", '')
     .replace("/", "")
+    .replace("/", "")
   ).crumbs
 
   return (
