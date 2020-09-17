@@ -1,9 +1,10 @@
 /** @jsx jsx */
-import AniLink from "gatsby-plugin-transition-link/AniLink";
+// import AniLink from "gatsby-plugin-transition-link/AniLink";
 import PropTypes from "prop-types"
 import { Flex, IconButton, jsx, Styled, useColorMode, css } from "theme-ui"
 import LogoSvg from "../svgs/logo.svg"
 import SunSvg from "../svgs/sun.svg"
+import {Link} from "gatsby"
 
 const navLink = {
   p: "2.5px",
@@ -60,15 +61,13 @@ const Header = () => {
           alignItems: "center",
         }}
       >
-        <AniLink
-          paintDrip
+        <Link
           to="/"
           title="Ahiravan's Home"
           sx={{
             color: "primary",
             alignSelf: "center",
           }}
-          color={ani_color}
           css={css(logocss)}
 
         >
@@ -78,10 +77,10 @@ const Header = () => {
               height: "2.5em",
             }}
           />
-        </AniLink>
+        </Link>
         <div sx={{ mx: "auto" }} />
 
-        <Styled.a as={AniLink} paintDrip to="/blog" sx={navLink} color={ani_color}>
+        <Styled.a as={Link} to="/blog" sx={navLink}>
           /Blog
         </Styled.a>
 
