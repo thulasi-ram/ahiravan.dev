@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { graphql, Link } from "gatsby"
 import PropTypes from "prop-types"
-import { jsx, Styled } from "theme-ui"
+import { Flex, jsx, Styled } from "theme-ui"
 import {CrumbBuilderFactory} from "../services/crumb-builder"
 import Breadcrumb from "../components/breadcrumb"
 
@@ -38,9 +38,12 @@ const Tags = ({ pageContext, data }) => {
           )
         })}
       </ul>
+      <Flex>
+        <div sx={{mx: "auto"}}></div>
       <Styled.a as={Link} to="/tags">
-        All tags
+        all tags
       </Styled.a>
+      </Flex>
     </div>
   )
 }

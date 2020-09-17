@@ -43,8 +43,23 @@ export default {
       },
       "&:active": {
         bg: "accent",
-      }
-      ,
+      },
+    },
+    basic: {
+      color: "text",
+      bg: "background",
+      borderColor: "primary",
+      borderStyle: "solid",
+      borderWidth: "2px",
+      "&:hover": {
+        cursor: "pointer",
+      },
+      "&:active": {
+        transform: "scale(0.98)",
+      },
+      "&:focus": {
+        "outline" :"none",
+      },
     },
     link: {
       color: "text",
@@ -57,7 +72,6 @@ export default {
   fonts: {
     body: "'Roboto Mono', Courier, monospace",
     heading: "inherit",
-    logo: "WyvernWingsWydeBRK",
     monospace: "Menlo, monospace",
   },
   fontSizes: [10, 12, 14, 16, 20, 24, 32, 48, 64, 96],
@@ -104,6 +118,7 @@ export default {
       fontFamily: "body",
       lineHeight: "body",
       fontWeight: "body",
+      fontDisplay: "swap",
     },
     h1: {
       variant: "textStyles.display",
