@@ -82,7 +82,14 @@ module.exports = {
    },
    'gatsby-plugin-robots-txt',
    'gatsby-plugin-sitemap',
-
+   'gatsby-plugin-webpack-bundle-analyser-v2',
+   'gatsby-plugin-minify-html',
+   {
+    resolve: 'gatsby-plugin-brotli',
+    options: {
+      extensions: ['css', 'html', 'js', 'svg']
+    }
+  }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
