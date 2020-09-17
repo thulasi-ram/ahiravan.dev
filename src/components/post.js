@@ -20,7 +20,12 @@ const Post = ({
   const crumbs = new CrumbBuilderFactory()
   .addCrumb("/", 'home')
   .addCrumb("/blog", 'blog')
-  .addCrumb(location.path, post.slug.replace("/blog", '').replace("/", "")).crumbs
+  .addCrumb(
+    location.pathname, 
+    post.slug
+    .replace("/blog", '')
+    .replace("/", "")
+  ).crumbs
 
   return (
     <div>
