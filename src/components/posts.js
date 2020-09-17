@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { Link } from "gatsby"
 import React from "react"
-import { Heading, jsx, Styled } from "theme-ui"
+import { jsx, Styled } from "theme-ui"
 import Breadcrumb from "./breadcrumb"
 import SEO from "./seo"
 import {CrumbBuilderFactory} from "../services/crumb-builder"

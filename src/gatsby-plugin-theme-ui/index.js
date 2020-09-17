@@ -22,11 +22,11 @@ export default {
     cardbg: "#fff",
     modes: {
       dark: {
-        text: "#ffffff",
+        text: "rgba(255, 255, 255, 0.87)",
         background: "#121212",
         primary: "#ffffff",
-        secondary: "#b2b2b2",
-        muted: "#191919",
+        secondary: "rgba(255, 255, 255, 0.6)",
+        muted: "rgba(255, 255, 255, 0.38)",
         highlight: "#3c3c3c",
         gray: "#999",
         accent: "#e0e0e0",
@@ -55,7 +55,7 @@ export default {
     container: "768px",
   },
   fonts: {
-    body: 'Roboto Mono',
+    body: "'Roboto Mono', Courier, monospace",
     heading: "inherit",
     logo: "WyvernWingsWydeBRK",
     monospace: "Menlo, monospace",
@@ -138,11 +138,13 @@ export default {
       cursor: "pointer",
       "&:hover": {
         color: "background",
+        cursor: "pointer",
         bg: "primary",
         transition: "all .5s ease",
       },
       "&.active": {
         color: "primary",
+        cursor: "pointer",
       },
     },
     pre: {

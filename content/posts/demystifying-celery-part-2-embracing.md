@@ -7,7 +7,7 @@ permalink: /:title
 date: 2020-07-19
 ---
 
-This post works upon internal library kombu used by celery for amqp transport mechanisms. For people that are not a option visit blog one where we [extend the functionality of celery](/demystifying-celery-part-1-customizing)
+This post works upon internal library kombu used by celery for amqp transport mechanisms. For people that are not a option visit blog one where we [extend the functionality of celery](/blog/demystifying-celery-part-1-customizing)
 
 1. Gotchas of celery
 	1. celery events gossip
