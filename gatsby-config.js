@@ -28,9 +28,9 @@ module.exports = {
       resolve: "gatsby-plugin-react-svg",
       options: {
         rule: {
-          include:`${__dirname}/src/svgs/`
-        }
-      }
+          include: `${__dirname}/src/svgs/`,
+        },
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
@@ -57,39 +57,47 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-web-font-loader',
+      resolve: "gatsby-plugin-web-font-loader",
       options: {
         google: {
-          families: ['Roboto Mono'],
-        },  
+          families: ["Roboto Mono"],
+        },
         // custom: {
         //   families: ['Wyvern'],
         //   urls: ["/fonts/fonts.css"]
         // }
-      }
+      },
     },
-    { resolve: 'gatsby-plugin-theme-ui',
+    {
+      resolve: "gatsby-plugin-theme-ui",
       options: {
         // prismPreset: 'night-owl',
         // preset: '@theme-ui/preset-funk'
-      }
+      },
     },
     {
       resolve: "gatsby-plugin-transition-link",
       options: {
-          layout: require.resolve(`./src/components/layout.js`)
-        }
-   },
-   'gatsby-plugin-robots-txt',
-   'gatsby-plugin-sitemap',
-   'gatsby-plugin-webpack-bundle-analyser-v2',
-   'gatsby-plugin-minify-html',
-   {
-    resolve: 'gatsby-plugin-brotli',
-    options: {
-      extensions: ['css', 'html', 'js', 'svg']
-    }
-  }
+        layout: require.resolve(`./src/components/layout.js`),
+      },
+    },
+    "gatsby-plugin-robots-txt",
+    "gatsby-plugin-sitemap",
+    "gatsby-plugin-webpack-bundle-analyser-v2",
+    "gatsby-plugin-minify-html",
+    {
+      resolve: "gatsby-plugin-brotli",
+      options: {
+        extensions: ["css", "html", "js", "svg"],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-s3`,
+      options: {
+        bucketName: "ahiravan.dev",
+        acl: null,
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
