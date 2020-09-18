@@ -13,7 +13,7 @@ But there's not one but two problems in it for me.
 
 But sometimes we are stuck. We cannot get rid of it since there are so many things that are managed by it. But what if the producer is not celery? You cannot consume such messages with celery.
 
-In this post we will cover for use cases where we want to retain celery for other tasks but still be able to consume from producers that are not celery. As a bonus we will also setup a dead-letter-queue for our queue so that messages are not discarded. For use cases where getting rid of celery can be considered take look into this flask extension like implementation in part-2 of this post [here](/demystifying-celery-part-2-embracing).
+In this post we will cover for use cases where we want to retain celery for other tasks but still be able to consume from producers that are not celery. As a bonus we will also setup a dead-letter-queue for our queue so that messages are not discarded. For use cases where getting rid of celery can be considered take look into this flask extension like implementation in part-2 of this post [here](/blog/demystifying-celery-part-2-embracing).
 
 
 ### 1. Custom consumer

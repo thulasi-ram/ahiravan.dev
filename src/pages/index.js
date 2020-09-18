@@ -111,8 +111,7 @@ const IndexPage = () => (
           <Heading variant="section"> ABOUT ME </Heading>
         </Flex>
         <IntroP>
-          Crafting software, with &#10084; currently <IntroA href="/">@Simpl</IntroA>{" "}
-          in Bengaluru, India.{" "}
+          Crafting software, with &#10084; currently <IntroA href="/">@Simpl</IntroA> - Bengaluru, India.{" "}
         </IntroP>
 
         <IntroP>
