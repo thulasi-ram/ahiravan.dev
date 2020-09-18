@@ -57,23 +57,8 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-web-font-loader",
-      options: {
-        google: {
-          families: ["Roboto Mono"],
-        },
-        // custom: {
-        //   families: ['Wyvern'],
-        //   urls: ["/fonts/fonts.css"]
-        // }
-      },
-    },
-    {
       resolve: "gatsby-plugin-theme-ui",
-      options: {
-        // prismPreset: 'night-owl',
-        // preset: '@theme-ui/preset-funk'
-      },
+      options: {},
     },
     {
       resolve: "gatsby-plugin-transition-link",

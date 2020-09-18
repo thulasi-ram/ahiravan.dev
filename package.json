@@ -26,7 +26,6 @@
     "gatsby-plugin-svgr": "^2.0.2",
     "gatsby-plugin-theme-ui": "^0.3.0",
     "gatsby-plugin-transition-link": "^1.20.2",
-    "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-filesystem": "^2.1.36",
     "gatsby-theme-blog-core": "^2.0.1",
     "gatsby-theme-style-guide": "^0.3.1",
