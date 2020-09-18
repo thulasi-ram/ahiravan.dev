@@ -12,7 +12,7 @@ const navLink = {
   textTransform: "uppercase",
   textDecoration: "none",
   lineHeight: 1,
-  fontWeight: "bold",
+  fontWeight: "medium",
   width: "inherit",
   height: "inherit",
   fontSize: "3"
