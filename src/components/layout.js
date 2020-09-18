@@ -4,6 +4,7 @@ import PropTypes from "prop-types"
 import { Container, jsx } from "theme-ui"
 import Footer from "./footer"
 import Header from "./header"
+import Helmet from "react-helmet"
 
 const Layout = ({ children }) => {
   return (
@@ -14,10 +15,21 @@ const Layout = ({ children }) => {
         minHeight: "100vh",
         padding: 2,
         minWidth: "320px",
-        backfaceVisibility: "hidden"
+        backfaceVisibility: "hidden",
       }}
-      id="cccc"
     >
+      <Helmet>
+        <link rel="dns-prefetch" href="//fonts.googleapis.com"></link>{" "}
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin
+        ></link>
+        <link
+          href="https://fonts.googleapis.com/css?family=Roboto+Mono"
+          rel="stylesheet"
+        />
+      </Helmet>
       <Header />
       <main
         sx={{
