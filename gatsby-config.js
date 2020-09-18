@@ -1,17 +1,17 @@
 module.exports = {
   siteMetadata: {
-    title: `Ahiravan`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-    siteUrl: "https://amberley.blog",
+    title: `Ahiravan's Home`,
+    description: `Ahiravan's home, blog and musings.`,
+    author: `@ahiravan1`,
+    siteUrl: "https://ahiravan.dev",
     social: [
       {
         name: `Twitter`,
-        url: `https://twitter.com/gatsbyjs`,
+        url: `https://twitter.com/ahiravan1`,
       },
       {
         name: `GitHub`,
-        url: `https://github.com/gatsbyjs`,
+        url: `https://github.com/thulas-ram`,
       },
     ],
   },
@@ -47,13 +47,17 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Ahiravan's Portfolio`,
+        short_name: `Ahiravan home and blog`,
         start_url: `/`,
         background_color: `#fff`,
         theme_color: `#000`,
-        display: `minimal-ui`,
+        display: `standalone`,
+        lang: `en`,
         icon: `src/images/favicon.png`,
+        icon_options: {
+          purpose: `any maskable`,
+        },
       },
     },
     {
@@ -70,12 +74,6 @@ module.exports = {
     "gatsby-plugin-sitemap",
     "gatsby-plugin-webpack-bundle-analyser-v2",
     "gatsby-plugin-minify-html",
-    {
-      resolve: "gatsby-plugin-brotli",
-      options: {
-        extensions: ["css", "html", "js", "svg"],
-      },
-    },
     {
       resolve: `gatsby-plugin-s3`,
       options: {
