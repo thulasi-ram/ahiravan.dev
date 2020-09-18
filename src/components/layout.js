@@ -19,14 +19,19 @@ const Layout = ({ children }) => {
       }}
     >
       <Helmet>
-        <link rel="dns-prefetch" href="//fonts.googleapis.com"></link>{" "}
+        <link rel="dns-prefetch" href="//fonts.googleapis.com"></link>
         <link
           rel="preconnect"
           href="https://fonts.gstatic.com"
           crossorigin
         ></link>
         <link
-          href="https://fonts.googleapis.com/css?family=Roboto+Mono"
+          href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,600,700&display=swap"
+          rel="preload"
+          as="style"
+        />
+        <link
+          href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,600,700&display=swap"
           rel="stylesheet"
         />
       </Helmet>
