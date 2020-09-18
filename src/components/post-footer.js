@@ -2,12 +2,13 @@
 import { Link } from "gatsby"
 import { css, Flex, jsx, Styled } from "theme-ui"
 import SimilarArticles from "../templates/similar-articles"
+
 const PostFooter = ({ previous, next, post }) => (
   <footer
     sx={{
       marginTop: 5,
       marginBottom: 2,
-      fontSize: 2
+      fontSize: 2,
     }}
   >
     <SimilarArticles tags={post.tags} currentArticleSlug={post.slug} />
@@ -24,14 +25,14 @@ const PostFooter = ({ previous, next, post }) => (
       >
         <li>
           {previous && (
-            <Styled.a as={Link} to={previous.slug} rel="prev" sx={{fontWeight: 'bold'}}>
+            <Styled.a as={Link} to={previous.slug} rel="prev">
               ← {previous.title}
             </Styled.a>
           )}
         </li>
         <li>
           {next && (
-            <Styled.a as={Link} to={next.slug} rel="next"  sx={{fontWeight: 'bold'}}>
+            <Styled.a as={Link} to={next.slug} rel="next">
               {next.title} →
             </Styled.a>
           )}

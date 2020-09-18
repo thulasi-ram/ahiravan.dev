@@ -161,6 +161,9 @@ export default {
         color: "primary",
         cursor: "pointer",
       },
+      // "&:visited": {
+      //   color: "inherit",
+      // },
     },
     pre: {
       fontFamily: "monospace",
@@ -232,7 +235,7 @@ export default {
       padding: 2,
       bg: "cardbg",
       borderRadius: 4,
-      boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.75)"
+      boxShadow: "0px 0px 1px 1px rgba(0,0,0,0.75)"
     },
   }
 }
