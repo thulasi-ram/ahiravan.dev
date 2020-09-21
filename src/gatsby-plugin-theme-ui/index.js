@@ -70,7 +70,7 @@ export default {
     container: "768px",
   },
   fonts: {
-    body: "'Roboto Mono', Courier, monospace",
+    body: "inherit",
     heading: "inherit",
     monospace: "Menlo, monospace",
   },

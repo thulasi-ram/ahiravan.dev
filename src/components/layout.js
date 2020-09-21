@@ -6,7 +6,6 @@ import Footer from "./footer"
 import Header from "./header"
 import Helmet from "react-helmet"
 
-const fontLink = "https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,600,700&display=swap"
 const Layout = ({ children }) => {
   return (
     <Container
@@ -20,21 +19,8 @@ const Layout = ({ children }) => {
       }}
     >
       <Helmet>
-        <link rel="dns-prefetch" href="//fonts.googleapis.com"></link>
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin
-        ></link>
-        <link
-          href={fontLink}
-          rel="preload"
-          as="style"
-        />
-        <link
-          href={fontLink}
-          rel="stylesheet"
-        />
+        <link rel="preload" href="font-ibm/optimized.woff2" as="font" type="font/woff2" crossorigin/>
+        <link rel="stylesheet" href="css/global.css"/>
       </Helmet>
       <Header />
       <main

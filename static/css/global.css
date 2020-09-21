@@ -1,0 +1,48 @@
+@font-face {
+    font-family: LatoSubset;
+    src: url('font-ibm/optimized.woff2') format('woff2'),
+             url('font-ibm/optimized.woff') format('woff');
+    unicode-range: U+65-90, U+97-122;
+    font-display: swap;
+}
+@font-face {
+    font-family: Lato;
+    src: url('/font-ibm/regular.woff2') format('woff2'),
+             url('/font-ibm/regular.woff') format('woff');
+             font-display: swap;
+
+}
+@font-face {
+    font-family: Lato;
+    src: url('/font-ibm/bold.woff2') format('woff2'),
+             url('/font-ibm/bold.woff') format('woff');
+    font-weight: 700;
+    font-display: swap;
+
+}
+@font-face {
+    font-family: Lato;
+    src: url('/font-ibm/italic.woff2') format('woff2'),
+             url('/font-ibm/italic.woff') format('woff');
+    font-style: italic;
+    font-display: swap;
+
+}
+@font-face {
+    font-family: Lato;
+    src: url('/font-ibm/bolditalic.woff2') format('woff2'),
+             url('/font-ibm/bolditalic.woff') format('woff');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+
+}
+body {
+    font-family: monospace;
+}
+.fonts-loaded-1 body {
+    font-family: LatoSubset;
+}
+.fonts-loaded-2 body {
+    font-family: Lato;
+}
