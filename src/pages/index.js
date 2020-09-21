@@ -21,7 +21,7 @@ const IndexPage = () => (
       >
         <Box>
           <h1>Hi, I'm Thulasi</h1>
-          <Heading>I build for all things web.</Heading>
+          <h2>I build for all things web.</h2>
 
           <Grid
             columns={[1]}

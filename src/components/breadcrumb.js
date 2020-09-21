@@ -9,9 +9,6 @@ const crumbLinkSx = (active) => {
   if (!active) {
     sx['textDecoration']= "none"
   }
-  else {
-    sx['fontWeight']= "bold"
-  }
   return (sx)
 }
 
