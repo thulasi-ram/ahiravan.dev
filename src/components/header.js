@@ -9,7 +9,7 @@ import {Link} from "gatsby"
 const navLink = {
   p: "2.5px",
   ml: "4",
-  textTransform: "uppercase",
+  textTransform: "lowercase",
   textDecoration: "none",
   lineHeight: 1,
   fontWeight: "medium",

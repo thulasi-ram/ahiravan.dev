@@ -118,7 +118,6 @@ export default {
       fontFamily: "body",
       lineHeight: "body",
       fontWeight: "body",
-      fontDisplay: "swap",
     },
     h1: {
       variant: "textStyles.display",

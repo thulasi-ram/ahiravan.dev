@@ -2,9 +2,9 @@
 import "normalize.css"
 import PropTypes from "prop-types"
 import { Container, jsx } from "theme-ui"
+import FontHeader from "./font"
 import Footer from "./footer"
 import Header from "./header"
-import Helmet from "react-helmet"
 
 const Layout = ({ children }) => {
   return (
@@ -18,10 +18,7 @@ const Layout = ({ children }) => {
         backfaceVisibility: "hidden",
       }}
     >
-      <Helmet>
-        <link rel="preload" href="font-ibm/optimized.woff2" as="font" type="font/woff2" crossorigin/>
-        <link rel="stylesheet" href="css/global.css"/>
-      </Helmet>
+      <FontHeader />
       <Header />
       <main
         sx={{
