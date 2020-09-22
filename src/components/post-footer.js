@@ -1,6 +1,5 @@
 /** @jsx jsx */
-import { Link } from "gatsby"
-import { css, Flex, jsx, Styled } from "theme-ui"
+import { jsx } from "theme-ui"
 import SimilarArticles from "../templates/similar-articles"
 
 const PostFooter = ({ previous, next, post }) => (
@@ -11,34 +10,11 @@ const PostFooter = ({ previous, next, post }) => (
       fontSize: 2,
     }}
   >
-    <SimilarArticles tags={post.tags} currentArticleSlug={post.slug} />
-
-    {(previous || next) && (
-      <Flex
-        as="ul"
-        css={css({
-          flexWrap: `wrap`,
-          justifyContent: `space-between`,
-          listStyle: `none`,
-          padding: 0,
-        })}
-      >
-        <li>
-          {previous && (
-            <Styled.a as={Link} to={previous.slug} rel="prev">
-              ← {previous.title}
-            </Styled.a>
-          )}
-        </li>
-        <li>
-          {next && (
-            <Styled.a as={Link} to={next.slug} rel="next">
-              {next.title} →
-            </Styled.a>
-          )}
-        </li>
-      </Flex>
-    )}
+    <SimilarArticles
+      currentArticle={post}
+      nextArticle={next}
+      previousArticle={previous}
+    />
   </footer>
 )
 

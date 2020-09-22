@@ -1,9 +1,11 @@
 /** @jsx jsx */
 import { graphql, StaticQuery } from "gatsby"
 import { jsx } from "theme-ui"
-import { SimilarArticlesFactory, getPostsFromQuery } from "../services/similar-articles-factory"
-import {SimilarArticlesComponent} from '../components/similar-articles'
-
+import {
+  SimilarArticlesFactory,
+  getPostsFromQuery,
+} from "../services/similar-articles-factory"
+import { SimilarArticlesComponent } from "../components/similar-articles"
 
 export default props => (
   <StaticQuery
@@ -30,24 +32,29 @@ export default props => (
       }
     `}
     render={data => {
-      const { tags, currentArticleSlug } = props
+      const { currentArticle, nextArticle, previousArticle } = props
 
       // (2.) Marshall the response into articles
       const articles = getPostsFromQuery(data.posts)
-      var currPostSlug = currentArticleSlug.replace("/blog", "");
+      var excludeArticles = [currentArticle, nextArticle, previousArticle]
 
-      // (3.) Use a SimilarArticlesFactory to get my similar articles
       const similarArticles = new SimilarArticlesFactory(
         articles,
-        currPostSlug
+        excludeArticles
       )
-        .setMaxArticles(4)
+        .setMaxArticles(3)
         .setCategory("dummy")
-        .setTags(tags)
+        .setTags(currentArticle.tags)
         .getArticles()
 
       // (4.) Render it
-      return <SimilarArticlesComponent articles={similarArticles} />
+      return (
+        <SimilarArticlesComponent
+          articles={similarArticles}
+          nextArticle={nextArticle}
+          previousArticle={previousArticle}
+        />
+      )
     }}
   />
 )

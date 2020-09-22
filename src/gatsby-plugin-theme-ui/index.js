@@ -236,5 +236,17 @@ export default {
       borderRadius: 4,
       boxShadow: "0px 0px 1px 1px rgba(0,0,0,0.75)"
     },
-  }
+  },
+  badges: {
+    primary: {
+      color: 'background',
+      bg: 'primary',
+    },
+    outline: {
+      color: 'primary',
+      bg: 'transparent',
+      boxShadow: 'inset 0 0 0 1px',
+    },
+  },
+
 }
