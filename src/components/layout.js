@@ -14,7 +14,7 @@ const Layout = ({ children }) => {
         flexDirection: "column",
         minHeight: "100vh",
         padding: 2,
-        minWidth: "320px",
+        minWidth: "370px",
         backfaceVisibility: "hidden",
       }}
     >

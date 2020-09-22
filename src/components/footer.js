@@ -1,5 +1,6 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
+import { Grid, jsx, Styled } from "theme-ui"
+import {FooterSocial} from "./composites"
 
 const Footer = () => {
   return (
@@ -8,18 +9,30 @@ const Footer = () => {
         display: "flex",
         flexWrap: "wrap",
         alignItems: "center",
-        justifyContent: "center",
-        color: "gray",
-        borderTop: theme => `${theme.colors.primary} 1px solid`,
+        borderTop: theme => `${theme.colors.muted} 1px solid`,
       }}
     >
+      <Grid
+        columns={[3]}
+      >
+        <FooterSocial href="https://github.com/thulasi-ram" aria-label="github">
+          {`{GH}`}
+        </FooterSocial>
+
+        <FooterSocial href="/"> {`(TW)`} </FooterSocial>
+
+        <FooterSocial href="https://www.linkedin.com/in/thulasi-ram">
+          {`[LI]`}
+        </FooterSocial>
+      </Grid>
+
       <div sx={{ mx: "auto" }} />
 
-      <Styled.p>
+      <Styled.p sx={{
+        color: "gray",
+      }}>
         © Copyright {new Date().getFullYear()}, Ahiravan
-        {` `}
       </Styled.p>
-      <div sx={{ mx: "auto" }} />
     </footer>
   )
 }
