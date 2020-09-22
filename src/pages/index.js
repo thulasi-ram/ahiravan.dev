@@ -53,7 +53,7 @@ const IndexPage = () => (
         </Flex>
         <IntroP>
           Crafting software, with &#10084; currently{" "}
-          <IntroA href="/">@Simpl</IntroA> - Bengaluru, India.{" "}
+          <IntroA href="https://www.getsimpl.com/about-us/">@Simpl</IntroA> - Bengaluru, India.{" "}
         </IntroP>
 
         <IntroP>
@@ -102,13 +102,13 @@ const IndexPage = () => (
         </Flex>
         <ul>
           <li>
-            <IntroA href="/">Feature Toggle </IntroA>
+            <IntroA href="https://github.com/thulasi-ram/django-feature-toggle">Feature Toggle </IntroA>
           </li>
           <li>
-            <IntroA href="/">Diff and Patch </IntroA>
+            <IntroA href="https://github.com/thulasi-ram/diff-and-patch">Diff and Patch </IntroA>
           </li>
           <li>
-            <IntroA href="/">IvoryCRM </IntroA>
+            <IntroA href="https://github.com/thulasi-ram/ivory">IvoryCRM </IntroA>
           </li>
         </ul>
       </section>
