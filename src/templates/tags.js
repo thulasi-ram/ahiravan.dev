@@ -1,21 +1,18 @@
 /** @jsx jsx */
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import PropTypes from "prop-types"
-import { Flex, jsx, Styled } from "theme-ui"
-import {CrumbBuilderFactory} from "../services/crumb-builder"
+import { Flex, jsx } from "theme-ui"
 import Breadcrumb from "../components/breadcrumb"
+import { FlexFiller, LinkAsA } from "../components/composites"
+import { CrumbBuilderFactory } from "../services/crumb-builder"
 
 const Tags = ({ pageContext, data }) => {
-
-
-
   const { tag } = pageContext
 
-
   const crumbs = new CrumbBuilderFactory()
-  .addCrumb("/", 'home')
-  .addCrumb("/tags", 'tags')
-  .addCrumb("/tags/" + tag, tag).crumbs
+    .addCrumb("/", "home")
+    .addCrumb("/tags", "tags")
+    .addCrumb("/tags/" + tag, tag).crumbs
 
   const { edges, totalCount } = data.allMarkdownRemark
   const tagHeader = `${totalCount} post${
@@ -31,18 +28,14 @@ const Tags = ({ pageContext, data }) => {
           const { title } = node.frontmatter
           return (
             <li key={"tgs2" + slug}>
-              <Styled.a as={Link} to={"/blog" + slug}>
-                {title}
-              </Styled.a>
+              <LinkAsA to={"/blog" + slug}>{title}</LinkAsA>
             </li>
           )
         })}
       </ul>
       <Flex>
-        <div sx={{mx: "auto"}}></div>
-      <Styled.a as={Link} to="/tags">
-        all tags
-      </Styled.a>
+        <FlexFiller></FlexFiller>
+        <LinkAsA to="/tags">all tags</LinkAsA>
       </Flex>
     </div>
   )

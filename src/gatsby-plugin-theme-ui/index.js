@@ -220,7 +220,7 @@ export default {
     },
     td: {
       verticalAlign: "top",
-      borderBottomWidth: 1,
+      borderBottomWidth: 0,
     },
     hr: {
       border: 0,

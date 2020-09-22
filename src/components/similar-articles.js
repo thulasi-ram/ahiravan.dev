@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { Link } from "gatsby"
-import { Box, Flex, Heading, jsx, Styled, Badge } from "theme-ui"
+import { Badge, Box, Flex, Heading, jsx } from "theme-ui"
+import { LinkAsA } from "./composites"
 
 export const SimilarArticlesComponent = ({
   articles,
@@ -16,27 +16,27 @@ export const SimilarArticlesComponent = ({
         {articles.map((article, i) => {
           return (
             <li key={"sa" + i}>
-              <Styled.a as={Link} to={"/blog" + article.article.slug}>
+              <LinkAsA to={"/blog" + article.article.slug}>
                 {article.article.title}{" "}
-              </Styled.a>
+              </LinkAsA>
             </li>
           )
         })}
 
         {nextArticle && (
-          <li key={"sa" + "next"}>
-            <Styled.a as={Link} to={"/blog" + nextArticle.slug}>
+          <li key={"sa-next"}>
+            <LinkAsA to={nextArticle.slug}>
               {nextArticle.title}
-            </Styled.a>
+            </LinkAsA>
             <Badge sx={{ mx: 2 }}>next</Badge>
           </li>
         )}
 
         {previousArticle && (
-          <li key={"sa" + "prev"}>
-            <Styled.a as={Link} to={"/blog" + previousArticle.slug}>
+          <li key={"sa-prev"}>
+            <LinkAsA to={previousArticle.slug}>
               {previousArticle.title}
-            </Styled.a>
+            </LinkAsA>
             <Badge sx={{ mx: 2 }}>prev</Badge>
           </li>
         )}

@@ -4,6 +4,7 @@ import PropTypes from "prop-types"
 import { css, Flex, IconButton, jsx, useColorMode } from "theme-ui"
 import LogoSvg from "../svgs/logo.svg"
 import SunSvg from "../svgs/sun.svg"
+import { FlexFiller } from "./composites"
 
 const animatecss = {
   "&:hover": {
@@ -61,11 +62,11 @@ const Header = () => {
             }}
           />
         </Link>
-        <div sx={{ mx: "auto" }} />
+        <FlexFiller></FlexFiller>
 
         <IconButton
           aria-label="Toggle dark mode"
-          css={animatecss}
+          css={css(animatecss)}
           sx={{
             p: 0,
             width: "1em",

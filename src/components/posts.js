@@ -1,17 +1,16 @@
 /** @jsx jsx */
-import { Link } from "gatsby"
 import React from "react"
 import { jsx, Styled } from "theme-ui"
 import Breadcrumb from "./breadcrumb"
 import SEO from "./seo"
-import {CrumbBuilderFactory} from "../services/crumb-builder"
-
+import { CrumbBuilderFactory } from "../services/crumb-builder"
+import { LinkAsA } from "./composites"
 
 const Posts = ({ location, posts, siteTitle, socialLinks }) => {
   const crumbs = new CrumbBuilderFactory()
-  .addCrumb("/", 'home')
-  .addCrumb("/blog", 'blog').crumbs
-  
+    .addCrumb("/", "home")
+    .addCrumb("/blog", "blog").crumbs
+
   return (
     <div>
       <SEO title="Ahiravan's Blog" />
@@ -32,9 +31,7 @@ const Posts = ({ location, posts, siteTitle, socialLinks }) => {
               <React.Fragment key={"pst1" + i}>
                 <tr>
                   <Styled.td>
-                    <Styled.a as={Link} to={node.slug}>
-                      {node.title}
-                    </Styled.a>
+                    <LinkAsA to={node.slug}>{node.title} </LinkAsA>
                   </Styled.td>
                   <Styled.td>{node.date}</Styled.td>
                   <Styled.td>
@@ -42,9 +39,9 @@ const Posts = ({ location, posts, siteTitle, socialLinks }) => {
                     {node.tags.map((tag, j) => {
                       return (
                         <React.Fragment key={"pst2" + j}>
-                          <Styled.a as={Link} to={"/tags/" + tag}>
+                          <LinkAsA to={"/tags/" + tag}>
                             {tag}
-                          </Styled.a>
+                          </LinkAsA>
                           <span>{j < node.tags.length - 1 ? ", " : ""}</span>
                         </React.Fragment>
                       )

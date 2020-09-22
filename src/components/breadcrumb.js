@@ -1,15 +1,15 @@
 /** @jsx jsx */
-import { Link } from "gatsby"
-import { jsx, Styled } from "theme-ui"
+import { jsx } from "theme-ui"
+import { LinkAsA } from "./composites"
 
-const crumbLinkSx = (active) => {
+const crumbLinkSx = active => {
   const sx = {
-    color: 'secondary'
+    color: "secondary",
   }
   if (!active) {
-    sx['textDecoration']= "none"
+    sx["textDecoration"] = "none"
   }
-  return (sx)
+  return sx
 }
 
 const BreadCrumb = ({ crumbs }) => {
@@ -27,14 +27,13 @@ const BreadCrumb = ({ crumbs }) => {
         {crumbs.map((c, i) => {
           return (
             <li key={"crmb" + i}>
-              <Styled.a
-                as={Link}
+              <LinkAsA
                 to={c.pathname || ""}
                 aria-current={i === crumbs.length - 1 ? "page" : null}
-                sx={crumbLinkSx(i===crumbs.length - 1)}
+                sx={crumbLinkSx(i === crumbs.length - 1)}
               >
                 {c.crumbLabel}
-              </Styled.a>
+              </LinkAsA>
               {i === crumbs.length - 1 ? null : (
                 <span aria-hidden="true" sx={{ mx: 2 }}>
                   {c.crumbSeparator}
