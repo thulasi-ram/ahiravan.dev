@@ -1,22 +1,9 @@
 /** @jsx jsx */
-// import AniLink from "gatsby-plugin-transition-link/AniLink";
+import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import { Flex, IconButton, jsx, Styled, useColorMode, css } from "theme-ui"
+import { css, Flex, IconButton, jsx, useColorMode } from "theme-ui"
 import LogoSvg from "../svgs/logo.svg"
 import SunSvg from "../svgs/sun.svg"
-import {Link} from "gatsby"
-
-const navLink = {
-  p: "2.5px",
-  ml: "4",
-  textTransform: "lowercase",
-  textDecoration: "none",
-  lineHeight: 1,
-  fontWeight: "medium",
-  width: "inherit",
-  height: "inherit",
-  fontSize: "3"
-}
 
 const animatecss = {
   "&:hover": {
@@ -30,19 +17,18 @@ const animatecss = {
 }
 
 const logocss = {
-  '& .shp1': {
-    fill: 'primary',
+  "& .shp1": {
+    fill: "primary",
   },
-  '& .shp0': {
-    fill: 'background',
-    transition: "all 1s ease"
+  "& .shp0": {
+    fill: "background",
+    transition: "all 1s ease",
   },
-    "&:hover": {
-      '& .shp0': {
-        fill: 'primary',
-      }
+  "&:hover": {
+    "& .shp0": {
+      fill: "primary",
     },
-
+  },
 }
 
 const Header = () => {
@@ -67,7 +53,6 @@ const Header = () => {
             alignSelf: "center",
           }}
           css={css(logocss)}
-
         >
           <LogoSvg
             sx={{
@@ -78,14 +63,14 @@ const Header = () => {
         </Link>
         <div sx={{ mx: "auto" }} />
 
-        <Styled.a as={Link} to="/blog" sx={navLink}>
-          /Blog
-        </Styled.a>
-
         <IconButton
           aria-label="Toggle dark mode"
-          sx={navLink}
           css={animatecss}
+          sx={{
+            p: 0,
+            width: "1em",
+            height: "1em",
+          }}
           onClick={e => {
             setColorMode(colorMode === "default" ? "dark" : "default")
           }}
