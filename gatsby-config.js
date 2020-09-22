@@ -74,6 +74,7 @@ module.exports = {
     "gatsby-plugin-sitemap",
     "gatsby-plugin-webpack-bundle-analyser-v2",
     "gatsby-plugin-minify-html",
+    "gatsby-plugin-emotion",
     {
       resolve: `gatsby-plugin-s3`,
       options: {

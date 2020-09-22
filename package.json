@@ -5,7 +5,8 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
-    "@emotion/core": "^10.0.22",
+    "@emotion/core": "^10.0.35",
+    "@emotion/styled": "^10.0.27",
     "@mdx-js/react": "^1.5.1",
     "@svgr/webpack": "^5.4.0",
     "@theme-ui/components": "^0.3.1",
@@ -14,6 +15,7 @@
     "gatsby": "^2.24.57",
     "gatsby-image": "^2.2.31",
     "gatsby-plugin-brotli": "^2.0.0",
+    "gatsby-plugin-emotion": "^4.3.11",
     "gatsby-plugin-manifest": "^2.2.27",
     "gatsby-plugin-minify-html": "^1.0.3",
     "gatsby-plugin-offline": "^3.2.28",

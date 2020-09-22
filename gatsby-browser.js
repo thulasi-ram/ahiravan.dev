@@ -5,7 +5,6 @@
  */
 
 // You can delete this file if you're not using it
-
 exports.onClientEntry = () => {
     if( "fonts" in document ) {
         // Optimization for Repeat Views
