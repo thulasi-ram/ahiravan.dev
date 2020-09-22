@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { Grid, jsx, Styled } from "theme-ui"
-import {FooterSocial} from "./composites"
+import {FooterSocial, FlexFiller} from "./composites"
 
 const Footer = () => {
   return (
@@ -19,14 +19,14 @@ const Footer = () => {
           {`{GH}`}
         </FooterSocial>
 
-        <FooterSocial href="/"> {`(TW)`} </FooterSocial>
+        <FooterSocial href="https://twitter.com/ahiravan1"> {`(TW)`} </FooterSocial>
 
         <FooterSocial href="https://www.linkedin.com/in/thulasi-ram">
           {`[LI]`}
         </FooterSocial>
       </Grid>
 
-      <div sx={{ mx: "auto" }} />
+      <FlexFiller></FlexFiller>
 
       <Styled.p sx={{
         color: "gray",

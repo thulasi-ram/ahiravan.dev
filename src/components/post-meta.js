@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { Fragment } from "react"
 import { jsx, Styled } from "theme-ui"
-import {Link} from "gatsby"
+import {LinkAsA} from "./composites"
 const readingTime = require("reading-time")
 
 const PostMeta = ({ post }) => {
@@ -16,13 +16,12 @@ const PostMeta = ({ post }) => {
         {post.tags.map((tag, index) => {
           return (
             <Fragment key={"pm" + index}>
-              <Styled.a 
-              as={Link} 
+              <LinkAsA
               to={"/tags/" + tag}
               sx={{ color: "inherit" }}
               >
                 {tag}
-              </Styled.a>
+              </LinkAsA>
               <span sx={{ color: "inherit" }}>{index < post.tags.length - 1 ? ", " : ""}</span>
             </Fragment>
           )

@@ -5,8 +5,11 @@ import {
   IntroA,
   IntroP,
   LinkAsA,
+  FlexFiller,
 } from "../components/composites"
 import SEO from "../components/seo"
+import DownloadSvg from "../svgs/download.svg"
+import RightArrowSvg from "../svgs/right.svg"
 
 const IndexPage = () => (
   <div>
@@ -23,17 +26,37 @@ const IndexPage = () => (
         <h1>Hi, I'm Thulasi</h1>
         <h2>I build for all things web.</h2>
 
-        <Grid columns={[2]} sx={{mt: 4}}>
+        <Grid columns={[2]} sx={{ mt: 4 }}>
           <IndexPageButton
             href="https://docs.google.com/document/d/19U1NSPc4tTiaVzpPasZLVVWPzhY13PPFXWlBGOop7sE/export?format=pdf"
             download
             sx={{ ml: "auto" }}
           >
-            RESUME &#x2b07;{" "}
+            <Flex
+              sx={{
+                alignItems: "center",
+              }}
+            >
+              <FlexFiller></FlexFiller>
+              RESUME
+              <DownloadSvg sx={{ height: "24px", width: "24px", mx: 2 }}></DownloadSvg>
+              <FlexFiller></FlexFiller>
+            </Flex>
           </IndexPageButton>
 
           <IndexPageButton as={LinkAsA} to="/blog" sx={{ mr: "auto" }}>
-            BLOG {" ->"}
+            <Flex
+              sx={{
+                alignItems: "center",
+              }}
+            >
+              <FlexFiller></FlexFiller>
+              BLOG
+              <RightArrowSvg
+                sx={{ height: "24px", width: "24px", mx: 2 }}
+              ></RightArrowSvg>
+              <FlexFiller></FlexFiller>
+            </Flex>
           </IndexPageButton>
         </Grid>
       </Box>
@@ -53,7 +76,8 @@ const IndexPage = () => (
         </Flex>
         <IntroP>
           Crafting software, with &#10084; currently{" "}
-          <IntroA href="https://www.getsimpl.com/about-us/">@Simpl</IntroA> - Bengaluru, India.{" "}
+          <IntroA href="https://www.getsimpl.com/about-us/">@Simpl</IntroA> -
+          Bengaluru, India.{" "}
         </IntroP>
 
         <IntroP>
@@ -102,13 +126,19 @@ const IndexPage = () => (
         </Flex>
         <ul>
           <li>
-            <IntroA href="https://github.com/thulasi-ram/django-feature-toggle">Feature Toggle </IntroA>
+            <IntroA href="https://github.com/thulasi-ram/django-feature-toggle">
+              Feature Toggle{" "}
+            </IntroA>
           </li>
           <li>
-            <IntroA href="https://github.com/thulasi-ram/diff-and-patch">Diff and Patch </IntroA>
+            <IntroA href="https://github.com/thulasi-ram/diff-and-patch">
+              Diff and Patch{" "}
+            </IntroA>
           </li>
           <li>
-            <IntroA href="https://github.com/thulasi-ram/ivory">IvoryCRM </IntroA>
+            <IntroA href="https://github.com/thulasi-ram/ivory">
+              IvoryCRM{" "}
+            </IntroA>
           </li>
         </ul>
       </section>

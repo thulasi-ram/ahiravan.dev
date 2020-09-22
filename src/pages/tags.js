@@ -1,21 +1,21 @@
 /** @jsx jsx */
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import kebabCase from "lodash/kebabCase"
 import PropTypes from "prop-types"
-import { jsx, Styled } from "theme-ui"
-import SEO from "../components/seo"
-import {CrumbBuilderFactory} from "../services/crumb-builder"
+import { jsx } from "theme-ui"
 import Breadcrumb from "../components/breadcrumb"
+import { LinkAsA } from "../components/composites"
+import SEO from "../components/seo"
+import { CrumbBuilderFactory } from "../services/crumb-builder"
 
 const TagsPage = ({
   data: {
     allMarkdownRemark: { group },
   },
 }) => {
-
   const crumbs = new CrumbBuilderFactory()
-  .addCrumb("/", 'home')
-  .addCrumb("/tags", 'tags').crumbs
+    .addCrumb("/", "home")
+    .addCrumb("/tags", "tags").crumbs
 
   return (
     <div>
@@ -26,9 +26,9 @@ const TagsPage = ({
         <ul>
           {group.map(tag => (
             <li key={"tgs1" + tag.fieldValue}>
-              <Styled.a as={Link} to={`/tags/${kebabCase(tag.fieldValue)}/`}>
+              <LinkAsA to={`/tags/${kebabCase(tag.fieldValue)}/`}>
                 {tag.fieldValue} ({tag.totalCount})
-              </Styled.a>
+              </LinkAsA>
             </li>
           ))}
         </ul>
