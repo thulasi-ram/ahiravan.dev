@@ -1,7 +1,7 @@
 ---
 title: Demystifying celery - Part 1 - Customizing
 tags: [programming, blog]
-date: 2019-04-15
+date: 2020-06-20
 ---
 
 Celery is touted as the async task processor in python. Its resilient, its fast and moreover has large set of utilities and deals with multiple messaging systems.
