@@ -11,7 +11,7 @@ export default props => (
   <StaticQuery
     query={graphql`
       query SimilarArticles {
-        posts: allMarkdownRemark(
+        posts: allMdx(
           sort: { order: DESC, fields: [frontmatter___date] }
           filter: {}
           limit: 1000
