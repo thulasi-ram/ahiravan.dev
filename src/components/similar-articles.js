@@ -28,23 +28,28 @@ export const SimilarArticlesComponent = ({
           </li>
         )}
       </ul>
-      <div sx={{ mx: 4 }}>
-        <small sx={{ color: "gray", fontSize: 1 }}>
-          [similar articles]
-        </small>
-      </div>
 
-      <ul sx={{ listStyleType: "square" }}>
-        {articles.map((article, i) => {
-          return (
-            <li key={"sa" + i}>
-              <LinkAsA to={"/blog" + article.article.slug}>
-                {article.article.title}{" "}
-              </LinkAsA>
-            </li>
-          )
-        })}
-      </ul>
+      {articles && articles.length > 0 && (
+        <div>
+          <div sx={{ mx: 4 }}>
+            <small sx={{ color: "gray", fontSize: 1 }}>
+              [similar articles]
+            </small>
+          </div>
+
+          <ul sx={{ listStyleType: "square" }}>
+            {articles.map((article, i) => {
+              return (
+                <li key={"sa" + i}>
+                  <LinkAsA to={"/blog" + article.article.slug}>
+                    {article.article.title}{" "}
+                  </LinkAsA>
+                </li>
+              )
+            })}
+          </ul>
+        </div>
+      )}
     </Box>
   )
 }
