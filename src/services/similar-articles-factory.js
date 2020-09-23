@@ -33,6 +33,7 @@ export class SimilarArticlesFactory {
     this.maxArticles = 3
     this.category = null
     this.tags = []
+    this.similarPointThreshold = 0
   }
 
   // (4.) Builder pattern usage
@@ -97,15 +98,18 @@ export class SimilarArticlesFactory {
       const tagPoint = 1
       const slug = getSlug(article)
 
-      article.tags.forEach(aTag => {
+      article.tags && article.tags.forEach(aTag => {
         if (includes(tags, aTag)) {
           identityMap[slug].points += tagPoint
         }
       })
     }
 
-    function getIdentityMapAsArray() {
-      return Object.keys(identityMap).map(slug => identityMap[slug])
+
+    function getIdentityMapAsArray(threshold) {
+      let identityMap2 = Object.fromEntries(Object.entries(identityMap).filter(([k,v]) => v.points>threshold));
+      console.log("matches2", identityMap2)
+      return Object.keys(identityMap2).map(slug => identityMap[slug])
     }
 
     // (6.) Map over all articles, add to map and add points
@@ -116,7 +120,7 @@ export class SimilarArticlesFactory {
     }
 
     // (9.) Convert the identity map to an array
-    const arrayIdentityMap = getIdentityMapAsArray()
+    const arrayIdentityMap = getIdentityMapAsArray(this.similarPointThreshold)
 
     // (10.) Use a lodash utility function to sort them
     // by points, from greatest to least
