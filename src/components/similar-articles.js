@@ -12,6 +12,30 @@ export const SimilarArticlesComponent = ({
       <Flex>
         <Heading variant="section"> RELATED POSTS </Heading>
       </Flex>
+
+      <ul>
+        {nextArticle && (
+          <li key={"sa-next"}>
+            <LinkAsA to={nextArticle.slug}>{nextArticle.title}</LinkAsA>
+            <Badge sx={{ mx: 2, color: "background" }}>next</Badge>
+          </li>
+        )}
+
+        {previousArticle && (
+          <li key={"sa-prev"}>
+            <LinkAsA to={previousArticle.slug}>{previousArticle.title}</LinkAsA>
+            <Badge sx={{ mx: 2, color: "background" }}>prev</Badge>
+          </li>
+        )}
+      </ul>
+      <div sx={{ mx: 4 }}>
+        <small sx={{ color: "gray", fontSize: 1 }}>
+          &#x23AF;&#x23AF;&#x23AF;&#x23AF; 
+          similar articles
+          &#x23AF;&#x23AF;&#x23AF;&#x23AF;
+        </small>
+      </div>
+
       <ul sx={{ listStyleType: "square" }}>
         {articles.map((article, i) => {
           return (
@@ -22,24 +46,6 @@ export const SimilarArticlesComponent = ({
             </li>
           )
         })}
-
-        {nextArticle && (
-          <li key={"sa-next"}>
-            <LinkAsA to={nextArticle.slug}>
-              {nextArticle.title}
-            </LinkAsA>
-            <Badge sx={{ mx: 2 }}>next</Badge>
-          </li>
-        )}
-
-        {previousArticle && (
-          <li key={"sa-prev"}>
-            <LinkAsA to={previousArticle.slug}>
-              {previousArticle.title}
-            </LinkAsA>
-            <Badge sx={{ mx: 2 }}>prev</Badge>
-          </li>
-        )}
       </ul>
     </Box>
   )

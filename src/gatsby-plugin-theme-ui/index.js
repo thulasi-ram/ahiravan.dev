@@ -239,14 +239,8 @@ export default {
   },
   badges: {
     primary: {
-      color: 'background',
-      bg: 'primary',
-    },
-    outline: {
-      color: 'primary',
-      bg: 'transparent',
-      boxShadow: 'inset 0 0 0 1px',
-    },
+      color: "background",
+      bg: "text",
+    }
   },
-
 }
