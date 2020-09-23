@@ -73,8 +73,20 @@ function FontHeader() {
           type="font/woff2"
           crossorigin="anonymous"
         />
-            <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Sen:400,700&display=swap"></link>
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="https://fonts.googleapis.com/css?family=Sen:400,700&display=swap"
+          as="style"
+        />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Sen:400,700&display=swap"
+        />
       </Helmet>
       <Global
         styles={css`
