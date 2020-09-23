@@ -25,7 +25,7 @@ const Posts = ({ location, posts, siteTitle, socialLinks }) => {
             <Styled.th>Tags</Styled.th>
           </tr>
         </thead>
-        <tbody sx={{ fontSize: 2 }}>
+        <tbody>
           {posts.map((node, i) => {
             return (
               <React.Fragment key={"pst1" + i}>
@@ -33,7 +33,7 @@ const Posts = ({ location, posts, siteTitle, socialLinks }) => {
                   <Styled.td>
                     <LinkAsA to={node.slug}>{node.title} </LinkAsA>
                   </Styled.td>
-                  <Styled.td>{node.date}</Styled.td>
+                  <Styled.td sx={{ fontSize: 2 }}>{node.date}</Styled.td>
                   <Styled.td>
                     {" "}
                     {node.tags.map((tag, j) => {

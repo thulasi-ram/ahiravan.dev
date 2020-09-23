@@ -30,9 +30,7 @@ export const SimilarArticlesComponent = ({
       </ul>
       <div sx={{ mx: 4 }}>
         <small sx={{ color: "gray", fontSize: 1 }}>
-          &#x23AF;&#x23AF;&#x23AF;&#x23AF; 
-          similar articles
-          &#x23AF;&#x23AF;&#x23AF;&#x23AF;
+          [similar articles]
         </small>
       </div>
 
