@@ -9,6 +9,8 @@ const Footer = () => {
         display: "flex",
         flexWrap: "wrap",
         alignItems: "center",
+        mx: 2,
+        px: 2,
         borderTop: theme => `${theme.colors.muted} 1px solid`,
       }}
     >

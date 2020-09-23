@@ -19,18 +19,16 @@ export default {
     highlight: "#9f9f9f",
     gray: "#6c6c6c",
     accent: "#3f3f3f",
-    cardbg: "#fff",
     modes: {
       dark: {
         text: "rgba(255, 255, 255, 0.87)",
-        background: "#121212",
-        primary: "#ffffff",
-        secondary: "rgba(255, 255, 255, 0.6)",
-        muted: "rgba(255, 255, 255, 0.38)",
+        background: "#1A202C",
+        primary: "rgba(255, 255, 255, 0.87)",
+        secondary: "#d6e0f0",
+        muted: "#393e46",
         highlight: "#3c3c3c",
         gray: "#999",
         accent: "#e0e0e0",
-        cardbg: "#212121",
       },
     },
   },
@@ -71,13 +69,13 @@ export default {
   },
   fonts: {
     body: "inherit",
+    para: "Sen, sans-serif",
     heading: "inherit",
     monospace: "Menlo, monospace",
   },
   fontSizes: [10, 12, 14, 16, 20, 24, 32, 48, 64, 96],
   fontWeights: {
     body: 400,
-    medium: 500,
     heading: 600,
     bold: 700,
   },
@@ -98,13 +96,13 @@ export default {
   textStyles: {
     heading: {
       fontFamily: "heading",
-      fontWeight: "heading",
+      fontWeight: "bold",
       lineHeight: "heading",
     },
     display: {
       variant: "textStyles.heading",
       fontSize: [5, 6],
-      fontWeight: "display",
+      fontWeight: "body",
       letterSpacing: "-0.03em",
       mt: 3,
     },
@@ -144,9 +142,11 @@ export default {
       fontSize: 2,
     },
     p: {
-      fontSize: 2,
+      fontFamily: "para",
+      fontSize: 3,
     },
     a: {
+      fontFamily: "para",
       color: "primary",
       fontSize: 2,
       cursor: "pointer",
@@ -232,7 +232,7 @@ export default {
   cards: {
     primary: {
       padding: 2,
-      bg: "cardbg",
+      bg: "background",
       borderRadius: 4,
       boxShadow: "0px 0px 1px 1px rgba(0,0,0,0.75)"
     },
