@@ -42,8 +42,12 @@ module.exports = {
     `gatsby-theme-style-guide`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-mdx`,
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.md`, `.mdx`],
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

@@ -10,7 +10,7 @@ import { CrumbBuilderFactory } from "../services/crumb-builder"
 
 const TagsPage = ({
   data: {
-    allMarkdownRemark: { group },
+    allMdx: { group },
   },
 }) => {
   const crumbs = new CrumbBuilderFactory()
@@ -38,7 +38,7 @@ const TagsPage = ({
 }
 TagsPage.propTypes = {
   data: PropTypes.shape({
-    allMarkdownRemark: PropTypes.shape({
+    allMdx: PropTypes.shape({
       group: PropTypes.arrayOf(
         PropTypes.shape({
           fieldValue: PropTypes.string.isRequired,
@@ -51,7 +51,7 @@ TagsPage.propTypes = {
 export default TagsPage
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(limit: 2000) {
+    allMdx(limit: 2000) {
       group(field: frontmatter___tags) {
         fieldValue
         totalCount
