@@ -1,21 +1,10 @@
 /** @jsx jsx */
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import { css, Flex, IconButton, jsx, useColorMode } from "theme-ui"
+import { css, Flex, jsx } from "theme-ui"
 import LogoSvg from "../svgs/logo.svg"
-import SunSvg from "../svgs/sun.svg"
 import { FlexFiller } from "./composites"
-
-const animatecss = {
-  "&:hover": {
-    cursor: "pointer",
-    animation: "rotation 5s infinite ease",
-    "@keyframes rotation": {
-      from: { transform: "translateZ(0) rotate(0deg)" },
-      to: { transform: "translateZ(0) rotate(359deg)" },
-    },
-  },
-}
+import DarkModeToggle from "./dark_mode_toggle"
 
 const logocss = {
   "& .shp1": {
@@ -33,7 +22,6 @@ const logocss = {
 }
 
 const Header = () => {
-  const [colorMode, setColorMode] = useColorMode()
   return (
     <header
       sx={{
@@ -64,20 +52,7 @@ const Header = () => {
         </Link>
         <FlexFiller></FlexFiller>
 
-        <IconButton
-          aria-label="Toggle dark mode"
-          css={css(animatecss)}
-          sx={{
-            p: 0,
-            width: "1em",
-            height: "1em",
-          }}
-          onClick={e => {
-            setColorMode(colorMode === "default" ? "dark" : "default")
-          }}
-        >
-          <SunSvg></SunSvg>
-        </IconButton>
+        <DarkModeToggle></DarkModeToggle>
       </Flex>
     </header>
   )
