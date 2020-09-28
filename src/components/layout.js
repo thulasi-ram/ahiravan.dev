@@ -5,6 +5,17 @@ import { Container, jsx } from "theme-ui"
 import FontHeader from "./font"
 import Footer from "./footer"
 import Header from "./header"
+import { css, Global } from "@emotion/core"
+
+
+export const actualCss = `
+body {
+  -webkit-transition: all 0.5s ease;
+  -moz-transition:    all 0.5s ease;
+  -ms-transition:     all 0.5s ease;
+  -o-transition:      all 0.5s ease;
+}
+`
 
 const Layout = ({ children }) => {
   return (
@@ -15,9 +26,12 @@ const Layout = ({ children }) => {
         minHeight: "100vh",
         padding: 2,
         minWidth: "370px",
-        backfaceVisibility: "hidden",
+        backfaceVisibility: "hidden"
       }}
     >
+      <Global
+        styles={css`${actualCss}`}
+      />
       <FontHeader />
       <Header />
       <main
