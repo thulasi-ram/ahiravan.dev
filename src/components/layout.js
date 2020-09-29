@@ -8,12 +8,9 @@ import Header from "./header"
 import { css, Global } from "@emotion/core"
 
 
-export const actualCss = `
+export const bodyCss = `
 body {
-  -webkit-transition: all 0.5s ease;
-  -moz-transition:    all 0.5s ease;
-  -ms-transition:     all 0.5s ease;
-  -o-transition:      all 0.5s ease;
+  transition: background 0.1s ease;
 }
 `
 
@@ -30,7 +27,7 @@ const Layout = ({ children }) => {
       }}
     >
       <Global
-        styles={css`${actualCss}`}
+        styles={css`${bodyCss}`}
       />
       <FontHeader />
       <Header />

@@ -108,7 +108,6 @@ export class SimilarArticlesFactory {
 
     function getIdentityMapAsArray(threshold) {
       let identityMap2 = Object.fromEntries(Object.entries(identityMap).filter(([k,v]) => v.points>threshold));
-      console.log("matches2", identityMap2)
       return Object.keys(identityMap2).map(slug => identityMap[slug])
     }
 
