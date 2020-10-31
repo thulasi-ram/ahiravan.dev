@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { Grid, jsx, Styled, Flex } from "theme-ui"
+import { Grid, jsx, Styled, Flex, Box } from "theme-ui"
 import { FooterSocial, FlexFiller } from "./composites"
 import GithubSvg from "../svgs/github.svg"
 import TwitterSvg from "../svgs/twitter.svg"
@@ -9,16 +9,19 @@ const Footer = () => {
   return (
     <footer
       sx={{
-        display: "flex",
-        flexWrap: "wrap",
-        alignItems: "center",
         mx: 2,
         px: 2,
+        pt:1,
         borderTop: theme => `${theme.colors.muted} 1px solid`,
       }}
     >
-      <Grid columns={[1, 3, 3]} sx={{ mx:"auto", my: [0, 2, 2] }}>
-        <Grid columns={[3]} sx={{mt:[4, 2, 2]}}>
+      <Grid columns={['1fr 2fr']}>
+        <Grid columns={[3]} 
+        sx={{
+          maxWidth: "200px",
+          mt: 2,
+        }}
+        >
           <FooterSocial
             href="https://github.com/thulasi-ram"
             aria-label="github"
@@ -42,8 +45,8 @@ const Footer = () => {
         </Grid>
 
 
-
-        <FlexFiller></FlexFiller>
+        <Flex>
+        <FlexFiller sx={{mx: "auto"}}></FlexFiller>
 
           <Styled.p
             sx={{
@@ -54,6 +57,7 @@ const Footer = () => {
           >
             © Copyright {new Date().getFullYear()}, Ahiravan
           </Styled.p>
+          </Flex>
       </Grid>
     </footer>
   )
