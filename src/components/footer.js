@@ -1,6 +1,9 @@
 /** @jsx jsx */
 import { Grid, jsx, Styled } from "theme-ui"
 import {FooterSocial, FlexFiller} from "./composites"
+import GithubSvg from "../svgs/github.svg"
+import TwitterSvg from "../svgs/twitter.svg"
+import LinkedInSvg from "../svgs/linkedin.svg"
 
 const Footer = () => {
   return (
@@ -17,14 +20,16 @@ const Footer = () => {
       <Grid
         columns={[3]}
       >
-        <FooterSocial href="https://github.com/thulasi-ram" aria-label="github">
-          {`{GH}`}
+        <FooterSocial href="https://github.com/thulasi-ram" aria-label="github"  >
+          <GithubSvg></GithubSvg>
         </FooterSocial>
 
-        <FooterSocial href="https://twitter.com/ahiravan1"> {`(TW)`} </FooterSocial>
+        <FooterSocial href="https://www.linkedin.com/in/thulasi-ram" aria-label="linkedin" >
+        <LinkedInSvg></LinkedInSvg>
+        </FooterSocial>
 
-        <FooterSocial href="https://www.linkedin.com/in/thulasi-ram">
-          {`[LI]`}
+        <FooterSocial href="https://www.twitter.com/ahiravan1" aria-label="twitter" >
+        <TwitterSvg></TwitterSvg>
         </FooterSocial>
       </Grid>
 

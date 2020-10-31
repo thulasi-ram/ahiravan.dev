@@ -1,0 +1,41 @@
+/** @jsx jsx */
+import { jsx, Flex } from "theme-ui"
+import React from "react"
+import SEO from "../components/seo"
+
+const doc_url = "https://docs.google.com/document/d/19U1NSPc4tTiaVzpPasZLVVWPzhY13PPFXWlBGOop7sE"
+
+const ResumePage = () => (
+  <React.Fragment>
+
+    <SEO title="Thulasiram's resume" />
+<a href={`${doc_url}/export?format=pdf`} id="download_resume">download </a>
+<Flex sx={{
+      height: "2200px",
+      overflow: "hidden",
+      background: "primary"
+}}>
+    {/* <object data={`${doc_url}/preview`} type="application/pdf" 
+    sx={{
+      flexGrow: 1,
+      frameborder:"0"
+
+    }}>
+    <embed src={`${doc_url}/preview`} type="application/pdf" sx={{
+            background: "gray"
+    }}/>
+    </object> */}
+    <iframe src={`${doc_url}/preview`}  title="heheh" frameborder="0"
+    sx={{
+       border: "none",
+       m:0,
+       p:0,
+       width:"100%",
+       background: "white"
+    }}></iframe>
+    </Flex>
+    </React.Fragment>
+
+)
+
+export default ResumePage
