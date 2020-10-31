@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { Grid, jsx, Styled } from "theme-ui"
-import {FooterSocial, FlexFiller} from "./composites"
+import { Grid, jsx, Styled, Flex } from "theme-ui"
+import { FooterSocial, FlexFiller } from "./composites"
 import GithubSvg from "../svgs/github.svg"
 import TwitterSvg from "../svgs/twitter.svg"
 import LinkedInSvg from "../svgs/linkedin.svg"
@@ -17,29 +17,44 @@ const Footer = () => {
         borderTop: theme => `${theme.colors.muted} 1px solid`,
       }}
     >
-      <Grid
-        columns={[3]}
-      >
-        <FooterSocial href="https://github.com/thulasi-ram" aria-label="github"  >
-          <GithubSvg></GithubSvg>
-        </FooterSocial>
+      <Grid columns={[1, 3, 3]} sx={{ mx:"auto", my: [0, 2, 2] }}>
+        <Grid columns={[3]} sx={{mt:[4, 2, 2]}}>
+          <FooterSocial
+            href="https://github.com/thulasi-ram"
+            aria-label="github"
+          >
+            <GithubSvg></GithubSvg>
+          </FooterSocial>
 
-        <FooterSocial href="https://www.linkedin.com/in/thulasi-ram" aria-label="linkedin" >
-        <LinkedInSvg></LinkedInSvg>
-        </FooterSocial>
+          <FooterSocial
+            href="https://www.linkedin.com/in/thulasi-ram"
+            aria-label="linkedin"
+          >
+            <LinkedInSvg></LinkedInSvg>
+          </FooterSocial>
 
-        <FooterSocial href="https://www.twitter.com/ahiravan1" aria-label="twitter" >
-        <TwitterSvg></TwitterSvg>
-        </FooterSocial>
+          <FooterSocial
+            href="https://www.twitter.com/ahiravan1"
+            aria-label="twitter"
+          >
+            <TwitterSvg></TwitterSvg>
+          </FooterSocial>
+        </Grid>
+
+
+
+        <FlexFiller></FlexFiller>
+
+          <Styled.p
+            sx={{
+              color: "gray",
+              fontSize: [1, 2, 2],
+              my: "auto"
+            }}
+          >
+            © Copyright {new Date().getFullYear()}, Ahiravan
+          </Styled.p>
       </Grid>
-
-      <FlexFiller></FlexFiller>
-
-      <Styled.p sx={{
-        color: "gray",
-      }}>
-        © Copyright {new Date().getFullYear()}, Ahiravan
-      </Styled.p>
     </footer>
   )
 }
