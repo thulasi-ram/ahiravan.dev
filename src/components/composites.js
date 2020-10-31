@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { Link } from "gatsby"
-import { Button, jsx, Styled } from "theme-ui"
+import { Button, jsx, NavLink, Styled } from "theme-ui"
 
 export const IntroP = ({ ...props }) => (
   <Styled.p sx={{ fontSize: 3 }} {...props} />
@@ -41,11 +41,20 @@ export const DividerWithText = ({ ...props }) => (
       "& > span": {
         bg: "background",
         px: "2",
-        color: "gray"
+        color: "gray",
       },
     }}
   >
     {" "}
     <span> {props.text} </span>
   </div>
+)
+export const HeaderNavLink = ({ ...props }) => (
+  <NavLink
+    sx={{
+      mr: 5,
+    }}
+    className="middleanim"
+    {...props}
+  />
 )

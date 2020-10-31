@@ -1,20 +1,43 @@
 /** @jsx jsx */
 import "normalize.css"
 import PropTypes from "prop-types"
-import { Container, jsx } from "theme-ui"
+import { Container, jsx, useThemeUI } from "theme-ui"
 import FontHeader from "./font"
 import Footer from "./footer"
 import Header from "./header"
 import { css, Global } from "@emotion/core"
 
-
-export const bodyCss = `
-body {
-  transition: background 0.1s ease;
-}
-`
-
 const Layout = ({ children }) => {
+  const { theme } = useThemeUI()
+  const bodyCss = `
+    body {
+      transition: background 0.1s ease;
+    }
+    a[target='_blank']:hover::after {
+      content: '↗';
+      font-size: 0.5em;
+    }
+    a.middleanim {
+      position: relative;
+    }
+    a.middleanim:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: ${theme.colors.primary};
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+    }
+    a.middleanim:hover:before {
+    visibility: visible;
+    transform: scaleX(1);
+    }
+  `
+
   return (
     <Container
       sx={{
@@ -23,11 +46,13 @@ const Layout = ({ children }) => {
         minHeight: "100vh",
         padding: 2,
         minWidth: "370px",
-        backfaceVisibility: "hidden"
+        backfaceVisibility: "hidden",
       }}
     >
       <Global
-        styles={css`${bodyCss}`}
+        styles={css`
+          ${bodyCss}
+        `}
       />
       <FontHeader />
       <Header />

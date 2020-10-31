@@ -1,15 +1,10 @@
 /** @jsx jsx */
 import { Box, Flex, Grid, Heading, jsx } from "theme-ui"
 import {
-  IndexPageButton,
   IntroA,
-  IntroP,
-  LinkAsA,
-  FlexFiller,
+  IntroP
 } from "../components/composites"
 import SEO from "../components/seo"
-import DownloadSvg from "../svgs/download.svg"
-import RightArrowSvg from "../svgs/right.svg"
 
 const IndexPage = () => (
   <div>
@@ -18,7 +13,7 @@ const IndexPage = () => (
     <Grid
       sx={{
         mt: "5%",
-        mb: ["20%", "20%", "15%"],
+        mb: ["20%", "15%", "10%"],
         textAlign: "center",
       }}
     >
@@ -26,8 +21,8 @@ const IndexPage = () => (
         <h1>Hi, I'm Thulasi</h1>
         <h2>I build for all things web.</h2>
 
-        <Grid columns={[2]} sx={{ mt: 4 }}>
-          <IndexPageButton
+        {/* <Grid columns={[2]} sx={{ mt: 4 }}> */}
+          {/* <IndexPageButton
             href="https://docs.google.com/document/d/19U1NSPc4tTiaVzpPasZLVVWPzhY13PPFXWlBGOop7sE/export?format=pdf"
             download
             sx={{ ml: "auto" }}
@@ -42,9 +37,9 @@ const IndexPage = () => (
               <DownloadSvg sx={{ height: "24px", width: "24px", mx: 2 }}></DownloadSvg>
               <FlexFiller></FlexFiller>
             </Flex>
-          </IndexPageButton>
+          </IndexPageButton> */}
 
-          <IndexPageButton as={LinkAsA} to="/blog" sx={{ mr: "auto" }}>
+          {/* <IndexPageButton as={LinkAsA} to="/blog" sx={{ mr: "auto" }}>
             <Flex
               sx={{
                 alignItems: "center",
@@ -57,8 +52,8 @@ const IndexPage = () => (
               ></RightArrowSvg>
               <FlexFiller></FlexFiller>
             </Flex>
-          </IndexPageButton>
-        </Grid>
+          </IndexPageButton> */}
+        {/* </Grid> */}
       </Box>
     </Grid>
 

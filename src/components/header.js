@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import { css, Flex, jsx } from "theme-ui"
 import LogoSvg from "../svgs/logo.svg"
-import { FlexFiller } from "./composites"
+import { FlexFiller, HeaderNavLink } from "./composites"
 import DarkModeToggle from "./dark_mode_toggle"
 
 const logocss = {
@@ -51,7 +51,12 @@ const Header = () => {
           />
         </Link>
         <FlexFiller></FlexFiller>
+        <HeaderNavLink
+        href="https://docs.google.com/document/d/19U1NSPc4tTiaVzpPasZLVVWPzhY13PPFXWlBGOop7sE/export?format=pdf"
+        target="_blank"
+        >resume</HeaderNavLink>
 
+<HeaderNavLink as={Link} to="/blog">blog</HeaderNavLink>
         <DarkModeToggle></DarkModeToggle>
       </Flex>
     </header>
