@@ -11,7 +11,7 @@ export const IntroA = ({ ...props }) => (
 export const LinkAsA = ({ ...props }) => <Styled.a as={Link} {...props} />
 export const ButtonAsA = ({ ...props }) => <Button as={Styled.a} {...props} />
 export const FooterSocial = ({ ...props }) => (
-  <Styled.a sx={{ textDecoration: "none" }} rel="external" {...props} />
+  <a sx={{ textDecoration: "none", fill: "secondary", width: "1.4em"}} rel="external" {...props} />
 )
 export const IndexPageButton = ({ ...props }) => (
   <ButtonAsA

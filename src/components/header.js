@@ -52,8 +52,9 @@ const Header = () => {
         </Link>
         <FlexFiller></FlexFiller>
         <HeaderNavLink
-        href="https://docs.google.com/document/d/19U1NSPc4tTiaVzpPasZLVVWPzhY13PPFXWlBGOop7sE/export?format=pdf"
+        href="https://docs.google.com/document/d/19U1NSPc4tTiaVzpPasZLVVWPzhY13PPFXWlBGOop7sE/preview"
         target="_blank"
+        rel="external"
         >resume</HeaderNavLink>
 
 <HeaderNavLink as={Link} to="/blog">blog</HeaderNavLink>
