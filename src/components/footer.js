@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { Grid, jsx, Styled, Flex, Box } from "theme-ui"
+import { Grid, jsx, Styled, Flex } from "theme-ui"
 import { FooterSocial, FlexFiller } from "./composites"
 import GithubSvg from "../svgs/github.svg"
 import TwitterSvg from "../svgs/twitter.svg"

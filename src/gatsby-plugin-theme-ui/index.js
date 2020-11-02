@@ -1,6 +1,7 @@
 // import { tailwind as baseStyles } from "@theme-ui/presets"
 // import code_theme from '@theme-ui/prism/presets/github.json'
 import code_theme from "@theme-ui/prism/presets/night-owl.json"
+import {FONT_NAME} from "../constants"
 
 // export default {
 //   ...baseStyles,
@@ -69,7 +70,7 @@ export default {
   },
   fonts: {
     body: "inherit",
-    para: "Sen, sans-serif",
+    para: `'${FONT_NAME}', sans-serif`,
     heading: "inherit",
     monospace: "Menlo, monospace",
   },
