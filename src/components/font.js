@@ -3,6 +3,8 @@ import { css, Global } from "@emotion/core"
 import React from "react"
 import Helmet from "react-helmet"
 import { jsx } from "theme-ui"
+import {FONT_NAME} from "../constants"
+
 
 const fontDir = "font-roboto"
 
@@ -63,6 +65,8 @@ export const actualCss = `
 `
 
 function FontHeader() {
+
+  let fontName = FONT_NAME.replaceAll(" ", "+")
   return (
     <React.Fragment>
       <Helmet>
@@ -80,12 +84,12 @@ function FontHeader() {
         />
         <link
           rel="preload"
-          href="https://fonts.googleapis.com/css?family=Sen:400,700&display=swap"
+          href={`https://fonts.googleapis.com/css?family=${fontName}:400,700&display=swap`}
           as="style"
         />
         <link
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Sen:400,700&display=swap"
+          href={`https://fonts.googleapis.com/css?family=${fontName}:400,700&display=swap`}
         />
       </Helmet>
       <Global
