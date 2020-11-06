@@ -61,6 +61,7 @@ const Layout = ({ children }) => {
           flex: "1 1 auto",
           my: 4,
           px: 4,
+          pt: 2
         }}
       >
         {children}

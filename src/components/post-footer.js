@@ -7,7 +7,6 @@ const PostFooter = ({ previous, next, post }) => (
     sx={{
       marginTop: 5,
       marginBottom: 2,
-      fontSize: 2,
     }}
   >
     <SimilarArticles

@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import React from "react"
-import { jsx, Styled } from "theme-ui"
+import { jsx, Styled, Text } from "theme-ui"
 import Breadcrumb from "./breadcrumb"
 import SEO from "./seo"
 import { CrumbBuilderFactory } from "../services/crumb-builder"
@@ -15,7 +15,7 @@ const Posts = ({ location, posts, siteTitle, socialLinks }) => {
     <div>
       <SEO title="Ahiravan's Blog" />
       <Breadcrumb crumbs={crumbs} />
-      <h1> All posts </h1>
+      <Styled.h1> All posts </Styled.h1>
 
       <Styled.table>
         <thead>
@@ -29,17 +29,19 @@ const Posts = ({ location, posts, siteTitle, socialLinks }) => {
           {posts.map((node, i) => {
             return (
               <React.Fragment key={"pst1" + i}>
-                <tr>
+                <Styled.tr>
                   <Styled.td>
                     <LinkAsA to={node.slug}>{node.title} </LinkAsA>
                   </Styled.td>
-                  <Styled.td sx={{ fontSize: 2 }}>{node.date}</Styled.td>
+                  <Styled.td>
+                    <Text variant="postmeta">{node.date}</Text>
+                    </Styled.td>
                   <Styled.td>
                     {" "}
                     {node.tags.map((tag, j) => {
                       return (
                         <React.Fragment key={"pst2" + j}>
-                          <LinkAsA to={"/tags/" + tag}>
+                          <LinkAsA variant="postmeta" to={"/tags/" + tag}>
                             {tag}
                           </LinkAsA>
                           <span>{j < node.tags.length - 1 ? ", " : ""}</span>
@@ -47,7 +49,7 @@ const Posts = ({ location, posts, siteTitle, socialLinks }) => {
                       )
                     })}
                   </Styled.td>
-                </tr>
+                </Styled.tr>
               </React.Fragment>
             )
           })}

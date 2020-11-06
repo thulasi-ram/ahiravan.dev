@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { Box, Flex, Grid, Heading, jsx } from "theme-ui"
+import { Box, Flex, Grid, Heading, jsx, Styled } from "theme-ui"
 import {
   IntroA,
   IntroP
@@ -18,8 +18,8 @@ const IndexPage = () => (
       }}
     >
       <Box>
-        <h1>Hi, I'm Thulasi</h1>
-        <h2>I build for all things web.</h2>
+        <Styled.h1>Hi, I'm Thulasi</Styled.h1>
+        <Styled.h2>I build for all things web.</Styled.h2>
 
         {/* <Grid columns={[2]} sx={{ mt: 4 }}> */}
           {/* <IndexPageButton
@@ -67,7 +67,7 @@ const IndexPage = () => (
     >
       <section>
         <Flex>
-          <Heading variant="section"> ABOUT ME </Heading>
+          <Heading variant="section" as="h3"> ABOUT ME</Heading>
         </Flex>
         <IntroP>
           Crafting software, with &#10084; currently{" "}
@@ -94,7 +94,7 @@ const IndexPage = () => (
 
       <section>
         <Flex>
-          <Heading variant="section"> WORK </Heading>
+          <Heading variant="section" as="h3"> WORK </Heading>
         </Flex>
         <IntroP>
           Previously:{" "}
@@ -117,25 +117,25 @@ const IndexPage = () => (
       </section>
       <section>
         <Flex>
-          <Heading variant="section"> OSS </Heading>
+          <Heading variant="section" as="h3"> OSS </Heading>
         </Flex>
-        <ul>
-          <li>
+        <Styled.ul sx={{lineHeight: 2}}>
+          <Styled.li>
             <IntroA href="https://github.com/thulasi-ram/django-feature-toggle">
               Feature Toggle{" "}
             </IntroA>
-          </li>
-          <li>
+          </Styled.li>
+          <Styled.li>
             <IntroA href="https://github.com/thulasi-ram/diff-and-patch">
               Diff and Patch{" "}
             </IntroA>
-          </li>
-          <li>
+          </Styled.li>
+          <Styled.li>
             <IntroA href="https://github.com/thulasi-ram/ivory">
               IvoryCRM{" "}
             </IntroA>
-          </li>
-        </ul>
+          </Styled.li>
+        </Styled.ul>
       </section>
     </Grid>
   </div>
