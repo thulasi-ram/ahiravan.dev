@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { Grid, jsx, Styled, Flex } from "theme-ui"
+import { Grid, jsx, Text, Flex } from "theme-ui"
 import { FooterSocial, FlexFiller } from "./composites"
 import GithubSvg from "../svgs/github.svg"
 import TwitterSvg from "../svgs/twitter.svg"
@@ -48,15 +48,14 @@ const Footer = () => {
         <Flex>
         <FlexFiller sx={{mx: "auto"}}></FlexFiller>
 
-          <Styled.p
+          <Text
+            variant='footer'
             sx={{
-              color: "gray",
-              fontSize: [1, 2, 2],
               my: "auto"
             }}
           >
             © Copyright {new Date().getFullYear()}, Ahiravan
-          </Styled.p>
+          </Text>
           </Flex>
       </Grid>
     </footer>

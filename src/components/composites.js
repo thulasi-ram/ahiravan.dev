@@ -1,17 +1,25 @@
 /** @jsx jsx */
 import { Link } from "gatsby"
-import { Button, jsx, NavLink, Styled } from "theme-ui"
+import { Button, jsx, NavLink, Styled, Link as TLink, Text } from "theme-ui"
 
-export const IntroP = ({ ...props }) => (
-  <Styled.p sx={{ fontSize: 3 }} {...props} />
-)
+export const IntroP = ({ ...props }) => <Text variant="intro" {...props} />
 export const IntroA = ({ ...props }) => (
-  <Styled.a sx={{ fontSize: 3 }} rel="external" {...props} target="_blank" />
+  <TLink rel="external" {...props} target="_blank" />
 )
-export const LinkAsA = ({ ...props }) => <Styled.a as={Link} {...props} />
+export const LinkAsA = ({ ...props }) => <TLink as={Link} {...props} />
 export const ButtonAsA = ({ ...props }) => <Button as={Styled.a} {...props} />
 export const FooterSocial = ({ ...props }) => (
-  <a sx={{ textDecoration: "none", fill: "secondary", width: "1.4em", mx: "auto", my: "auto"}} rel="external" {...props} />
+  <a
+    sx={{
+      textDecoration: "none",
+      fill: "secondary",
+      width: "1.4em",
+      mx: "auto",
+      my: "auto",
+    }}
+    rel="external"
+    {...props}
+  />
 )
 export const IndexPageButton = ({ ...props }) => (
   <ButtonAsA
@@ -50,11 +58,6 @@ export const DividerWithText = ({ ...props }) => (
   </div>
 )
 export const HeaderNavLink = ({ ...props }) => (
-  <NavLink
-    sx={{
-      mr: 5,
-    }}
-    className="middleanim"
-    {...props}
-  />
+  // refer: links.nav in index.js
+  <NavLink variant="nav" className="middleanim" {...props} />
 )

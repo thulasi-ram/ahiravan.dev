@@ -1,14 +1,5 @@
-// import { tailwind as baseStyles } from "@theme-ui/presets"
-// import code_theme from '@theme-ui/prism/presets/github.json'
 import code_theme from "@theme-ui/prism/presets/night-owl.json"
-import {FONT_NAME} from "../constants"
-
-// export default {
-//   ...baseStyles,
-//   styles: {
-//     ...baseStyles.styles,
-//   },
-// }
+import { FONT_NAME } from "../constants"
 
 export default {
   colors: {
@@ -57,7 +48,7 @@ export default {
         transform: "scale(0.98)",
       },
       "&:focus": {
-        "outline" :"none",
+        outline: "none",
       },
     },
     link: {
@@ -69,16 +60,14 @@ export default {
     container: "768px",
   },
   fonts: {
-    body: "inherit",
-    para: `'${FONT_NAME}', sans-serif`,
-    heading: "inherit",
-    monospace: "Menlo, monospace",
+    body: '"Verdana", sans-serif',
+    heading: `"${FONT_NAME}", Monaco, monospace`,
+    monospace: '"Courier New", Courier, monospace',
   },
-  fontSizes: [10, 12, 14, 16, 20, 24, 32, 48, 64, 96],
+  fontSizes: [12, 14, 16, 19, 22, 25, 29, 33],
   fontWeights: {
     body: 400,
-    heading: 600,
-    bold: 700,
+    heading: 500,
   },
   lineHeights: {
     body: 1.75,
@@ -88,26 +77,60 @@ export default {
     section: {
       color: "background",
       bg: "text",
-      fontSize: 3,
-      fontWeight: "body",
       p: 1,
       my: 2,
-    },
-  },
-  textStyles: {
-    heading: {
+      fontSize: 2,
       fontFamily: "heading",
-      fontWeight: "bold",
-      lineHeight: "heading",
+      letterSpacing: "0.1em"
     },
-    display: {
-      variant: "textStyles.heading",
-      fontSize: [5, 6],
+    intro: {
+      marginBlockStart: "1em",
+      marginBlockEnd: "1em",
+    },
+    footer: {
+      color: "gray",
+      fontSize: [0, 1, 1],
+      fontFamily: "heading",
+    },
+    postmeta: {
+      fontSize: 1,
+      color: "gray",
+      fontFamily: "heading",
+    },
+    postmetasmall: {
+      variant: 'text.postmeta',      
+      fontSize: 0,
+    }
+  },
+  links: {
+    crumb: {
+      fontSize: 1,
+      color: "secondary",
+      fontFamily: "heading",
+      textDecoration: "none",
+      "&.active": {
+        color: "primary",
+        textDecoration: "underline"
+      },
+      '&:hover' : {
+        fontWeight: "heading"
+      }
+    },
+    postmeta: {
+      variant: 'text.postmeta'
+    },
+    nav: {
+      mr: 5, 
+      class:"middleanim",
+      fontFamily: "heading",
       fontWeight: "body",
-      letterSpacing: "-0.03em",
-      mt: 3,
+      letterSpacing: "1px",
+      '&:hover' : {
+        fontWeight: "heading"
+      }
     },
   },
+  space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   styles: {
     Container: {
       p: 3,
@@ -117,40 +140,49 @@ export default {
       fontFamily: "body",
       lineHeight: "body",
       fontWeight: "body",
+      overflowWrap: "break-word"
     },
     h1: {
-      variant: "textStyles.display",
-      fontSize: 1,
+      fontFamily: "heading",
+      fontWeight: "heading",
+      lineHeight: "heading",
+      fontSize: 7,
     },
     h2: {
-      variant: "textStyles.heading",
+      fontFamily: "heading",
+      fontWeight: "heading",
+      lineHeight: "heading",
       fontSize: 6,
     },
     h3: {
-      variant: "textStyles.heading",
+      fontFamily: "heading",
+      fontWeight: "heading",
+      lineHeight: "heading",
       fontSize: 5,
     },
     h4: {
-      variant: "textStyles.heading",
+      fontFamily: "heading",
+      fontWeight: "heading",
+      lineHeight: "heading",
       fontSize: 4,
     },
     h5: {
-      variant: "textStyles.heading",
+      fontFamily: "heading",
+      fontWeight: "heading",
+      lineHeight: "heading",
       fontSize: 3,
     },
     h6: {
-      variant: "textStyles.heading",
-      fontSize: 2,
+      fontFamily: "heading",
+      fontWeight: "heading",
+      lineHeight: "heading",
     },
-    p: {
-      fontFamily: "para",
-      fontSize: 3,
-    },
+    p: {},
     a: {
-      fontFamily: "para",
+      fontFamily: "body",
       color: "primary",
-      fontSize: 2,
       cursor: "pointer",
+
       "&:hover": {
         color: "background",
         cursor: "pointer",
@@ -167,7 +199,6 @@ export default {
     },
     pre: {
       fontFamily: "monospace",
-      fontSize: 1,
       p: 3,
       color: "text",
       bg: "muted",
@@ -178,6 +209,7 @@ export default {
       borderRightWidth: 0,
       borderBottomWidth: 0,
       overflow: "auto",
+      whiteSpace: "pre",
       code: {
         color: "inherit",
       },
@@ -196,11 +228,8 @@ export default {
     },
     ul: {
       listStyleType: "square",
-      fontSize: 2,
     },
-    ol: {
-      fontSize: 2,
-    },
+    ol: {},
     table: {
       width: "100%",
       my: 4,
@@ -235,13 +264,18 @@ export default {
       padding: 2,
       bg: "background",
       borderRadius: 4,
-      boxShadow: "0px 0px 1px 1px rgba(0,0,0,0.75)"
+      boxShadow: "0px 0px 1px 1px rgba(0,0,0,0.75)",
     },
   },
   badges: {
     primary: {
       color: "background",
       bg: "text",
+    },
+    postmeta: {
+      mx: 2, 
+      color: "background", 
+      fontFamily: "heading"
     }
   },
 }

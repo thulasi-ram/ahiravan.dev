@@ -2,16 +2,6 @@
 import { jsx } from "theme-ui"
 import { LinkAsA } from "./composites"
 
-const crumbLinkSx = active => {
-  const sx = {
-    color: "secondary",
-  }
-  if (!active) {
-    sx["textDecoration"] = "none"
-  }
-  return sx
-}
-
 const BreadCrumb = ({ crumbs }) => {
   return (
     <nav aria-label="Breadcrumb">
@@ -28,9 +18,10 @@ const BreadCrumb = ({ crumbs }) => {
           return (
             <li key={"crmb" + i}>
               <LinkAsA
+                variant="crumb"
                 to={c.pathname || ""}
                 aria-current={i === crumbs.length - 1 ? "page" : null}
-                sx={crumbLinkSx(i === crumbs.length - 1)}
+                className={i === crumbs.length - 1 ? "active": ""}
               >
                 {c.crumbLabel}
               </LinkAsA>

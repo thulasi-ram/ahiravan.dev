@@ -1,22 +1,23 @@
 /** @jsx jsx */
 import { Fragment } from "react"
-import { jsx, Styled } from "theme-ui"
+import { jsx, Text } from "theme-ui"
 import {LinkAsA} from "./composites"
 const readingTime = require("reading-time")
 
 const PostMeta = ({ post }) => {
   const stats = readingTime(post.body)
   return (
-    <Styled.p sx={{ mt: 0, color: "gray" }}>
+    <Text variant="postmeta" sx={{ mt: 0 }}>
       <span>{post.date}</span>
       <span>&nbsp; • &nbsp;</span>
       <span>{stats.text}</span>
-      <span>&nbsp;•&nbsp;</span>
+      <span>&nbsp; • &nbsp;</span>
       <span>
         {post.tags.map((tag, index) => {
           return (
             <Fragment key={"pm" + index}>
               <LinkAsA
+              variant="postmeta"
               to={"/tags/" + tag}
               sx={{ color: "inherit" }}
               >
@@ -27,7 +28,7 @@ const PostMeta = ({ post }) => {
           )
         })}
       </span>
-    </Styled.p>
+    </Text>
   )
 }
 
