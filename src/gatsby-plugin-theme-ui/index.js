@@ -81,7 +81,7 @@ export default {
       my: 2,
       fontSize: 2,
       fontFamily: "heading",
-      letterSpacing: "0.1em"
+      letterSpacing: "0.1em",
     },
     intro: {
       marginBlockStart: "1em",
@@ -98,9 +98,9 @@ export default {
       fontFamily: "heading",
     },
     postmetasmall: {
-      variant: 'text.postmeta',      
+      variant: "text.postmeta",
       fontSize: 0,
-    }
+    },
   },
   links: {
     crumb: {
@@ -110,28 +110,28 @@ export default {
       textDecoration: "none",
       "&.active": {
         color: "primary",
-        textDecoration: "underline"
+        textDecoration: "underline",
       },
-      '&:hover' : {
-        fontWeight: "heading"
-      }
+      "&:hover": {
+        fontWeight: "heading",
+      },
     },
     postmeta: {
-      variant: 'text.postmeta'
+      variant: "text.postmeta",
     },
     justmono: {
       variant: "styles.a",
       fontFamily: "heading",
     },
     nav: {
-      mr: 5, 
-      class:"middleanim",
+      mr: 5,
+      class: "middleanim",
       fontFamily: "heading",
       fontWeight: "body",
       letterSpacing: "1px",
-      '&:hover' : {
-        fontWeight: "heading"
-      }
+      "&:hover": {
+        fontWeight: "heading",
+      },
     },
   },
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
@@ -144,7 +144,7 @@ export default {
       fontFamily: "body",
       lineHeight: "body",
       fontWeight: "body",
-      overflowWrap: "break-word"
+      overflowWrap: "break-word",
     },
     h1: {
       fontFamily: "heading",
@@ -201,34 +201,15 @@ export default {
       //   color: "inherit",
       // },
     },
-    pre: {
-      fontFamily: "monospace",
-      p: 3,
-      color: "text",
-      bg: "muted",
-      borderColor: "text",
-      borderStyle: "solid",
-      borderTopWidth: 0,
-      borderLeftWidth: 0,
-      borderRightWidth: 0,
-      borderBottomWidth: 0,
-      fontSize: [0, 1, 1],
-      overflow: "auto",
-      whiteSpace: "pre",
-      code: {
-        color: "inherit",
-      },
-      highlight: {
-        background: "hsla(0, 0%, 30%, .5)",
-      },
-    },
     code: {
       ...code_theme,
+      p: 3,
+      my: 4,
+      overflow: "auto",
+      fontSize: [0, 1, 1],
     },
     inlineCode: {
-      fontFamily: "monospace",
-      color: "secondary",
-      bg: "muted",
+      ...code_theme,
       px: 2,
     },
     ul: {
@@ -278,9 +259,9 @@ export default {
       bg: "text",
     },
     postmeta: {
-      mx: 2, 
-      color: "background", 
-      fontFamily: "heading"
-    }
+      mx: 2,
+      color: "background",
+      fontFamily: "heading",
+    },
   },
 }
