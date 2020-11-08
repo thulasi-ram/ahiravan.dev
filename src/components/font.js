@@ -67,7 +67,7 @@ const fontDir = "font-roboto"
 
 function FontHeader() {
 
-  let fontName = FONT_NAME.replaceAll(" ", "+")
+  let fontName = FONT_NAME.split(" ").join("+")
   return (
     <React.Fragment>
       <Helmet>
