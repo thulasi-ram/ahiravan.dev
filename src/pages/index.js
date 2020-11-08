@@ -18,7 +18,7 @@ const IndexPage = () => (
       }}
     >
       <Box>
-        <Styled.h1>Hi, I'm Thulasi</Styled.h1>
+        <Styled.h1 sx={{mb: 4}}>Hi, I'm Thulasi</Styled.h1>
         <Styled.h2>I build for all things web.</Styled.h2>
 
         {/* <Grid columns={[2]} sx={{ mt: 4 }}> */}

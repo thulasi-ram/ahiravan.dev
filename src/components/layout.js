@@ -13,9 +13,16 @@ const Layout = ({ children }) => {
     body {
       transition: background 0.1s ease;
     }
+    
     a[target='_blank']:hover::after {
+      opacity: 1;
+    }
+    
+    a[target='_blank']::after {
       content: '↗';
+      transition: all 0.1s;
       font-size: 0.5em;
+      opacity: 0.3;
     }
     a.middleanim {
       position: relative;
