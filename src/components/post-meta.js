@@ -9,9 +9,9 @@ const PostMeta = ({ post }) => {
   return (
     <Text variant="postmeta" sx={{ mt: 0 }}>
       <span>{post.date}</span>
-      <span>&nbsp; • &nbsp;</span>
+      <span> • </span>
       <span>{stats.text}</span>
-      <span>&nbsp; • &nbsp;</span>
+      <span> • </span>
       <span>
         {post.tags.map((tag, index) => {
           return (

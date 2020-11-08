@@ -119,6 +119,10 @@ export default {
     postmeta: {
       variant: 'text.postmeta'
     },
+    justmono: {
+      variant: "styles.a",
+      fontFamily: "heading",
+    },
     nav: {
       mr: 5, 
       class:"middleanim",
@@ -208,6 +212,7 @@ export default {
       borderLeftWidth: 0,
       borderRightWidth: 0,
       borderBottomWidth: 0,
+      fontSize: [0, 1, 1],
       overflow: "auto",
       whiteSpace: "pre",
       code: {
