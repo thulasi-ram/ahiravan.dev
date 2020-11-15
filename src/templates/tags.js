@@ -1,7 +1,8 @@
 /** @jsx jsx */
 import { graphql } from "gatsby"
 import PropTypes from "prop-types"
-import { Flex, jsx, Styled } from "theme-ui"
+import React from "react"
+import { Flex, jsx, Styled, Text } from "theme-ui"
 import Breadcrumb from "../components/breadcrumb"
 import { FlexFiller, LinkAsA } from "../components/composites"
 import { CrumbBuilderFactory } from "../services/crumb-builder"
@@ -23,20 +24,50 @@ const Tags = ({ pageContext, data }) => {
       <Breadcrumb crumbs={crumbs} />
       <Styled.h1> {tagHeader}</Styled.h1>
 
-      <ul>
-        {edges.map(({ node }) => {
-          const { slug } = node.fields
-          const { title } = node.frontmatter
-          return (
-            <li key={"tgs2" + slug}>
-              <LinkAsA to={"/blog" + slug}>{title}</LinkAsA>
-            </li>
-          )
-        })}
-      </ul>
+      <Styled.table>
+        <thead>
+          <tr>
+            <Styled.th>Post</Styled.th>
+            <Styled.th>Posted On</Styled.th>
+            <Styled.th>Tags</Styled.th>
+          </tr>
+        </thead>
+        <tbody>
+          {edges.map((post, i) => {
+            let node = post.node
+            return (
+              <React.Fragment key={"pst1" + i}>
+                <Styled.tr>
+                  <Styled.td>
+                    <LinkAsA to={node.fields.slug}>{node.frontmatter.title} </LinkAsA>
+                  </Styled.td>
+                  <Styled.td>
+                    <Text variant="postmeta">{node.frontmatter.date}</Text>
+                  </Styled.td>
+                  <Styled.td>
+                    {node.frontmatter.tags.map((tag, j) => {
+                      return (
+                        <React.Fragment key={"pst2" + j}>
+                          <LinkAsA variant="postmeta" to={"/tags/" + tag}>
+                            {tag}
+                          </LinkAsA>
+                          <span>{j < node.frontmatter.tags.length - 1 ? ", " : ""}</span>
+                        </React.Fragment>
+                      )
+                    })}
+                  </Styled.td>
+                </Styled.tr>
+              </React.Fragment>
+            )
+          })}
+        </tbody>
+      </Styled.table>
+
       <Flex>
         <FlexFiller></FlexFiller>
-        <LinkAsA to="/tags">all tags</LinkAsA>
+        <LinkAsA variant="postmeta" to="/blog">
+          all posts
+        </LinkAsA>
       </Flex>
     </div>
   )
@@ -79,6 +110,8 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
+            date(formatString: "MMM DD, YYYY")
+            tags
           }
         }
       }
