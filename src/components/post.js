@@ -33,6 +33,7 @@ const Post = ({
       <SEO
         title={post.title}
         description={post.excerpt}
+        keywords={post.tags}
         imageSource={
           post.socialImage
             ? post.socialImage?.childImageSharp?.fluid.src
