@@ -22,7 +22,7 @@ const Layout = ({ children }) => {
       content: '↗';
       transition: all 0.1s;
       font-size: 0.5em;
-      opacity: 0.3;
+      opacity: 0.5;
     }
     a.middleanim {
       position: relative;

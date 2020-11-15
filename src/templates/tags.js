@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { graphql } from "gatsby"
 import PropTypes from "prop-types"
-import { Flex, jsx } from "theme-ui"
+import { Flex, jsx, Styled } from "theme-ui"
 import Breadcrumb from "../components/breadcrumb"
 import { FlexFiller, LinkAsA } from "../components/composites"
 import { CrumbBuilderFactory } from "../services/crumb-builder"
@@ -21,7 +21,8 @@ const Tags = ({ pageContext, data }) => {
   return (
     <div>
       <Breadcrumb crumbs={crumbs} />
-      <h1>{tagHeader}</h1>
+      <Styled.h1> {tagHeader}</Styled.h1>
+
       <ul>
         {edges.map(({ node }) => {
           const { slug } = node.fields
