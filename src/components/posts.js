@@ -1,10 +1,10 @@
 /** @jsx jsx */
 import React from "react"
-import { jsx, Styled, Text } from "theme-ui"
+import { jsx, Styled, Text, Flex } from "theme-ui"
 import Breadcrumb from "./breadcrumb"
 import SEO from "./seo"
 import { CrumbBuilderFactory } from "../services/crumb-builder"
-import { LinkAsA } from "./composites"
+import { LinkAsA, FlexFiller} from "./composites"
 
 const Posts = ({ location, posts, siteTitle, socialLinks }) => {
   const crumbs = new CrumbBuilderFactory()
@@ -55,6 +55,12 @@ const Posts = ({ location, posts, siteTitle, socialLinks }) => {
           })}
         </tbody>
       </Styled.table>
+      <Flex>
+        <FlexFiller></FlexFiller>
+        <LinkAsA variant="postmeta" to="/tags">
+          by tags
+        </LinkAsA>
+      </Flex>
     </div>
   )
 }
