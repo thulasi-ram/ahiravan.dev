@@ -2,7 +2,7 @@
 import { graphql } from "gatsby"
 import kebabCase from "lodash/kebabCase"
 import PropTypes from "prop-types"
-import { jsx } from "theme-ui"
+import { jsx, Styled } from "theme-ui"
 import Breadcrumb from "../components/breadcrumb"
 import { LinkAsA } from "../components/composites"
 import SEO from "../components/seo"
@@ -22,7 +22,7 @@ const TagsPage = ({
       <SEO title="Ahiravan.dev all tags" />
       <Breadcrumb crumbs={crumbs} />
       <div>
-        <h1>All Tags</h1>
+      <Styled.h1> All tags </Styled.h1>
         <ul>
           {group.map(tag => (
             <li key={"tgs1" + tag.fieldValue}>
