@@ -39,7 +39,9 @@ const Tags = ({ pageContext, data }) => {
               <React.Fragment key={"pst1" + i}>
                 <Styled.tr>
                   <Styled.td>
-                    <LinkAsA to={node.fields.slug}>{node.frontmatter.title} </LinkAsA>
+                    <LinkAsA to={`/blog` + node.fields.slug}>
+                      {node.frontmatter.title}{" "}
+                    </LinkAsA>
                   </Styled.td>
                   <Styled.td>
                     <Text variant="postmeta">{node.frontmatter.date}</Text>
@@ -51,7 +53,9 @@ const Tags = ({ pageContext, data }) => {
                           <LinkAsA variant="postmeta" to={"/tags/" + tag}>
                             {tag}
                           </LinkAsA>
-                          <span>{j < node.frontmatter.tags.length - 1 ? ", " : ""}</span>
+                          <span>
+                            {j < node.frontmatter.tags.length - 1 ? ", " : ""}
+                          </span>
                         </React.Fragment>
                       )
                     })}
