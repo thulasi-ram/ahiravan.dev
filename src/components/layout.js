@@ -43,6 +43,12 @@ const Layout = ({ children }) => {
     visibility: visible;
     transform: scaleX(1);
     }
+    .vpower {
+      display: none;
+    }
+    .vinput:focus {
+      border-bottom-color: ${theme.colors.primary} !important; 
+    }
   `
 
   return (

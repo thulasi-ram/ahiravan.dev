@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import SimilarArticles from "../templates/similar-articles"
+import {CommentsComponent} from "../components/comments"
 
 const PostFooter = ({ previous, next, post }) => (
   <footer
@@ -14,6 +15,7 @@ const PostFooter = ({ previous, next, post }) => (
       nextArticle={next}
       previousArticle={previous}
     />
+    <CommentsComponent></CommentsComponent>
   </footer>
 )
 
