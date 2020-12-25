@@ -1,6 +1,8 @@
 /** @jsx jsx */
 import { Link } from "gatsby"
 import { Button, jsx, NavLink, Styled, Link as TLink, Text } from "theme-ui"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
+
 
 export const IntroP = ({ ...props }) => <Text variant="intro" {...props} />
 export const IntroA = ({ ...props }) => (
@@ -9,7 +11,7 @@ export const IntroA = ({ ...props }) => (
 export const LinkAsA = ({ ...props }) => <TLink as={Link} {...props} />
 export const ButtonAsA = ({ ...props }) => <Button as={Styled.a} {...props} />
 export const FooterSocial = ({ ...props }) => (
-  <a
+  <OutboundLink
     sx={{
       textDecoration: "none",
       fill: "secondary",
