@@ -104,7 +104,7 @@ module.exports = {
       options: {
         appId: process.env.LEAN_CLOUD_APP_ID,
         appKey: process.env.LEAN_CLOUD_APP_KEY,
-        avatar: `mp`,
+        avatar: `hide`,
         lang: `en`,
         meta: [`nick`],
         placeholder: "comment",
