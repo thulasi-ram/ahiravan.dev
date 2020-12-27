@@ -20,7 +20,12 @@ jobs:
         node-version: '14'
         check-latest: true
     - run: npm install
-    - run: npm run build-fresh
+    - shell: bash
+      env:
+        GA_TRACKING_ID: ${{ secrets.GA_TRACKING_ID }}
+        LEAN_CLOUD_APP_ID: ${{ secrets.LEAN_CLOUD_APP_ID }}
+        LEAN_CLOUD_APP_KEY: ${{ secrets.LEAN_CLOUD_APP_KEY }}
+      run: npm run build-fresh
     - name: Setup AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
