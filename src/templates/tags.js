@@ -16,9 +16,9 @@ const Tags = ({ pageContext, data }) => {
     .addCrumb("/tags/" + tag, tag).crumbs
 
   const { edges, totalCount } = data.allMdx
-  const tagHeader = `${totalCount} post${
+  const tagHeader = `#${tag} - ${totalCount} post${
     totalCount === 1 ? "" : "s"
-  } tagged with "${tag}"`
+  }`
   return (
     <div>
       <Breadcrumb crumbs={crumbs} />
@@ -51,7 +51,7 @@ const Tags = ({ pageContext, data }) => {
                       return (
                         <React.Fragment key={"pst2" + j}>
                           <LinkAsA variant="postmeta" to={"/tags/" + tag}>
-                            {tag}
+                            #{tag}
                           </LinkAsA>
                           <span>
                             {j < node.frontmatter.tags.length - 1 ? ", " : ""}

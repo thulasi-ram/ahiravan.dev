@@ -42,7 +42,7 @@ const Posts = ({ location, posts, siteTitle, socialLinks }) => {
                       return (
                         <React.Fragment key={"pst2" + j}>
                           <LinkAsA variant="postmeta" to={"/tags/" + tag}>
-                            {tag}
+                            #{tag}
                           </LinkAsA>
                           <span>{j < node.tags.length - 1 ? ", " : ""}</span>
                         </React.Fragment>
