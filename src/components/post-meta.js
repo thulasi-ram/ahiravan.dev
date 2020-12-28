@@ -21,7 +21,7 @@ const PostMeta = ({ post }) => {
               to={"/tags/" + tag}
               sx={{ color: "inherit" }}
               >
-                {tag}
+                #{tag}
               </LinkAsA>
               <span sx={{ color: "inherit" }}>{index < post.tags.length - 1 ? ", " : ""}</span>
             </Fragment>
