@@ -41,7 +41,7 @@ var langMode = {
   },
 }
 
-export const CommentsComponent = () => {
+export const CommentsComponent = ({current_url}) => {
   return (
     <Box>
       <Flex>
@@ -50,7 +50,7 @@ export const CommentsComponent = () => {
           COMMENTS{" "}
         </Heading>
       </Flex>
-      <Valine/>
+      <Valine path={current_url}/>
     </Box>
   )
 }
