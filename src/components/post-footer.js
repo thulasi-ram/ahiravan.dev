@@ -15,7 +15,7 @@ const PostFooter = ({ previous, next, post }) => (
       nextArticle={next}
       previousArticle={previous}
     />
-    <CommentsComponent></CommentsComponent>
+    <CommentsComponent current_url={post.slug}/>
   </footer>
 )
 
