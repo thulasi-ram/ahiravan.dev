@@ -19,6 +19,10 @@ function SEO({ description, lang, meta, title, keywords }) {
             title
             description
             author
+            social {
+              name
+              url
+            }
           }
         }
       }
@@ -26,6 +30,24 @@ function SEO({ description, lang, meta, title, keywords }) {
   )
 
   const metaDescription = description || site.siteMetadata.description
+
+  let twitterLink = ""
+  let githubLink = ""
+  try {
+    twitterLink = site.siteMetadata.social.filter(s => {return s.name.toLowerCase() === 'twitter'})[0].url
+  }
+  catch(err) {
+    console.log("Unable to parse twitter link", err)
+    throw err
+  }
+
+  try {
+    githubLink = site.siteMetadata.social.filter(s => {return s.name.toLowerCase() === 'github'})[0].url
+  }
+  catch(err) {
+    console.log("Unable to parse github link", err)
+    throw err
+  }
 
   return (
     <Helmet
@@ -72,6 +94,16 @@ function SEO({ description, lang, meta, title, keywords }) {
           content: keywords,
         },
       ].concat(meta)}
+      link={[
+        {
+          href: twitterLink,
+          rel: "me"
+        },
+        {
+          href: githubLink,
+          rel: "me"
+        }
+      ]}
     />
   )
 }
