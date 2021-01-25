@@ -102,7 +102,12 @@ function SEO({ description, lang, meta, title, keywords }) {
         {
           href: githubLink,
           rel: "me"
-        }
+        },
+        {
+          href: "https://webmention.io/www.ahiravan.dev/webmention",
+          rel: "webmention"
+        },
+        
       ]}
     />
   )
