@@ -74,6 +74,16 @@ const Layout = ({ children }) => {
     .vquote {
       border-left: 1px solid ${theme.colors.muted} !important;
     }
+    .swal-modal {
+      background-color: ${theme.colors.background};
+      animation: none !important;
+    }
+    .swal-title {
+      margin: 10px !important;
+      font-family: ${theme.fonts.heading};
+      color: ${theme.colors.primary};
+      font-weight: ${theme.fontWeights.heading};
+    }
   `
 
   return (
