@@ -6,6 +6,7 @@
 
 // You can delete this file if you're not using it
 
+
 exports.onCreateWebpackConfig = ({ actions }) => {
     actions.setWebpackConfig({
       devtool: 'eval-source-map',
@@ -26,11 +27,13 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 }
 
 const path = require("path")
-const _ = require("lodash")
+const kebabCase = require('lodash/kebabCase')
+
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
   const blogPostTemplate = path.resolve("src/components/post.js")
   const tagTemplate = path.resolve("src/templates/tags.js")
+
   const result = await graphql(`
     {
       postsRemark: allMdx(
@@ -73,7 +76,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   // Make tag pages
   tags.forEach(tag => {
     createPage({
-      path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
+      path: `/tags/${kebabCase(tag.fieldValue)}/`,
       component: tagTemplate,
       context: {
         tag: tag.fieldValue,

@@ -5,6 +5,8 @@ import Breadcrumb from "./breadcrumb"
 import SEO from "./seo"
 import { CrumbBuilderFactory } from "../services/crumb-builder"
 import { LinkAsA, FlexFiller} from "./composites"
+import Layout from "./layout"
+
 
 const Posts = ({ location, posts, siteTitle, socialLinks }) => {
   const crumbs = new CrumbBuilderFactory()
@@ -12,7 +14,7 @@ const Posts = ({ location, posts, siteTitle, socialLinks }) => {
     .addCrumb("/blog", "blog").crumbs
 
   return (
-    <div>
+    <Layout>
       <SEO title="Ahiravan's Blog" />
       <Breadcrumb crumbs={crumbs} />
       <Styled.h1> All posts </Styled.h1>
@@ -61,7 +63,7 @@ const Posts = ({ location, posts, siteTitle, socialLinks }) => {
           by tags
         </LinkAsA>
       </Flex>
-    </div>
+    </Layout>
   )
 }
 

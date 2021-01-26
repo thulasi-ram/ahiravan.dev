@@ -1,12 +1,15 @@
 /** @jsx jsx */
 import { graphql } from "gatsby"
-import kebabCase from "lodash/kebabCase"
 import PropTypes from "prop-types"
 import { jsx, Styled } from "theme-ui"
 import Breadcrumb from "../components/breadcrumb"
 import { LinkAsA } from "../components/composites"
 import SEO from "../components/seo"
 import { CrumbBuilderFactory } from "../services/crumb-builder"
+import Layout from "../components/layout"
+
+
+const kebabCase = require('lodash/kebabCase')
 
 const TagsPage = ({
   data: {
@@ -18,7 +21,7 @@ const TagsPage = ({
     .addCrumb("/tags", "tags").crumbs
 
   return (
-    <div>
+    <Layout>
       <SEO title="Ahiravan.dev all tags" />
       <Breadcrumb crumbs={crumbs} />
       <div>
@@ -34,7 +37,7 @@ const TagsPage = ({
           ))}
         </ul>
       </div>
-    </div>
+    </Layout>
   )
 }
 TagsPage.propTypes = {

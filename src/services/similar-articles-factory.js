@@ -1,4 +1,5 @@
-import { includes, orderBy } from "lodash"
+const orderBy = require("lodash/orderBy")
+
 
 export function getPostsFromQuery(posts) {
   if (posts) {
@@ -99,7 +100,7 @@ export class SimilarArticlesFactory {
       const slug = getSlug(article)
 
       article.tags && article.tags.forEach(aTag => {
-        if (includes(tags, aTag)) {
+        if (tags.includes(aTag)) {
           identityMap[slug].points += tagPoint
         }
       })

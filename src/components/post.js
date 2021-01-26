@@ -4,6 +4,7 @@ import { jsx } from "theme-ui"
 import Breadcrumb from "./breadcrumb"
 import PostFooter from "./post-footer"
 import PostHeader from "./post-header"
+import Layout from "./layout"
 import SEO from "./seo"
 import {CrumbBuilderFactory} from "../services/crumb-builder"
 
@@ -29,7 +30,7 @@ const Post = ({
   ).crumbs
 
   return (
-    <div>
+    <Layout>
       <SEO
         title={post.title}
         description={post.excerpt}
@@ -51,7 +52,7 @@ const Post = ({
         </section>
         <PostFooter {...{ previous, next, post }} />
       </article>
-    </div>
+    </Layout>
   )
 }
 

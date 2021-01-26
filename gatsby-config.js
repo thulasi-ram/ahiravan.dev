@@ -46,7 +46,7 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-theme-style-guide`,
+    // `gatsby-theme-style-guide`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -75,12 +75,16 @@ module.exports = {
       resolve: "gatsby-plugin-theme-ui",
       options: {},
     },
-    {
-      resolve: "gatsby-plugin-transition-link",
-      options: {
-        layout: require.resolve(`./src/components/layout.js`),
-      },
-    },
+    // {
+    //   resolve: "gatsby-plugin-transition-link",
+    //   options: {
+    //     layout: require.resolve(`./src/components/layout.js`),
+    //   },
+    // },
+    // {
+    //   resolve: `gatsby-plugin-lodash`,
+    //   options: {},
+    // },
     "gatsby-plugin-robots-txt",
     "gatsby-plugin-sitemap",
     "gatsby-plugin-webpack-bundle-analyser-v2",
