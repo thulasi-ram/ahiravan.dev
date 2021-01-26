@@ -6,6 +6,8 @@ import { Flex, jsx, Styled, Text } from "theme-ui"
 import Breadcrumb from "../components/breadcrumb"
 import { FlexFiller, LinkAsA } from "../components/composites"
 import { CrumbBuilderFactory } from "../services/crumb-builder"
+import Layout from "../components/layout"
+
 
 const Tags = ({ pageContext, data }) => {
   const { tag } = pageContext
@@ -20,7 +22,7 @@ const Tags = ({ pageContext, data }) => {
     totalCount === 1 ? "" : "s"
   }`
   return (
-    <div>
+    <Layout>
       <Breadcrumb crumbs={crumbs} />
       <Styled.h1> {tagHeader}</Styled.h1>
 
@@ -73,7 +75,7 @@ const Tags = ({ pageContext, data }) => {
           all posts
         </LinkAsA>
       </Flex>
-    </div>
+    </Layout>
   )
 }
 Tags.propTypes = {

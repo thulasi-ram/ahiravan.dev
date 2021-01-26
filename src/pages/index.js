@@ -1,13 +1,24 @@
 /** @jsx jsx */
-import { Box, Flex, Grid, Heading, jsx, Styled } from "theme-ui"
 import {
-  IntroA,
-  IntroP
-} from "../components/composites"
+  Box,
+  Flex,
+  Grid,
+  Heading,
+  jsx,
+  Styled,
+  Link as TLink,
+  Text,
+} from "theme-ui"
 import SEO from "../components/seo"
+import Layout from "../components/layout"
+
+const IntroP = ({ ...props }) => <Text variant="intro" {...props} />
+const IntroA = ({ ...props }) => (
+  <TLink rel="external" target="_blank" {...props}></TLink>
+)
 
 const IndexPage = () => (
-  <div>
+  <Layout>
     <SEO title="Ahiravans' Home, Blog and Musings" />
 
     <Grid
@@ -18,11 +29,11 @@ const IndexPage = () => (
       }}
     >
       <Box>
-        <Styled.h1 sx={{mb: 4}}>Hi, I'm Thulasi</Styled.h1>
+        <Styled.h1 sx={{ mb: 4 }}>Hi, I'm Thulasi</Styled.h1>
         <Styled.h2>I build for all things web.</Styled.h2>
 
         {/* <Grid columns={[2]} sx={{ mt: 4 }}> */}
-          {/* <IndexPageButton
+        {/* <IndexPageButton
             href="https://docs.google.com/document/d/19U1NSPc4tTiaVzpPasZLVVWPzhY13PPFXWlBGOop7sE/export?format=pdf"
             download
             sx={{ ml: "auto" }}
@@ -39,7 +50,7 @@ const IndexPage = () => (
             </Flex>
           </IndexPageButton> */}
 
-          {/* <IndexPageButton as={LinkAsA} to="/blog" sx={{ mr: "auto" }}>
+        {/* <IndexPageButton as={LinkAsA} to="/blog" sx={{ mr: "auto" }}>
             <Flex
               sx={{
                 alignItems: "center",
@@ -67,12 +78,20 @@ const IndexPage = () => (
     >
       <section>
         <Flex>
-          <Heading variant="section" as="h3"> ABOUT ME</Heading>
+          <Heading variant="section" as="h3">
+            ABOUT ME
+          </Heading>
         </Flex>
         <IntroP>
-          Crafting software, with &#10084; currently{" "}
-          <IntroA href="https://www.getsimpl.com/about-us/">@Simpl</IntroA> -
-          Bengaluru, India.{" "}
+          <span>Crafting software, with &#10084; currently </span>
+          <IntroA
+            rel="external"
+            target="_blank"
+            href="https://www.getsimpl.com/about-us/"
+          >
+            @Simpl
+          </IntroA>
+          <span> - Bengaluru, India.</span>
         </IntroP>
 
         <IntroP>
@@ -82,31 +101,29 @@ const IndexPage = () => (
         </IntroP>
 
         <IntroP>
-          In leisure, I like to play{" "}
-          <IntroA href="https://lichess.org/@/thulasi503"> chess</IntroA>, swim,
-          surf the web,{" "}
+          <span>In leisure, I like to play </span>
+          <IntroA href="https://lichess.org/@/thulasi503">chess</IntroA>
+          <span>, swim, surf the web, </span>
           <IntroA href="https://www.goodreads.com/thulasi-ram">
             read books
-          </IntroA>{" "}
-          and listen to music.
+          </IntroA>
+          <span> and listen to music.</span>
         </IntroP>
       </section>
 
       <section>
         <Flex>
-          <Heading variant="section" as="h3"> WORK </Heading>
+          <Heading variant="section" as="h3">
+            WORK
+          </Heading>
         </Flex>
         <IntroP>
-          Previously:{" "}
+        <span>Previously: </span>
           <IntroA href="https://en.wikipedia.org/wiki/Treebo_Hotels">
-            {" "}
             @Treebo
-          </IntroA>{" "}
-          ,{" "}
-          <IntroA href="https://en.wikipedia.org/wiki/Infosys">
-            {" "}
-            @Infosys
-          </IntroA>{" "}
+          </IntroA>
+          <span>, </span>
+          <IntroA href="https://en.wikipedia.org/wiki/Infosys">@Infosys</IntroA>
         </IntroP>
         <IntroP>
           I come with a hybrid background in both backend systems and frontend
@@ -117,9 +134,11 @@ const IndexPage = () => (
       </section>
       <section>
         <Flex>
-          <Heading variant="section" as="h3"> OSS </Heading>
+          <Heading variant="section" as="h3">
+            OSS
+          </Heading>
         </Flex>
-        <Styled.ul sx={{lineHeight: 2}}>
+        <Styled.ul sx={{ lineHeight: 2 }}>
           <Styled.li>
             <IntroA href="https://github.com/thulasi-ram/django-feature-toggle">
               Feature Toggle{" "}
@@ -138,7 +157,7 @@ const IndexPage = () => (
         </Styled.ul>
       </section>
     </Grid>
-  </div>
+  </Layout>
 )
 
 export default IndexPage
