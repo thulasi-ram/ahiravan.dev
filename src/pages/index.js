@@ -83,7 +83,7 @@ const IndexPage = () => (
           </Heading>
         </Flex>
         <IntroP>
-          <span>Crafting software, with &#10084; currently </span>
+          <span>Crafting software one line at a time. Currently </span>
           <IntroA
             rel="external"
             target="_blank"

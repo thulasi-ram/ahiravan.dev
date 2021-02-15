@@ -93,7 +93,7 @@ const Layout = ({ children }) => {
         flexDirection: "column",
         minHeight: "100vh",
         padding: 2,
-        minWidth: "370px",
+        minWidth: "274px",
         backfaceVisibility: "hidden",
       }}
     >

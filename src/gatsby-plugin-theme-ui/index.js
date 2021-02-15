@@ -89,7 +89,7 @@ export default {
     },
     footer: {
       color: "gray",
-      fontSize: [0, 1, 1],
+      fontSize: 1,
       fontFamily: "heading",
     },
     postmeta: {
@@ -244,7 +244,7 @@ export default {
       borderColor: "text",
     },
   },
-  breakpoints: ["640px", "768px", "1024px"],
+  breakpoints: ["400px", "768px", "1024px"],
   cards: {
     primary: {
       padding: 2,

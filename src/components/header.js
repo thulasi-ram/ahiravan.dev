@@ -39,22 +39,23 @@ const Header = () => {
         cursor: "pointer",
         fontSize: 1,
         outline: `${theme.colors.primary}`,
-        "&:active" : {
+        "&:active": {
           boxShadow: "inset 0px 0px 100px rgba(0, 0, 0, 0.4);",
-        }
-
+        },
       }}
     />
   )
 
   const previewResume = () => {
-      let link = "https://docs.google.com/document/d/19U1NSPc4tTiaVzpPasZLVVWPzhY13PPFXWlBGOop7sE/preview"
-      window.open(link, "_blank") 
+    let link =
+      "https://docs.google.com/document/d/19U1NSPc4tTiaVzpPasZLVVWPzhY13PPFXWlBGOop7sE/preview"
+    window.open(link, "_blank")
   }
 
   const downloadResume = () => {
-      let link = "https://docs.google.com/document/d/19U1NSPc4tTiaVzpPasZLVVWPzhY13PPFXWlBGOop7sE/export?format=pdf"
-      window.location.href = link
+    let link =
+      "https://docs.google.com/document/d/19U1NSPc4tTiaVzpPasZLVVWPzhY13PPFXWlBGOop7sE/export?format=pdf"
+    window.location.href = link
   }
 
   const onResumeClick = () => {
@@ -70,18 +71,16 @@ const Header = () => {
             preview <UpRightArrowSvg sx={{ width: "1.1em", ml: 2 }} />
           </ResumeButton>
 
-          <ResumeButton 
-          href="https://docs.google.com/document/d/19U1NSPc4tTiaVzpPasZLVVWPzhY13PPFXWlBGOop7sE/preview"
-          onClick={downloadResume}
+          <ResumeButton
+            href="https://docs.google.com/document/d/19U1NSPc4tTiaVzpPasZLVVWPzhY13PPFXWlBGOop7sE/preview"
+            onClick={downloadResume}
           >
-            download <DownloadSvg sx={{ width: "1.1em", ml:2 }} />
+            download <DownloadSvg sx={{ width: "1.1em", ml: 2 }} />
           </ResumeButton>
         </Flex>
       ),
     })
   }
-
-  // onResumeClick()
 
   return (
     <header
@@ -89,9 +88,10 @@ const Header = () => {
         bg: `background`,
       }}
     >
-      <Flex
-        as="nav"
+      <nav
         sx={{
+          display: "flex",
+          flexWrap: "wrap",
           alignItems: "center",
         }}
       >
@@ -100,32 +100,43 @@ const Header = () => {
           title="Ahiravan's Home"
           sx={{
             color: "primary",
-            alignSelf: "center",
+            ml: ["auto", 0, 0],
+            mr: "auto",
+            minWidth: ["2.5em", null, null],
           }}
           css={css(logocss)}
         >
           <LogoSvg
             sx={{
-              width: "8em",
+              width: [null, "2.5em", "2.5em"],
               height: "2.5em",
             }}
           />
         </Link>
-        <FlexFiller></FlexFiller>
 
-        <HeaderNavLink as={Link} to="/blog">
-          blog
-        </HeaderNavLink>
+        {/* serves as gap between logo and menu items on low resolutions */}
+        <div
+          sx={{
+            width: ["100%", 0, 0],
+            height: ["1em", null, null],
+          }}
+        ></div>
 
-        <HeaderNavLink
-          onClick={() => onResumeClick()}
-          sx={{ cursor: "pointer" }}
+        <div
+          sx={{
+            mr: ["auto", 0, 0],
+            ml: "auto",
+          }}
         >
-          resume
-        </HeaderNavLink>
+          <HeaderNavLink as={Link} to="/blog">
+            blog
+          </HeaderNavLink>
 
-        <DarkModeToggle></DarkModeToggle>
-      </Flex>
+          <HeaderNavLink onClick={() => onResumeClick()}>resume</HeaderNavLink>
+
+          <DarkModeToggle></DarkModeToggle>
+        </div>
+      </nav>
     </header>
   )
 }
