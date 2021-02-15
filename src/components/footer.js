@@ -11,16 +11,26 @@ const Footer = () => {
       sx={{
         mx: 2,
         px: 2,
-        pt:1,
+        pt: 1,
         borderTop: theme => `${theme.colors.muted} 1px solid`,
       }}
     >
-      <Grid columns={['1fr 2fr']}>
-        <Grid columns={[3]} 
+      <div
         sx={{
-          maxWidth: "200px",
-          mt: 2,
+          display: "flex",
+          flexWrap: "wrap",
+          alignItems: "center",
         }}
+      >
+        <Flex
+          sx={{
+            justifyContent: "space-between",
+            mt: 2,
+            width: ["100%", "37%", "33%"],
+            ml: ["auto", 0, 0],
+            mr: "auto",
+            maxWidth: ["90%", "100%", "100%"],
+          }}
         >
           <FooterSocial
             href="https://github.com/thulasi-ram"
@@ -42,22 +52,25 @@ const Footer = () => {
           >
             <TwitterSvg></TwitterSvg>
           </FooterSocial>
-        </Grid>
+        </Flex>
 
-
-        <Flex>
-        <FlexFiller sx={{mx: "auto"}}></FlexFiller>
-
+        <Flex
+          sx={{
+            mr: ["auto", 0, 0],
+            ml: "auto",
+          }}
+        >
           <Text
-            variant='footer'
+            variant="footer"
             sx={{
-              my: "auto"
+              pt: [2, 0, 0],
+              my: "auto",
             }}
           >
             © Copyright {new Date().getFullYear()}, Ahiravan
           </Text>
-          </Flex>
-      </Grid>
+        </Flex>
+      </div>
     </footer>
   )
 }

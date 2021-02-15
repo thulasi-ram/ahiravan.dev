@@ -3,7 +3,6 @@ import { Link } from "gatsby"
 import { Button, jsx, NavLink, Styled, Link as TLink } from "theme-ui"
 import { OutboundLink } from "gatsby-plugin-google-analytics"
 
-
 export const LinkAsA = ({ ...props }) => <TLink as={Link} {...props} />
 export const ButtonAsA = ({ ...props }) => <Button as={Styled.a} {...props} />
 export const FooterSocial = ({ ...props }) => (
@@ -56,5 +55,13 @@ export const DividerWithText = ({ ...props }) => (
   </div>
 )
 export const HeaderNavLink = ({ ...props }) => (
-  <NavLink variant="nav" className="middleanim" {...props} />
+  <NavLink
+    variant="nav"
+    className="middleanim"
+    sx={{
+      cursor: "pointer",
+      mr: 5,
+    }}
+    {...props}
+  />
 )
