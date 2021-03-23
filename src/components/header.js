@@ -132,7 +132,7 @@ const Header = () => {
             blog
           </HeaderNavLink>
 
-          <HeaderNavLink onClick={() => onResumeClick()}>resume</HeaderNavLink>
+          {/* <HeaderNavLink onClick={() => onResumeClick()}>resume</HeaderNavLink> */}
 
           <DarkModeToggle></DarkModeToggle>
         </div>
