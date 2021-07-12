@@ -60,9 +60,9 @@ export default {
     container: "768px",
   },
   fonts: {
-    body: '"Iosevka Etolie", "Verdana", sans-serif',
-    heading: `"Iosevka Aile", Monaco, monospace`,
-    monospace: '"Courier New", Courier, monospace',
+    body: '"Iosevka Etoile Web", "Verdana", sans-serif',
+    heading: `"Iosevka Aile Web", Monaco, monospace`,
+    monospace: '"Iosevka Fixed Web", Courier, monospace',
   },
   fontSizes: [12, 14, 16, 19, 22, 25, 29, 33],
   fontWeights: {
@@ -200,6 +200,9 @@ export default {
       // "&:visited": {
       //   color: "inherit",
       // },
+    },
+    pre: {
+      fontFamily: "monospace"
     },
     code: {
       ...code_theme,
