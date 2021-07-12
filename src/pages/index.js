@@ -37,8 +37,7 @@ const IndexPage = () => (
 
         <Grid columns={[2]} sx={{ mt: 4 }}>
         <IndexPageButton
-            href="https://docs.google.com/document/d/19U1NSPc4tTiaVzpPasZLVVWPzhY13PPFXWlBGOop7sE/export?format=pdf"
-            download
+            href="mailto:me@ahiravan.dev"
             sx={{ ml: "auto" }}
           >
             <Flex
