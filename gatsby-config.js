@@ -103,17 +103,6 @@ module.exports = {
         trackingId: process.env.GA_TRACKING_ID,
       },
     },
-    {
-      resolve: `gatsby-plugin-valine`,
-      options: {
-        appId: process.env.LEAN_CLOUD_APP_ID,
-        appKey: process.env.LEAN_CLOUD_APP_KEY,
-        avatar: `hide`,
-        lang: `en`,
-        meta: [`nick`],
-        placeholder: "comment",
-      },
-    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

@@ -4,16 +4,22 @@ import Helmet from "react-helmet"
 import { Box, Flex, Heading, jsx } from "theme-ui"
 class CactusComment extends React.Component {
   componentDidMount() {
+    let cactusOptions = {
+      node: document.getElementById("comment-section"),
+      defaultHomeserverUrl: "https://matrix.cactus.chat:8448",
+      serverName: "cactus.chat",
+      siteName: process.env.CACTUS_CHAT_SITE_NAME,
+      commentSectionId: `${process.env.NODE_ENV}-${this.props.path}`
+    }
+    console.log(`${cactusOptions.commentSectionId}`)
+
     if (window.initComments) {
-      window.initComments({
-        node: document.getElementById("comment-section"),
-        defaultHomeserverUrl: "https://matrix.cactus.chat:8448",
-        serverName: "cactus.chat",
-        siteName: "ahiravan.dev",
-        commentSectionId: this.props.path
-      }) 
+      window.initComments(cactusOptions) 
     } else {
-      console.log("initComments is undefined")
+      console.log("initComments is undefined, retrying in 3 sec")
+      setTimeout(function(){
+        window.initComments(cactusOptions) 
+       }, 3000);
     }
   }
 
