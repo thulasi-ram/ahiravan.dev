@@ -23,8 +23,7 @@ jobs:
     - shell: bash
       env:
         GA_TRACKING_ID: ${{ secrets.GA_TRACKING_ID }}
-        LEAN_CLOUD_APP_ID: ${{ secrets.LEAN_CLOUD_APP_ID }}
-        LEAN_CLOUD_APP_KEY: ${{ secrets.LEAN_CLOUD_APP_KEY }}
+        CACTUS_CHAT_SITE_NAME: ${{ secrets.CACTUS_CHAT_SITE_NAME }}
       run: npm run build-fresh
     - name: Setup AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
