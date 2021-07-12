@@ -67,6 +67,8 @@ const fontDir = "font-roboto"
 
 function FontHeader() {
 
+  // Deprecated in favour of font.css
+
   let fontName = FONT_NAME.split(" ").join("+")
   return (
     <React.Fragment>

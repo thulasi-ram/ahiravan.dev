@@ -11,6 +11,9 @@ import {
 } from "theme-ui"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
+import {FlexFiller, LinkAsA, IndexPageButton} from "../components/composites"
+import RightArrowSvg from "../svgs/right.svg"
+import PaperPlaneSvg from "../svgs/paper_plane.svg"
 
 const IntroP = ({ ...props }) => <Text variant="intro" {...props} />
 const IntroA = ({ ...props }) => (
@@ -29,11 +32,11 @@ const IndexPage = () => (
       }}
     >
       <Box>
-        <Styled.h1 sx={{ mb: 4 }}>Hi, I'm Thulasi</Styled.h1>
-        <Styled.h2>I build for all things web.</Styled.h2>
+        <Styled.h1 sx={{ mb: 3 , fontFamily: "body"}}>Hi, I'm Thulasi</Styled.h1>
+        <Styled.h2 sx={{mb: 4, fontFamily: "body"}}>I build for all things web.</Styled.h2>
 
-        {/* <Grid columns={[2]} sx={{ mt: 4 }}> */}
-        {/* <IndexPageButton
+        <Grid columns={[2]} sx={{ mt: 4 }}>
+        <IndexPageButton
             href="https://docs.google.com/document/d/19U1NSPc4tTiaVzpPasZLVVWPzhY13PPFXWlBGOop7sE/export?format=pdf"
             download
             sx={{ ml: "auto" }}
@@ -44,27 +47,27 @@ const IndexPage = () => (
               }}
             >
               <FlexFiller></FlexFiller>
-              RESUME
-              <DownloadSvg sx={{ height: "24px", width: "24px", mx: 2 }}></DownloadSvg>
+              Get in Touch
+              <PaperPlaneSvg sx={{ height: "20px", width: "20px", mx: 2 }}></PaperPlaneSvg>
               <FlexFiller></FlexFiller>
             </Flex>
-          </IndexPageButton> */}
+          </IndexPageButton>
 
-        {/* <IndexPageButton as={LinkAsA} to="/blog" sx={{ mr: "auto" }}>
+        <IndexPageButton as={LinkAsA} to="/blog" sx={{ mr: "auto" }}>
             <Flex
               sx={{
                 alignItems: "center",
               }}
             >
               <FlexFiller></FlexFiller>
-              BLOG
+              Vist My Blog
               <RightArrowSvg
                 sx={{ height: "24px", width: "24px", mx: 2 }}
               ></RightArrowSvg>
               <FlexFiller></FlexFiller>
             </Flex>
-          </IndexPageButton> */}
-        {/* </Grid> */}
+          </IndexPageButton>
+        </Grid>
       </Box>
     </Grid>
 
@@ -128,8 +131,9 @@ const IndexPage = () => (
         <IntroP>
           I come with a hybrid background in both backend systems and frontend
           technologies. Polyglot. Have extensive hands on experience in Python,
-          Go, Javascript, Java and misc css frameworks. Have briefly tried out
-          Clojure, Haskell, Ruby and Elixir.
+          Go, Ruby, Java and Javascript. In my leisure you can find me dabbling in less mainstream 
+          languages such as Rust, Clojure, Haskell and Elixir. Ocassionally I also find my self squabbling with
+          micro css frameworks and other frontend developments.
         </IntroP>
       </section>
       <section>
