@@ -60,8 +60,8 @@ export default {
     container: "768px",
   },
   fonts: {
-    body: '"Verdana", sans-serif',
-    heading: `"${FONT_NAME}", Monaco, monospace`,
+    body: '"Iosevka Etolie", "Verdana", sans-serif',
+    heading: `"Iosevka Aile", Monaco, monospace`,
     monospace: '"Courier New", Courier, monospace',
   },
   fontSizes: [12, 14, 16, 19, 22, 25, 29, 33],
@@ -90,7 +90,7 @@ export default {
     footer: {
       color: "gray",
       fontSize: 1,
-      fontFamily: "heading",
+      fontFamily: "body",
     },
     postmeta: {
       fontSize: 1,
@@ -126,7 +126,7 @@ export default {
     nav: {
       mr: 5,
       class: "middleanim",
-      fontFamily: "heading",
+      fontFamily: "body",
       fontWeight: "body",
       letterSpacing: "1px",
       "&:hover": {

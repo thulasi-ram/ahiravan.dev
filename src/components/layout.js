@@ -6,6 +6,8 @@ import FontHeader from "./font"
 import Footer from "./footer"
 import Header from "./header"
 import { css, Global } from "@emotion/core"
+import "../css/font.css"
+
 
 const Layout = ({ children }) => {
   const { theme } = useThemeUI()
@@ -102,7 +104,7 @@ const Layout = ({ children }) => {
           ${bodyCss}
         `}
       />
-      <FontHeader />
+      {/* <FontHeader />  // disabled in favour of font.css */} 
       <Header />
       <main
         sx={{
