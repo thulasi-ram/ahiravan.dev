@@ -91,6 +91,8 @@ const Layout = ({ children }) => {
     .cactus-login-form {
       background-color: ${theme.colors.background} !important;
       border: 1px solid ${theme.colors.primary} !important;
+      width: 80%;
+      max-width: 300px;
     }
   `
 
