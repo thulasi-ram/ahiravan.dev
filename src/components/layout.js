@@ -88,6 +88,10 @@ const Layout = ({ children }) => {
       color: ${theme.colors.primary};
       font-weight: ${theme.fontWeights.heading};
     }
+    .cactus-login-form {
+      background-color: ${theme.colors.background} !important;
+      border: 1px solid ${theme.colors.primary} !important;
+    }
   `
 
   return (

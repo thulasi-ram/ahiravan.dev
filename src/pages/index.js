@@ -64,7 +64,6 @@ const IndexPage = () => (
             <ButtonAsA
               sx={{
                 width: ["90%", "80%", "70%"],
-                // alignItems: "center",
                 minWidth: "200px",
                 maxWidth: "40%",
               }}
@@ -72,9 +71,15 @@ const IndexPage = () => (
               href="mailto:me@ahiravan.dev"
             >
               <div sx={{ mx: "auto" }}>
-                <span>Get in Touch</span>
+                <span sx={{
+                verticalAlign: "middle",
+
+                }}>Get in Touch</span>
                 <PaperPlaneSvg
-                  sx={{ height: "20px", width: "20px", mx: 2 }}
+                  sx={{
+                    ml: 2,
+                    verticalAlign: "middle",
+                  }}
                 ></PaperPlaneSvg>
               </div>
             </ButtonAsA>
@@ -91,7 +96,6 @@ const IndexPage = () => (
             <Button
               sx={{
                 width: ["90%", "80%", "70%"],
-                // alignItems: "center",
                 minWidth: "200px",
                 maxWidth: "40%",
               }}
@@ -104,13 +108,14 @@ const IndexPage = () => (
                   mx: "auto",
                 }}
               >
-                <span>Vist My Blog</span>
+                <span sx={{
+                                      verticalAlign: "middle",
+
+                }}>Vist My Blog</span>
                 <RightArrowSvg
                   sx={{
-                    height: "24px",
-                    width: "24px",
-                    mx: 2,
-                    alignSelf: "center",
+                    ml: 2,
+                    verticalAlign: "middle",
                   }}
                 ></RightArrowSvg>
               </div>
