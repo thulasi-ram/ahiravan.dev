@@ -17,11 +17,15 @@ This post works upon internal library kombu used by celery for amqp transport me
 3. dead letter queues !!!
 4. But but but where are my retries and delayed tasks?
 
+## History
+* Started of as a simple script to implement celery via gevent here https://gist.github.com/thulasi-ram/6f0a867e8303047a76cb0d2b56af8de4
+* Then evolved to a gist here with basic structure: https://gist.github.com/thulasi-ram/3c166f587a3df69af8aaccb4f2449db5
+* Then to a full blown library packaged in github here: https://github.com/thulasi-ram/kombu-rabbitmq
 
-The code is packaged in github here: https://github.com/thulasi-ram/kombu-rabbitmq
 One can down download the code as zip and include in their lib. Perhaps someday will make a pip package out of it.
+Sneak peek of examples for django and flask as below.
 
-### Django Example
+## Django Example
 ```python
 import os
 import sys
@@ -65,7 +69,7 @@ if __name__ == '__main__':
 ```
 
 
-### Flask Example
+## Flask Example
 ```python
 import os
 import sys
