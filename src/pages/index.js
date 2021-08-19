@@ -8,10 +8,16 @@ import {
   Styled,
   Link as TLink,
   Text,
+  Button,
 } from "theme-ui"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
-import {FlexFiller, LinkAsA, IndexPageButton} from "../components/composites"
+import {
+  FlexFiller,
+  LinkAsA,
+  IndexPageButton,
+  ButtonAsA,
+} from "../components/composites"
 import RightArrowSvg from "../svgs/right.svg"
 import PaperPlaneSvg from "../svgs/paper_plane.svg"
 
@@ -32,41 +38,85 @@ const IndexPage = () => (
       }}
     >
       <Box>
-        <Styled.h1 sx={{ mb: 3 , fontFamily: "body"}}>Hi, I'm Thulasi</Styled.h1>
-        <Styled.h2 sx={{mb: 4, fontFamily: "body"}}>I build for all things web.</Styled.h2>
+        <Styled.h1 sx={{ mb: 3, fontFamily: "body" }}>
+          Hi, I'm Thulasi
+        </Styled.h1>
+        <Styled.h2 sx={{ mb: 4, fontFamily: "body" }}>
+          I build for all things web.
+        </Styled.h2>
 
-        <Grid columns={[2]} sx={{ mt: 4 }}>
-        <IndexPageButton
-            href="mailto:me@ahiravan.dev"
-            sx={{ ml: "auto" }}
+        <div
+          sx={{
+            mt: 4,
+            display: "flex",
+            flexWrap: "wrap",
+            alignItems: "center",
+          }}
+        >
+          <div
+            sx={{
+              my: 1,
+              mr: ["auto", "auto", "3%"],
+              ml: "auto",
+              px: 2,
+            }}
           >
-            <Flex
+            <ButtonAsA
               sx={{
-                alignItems: "center",
+                width: ["90%", "80%", "70%"],
+                // alignItems: "center",
+                minWidth: "200px",
+                maxWidth: "40%",
               }}
+              variant="basic"
+              href="mailto:me@ahiravan.dev"
             >
-              <FlexFiller></FlexFiller>
-              Get in Touch
-              <PaperPlaneSvg sx={{ height: "20px", width: "20px", mx: 2 }}></PaperPlaneSvg>
-              <FlexFiller></FlexFiller>
-            </Flex>
-          </IndexPageButton>
+              <div sx={{ mx: "auto" }}>
+                <span>Get in Touch</span>
+                <PaperPlaneSvg
+                  sx={{ height: "20px", width: "20px", mx: 2 }}
+                ></PaperPlaneSvg>
+              </div>
+            </ButtonAsA>
+          </div>
 
-        <IndexPageButton as={LinkAsA} to="/blog" sx={{ mr: "auto" }}>
-            <Flex
+          <div
+            sx={{
+              ml: ["auto", "auto", "3%"],
+              my: 1,
+              mr: "auto",
+              px: 2,
+            }}
+          >
+            <Button
               sx={{
-                alignItems: "center",
+                width: ["90%", "80%", "70%"],
+                // alignItems: "center",
+                minWidth: "200px",
+                maxWidth: "40%",
               }}
+              variant="basic"
+              as={LinkAsA}
+              to="/blog"
             >
-              <FlexFiller></FlexFiller>
-              Vist My Blog
-              <RightArrowSvg
-                sx={{ height: "24px", width: "24px", mx: 2 }}
-              ></RightArrowSvg>
-              <FlexFiller></FlexFiller>
-            </Flex>
-          </IndexPageButton>
-        </Grid>
+              <div
+                sx={{
+                  mx: "auto",
+                }}
+              >
+                <span>Vist My Blog</span>
+                <RightArrowSvg
+                  sx={{
+                    height: "24px",
+                    width: "24px",
+                    mx: 2,
+                    alignSelf: "center",
+                  }}
+                ></RightArrowSvg>
+              </div>
+            </Button>
+          </div>
+        </div>
       </Box>
     </Grid>
 
@@ -120,7 +170,7 @@ const IndexPage = () => (
           </Heading>
         </Flex>
         <IntroP>
-        <span>Previously: </span>
+          <span>Previously: </span>
           <IntroA href="https://en.wikipedia.org/wiki/Treebo_Hotels">
             @Treebo
           </IntroA>
@@ -130,9 +180,10 @@ const IndexPage = () => (
         <IntroP>
           I come with a hybrid background in both backend systems and frontend
           technologies. Polyglot. Have extensive hands on experience in Python,
-          Go, Ruby, Java and Javascript. In my leisure you can find me dabbling in less mainstream 
-          languages such as Rust, Clojure, Haskell and Elixir. Ocassionally I also find my self squabbling with
-          micro css frameworks and other frontend developments.
+          Go, Ruby, Java and Javascript. In my leisure you can find me dabbling
+          in less mainstream languages such as Rust, Clojure, Haskell and
+          Elixir. Ocassionally I also find my self squabbling with micro css
+          frameworks and other frontend developments.
         </IntroP>
       </section>
       <section>
