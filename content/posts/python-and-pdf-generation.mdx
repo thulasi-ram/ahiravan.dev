@@ -1,0 +1,113 @@
+---
+title: Python and PDF Generation
+tags: [python, programming]
+date: 2019-08-15
+---
+
+## PDF generations in python
+
+Popular Libraries for Generation PDFs
+* [wkhtmltopdf](https://wkhtmltopdf.org/)
+* [reportlab](https://www.reportlab.com/)
+* [weasyprint](https://weasyprint.org/)
+
+The above ones are one of the most used libraries but they lack the portability, ease of installation in our case
+unable to render css properly. When our frontend guys took to rendering the invoices in html none of the above libraries
+could render the css properly. We had to put wierd hacks and polyfills for them to work and occasionally one would render
+out of proportion / borders. Apparently maintaining responsiveness with wierd hacks and polyfills is not a very easy task.
+
+But we had to generate lots of pdfs and merge them sometimes. And then comes along [django-hardcopy](https://github.com/loftylabs/django-hardcopy)
+which was able to leverage headless chrome into rendering and saving the resultant pdf. But we were on flask but with docker deployments ensuring chrome being always present we quickly hacked together a small helper
+and to our astonishment the css rendering was pixel perfect. 
+
+It had some drawabacks though, somethings could not be done in headless which could otherwise be done in
+wkhtmltopdf or weasyprint. But we didnt need to learn another library, we didnt need to set page sizes and fonts. We did not need to explain to a frontend dev why his
+centering css wont work or why the flex wont wrap properly. Most important of all as most folks wont have it, it was perfect in every way for our use case.
+
+
+## Ramblings much. Where code?
+
+For those who want to download: [gist](https://gist.github.com/thulasi-ram/6228984e3f58a0bc8a23184b85197aba)
+
+```python
+import platform
+import subprocess
+from pathlib import Path
+from tempfile import NamedTemporaryFile
+
+from flask import current_app
+
+LINUX_PATHS = [
+    '/usr/bin/chromium',
+    '/usr/bin/chromium-browser',
+    '/usr/bin/chrome',
+    '/usr/bin/google-chrome',
+    '/usr/bin/chrome-browser',
+]
+
+
+class PdfGenerator:
+    # skip this if not needed.
+    chrome_path = getattr(current_app.config, 'CHROME_PATH', None)
+
+    chrome_args = []
+    chrome_kwargs = {}
+
+    def __init__(self, html, pdf_file=None, root_dir=None):
+        self.input_file = NamedTemporaryFile(suffix='.html')
+        if pdf_file is None:
+            self.output_file = NamedTemporaryFile(dir=root_dir)
+        else:
+            self.output_file = pdf_file
+
+        if isinstance(html, str):
+            html = bytes(html.encode('utf-8'))
+        self.input_file.write(html)
+        self.input_file.flush()
+
+    def get_chrome_path(self):
+        if not self.chrome_path:
+            self.chrome_path = PdfGenerator.guess_chrome_path()
+        return self.chrome_path
+
+    def get_chrome_args(self):
+        default_args = [
+            self.get_chrome_path(),
+            '--no-sandbox',  # Avoids permission issues while dockerized.
+            '--headless',
+            '--disable-extensions',  # Reduces startup overhead.
+            '--disable-gpu',  # Required by chrome's headless mode for now.
+            f'--print-to-pdf="{self.output_file.name}"',
+            f'file://{self.input_file.name}',
+        ]
+        args_without_values = [f'--{arg}' for arg in self.chrome_args]
+        args_with_values = [f'--{k}={v}' for k, v in self.chrome_kwargs.items()]
+
+        default_args += args_without_values
+        default_args += args_with_values
+
+        return default_args
+
+    def call_chrome(self):
+        chrome_args = self.get_chrome_args()
+        subprocess.call(" ".join(chrome_args), shell=True)
+        self.output_file.seek(0)
+
+    def generate_pdf(self):
+        self.call_chrome()
+        return self.output_file.read()
+
+    @staticmethod
+    def guess_chrome_path():
+        """Attempt to guess the Chrome path by default."""
+        if platform.uname()[0] == "Darwin":
+            # pylint: disable=anomalous-backslash-in-string
+            return '/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
+        if platform.uname()[0] == "Linux":
+            # Iterate through some sane path defaults.
+            for path in LINUX_PATHS:
+                if Path(path).is_file():
+                    return path
+        # No path found, throw an error.
+        raise ValueError('Missing CHROME_PATH! Unable to resolve path!')
+```
