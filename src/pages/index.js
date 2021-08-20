@@ -32,18 +32,15 @@ const IndexPage = () => {
   const GetInTouchButton = ({ children, ...props }) => (
     <Button
       sx={{
-        color: `${theme.colors.accent}`,
         mx: 3,
-        flexFlow: "wrap",
-        display: "flex",
-        alignItems: "center",
         cursor: "pointer",
         fontSize: 1,
-        outline: `${theme.colors.primary}`,
+        color: `${theme.colors.primary}`,
         "&:active": {
           boxShadow: "inset 0px 0px 100px rgba(0, 0, 0, 0.4);",
         },
-        minWidth: "9em",
+        border: `1px solid ${theme.colors.muted}`,
+        width: "9em",
         my: 1,
       }}
       {...props}
