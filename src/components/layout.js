@@ -81,6 +81,7 @@ const Layout = ({ children }) => {
     .swal-modal {
       background-color: ${theme.colors.background};
       animation: none !important;
+      border: 1px solid ${theme.colors.muted} !important;
     }
     .swal-title {
       margin: 10px !important;
