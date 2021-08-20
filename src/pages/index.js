@@ -9,24 +9,17 @@ import {
   Link as TLink,
   Text,
   Button,
-  useThemeUI
+  useThemeUI,
 } from "theme-ui"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
-import {
-  FlexFiller,
-  LinkAsA,
-  IndexPageButton,
-  ButtonAsA,
-} from "../components/composites"
+import { LinkAsA, ButtonAsA } from "../components/composites"
 import RightArrowSvg from "../svgs/right.svg"
 import VerticalMenuSvg from "../svgs/vertical_menu.svg"
 import swal from "@sweetalert/with-react"
-import UpRightArrowSvg from "../svgs/upright.svg"
 import CalendarSvg from "../svgs/calendar.svg"
 import EmailSvg from "../svgs/mail.svg"
 import RetweetSvg from "../svgs/retweet.svg"
-
 
 const IntroP = ({ ...props }) => <Text variant="intro" {...props} />
 const IntroA = ({ ...props }) => (
@@ -36,9 +29,8 @@ const IntroA = ({ ...props }) => (
 const IndexPage = () => {
   const { theme } = useThemeUI()
 
-  const GetInTouchButton = ({ ...props }) => (
+  const GetInTouchButton = ({ children, ...props }) => (
     <Button
-      {...props}
       sx={{
         color: `${theme.colors.accent}`,
         mx: 3,
@@ -51,32 +43,43 @@ const IndexPage = () => {
         "&:active": {
           boxShadow: "inset 0px 0px 100px rgba(0, 0, 0, 0.4);",
         },
+        minWidth: "9em",
+        my: 1,
       }}
-    />
+      {...props}
+      onClick={() => window.open(props.href, "_blank")}
+    >
+      <div sx={{ mx: "auto" }}>{children}</div>
+    </Button>
   )
+
+  const getInTouchSVGSx = { width: "1.1em", verticalAlign: "middle" }
 
   const onGetInTouchClick = () => {
     swal({
       title: "Get In Touch",
       buttons: false,
       content: (
-        <Flex sx={{ justifyContent: "center", alignItems: "center" }}>
-          <GetInTouchButton
-            href="https://docs.google.com/document/d/19U1NSPc4tTiaVzpPasZLVVWPzhY13PPFXWlBGOop7sE/preview"
-          >
-            email <EmailSvg sx={{ width: "1.1em", ml: 2 }} />
+        <Flex
+          sx={{
+            justifyContent: "center",
+            alignItems: "center",
+            flexDirection: "column",
+          }}
+        >
+          <GetInTouchButton href="mailto:me@ahiravan.dev">
+            <span sx={{ verticalAlign: "middle" }}>email</span>{" "}
+            <EmailSvg sx={getInTouchSVGSx} />
           </GetInTouchButton>
 
-          <GetInTouchButton
-            href="https://calendly.com/ahiravan"
-          >
-            calendly <CalendarSvg sx={{ width: "1.1em", ml: 2 }} />
+          <GetInTouchButton href="https://calendly.com/ahiravan">
+            <span sx={{ verticalAlign: "middle" }}>calendly</span>{" "}
+            <CalendarSvg sx={getInTouchSVGSx} />
           </GetInTouchButton>
 
-          <GetInTouchButton
-            href="https://docs.google.com/document/d/19U1NSPc4tTiaVzpPasZLVVWPzhY13PPFXWlBGOop7sE/preview"
-          >
-            twitter <RetweetSvg sx={{ width: "1.1em", ml: 2 }} />
+          <GetInTouchButton href="https://twitter.com/ahiravan1">
+            <span sx={{ verticalAlign: "middle" }}>twitter</span>{" "}
+            <RetweetSvg sx={getInTouchSVGSx} />
           </GetInTouchButton>
         </Flex>
       ),
@@ -125,7 +128,6 @@ const IndexPage = () => {
                   maxWidth: "40%",
                 }}
                 variant="basic"
-                // href="mailto:me@ahiravan.dev"
                 onClick={() => onGetInTouchClick()}
               >
                 <div sx={{ mx: "auto" }}>
