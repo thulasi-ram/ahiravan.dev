@@ -35,11 +35,10 @@ const IndexPage = () => {
         mx: 3,
         cursor: "pointer",
         fontSize: 1,
-        color: `${theme.colors.primary}`,
+        color: `${theme.colors.accent}`,
         "&:active": {
           boxShadow: "inset 0px 0px 100px rgba(0, 0, 0, 0.4);",
         },
-        border: `1px solid ${theme.colors.muted}`,
         width: "9em",
         my: 1,
       }}
