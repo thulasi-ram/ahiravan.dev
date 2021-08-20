@@ -19,7 +19,7 @@ import {
   ButtonAsA,
 } from "../components/composites"
 import RightArrowSvg from "../svgs/right.svg"
-import PaperPlaneSvg from "../svgs/paper_plane.svg"
+import VerticalMenuSvg from "../svgs/vertical_menu.svg"
 
 const IntroP = ({ ...props }) => <Text variant="intro" {...props} />
 const IntroA = ({ ...props }) => (
@@ -75,12 +75,12 @@ const IndexPage = () => (
                 verticalAlign: "middle",
 
                 }}>Get in Touch</span>
-                <PaperPlaneSvg
+                <VerticalMenuSvg
                   sx={{
                     ml: 2,
                     verticalAlign: "middle",
                   }}
-                ></PaperPlaneSvg>
+                ></VerticalMenuSvg>
               </div>
             </ButtonAsA>
           </div>
@@ -182,6 +182,15 @@ const IndexPage = () => (
           <span>, </span>
           <IntroA href="https://en.wikipedia.org/wiki/Infosys">@Infosys</IntroA>
         </IntroP>
+
+        <IntroP>
+          OSS Contributions <IntroA href="https://en.wikipedia.org/wiki/Treebo_Hotels">
+            @Github
+          </IntroA>
+          {" "}and thoughts on <IntroA href="https://en.wikipedia.org/wiki/Treebo_Hotels">
+            @Twitter
+          </IntroA>
+        </IntroP>
         <IntroP>
           I come with a hybrid background in both backend systems and frontend
           technologies. Polyglot. Have extensive hands on experience in Python,
@@ -190,30 +199,8 @@ const IndexPage = () => (
           Elixir. Ocassionally I also find my self squabbling with micro css
           frameworks and other frontend developments.
         </IntroP>
-      </section>
-      <section>
-        <Flex>
-          <Heading variant="section" as="h3">
-            OSS
-          </Heading>
-        </Flex>
-        <Styled.ul sx={{ lineHeight: 2 }}>
-          <Styled.li>
-            <IntroA href="https://github.com/thulasi-ram/django-feature-toggle">
-              Feature Toggle{" "}
-            </IntroA>
-          </Styled.li>
-          <Styled.li>
-            <IntroA href="https://github.com/thulasi-ram/diff-and-patch">
-              Diff and Patch{" "}
-            </IntroA>
-          </Styled.li>
-          <Styled.li>
-            <IntroA href="https://github.com/thulasi-ram/ivory">
-              IvoryCRM{" "}
-            </IntroA>
-          </Styled.li>
-        </Styled.ul>
+
+
       </section>
     </Grid>
   </Layout>
