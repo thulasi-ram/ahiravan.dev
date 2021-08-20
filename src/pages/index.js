@@ -253,11 +253,11 @@ const IndexPage = () => {
 
           <IntroP>
             OSS Contributions{" "}
-            <IntroA href="https://en.wikipedia.org/wiki/Treebo_Hotels">
+            <IntroA href="https://github.com/thulasi-ram">
               @Github
             </IntroA>{" "}
             and thoughts on{" "}
-            <IntroA href="https://en.wikipedia.org/wiki/Treebo_Hotels">
+            <IntroA href="https://www.twitter.com/ahiravan1">
               @Twitter
             </IntroA>
           </IntroP>
