@@ -248,13 +248,15 @@ const IndexPage = () => {
           </IntroP>
 
           <IntroP>
-            OSS Contributions{" "}
+            <span>OSS Contributions at </span>
             <IntroA href="https://github.com/thulasi-ram">
-              @Github
-            </IntroA>{" "}
-            and thoughts on{" "}
+              Github
+            </IntroA>
+
+            <span> and thoughts on </span>
+
             <IntroA href="https://www.twitter.com/ahiravan1">
-              @Twitter
+              Twitter
             </IntroA>
           </IntroP>
           <IntroP>
