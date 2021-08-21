@@ -112,6 +112,7 @@ module.exports = {
             md: '(max-width: 1024px)',
             l: '(max-width: 1536px)',
             portrait: '(orientation: portrait)',
+            posts_list_break: '(max-width: 550px)',
           },
       },
   },

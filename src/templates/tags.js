@@ -5,7 +5,7 @@ import { Flex, jsx, Styled } from "theme-ui"
 import Breadcrumb from "../components/breadcrumb"
 import { FlexFiller, LinkAsA } from "../components/composites"
 import Layout from "../components/layout"
-import { TabularPosts } from "../components/tabular_posts"
+import { ResponsivePosts } from "../components/responsive_posts"
 import { CrumbBuilderFactory } from "../services/crumb-builder"
 
 const Tags = ({ pageContext, data }) => {
@@ -23,7 +23,7 @@ const Tags = ({ pageContext, data }) => {
       <Breadcrumb crumbs={crumbs} />
       <Styled.h1> {tagHeader}</Styled.h1>
 
-      <TabularPosts posts={nodes}></TabularPosts>
+      <ResponsivePosts posts={nodes}/>
 
       <Flex>
         <FlexFiller></FlexFiller>
@@ -66,6 +66,7 @@ export const pageQuery = graphql`
       totalCount
       nodes {
         id
+        body
         excerpt
         slug
         title

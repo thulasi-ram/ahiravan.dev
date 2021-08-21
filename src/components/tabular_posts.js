@@ -9,7 +9,7 @@ export const TabularPosts = ({ posts, ...props }) => {
       <thead>
         <tr>
           <Styled.th>Post</Styled.th>
-          <Styled.th>Posted On</Styled.th>
+          <Styled.th>Date</Styled.th>
           <Styled.th>Tags</Styled.th>
         </tr>
       </thead>

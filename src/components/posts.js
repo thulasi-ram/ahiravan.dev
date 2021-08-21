@@ -5,7 +5,7 @@ import Breadcrumb from "./breadcrumb"
 import { FlexFiller, LinkAsA } from "./composites"
 import Layout from "./layout"
 import SEO from "./seo"
-import { TabularPosts } from "./tabular_posts"
+import { ResponsivePosts } from "./responsive_posts"
 
 const Posts = ({ location, posts, siteTitle, socialLinks }) => {
   const crumbs = new CrumbBuilderFactory()
@@ -18,7 +18,8 @@ const Posts = ({ location, posts, siteTitle, socialLinks }) => {
       <Breadcrumb crumbs={crumbs} />
       <Styled.h1> All posts </Styled.h1>
 
-      <TabularPosts posts={posts}></TabularPosts>
+      <ResponsivePosts posts={posts}/>
+      
       <Flex>
         <FlexFiller></FlexFiller>
         <LinkAsA variant="postmeta" to="/tags">
