@@ -103,6 +103,18 @@ module.exports = {
         trackingId: process.env.GA_TRACKING_ID,
       },
     },
+    {
+      resolve: "gatsby-plugin-breakpoints",
+      options: {
+          queries: {
+            xs: '(max-width: 320px)',
+            sm: '(max-width: 720px)',
+            md: '(max-width: 1024px)',
+            l: '(max-width: 1536px)',
+            portrait: '(orientation: portrait)',
+          },
+      },
+  },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
