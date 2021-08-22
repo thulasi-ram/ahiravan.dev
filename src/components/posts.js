@@ -1,25 +1,40 @@
 /** @jsx jsx */
+import { useState } from "react"
 import { Flex, jsx, Styled } from "theme-ui"
 import { CrumbBuilderFactory } from "../services/crumb-builder"
 import Breadcrumb from "./breadcrumb"
 import { FlexFiller, LinkAsA } from "./composites"
 import Layout from "./layout"
-import SEO from "./seo"
+import { PostListViewButton } from "./post_list_buttons"
 import { ResponsivePosts } from "./responsive_posts"
+import SEO from "./seo"
 
 const Posts = ({ location, posts, siteTitle, socialLinks }) => {
   const crumbs = new CrumbBuilderFactory()
     .addCrumb("/", "home")
     .addCrumb("/blog", "blog").crumbs
 
+  const [prefrredView, setPrefrredView] = useState()
+  const preferredViewCallback = val => {
+    setPrefrredView(val)
+  }
+
   return (
     <Layout>
       <SEO title="Ahiravan's Blog" />
       <Breadcrumb crumbs={crumbs} />
-      <Styled.h1> All posts </Styled.h1>
 
-      <ResponsivePosts posts={posts}/>
-      
+      <Flex>
+        <Styled.h1> All posts </Styled.h1>
+        <FlexFiller></FlexFiller>
+        <PostListViewButton
+          preferredViewCallback={preferredViewCallback}
+          sx={{ verticalAlign: "middle" }}
+        />
+      </Flex>
+
+      <ResponsivePosts posts={posts} prefrredView={prefrredView} />
+
       <Flex>
         <FlexFiller></FlexFiller>
         <LinkAsA variant="postmeta" to="/tags">
