@@ -3,12 +3,15 @@ import { DivPosts } from "./div_posts"
 import { TabularPosts } from "./tabular_posts"
 import { useBreakpoint } from "gatsby-plugin-breakpoints"
 
-
 export const ResponsivePosts = ({ ...props }) => {
   const breakpoints = useBreakpoint()
 
-  const getComp = (val) => {
-    return val === "list" ? <DivPosts {...props} /> : <TabularPosts {...props} />
+  const getComp = val => {
+    return val === "list" ? (
+      <DivPosts {...props} />
+    ) : (
+      <TabularPosts {...props} />
+    )
   }
 
   const getRespComp = () => {
@@ -16,13 +19,7 @@ export const ResponsivePosts = ({ ...props }) => {
     return getComp(val)
   }
 
-  let val = breakpoints.posts_list_break ? "list" : "table"
-
-  return props.prefrredView === "responsive" ? (
-    getRespComp()
-  ) : (
-    getComp(props.prefrredView)
-  )
-
-
+  return props.prefrredView === "responsive"
+    ? getRespComp()
+    : getComp(props.prefrredView)
 }
