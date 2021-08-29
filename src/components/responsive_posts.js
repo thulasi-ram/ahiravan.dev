@@ -19,7 +19,7 @@ export const ResponsivePosts = ({ ...props }) => {
     return getComp(val)
   }
 
-  return props.prefrredView === "responsive"
-    ? getRespComp()
-    : getComp(props.prefrredView)
+  return props.preferredView !== undefined && props.preferredView !== "responsive" 
+    ? getComp(props.preferredView)
+    : getRespComp()
 }

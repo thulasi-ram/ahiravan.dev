@@ -42,8 +42,9 @@ export const PostListViewButton = ({ ...props }) => {
   useEffect(() => {
     let lsVal = window.localStorage.getItem(lsKeyName)
     lsVal = lsVal ? JSON.parse(lsVal) : "responsive"
+    props.preferredViewCallback(lsVal)
     setPreferredView(lsVal)
-  }, [lsKeyName])
+  }, [lsKeyName, props])
 
   const buttonClick = val => {
     if (val === "responsive") {

@@ -14,9 +14,9 @@ const Posts = ({ location, posts, siteTitle, socialLinks }) => {
     .addCrumb("/", "home")
     .addCrumb("/blog", "blog").crumbs
 
-  const [prefrredView, setPrefrredView] = useState()
+  const [preferredView, setPreferredView] = useState()
   const preferredViewCallback = val => {
-    setPrefrredView(val)
+    setPreferredView(val)
   }
 
   return (
@@ -33,7 +33,7 @@ const Posts = ({ location, posts, siteTitle, socialLinks }) => {
         />
       </Flex>
 
-      <ResponsivePosts posts={posts} prefrredView={prefrredView} />
+      <ResponsivePosts posts={posts} preferredView={preferredView} />
 
       <Flex>
         <FlexFiller></FlexFiller>
