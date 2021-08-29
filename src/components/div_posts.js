@@ -1,7 +1,6 @@
 /** @jsx jsx */
-import { Card, Flex } from "@theme-ui/components"
 import React from "react"
-import { Styled, jsx, Text } from "theme-ui"
+import { jsx, Styled } from "theme-ui"
 import { LinkAsA } from "./composites"
 import PostMeta from "./post-meta"
 

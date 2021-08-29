@@ -1,5 +1,4 @@
 import code_theme from "@theme-ui/prism/presets/night-owl.json"
-import { FONT_NAME } from "../constants"
 
 export default {
   colors: {

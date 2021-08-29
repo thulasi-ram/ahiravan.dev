@@ -60,7 +60,7 @@ export const PostListViewButton = ({ ...props }) => {
     setPreferredView(val)
   }
 
-  return preferredView == "table" ? (
+  return preferredView === "table" ? (
     <PostListIconButton aria-label="list view">
       <DocListSvg onClick={() => buttonClick("list")} />
     </PostListIconButton>

@@ -1,9 +1,9 @@
 /** @jsx jsx */
-import { Grid, jsx, Text, Flex } from "theme-ui"
-import { FooterSocial, FlexFiller } from "./composites"
+import { Flex, jsx, Text } from "theme-ui"
 import GithubSvg from "../svgs/github.svg"
-import TwitterSvg from "../svgs/twitter.svg"
 import LinkedInSvg from "../svgs/linkedin.svg"
+import TwitterSvg from "../svgs/twitter.svg"
+import { FooterSocial } from "./composites"
 
 const Footer = () => {
   return (

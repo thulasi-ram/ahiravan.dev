@@ -1,25 +1,19 @@
 /** @jsx jsx */
+import swal from "@sweetalert/with-react"
 import {
-  Box,
-  Flex,
+  Box, Button, Flex,
   Grid,
   Heading,
-  jsx,
-  Styled,
-  Link as TLink,
-  Text,
-  Button,
-  useThemeUI,
+  jsx, Link as TLink, Styled, Text, useThemeUI
 } from "theme-ui"
-import SEO from "../components/seo"
+import { ButtonAsA, LinkAsA } from "../components/composites"
 import Layout from "../components/layout"
-import { LinkAsA, ButtonAsA } from "../components/composites"
-import RightArrowSvg from "../svgs/right.svg"
-import VerticalMenuSvg from "../svgs/vertical_menu.svg"
-import swal from "@sweetalert/with-react"
+import SEO from "../components/seo"
 import CalendarSvg from "../svgs/calendar.svg"
 import EmailSvg from "../svgs/mail.svg"
 import RetweetSvg from "../svgs/retweet.svg"
+import RightArrowSvg from "../svgs/right.svg"
+import VerticalMenuSvg from "../svgs/vertical_menu.svg"
 
 const IntroP = ({ ...props }) => <Text variant="intro" {...props} />
 const IntroA = ({ ...props }) => (
@@ -249,15 +243,11 @@ const IndexPage = () => {
 
           <IntroP>
             <span>OSS Contributions at </span>
-            <IntroA href="https://github.com/thulasi-ram">
-              Github
-            </IntroA>
+            <IntroA href="https://github.com/thulasi-ram">Github</IntroA>
 
             <span> and thoughts on </span>
 
-            <IntroA href="https://www.twitter.com/ahiravan1">
-              Twitter
-            </IntroA>
+            <IntroA href="https://www.twitter.com/ahiravan1">Twitter</IntroA>
           </IntroP>
           <IntroP>
             I come with a hybrid background in both backend systems and frontend
