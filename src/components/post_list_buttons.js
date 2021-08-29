@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react"
 import { Flex, jsx, useThemeUI } from "theme-ui"
 import DocListSvg from "../svgs/doc_list.svg"
-import ResponsiveSvg from "../svgs/Responsive.svg"
+import ResponsiveSvg from "../svgs/responsive.svg"
 import TableSvg from "../svgs/table.svg"
 
 const PostLinkButton = ({ val, preferredView, ...props }) => {
