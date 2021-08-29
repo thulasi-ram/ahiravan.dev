@@ -2,12 +2,12 @@
 import "normalize.css"
 import PropTypes from "prop-types"
 import { Container, jsx, useThemeUI } from "theme-ui"
-import FontHeader from "./font"
-import {CommentsHeader} from "./comments"
+// import FontHeader from "./font"
+// import {CommentsHeader} from "./comments"
 import Footer from "./footer"
 import Header from "./header"
 import { css, Global } from "@emotion/core"
-import "../css/font.css"
+// import "../css/font.css"
 
 
 
@@ -114,7 +114,7 @@ const Layout = ({ children }) => {
         `}
       />
       {/* <FontHeader />  // disabled in favour of font.css */} 
-      <CommentsHeader></CommentsHeader>
+      {/* <CommentsHeader></CommentsHeader> // load comments assets in body */}
       <Header />
       <main
         sx={{

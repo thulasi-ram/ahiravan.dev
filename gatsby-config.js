@@ -115,7 +115,21 @@ module.exports = {
             posts_list_break: '(max-width: 550px)',
           },
       },
+      
   },
+  {
+    resolve: "gatsby-omni-font-loader",  
+    options: {  
+      mode: "render-blocking",  
+      enableListener: false,  
+      custom: [
+        {
+          name:["Iosevka Aile Web"],
+          file: "/css/font.css",
+        },
+      ],
+    },
+  }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

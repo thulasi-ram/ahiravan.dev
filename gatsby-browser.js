@@ -30,5 +30,3 @@
 //         });
 //     }
 // }
-
-import "./src/css/font.css"
