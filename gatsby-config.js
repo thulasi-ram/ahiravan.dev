@@ -1,4 +1,5 @@
-const activeEnv = process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || "development"
+const activeEnv =
+  process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || "development"
 console.log(`Using environment config: '${activeEnv}'`)
 
 require("dotenv").config({
@@ -95,6 +96,8 @@ module.exports = {
       options: {
         bucketName: "ahiravan.dev",
         acl: null,
+        protocol: "https",
+        hostname: "www.ahiravan.dev",
       },
     },
     {
@@ -106,30 +109,38 @@ module.exports = {
     {
       resolve: "gatsby-plugin-breakpoints",
       options: {
-          queries: {
-            xs: '(max-width: 320px)',
-            sm: '(max-width: 720px)',
-            md: '(max-width: 1024px)',
-            l: '(max-width: 1536px)',
-            portrait: '(orientation: portrait)',
-            posts_list_break: '(max-width: 550px)',
-          },
-      },
-      
-  },
-  {
-    resolve: "gatsby-omni-font-loader",  
-    options: {  
-      mode: "async",  
-      enableListener: true,  
-      custom: [
-        {
-          name:["Iosevka Aile Web", "Iosevka Etoile Web", "Iosevka Fixed Web"],
-          file: "/css/font.css",
+        queries: {
+          xs: "(max-width: 320px)",
+          sm: "(max-width: 720px)",
+          md: "(max-width: 1024px)",
+          l: "(max-width: 1536px)",
+          portrait: "(orientation: portrait)",
+          posts_list_break: "(max-width: 550px)",
         },
-      ],
+      },
     },
-  }
+    {
+      resolve: "gatsby-omni-font-loader",
+      options: {
+        mode: "async",
+        enableListener: true,
+        custom: [
+          {
+            name: ["Iosevka Aile Web"],
+            file: "/fonts/webfont-iosevka-aile-10.1.1/iosevka-aile.css",
+          },
+          {
+            name: ["Iosevka Etoile Web"],
+            file: "/fonts/webfont-iosevka-etoile-10.1.1/iosevka-etoile.css",
+          },
+          {
+            name: ["Iosevka Fixed Web"],
+            file:
+              "/fonts/webfont-iosevka-fixed-ss05-10.1.1/iosevka-fixed-ss05.css",
+          },
+        ],
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
