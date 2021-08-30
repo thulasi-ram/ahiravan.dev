@@ -141,6 +141,13 @@ module.exports = {
         ],
       },
     },
+    {
+      // why this: https://github.com/jariz/gatsby-plugin-s3/blob/master/recipes/with-cloudfront.md
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: "https://www.ahiravan.dev",
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
