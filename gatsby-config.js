@@ -120,11 +120,11 @@ module.exports = {
   {
     resolve: "gatsby-omni-font-loader",  
     options: {  
-      mode: "render-blocking",  
-      enableListener: false,  
+      mode: "async",  
+      enableListener: true,  
       custom: [
         {
-          name:["Iosevka Aile Web"],
+          name:["Iosevka Aile Web", "Iosevka Etoile Web", "Iosevka Fixed Web"],
           file: "/css/font.css",
         },
       ],
