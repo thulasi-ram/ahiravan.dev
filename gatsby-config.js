@@ -132,12 +132,7 @@ module.exports = {
           {
             name: ["Iosevka Etoile Web"],
             file: "/fonts/webfont-iosevka-etoile-10.1.1/iosevka-etoile.css",
-          },
-          {
-            name: ["Iosevka Fixed Web"],
-            file:
-              "/fonts/webfont-iosevka-fixed-ss05-10.1.1/iosevka-fixed-ss05.css",
-          },
+          }
         ],
       },
     },

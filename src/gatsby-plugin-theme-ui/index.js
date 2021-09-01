@@ -61,7 +61,7 @@ export default {
   fonts: {
     body: '"Iosevka Etoile Web", "Verdana", sans-serif',
     heading: `"Iosevka Aile Web", Monaco, monospace`,
-    monospace: '"Iosevka Fixed Web", Courier, monospace',
+    monospace: '"Iosevka Aile Web", Courier, monospace',
   },
   fontSizes: [12, 14, 16, 19, 22, 25, 29, 33],
   fontWeights: {
