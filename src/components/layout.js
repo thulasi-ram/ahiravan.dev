@@ -1,13 +1,9 @@
 /** @jsx jsx */
-import "normalize.css"
 import PropTypes from "prop-types"
 import { Container, jsx, useThemeUI } from "theme-ui"
-// import FontHeader from "./font"
-// import {CommentsHeader} from "./comments"
 import Footer from "./footer"
 import Header from "./header"
 import { css, Global } from "@emotion/core"
-// import "../css/font.css"
 
 
 
@@ -47,37 +43,6 @@ const Layout = ({ children }) => {
     visibility: visible;
     transform: scaleX(1);
     }
-    .vpower {
-      display: none !important;
-    }
-    .vemoji-btn {
-      display: none !important;
-    }
-    .vsys {
-      display: none !important;
-    }
-    .vhead .vnick {
-      font-family: ${theme.fonts.heading};
-      font-weight: ${theme.fontWeights.heading};
-      font-size: 1em !important;
-    }
-    .vheader {
-      font-size: 1.2em !important;
-      font-weight: ${theme.fontWeights.heading};
-    }
-    .vinput:focus {
-      border-bottom-color: ${theme.colors.primary} !important; 
-    }
-    .vcount {
-      font-family: ${theme.fonts.heading};
-    }
-    .vcontent p {
-      margin-block-start: 0;
-      margin-block-end: 0;
-    }
-    .vquote {
-      border-left: 1px solid ${theme.colors.muted} !important;
-    }
     .swal-modal {
       background-color: ${theme.colors.background};
       animation: none !important;
@@ -113,8 +78,6 @@ const Layout = ({ children }) => {
           ${bodyCss}
         `}
       />
-      {/* <FontHeader />  // disabled in favour of font.css */} 
-      {/* <CommentsHeader></CommentsHeader> // load comments assets in body */}
       <Header />
       <main
         sx={{
