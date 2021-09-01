@@ -1,5 +1,3 @@
-const orderBy = require("lodash/orderBy")
-
 
 export function getPostsFromQuery(posts) {
   if (posts) {
@@ -24,9 +22,9 @@ export class SimilarArticlesFactory {
       .filter(a => a !== null)
       .map(a => a.slug)
       .map(slug => slug.replace("/blog", ""))
-    
+
     this.articles = articles.filter(
-      aArticle =>  !excludeArticlesSlug.includes(aArticle.slug)
+      aArticle => !excludeArticlesSlug.includes(aArticle.slug)
     )
 
     this.excludeArticlesSlug = excludeArticlesSlug
@@ -99,16 +97,18 @@ export class SimilarArticlesFactory {
       const tagPoint = 1
       const slug = getSlug(article)
 
-      article.tags && article.tags.forEach(aTag => {
-        if (tags.includes(aTag)) {
-          identityMap[slug].points += tagPoint
-        }
-      })
+      article.tags &&
+        article.tags.forEach(aTag => {
+          if (tags.includes(aTag)) {
+            identityMap[slug].points += tagPoint
+          }
+        })
     }
 
-
     function getIdentityMapAsArray(threshold) {
-      let identityMap2 = Object.fromEntries(Object.entries(identityMap).filter(([k,v]) => v.points>threshold));
+      let identityMap2 = Object.fromEntries(
+        Object.entries(identityMap).filter(([k, v]) => v.points > threshold)
+      )
       return Object.keys(identityMap2).map(slug => identityMap[slug])
     }
 
@@ -122,9 +122,12 @@ export class SimilarArticlesFactory {
     // (9.) Convert the identity map to an array
     const arrayIdentityMap = getIdentityMapAsArray(this.similarPointThreshold)
 
-    // (10.) Use a lodash utility function to sort them
+
+    // (10.) function to sort them
     // by points, from greatest to least
-    const similarArticles = orderBy(arrayIdentityMap, ["points"], ["desc"])
+    const similarArticles = arrayIdentityMap.sort(function(a, b) {
+      return b.points - a.points
+    })
 
     // (11. Take the max number articles requested)
     return similarArticles.splice(0, maxArticles)
