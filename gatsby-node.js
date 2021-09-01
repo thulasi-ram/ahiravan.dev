@@ -27,7 +27,6 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 }
 
 const path = require("path")
-const kebabCase = require('lodash/kebabCase')
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
@@ -76,7 +75,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   // Make tag pages
   tags.forEach(tag => {
     createPage({
-      path: `/tags/${kebabCase(tag.fieldValue)}/`,
+      path: `/tags/${tag.fieldValue}/`,
       component: tagTemplate,
       context: {
         tag: tag.fieldValue,

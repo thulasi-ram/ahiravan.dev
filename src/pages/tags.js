@@ -8,8 +8,6 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { CrumbBuilderFactory } from "../services/crumb-builder"
 
-const kebabCase = require("lodash/kebabCase")
-
 const TagsPage = ({
   data: {
     allMdx: { group },
@@ -28,7 +26,7 @@ const TagsPage = ({
         <ul>
           {group.map(tag => (
             <li key={"tgs1" + tag.fieldValue}>
-              <LinkAsA to={`/tags/${kebabCase(tag.fieldValue)}/`}>
+              <LinkAsA to={`/tags/${tag.fieldValue}/`}>
                 #{tag.fieldValue}
               </LinkAsA>
               ({tag.totalCount})
