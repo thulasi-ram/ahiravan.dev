@@ -24,8 +24,8 @@ module.exports = {
     ],
   },
   plugins: [
+    `gatsby-plugin-theme-ui`,
     `gatsby-plugin-react-helmet`,
-
     {
       resolve: `gatsby-theme-blog-core`,
       options: {
@@ -47,7 +47,6 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    // `gatsby-theme-style-guide`,
     {
       resolve: `gatsby-plugin-sharp`,
       options: {
@@ -85,10 +84,6 @@ module.exports = {
         },
       },
     },
-    {
-      resolve: "gatsby-plugin-theme-ui",
-      options: {},
-    },
     // {
     //   resolve: "gatsby-plugin-transition-link",
     //   options: {
@@ -101,8 +96,6 @@ module.exports = {
     // },
     "gatsby-plugin-robots-txt",
     "gatsby-plugin-sitemap",
-    "gatsby-plugin-webpack-bundle-analyser-v2",
-    "gatsby-plugin-minify-html",
     "gatsby-plugin-emotion",
     {
       resolve: `gatsby-plugin-s3`,
@@ -136,7 +129,7 @@ module.exports = {
       resolve: "gatsby-omni-font-loader",
       options: {
         mode: "async",
-        enableListener: true,
+        enableListener: false,
         custom: [
           {
             name: ["Iosevka Aile Web"],
@@ -156,6 +149,9 @@ module.exports = {
         siteUrl: "https://www.ahiravan.dev",
       },
     },
+    "gatsby-plugin-minify-html",
+    "gatsby-plugin-brotli",
+    "gatsby-plugin-webpack-bundle-analyser-v2",
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
