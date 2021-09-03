@@ -4,7 +4,7 @@ import {
   Box, Button, Flex,
   Grid,
   Heading,
-  jsx, Link as TLink, Styled, Text, useThemeUI
+  jsx, Link as TLink, Styled, Themed, Text, useThemeUI
 } from "theme-ui"
 import { ButtonAsA, LinkAsA } from "../components/composites"
 import Layout from "../components/layout"
@@ -15,7 +15,7 @@ import RetweetSvg from "../svgs/retweet.svg"
 import RightArrowSvg from "../svgs/right.svg"
 import VerticalMenuSvg from "../svgs/vertical_menu.svg"
 
-const IntroP = ({ ...props }) => <Text variant="intro" {...props} />
+const IntroP = ({ ...props }) => <Text variant="intro" as={Themed.p} {...props} />
 const IntroA = ({ ...props }) => (
   <TLink rel="external" target="_blank" {...props}></TLink>
 )

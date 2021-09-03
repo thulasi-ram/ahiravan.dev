@@ -20,20 +20,18 @@ const loadCactusScript = callback => {
 const CactusComment = ({ path }) => {
   let commentID = `${process.env.NODE_ENV}-${path}`
 
-  const cactusOptions = {
-    node: null,
-    defaultHomeserverUrl: "https://matrix.cactus.chat:8448",
-    serverName: "cactus.chat",
-    siteName: process.env.GATSBY_CACTUS_CHAT_SITE_NAME,
-    commentSectionId: commentID,
-  }
-
   useEffect(() => {
+
     loadCactusScript(() => {
-      cactusOptions.node = document.getElementById("comment-section")
-      window.initComments(cactusOptions)
+      window.initComments({
+        node: document.getElementById("comment-section"),
+        defaultHomeserverUrl: "https://matrix.cactus.chat:8448",
+        serverName: "cactus.chat",
+        siteName: process.env.GATSBY_CACTUS_CHAT_SITE_NAME,
+        commentSectionId: commentID,
+      })
     })
-  }, [cactusOptions])
+  }, [commentID])
   // why to return cactusOptions here
   // ref: https://stackoverflow.com/questions/61956823/why-cant-useeffect-access-my-state-variable-in-a-return-statement
 
