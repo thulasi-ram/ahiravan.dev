@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { graphql, useStaticQuery } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 import { jsx } from "theme-ui"
 
 /*
@@ -15,30 +15,26 @@ import { jsx } from "theme-ui"
  */
 
 const Image = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 300) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
+  const data = useStaticQuery(graphql`{
+  placeholderImage: file(relativePath: {eq: "gatsby-astronaut.png"}) {
+    childImageSharp {
+      gatsbyImageData(width: 300, layout: CONSTRAINED)
     }
-  `)
+  }
+}
+`)
 
   return (
-      <Img
-        sx={{ 
-          height: "100px",
-          width: "100px",
-          borderRadius: "200px",
-          border: "black 2px solid",
-          m: 4,
-           }}
-        fluid={data.placeholderImage.childImageSharp.fluid}
-      />
-  )
+    <GatsbyImage
+      image={data.placeholderImage.childImageSharp.gatsbyImageData}
+      sx={{ 
+        height: "100px",
+        width: "100px",
+        borderRadius: "200px",
+        border: "black 2px solid",
+        m: 4,
+         }} />
+  );
 }
 
 export default Image

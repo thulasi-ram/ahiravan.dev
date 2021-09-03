@@ -37,8 +37,8 @@ const Post = ({
         keywords={post.tags}
         imageSource={
           post.socialImage
-            ? post.socialImage?.childImageSharp?.fluid.src
-            : post.image?.childImageSharp?.fluid.src
+            ? post.socialImage?.childImageSharp?.gatsbyImageData.src
+            : post.image?.childImageSharp?.gatsbyImageData.src
         }
         imageAlt={post.imageAlt}
       />
@@ -53,7 +53,7 @@ const Post = ({
         <PostFooter {...{ previous, next, post }} />
       </article>
     </Layout>
-  )
+  );
 }
 
 export default Post
