@@ -1,13 +1,13 @@
 /** @jsx jsx */
 import { graphql, StaticQuery } from "gatsby"
-import { jsx } from "theme-ui"
+import { jsx } from "@theme-ui/core"
 import {
   SimilarArticlesFactory,
   getPostsFromQuery,
 } from "../services/similar-articles-factory"
 import { SimilarArticlesComponent } from "../components/similar-articles"
 
-export default props => (
+const similarArticlesQuery = props => (
   <StaticQuery
     query={graphql`
       query SimilarArticles {
@@ -58,3 +58,5 @@ export default props => (
     }}
   />
 )
+
+export default similarArticlesQuery

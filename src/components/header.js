@@ -1,7 +1,8 @@
 /** @jsx jsx */
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import { css, jsx } from "theme-ui"
+import { jsx } from "@theme-ui/core"
+import { css } from "@theme-ui/css"
 import LogoSvg from "../svgs/logo.svg"
 import { HeaderNavLink } from "./composites"
 import DarkModeToggle from "./dark_mode_toggle"

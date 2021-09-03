@@ -1,5 +1,6 @@
 /** @jsx jsx */
-import { Badge, Box, Flex, Heading, jsx, Text } from "theme-ui"
+import { jsx } from "@theme-ui/core"
+import { Badge, Box, Flex, Heading, Text } from "@theme-ui/components"
 import { LinkAsA } from "./composites"
 
 export const SimilarArticlesComponent = ({

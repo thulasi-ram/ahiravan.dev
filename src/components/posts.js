@@ -1,13 +1,17 @@
 /** @jsx jsx */
+import { Flex } from "@theme-ui/components"
+import { jsx } from "@theme-ui/core"
+import { Themed } from "@theme-ui/mdx"
 import { useState } from "react"
-import { Flex, jsx, Styled } from "theme-ui"
 import { CrumbBuilderFactory } from "../services/crumb-builder"
 import Breadcrumb from "./breadcrumb"
 import { FlexFiller, LinkAsA } from "./composites"
 import Layout from "./layout"
 import { PostListViewButton } from "./post_list_buttons"
 import { ResponsivePosts } from "./responsive_posts"
-import SEO from "./seo"
+import Seo from "./seo"
+
+
 
 const Posts = ({ location, posts, siteTitle, socialLinks }) => {
   const crumbs = new CrumbBuilderFactory()
@@ -21,11 +25,11 @@ const Posts = ({ location, posts, siteTitle, socialLinks }) => {
 
   return (
     <Layout>
-      <SEO title="Ahiravan's Blog" />
+      <Seo title="Ahiravan's Blog" />
       <Breadcrumb crumbs={crumbs} />
 
       <Flex>
-        <Styled.h1> All posts </Styled.h1>
+        <Themed.h1> All posts </Themed.h1>
         <FlexFiller></FlexFiller>
         <PostListViewButton
           preferredViewCallback={preferredViewCallback}

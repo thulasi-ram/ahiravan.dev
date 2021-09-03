@@ -1,10 +1,13 @@
 /** @jsx jsx */
 import { Link } from "gatsby"
-import { Button, jsx, NavLink, Styled, Link as TLink } from "theme-ui"
+import { Button, NavLink, Link as TLink } from "@theme-ui/components"
+import { jsx } from "@theme-ui/core"
+import { Themed } from "@theme-ui/mdx"
+
 import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 export const LinkAsA = ({ ...props }) => <TLink as={Link} {...props} />
-export const ButtonAsA = ({ ...props }) => <Button as={Styled.a} {...props} />
+export const ButtonAsA = ({ ...props }) => <Button as={Themed.a} {...props} />
 export const FooterSocial = ({ ...props }) => (
   <OutboundLink
     sx={{

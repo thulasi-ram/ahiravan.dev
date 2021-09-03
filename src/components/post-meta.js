@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { Fragment } from "react"
-import { jsx, Text } from "theme-ui"
+import { Text } from "@theme-ui/components"
+import { jsx } from "@theme-ui/core"
 import {LinkAsA} from "./composites"
 const readingTime = require("reading-time")
 

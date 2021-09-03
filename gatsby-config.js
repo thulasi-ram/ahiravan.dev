@@ -151,6 +151,7 @@ module.exports = {
     },
     "gatsby-plugin-minify-html",
     "gatsby-plugin-brotli",
+    `gatsby-plugin-perf-budgets`,
     "gatsby-plugin-webpack-bundle-analyser-v2",
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

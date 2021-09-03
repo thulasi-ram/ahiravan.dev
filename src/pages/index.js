@@ -1,21 +1,29 @@
 /** @jsx jsx */
 import swal from "@sweetalert/with-react"
 import {
-  Box, Button, Flex,
+  Box,
+  Button,
+  Flex,
   Grid,
   Heading,
-  jsx, Link as TLink, Styled, Themed, Text, useThemeUI
-} from "theme-ui"
+  Link as TLink,
+  Text,
+} from "@theme-ui/components"
+import { Themed, Styled } from "@theme-ui/mdx"
+import { jsx, useThemeUI } from "@theme-ui/core"
+
 import { ButtonAsA, LinkAsA } from "../components/composites"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import CalendarSvg from "../svgs/calendar.svg"
 import EmailSvg from "../svgs/mail.svg"
 import RetweetSvg from "../svgs/retweet.svg"
 import RightArrowSvg from "../svgs/right.svg"
 import VerticalMenuSvg from "../svgs/vertical_menu.svg"
 
-const IntroP = ({ ...props }) => <Text variant="intro" as={Themed.p} {...props} />
+const IntroP = ({ ...props }) => (
+  <Text variant="intro" as={Themed.p} {...props} />
+)
 const IntroA = ({ ...props }) => (
   <TLink rel="external" target="_blank" {...props}></TLink>
 )
@@ -78,7 +86,7 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <SEO title="Ahiravans' Home, Blog and Musings" />
+      <Seo title="Ahiravans' Home, Blog and Musings" />
 
       <Grid
         sx={{

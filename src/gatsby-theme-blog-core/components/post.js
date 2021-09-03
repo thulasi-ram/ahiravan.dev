@@ -1,7 +1,7 @@
 import React from "react"
 import Post from "../../components/post"
 
-export default ({ location, data }) => {
+const post = ({ location, data }) => {
   const { blogPost, previous, next } = data
   return (
     <Post
@@ -12,3 +12,5 @@ export default ({ location, data }) => {
     />
   )
 }
+
+export default post

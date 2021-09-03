@@ -1,11 +1,11 @@
 /** @jsx jsx */
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import { jsx } from "theme-ui"
+import { jsx } from "@theme-ui/core"
 import Breadcrumb from "./breadcrumb"
 import PostFooter from "./post-footer"
 import PostHeader from "./post-header"
 import Layout from "./layout"
-import SEO from "./seo"
+import Seo from "./seo"
 import {CrumbBuilderFactory} from "../services/crumb-builder"
 
 const Post = ({
@@ -31,7 +31,7 @@ const Post = ({
 
   return (
     <Layout>
-      <SEO
+      <Seo
         title={post.title}
         description={post.excerpt}
         keywords={post.tags}

@@ -1,11 +1,12 @@
 /** @jsx jsx */
-import { jsx,Styled } from "theme-ui"
+import { jsx } from "@theme-ui/core"
+import { Themed } from "@theme-ui/mdx"
 import PostMeta from "./post-meta"
 
 const PostHeader = ({ post }) => (
-  <header sx={{mb:4}}>
+  <header sx={{ mb: 4 }}>
     {/* <PostHero post={post} /> */}
-    <Styled.h1 sx={{mb: 0}}>{post.title}</Styled.h1>
+    <Themed.h1 sx={{ mb: 0 }}>{post.title}</Themed.h1>
     <PostMeta post={post} />
   </header>
 )

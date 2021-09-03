@@ -1,8 +1,10 @@
 /** @jsx jsx */
+import { Flex } from "@theme-ui/components"
+import { jsx } from "@theme-ui/core"
+import { Themed } from "@theme-ui/mdx"
 import { graphql } from "gatsby"
 import PropTypes from "prop-types"
 import { useState } from "react"
-import { Flex, jsx, Styled } from "theme-ui"
 import Breadcrumb from "../components/breadcrumb"
 import { FlexFiller, LinkAsA } from "../components/composites"
 import Layout from "../components/layout"
@@ -31,7 +33,7 @@ const Tags = ({ pageContext, data }) => {
       <Breadcrumb crumbs={crumbs} />
 
       <Flex>
-        <Styled.h1> {tagHeader}</Styled.h1>
+        <Themed.h1> {tagHeader}</Themed.h1>
         <FlexFiller></FlexFiller>
         <PostListViewButton
           preferredViewCallback={preferredViewCallback}

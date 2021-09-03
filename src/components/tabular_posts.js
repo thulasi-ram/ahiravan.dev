@@ -1,30 +1,31 @@
+import { Text } from "@theme-ui/components"
+import { Themed } from "@theme-ui/mdx"
 import React from "react"
-import { Styled, Text } from "theme-ui"
 import { LinkAsA } from "./composites"
 
 
 export const TabularPosts = ({ posts, ...props }) => {
   return (
-    <Styled.table>
+    <Themed.table>
       <thead>
         <tr>
-          <Styled.th>Post</Styled.th>
-          <Styled.th>Date</Styled.th>
-          <Styled.th>Tags</Styled.th>
+          <Themed.th>Post</Themed.th>
+          <Themed.th>Date</Themed.th>
+          <Themed.th>Tags</Themed.th>
         </tr>
       </thead>
       <tbody>
         {posts.map((node, i) => {
           return (
             <React.Fragment key={"pst1" + i}>
-              <Styled.tr sx={{ my: [10, 2, null] }}>
-                <Styled.td>
+              <Themed.tr sx={{ my: [10, 2, null] }}>
+                <Themed.td>
                   <LinkAsA to={node.slug}>{node.title} </LinkAsA>
-                </Styled.td>
-                <Styled.td>
+                </Themed.td>
+                <Themed.td>
                   <Text variant="postmeta">{node.date}</Text>
-                </Styled.td>
-                <Styled.td>
+                </Themed.td>
+                <Themed.td>
                   {" "}
                   {node.tags.map((tag, j) => {
                     return (
@@ -36,12 +37,12 @@ export const TabularPosts = ({ posts, ...props }) => {
                       </React.Fragment>
                     )
                   })}
-                </Styled.td>
-              </Styled.tr>
+                </Themed.td>
+              </Themed.tr>
             </React.Fragment>
           )
         })}
       </tbody>
-    </Styled.table>
+    </Themed.table>
   )
 }

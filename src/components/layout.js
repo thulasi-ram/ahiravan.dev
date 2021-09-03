@@ -1,11 +1,10 @@
 /** @jsx jsx */
 import PropTypes from "prop-types"
-import { Container, jsx, useThemeUI } from "theme-ui"
+import { jsx, useThemeUI } from "@theme-ui/core"
+import { Container } from "@theme-ui/components"
 import Footer from "./footer"
 import Header from "./header"
 import { css, Global } from "@emotion/core"
-
-
 
 const Layout = ({ children }) => {
   const { theme } = useThemeUI()
@@ -84,7 +83,7 @@ const Layout = ({ children }) => {
           flex: "1 1 auto",
           my: 4,
           px: 4,
-          pt: 2
+          pt: 2,
         }}
       >
         {children}

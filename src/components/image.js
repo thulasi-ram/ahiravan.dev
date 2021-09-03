@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { graphql, useStaticQuery } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image";
-import { jsx } from "theme-ui"
+import { GatsbyImage } from "gatsby-plugin-image"
+import { jsx } from "@theme-ui/core"
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
@@ -15,26 +15,28 @@ import { jsx } from "theme-ui"
  */
 
 const Image = () => {
-  const data = useStaticQuery(graphql`{
-  placeholderImage: file(relativePath: {eq: "gatsby-astronaut.png"}) {
-    childImageSharp {
-      gatsbyImageData(width: 300, layout: CONSTRAINED)
+  const data = useStaticQuery(graphql`
+    {
+      placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 300, layout: CONSTRAINED)
+        }
+      }
     }
-  }
-}
-`)
+  `)
 
   return (
     <GatsbyImage
       image={data.placeholderImage.childImageSharp.gatsbyImageData}
-      sx={{ 
+      sx={{
         height: "100px",
         width: "100px",
         borderRadius: "200px",
         border: "black 2px solid",
         m: 4,
-         }} />
-  );
+      }}
+    />
+  )
 }
 
 export default Image

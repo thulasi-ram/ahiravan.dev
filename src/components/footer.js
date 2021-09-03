@@ -1,5 +1,6 @@
 /** @jsx jsx */
-import { Flex, jsx, Text } from "theme-ui"
+import { Flex, Text } from "@theme-ui/components"
+import { jsx } from "@theme-ui/core"
 import GithubSvg from "../svgs/github.svg"
 import LinkedInSvg from "../svgs/linkedin.svg"
 import TwitterSvg from "../svgs/twitter.svg"

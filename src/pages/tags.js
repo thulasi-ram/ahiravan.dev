@@ -1,12 +1,16 @@
 /** @jsx jsx */
+import { Flex } from "@theme-ui/components"
+import { jsx } from "@theme-ui/core"
+import { Themed } from "@theme-ui/mdx"
 import { graphql } from "gatsby"
 import PropTypes from "prop-types"
-import { Flex, jsx, Styled } from "theme-ui"
 import Breadcrumb from "../components/breadcrumb"
 import { FlexFiller, LinkAsA } from "../components/composites"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import { CrumbBuilderFactory } from "../services/crumb-builder"
+
+
 
 const TagsPage = ({
   data: {
@@ -19,10 +23,10 @@ const TagsPage = ({
 
   return (
     <Layout>
-      <SEO title="Ahiravan.dev all tags" />
+      <Seo title="Ahiravan.dev all tags" />
       <Breadcrumb crumbs={crumbs} />
       <div>
-        <Styled.h1> All tags </Styled.h1>
+        <Themed.h1> All tags </Themed.h1>
         <ul>
           {group.map(tag => (
             <li key={"tgs1" + tag.fieldValue}>

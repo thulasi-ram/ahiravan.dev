@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx } from "@theme-ui/core"
 import SimilarArticles from "../templates/similar-articles"
 import {CommentsComponent} from "../components/comments"
 
