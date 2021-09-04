@@ -27,7 +27,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-theme-ui`,
       options: {
-        prismPreset: `night-owl`,
+        // prismPreset: `night-owl`,
       },
     },
     `gatsby-plugin-react-helmet`,

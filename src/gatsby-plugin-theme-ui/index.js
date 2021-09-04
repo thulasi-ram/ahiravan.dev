@@ -211,8 +211,11 @@ const theme = {
       fontSize: [0, 1, 1],
     },
     inlineCode: {
-      ...code_theme,
-      px: 2,
+      backgroundColor: "muted",
+      color: "text",
+      fontFamily: "body",
+      py:0,
+      px: 1,
     },
     ul: {
       listStyleType: "square",
