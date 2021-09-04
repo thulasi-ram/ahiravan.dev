@@ -1,10 +1,9 @@
 /** @jsx jsx */
+import { css, Global } from "@emotion/core"
 import PropTypes from "prop-types"
-import { jsx, useThemeUI } from "@theme-ui/core"
-import { Container } from "@theme-ui/components"
+import { Container, jsx, useThemeUI } from "theme-ui"
 import Footer from "./footer"
 import Header from "./header"
-import { css, Global } from "@emotion/core"
 
 const Layout = ({ children }) => {
   const { theme } = useThemeUI()

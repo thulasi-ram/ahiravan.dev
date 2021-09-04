@@ -1,10 +1,24 @@
 /** @jsx jsx */
-import { Flex, Text } from "@theme-ui/components"
-import { jsx } from "@theme-ui/core"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
+import { Flex, jsx, Text } from "theme-ui"
 import GithubSvg from "../svgs/github.svg"
 import LinkedInSvg from "../svgs/linkedin.svg"
 import TwitterSvg from "../svgs/twitter.svg"
-import { FooterSocial } from "./composites"
+
+
+const FooterSocial = ({ ...props }) => (
+  <OutboundLink
+    sx={{
+      textDecoration: "none",
+      fill: "secondary",
+      width: "1.4em",
+      mx: "auto",
+      my: "auto",
+    }}
+    rel="external"
+    {...props}
+  />
+)
 
 const Footer = () => {
   return (

@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { graphql, StaticQuery } from "gatsby"
-import { jsx } from "@theme-ui/core"
+import { jsx } from "theme-ui"
 import {
   SimilarArticlesFactory,
   getPostsFromQuery,

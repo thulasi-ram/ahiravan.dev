@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from "@theme-ui/core"
+import { jsx } from "theme-ui"
 import { LinkAsA } from "./composites"
 
 const BreadCrumb = ({ crumbs }) => {

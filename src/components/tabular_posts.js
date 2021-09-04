@@ -1,6 +1,5 @@
-import { Text } from "@theme-ui/components"
-import { Themed } from "@theme-ui/mdx"
 import React from "react"
+import { Text, Themed } from "theme-ui"
 import { LinkAsA } from "./composites"
 
 

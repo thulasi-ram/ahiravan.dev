@@ -1,9 +1,8 @@
 /** @jsx jsx */
 
 // courtesy of: https://jfelix.info/blog/using-react-spring-to-animate-svg-icons-dark-mode-toggle
-import { jsx } from "@theme-ui/core"
-import { useColorMode } from "@theme-ui/color-modes"
-import { useSpring, animated } from 'react-spring';
+import { animated, useSpring } from 'react-spring';
+import { jsx, useColorMode } from "theme-ui";
 
 
 const properties = {

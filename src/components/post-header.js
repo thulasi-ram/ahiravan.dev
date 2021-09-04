@@ -1,6 +1,5 @@
 /** @jsx jsx */
-import { jsx } from "@theme-ui/core"
-import { Themed } from "@theme-ui/mdx"
+import { jsx, Themed } from "theme-ui"
 import PostMeta from "./post-meta"
 
 const PostHeader = ({ post }) => (

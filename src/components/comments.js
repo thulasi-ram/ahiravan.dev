@@ -1,8 +1,7 @@
 /** @jsx jsx */
 import React, { useEffect } from "react"
 import Helmet from "react-helmet"
-import { Box, Flex, Heading } from "@theme-ui/components"
-import {jsx} from "@theme-ui/core"
+import { Box, Flex, Heading, jsx } from "theme-ui"
 
 const loadCactusScript = callback => {
   const existingScript = window.initComments

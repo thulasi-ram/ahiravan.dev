@@ -1,9 +1,7 @@
 /** @jsx jsx */
-import { Flex } from "@theme-ui/components"
-import { jsx } from "@theme-ui/core"
-import { Themed } from "@theme-ui/mdx"
 import { graphql } from "gatsby"
 import PropTypes from "prop-types"
+import { Flex, jsx, Themed } from "theme-ui"
 import Breadcrumb from "../components/breadcrumb"
 import { FlexFiller, LinkAsA } from "../components/composites"
 import Layout from "../components/layout"

@@ -1,10 +1,8 @@
 /** @jsx jsx */
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import { jsx } from "@theme-ui/core"
-import { css } from "@theme-ui/css"
+import { css, jsx, NavLink } from "theme-ui"
 import LogoSvg from "../svgs/logo.svg"
-import { HeaderNavLink } from "./composites"
 import DarkModeToggle from "./dark_mode_toggle"
 
 const logocss = {
@@ -21,6 +19,18 @@ const logocss = {
     },
   },
 }
+
+const HeaderNavLink = ({ ...props }) => (
+  <NavLink
+    variant="nav"
+    className="middleanim"
+    sx={{
+      cursor: "pointer",
+      mr: 5,
+    }}
+    {...props}
+  />
+)
 
 const Header = () => {
   // const { theme } = useThemeUI()

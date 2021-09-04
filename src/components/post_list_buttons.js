@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { useEffect, useState } from "react"
-import { jsx, useThemeUI } from "@theme-ui/core"
-import { Flex } from "@theme-ui/components"
+import { Flex, jsx, useThemeUI } from "theme-ui"
 import DocListSvg from "../svgs/doc_list.svg"
 import ResponsiveSvg from "../svgs/responsive.svg"
 import TableSvg from "../svgs/table.svg"

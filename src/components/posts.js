@@ -1,8 +1,6 @@
 /** @jsx jsx */
-import { Flex } from "@theme-ui/components"
-import { jsx } from "@theme-ui/core"
-import { Themed } from "@theme-ui/mdx"
 import { useState } from "react"
+import { Flex, jsx, Themed } from "theme-ui"
 import { CrumbBuilderFactory } from "../services/crumb-builder"
 import Breadcrumb from "./breadcrumb"
 import { FlexFiller, LinkAsA } from "./composites"

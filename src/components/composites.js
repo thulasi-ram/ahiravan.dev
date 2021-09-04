@@ -1,70 +1,43 @@
 /** @jsx jsx */
 import { Link } from "gatsby"
-import { Button, NavLink, Link as TLink } from "@theme-ui/components"
-import { jsx } from "@theme-ui/core"
-import { Themed } from "@theme-ui/mdx"
-
-import { OutboundLink } from "gatsby-plugin-google-analytics"
-
+import { Button, jsx, Link as TLink, Themed } from "theme-ui"
 export const LinkAsA = ({ ...props }) => <TLink as={Link} {...props} />
 export const ButtonAsA = ({ ...props }) => <Button as={Themed.a} {...props} />
-export const FooterSocial = ({ ...props }) => (
-  <OutboundLink
-    sx={{
-      textDecoration: "none",
-      fill: "secondary",
-      width: "1.4em",
-      mx: "auto",
-      my: "auto",
-    }}
-    rel="external"
-    {...props}
-  />
-)
-export const IndexPageButton = ({ ...props }) => (
-  <ButtonAsA
-    sx={{
-      width: ["90%", "80%", "70%"],
-      minWidth: "120px",
-    }}
-    variant="basic"
-    {...props}
-  />
-)
+
+// export const IndexPageButton = ({ ...props }) => (
+//   <ButtonAsA
+//     sx={{
+//       width: ["90%", "80%", "70%"],
+//       minWidth: "120px",
+//     }}
+//     variant="basic"
+//     {...props}
+//   />
+// )
 export const FlexFiller = ({ ...props }) => (
   <div sx={{ mx: "auto" }} {...props}></div>
 )
-export const DividerWithText = ({ ...props }) => (
-  <div
-    sx={{
-      width: ["70%", "50%", "30%"],
-      textAlign: "center",
-      borderBottomWidth: "1px",
-      borderBottomStyle: "solid",
-      borderBottomColor: "muted",
-      lineHeight: "0.1em",
-      my: "2",
-      mx: "4",
+// export const DividerWithText = ({ ...props }) => (
+//   <div
+//     sx={{
+//       width: ["70%", "50%", "30%"],
+//       textAlign: "center",
+//       borderBottomWidth: "1px",
+//       borderBottomStyle: "solid",
+//       borderBottomColor: "muted",
+//       lineHeight: "0.1em",
+//       my: "2",
+//       mx: "4",
 
-      "& > span": {
-        bg: "background",
-        px: "2",
-        color: "gray",
-      },
-    }}
-  >
-    {" "}
-    <span> {props.text} </span>
-  </div>
-)
-export const HeaderNavLink = ({ ...props }) => (
-  <NavLink
-    variant="nav"
-    className="middleanim"
-    sx={{
-      cursor: "pointer",
-      mr: 5,
-    }}
-    {...props}
-  />
-)
+//       "& > span": {
+//         bg: "background",
+//         px: "2",
+//         color: "gray",
+//       },
+//     }}
+//   >
+//     {" "}
+//     <span> {props.text} </span>
+//   </div>
+// )
+

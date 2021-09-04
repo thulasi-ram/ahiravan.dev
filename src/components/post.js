@@ -1,12 +1,12 @@
 /** @jsx jsx */
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import { jsx } from "@theme-ui/core"
+import { jsx } from "theme-ui"
+import { CrumbBuilderFactory } from "../services/crumb-builder"
 import Breadcrumb from "./breadcrumb"
+import Layout from "./layout"
 import PostFooter from "./post-footer"
 import PostHeader from "./post-header"
-import Layout from "./layout"
 import Seo from "./seo"
-import {CrumbBuilderFactory} from "../services/crumb-builder"
 
 const Post = ({
   post,

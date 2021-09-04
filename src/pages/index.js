@@ -1,17 +1,6 @@
 /** @jsx jsx */
 import swal from "@sweetalert/with-react"
-import {
-  Box,
-  Button,
-  Flex,
-  Grid,
-  Heading,
-  Link as TLink,
-  Text,
-} from "@theme-ui/components"
-import { Themed, Styled } from "@theme-ui/mdx"
-import { jsx, useThemeUI } from "@theme-ui/core"
-
+import { Box, Button, Flex, Grid, Heading, jsx, Link as TLink, Text, Themed, useThemeUI } from "theme-ui"
 import { ButtonAsA, LinkAsA } from "../components/composites"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -20,6 +9,7 @@ import EmailSvg from "../svgs/mail.svg"
 import RetweetSvg from "../svgs/retweet.svg"
 import RightArrowSvg from "../svgs/right.svg"
 import VerticalMenuSvg from "../svgs/vertical_menu.svg"
+
 
 const IntroP = ({ ...props }) => (
   <Text variant="intro" as={Themed.p} {...props} />
@@ -96,12 +86,12 @@ const IndexPage = () => {
         }}
       >
         <Box>
-          <Styled.h1 sx={{ mb: 3, fontFamily: "body" }}>
+          <Themed.h1 sx={{ mb: 3, fontFamily: "body" }}>
             Hi, I'm Thulasi
-          </Styled.h1>
-          <Styled.h2 sx={{ mb: 4, fontFamily: "body" }}>
+          </Themed.h1>
+          <Themed.h2 sx={{ mb: 4, fontFamily: "body" }}>
             I build for all things web.
-          </Styled.h2>
+          </Themed.h2>
 
           <div
             sx={{
