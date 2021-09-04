@@ -2244,7 +2244,7 @@
     "@theme-ui/css" "0.11.1"
     deepmerge "^4.2.2"
 
-"@theme-ui/components@0.11.1", "@theme-ui/components@^0.11.1":
+"@theme-ui/components@0.11.1":
   version "0.11.1"
   resolved "https://registry.yarnpkg.com/@theme-ui/components/-/components-0.11.1.tgz#fccf6c9db7bececee64ddf24907dfb1be265ca8f"
   integrity sha512-fWLTJe9zF045WS7Hhanj2PYRz0t6k883KCGHITES70rrTGZ7bL/+ooX34oZ5do9JrrVx/+80Tf7EtLQfzw9BFw==
@@ -2257,7 +2257,7 @@
     "@theme-ui/css" "0.11.1"
     "@types/styled-system" "^5.1.10"
 
-"@theme-ui/core@0.11.1", "@theme-ui/core@^0.11.1":
+"@theme-ui/core@0.11.1":
   version "0.11.1"
   resolved "https://registry.yarnpkg.com/@theme-ui/core/-/core-0.11.1.tgz#e7a3ced17a51cc57346360437cb6f94e4cbd3b0a"
   integrity sha512-8TRblBlVdFfcGwm6xluaglY4VasHfvHFFXRJhiQe0wUriNto6jpWaLQnw+y9mQZ/cffLbX68Vo8i4pAauM8U2g==
@@ -2267,7 +2267,7 @@
     "@theme-ui/parse-props" "0.11.1"
     deepmerge "^4.2.2"
 
-"@theme-ui/css@0.11.1", "@theme-ui/css@^0.11.1":
+"@theme-ui/css@0.11.1":
   version "0.11.1"
   resolved "https://registry.yarnpkg.com/@theme-ui/css/-/css-0.11.1.tgz#e91f58306bd015c813f72b4dce25850a93d5ba47"
   integrity sha512-b3M9EJ6EaUeJolQ5jMySGVqcliYgpMliSJmvTUPWogW43J+7chb6h/bZLymXDDhPHt+SVAtGIkR7n8aIvjFbcQ==
@@ -2275,7 +2275,7 @@
     "@emotion/react" "^11.1.1"
     csstype "^3.0.5"
 
-"@theme-ui/mdx@0.11.1", "@theme-ui/mdx@^0.11.1":
+"@theme-ui/mdx@0.11.1":
   version "0.11.1"
   resolved "https://registry.yarnpkg.com/@theme-ui/mdx/-/mdx-0.11.1.tgz#a6418ec4b90821c15ff63ee13930070dbda5fdc1"
   integrity sha512-PiYXA3swuRI55pdt+vgVVOQzoosaph5+baqOWdrfKiX3UodoER0H+FkHllnTEv5IdBPKryCKy6ZTjdAZ6OR5zQ==

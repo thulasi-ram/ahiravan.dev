@@ -24,7 +24,12 @@ module.exports = {
     ],
   },
   plugins: [
-    `gatsby-plugin-theme-ui`,
+    {
+      resolve: `gatsby-plugin-theme-ui`,
+      options: {
+        prismPreset: `night-owl`,
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-theme-blog-core`,
