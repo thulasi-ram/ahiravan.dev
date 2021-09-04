@@ -24,6 +24,7 @@ module.exports = {
     ],
   },
   plugins: [
+    `gatsby-plugin-preact`,
     {
       resolve: `gatsby-plugin-theme-ui`,
       options: {

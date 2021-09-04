@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default-theme-ui",
+  "name": "ahiravan.dev",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby & Theme UI",
+  "description": "Personal Website of Ahiravan",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Thulasiram <thulasi503@gmail.com>",
   "dependencies": {
     "@babel/core": "^7.15.4",
     "@emotion/core": "^10.0.35",
@@ -26,6 +26,7 @@
     "gatsby-plugin-manifest": "^3.13.0",
     "gatsby-plugin-mdx": "^2.13.0",
     "gatsby-plugin-minify-html": "^1.0.3",
+    "gatsby-plugin-preact": "^5.13.0",
     "gatsby-plugin-react-helmet": "^4.13.0",
     "gatsby-plugin-react-svg": "^3.0.0",
     "gatsby-plugin-robots-txt": "^1.5.1",
@@ -37,6 +38,8 @@
     "gatsby-source-filesystem": "^3.13.0",
     "gatsby-theme-blog-core": "^3.0.0",
     "gatsby-transformer-sharp": "^3.13.0",
+    "preact": "^10.5.14",
+    "preact-render-to-string": "^5.1.19",
     "prop-types": "^15.7.2",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
@@ -53,7 +56,7 @@
     "prettier": "^1.19.1"
   },
   "keywords": [
-    "gatsby"
+    "gatsby", "ahiravan"
   ],
   "license": "MIT",
   "scripts": {
@@ -68,9 +71,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/thulasi-ram/ahiravvan.dev"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/thulasi-ram/ahiravvan.dev"
   }
 }
