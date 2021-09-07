@@ -57,7 +57,7 @@ export const PostListViewButton = ({ ...props }) => {
   }
 
   const svgSx = {
-    width: "1em",
+    width: "18px",
   }
 
   return (
