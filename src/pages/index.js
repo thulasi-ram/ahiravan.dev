@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import swal from "@sweetalert/with-react"
-import { Box, Button, Flex, Grid, Heading, jsx, Link as TLink, Text, Themed, useThemeUI } from "theme-ui"
+import { Box, Button, Flex, Grid, Heading, jsx, Link as TLink, Text, Paragraph, useThemeUI } from "theme-ui"
 import { ButtonAsA, LinkAsA } from "../components/composites"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -12,7 +12,7 @@ import VerticalMenuSvg from "../svgs/vertical_menu.svg"
 
 
 const IntroP = ({ ...props }) => (
-  <Text variant="intro" as={Themed.p} {...props} />
+  <Text variant="intro" as={Paragraph} {...props} />
 )
 const IntroA = ({ ...props }) => (
   <TLink rel="external" target="_blank" {...props}></TLink>
@@ -86,12 +86,12 @@ const IndexPage = () => {
         }}
       >
         <Box>
-          <Themed.h1 sx={{ mb: 3, fontFamily: "body" }}>
+          <Heading as="h1" sx={{ mb: 3, fontFamily: "body" }}>
             Hi, I'm Thulasi
-          </Themed.h1>
-          <Themed.h2 sx={{ mb: 4, fontFamily: "body" }}>
+          </Heading>
+          <Heading as="h2" sx={{ mb: 4, fontFamily: "body", fontSize: 6 }}>
             I build for all things web.
-          </Themed.h2>
+          </Heading>
 
           <div
             sx={{
@@ -182,7 +182,7 @@ const IndexPage = () => {
       <Grid
         columns={[1]}
         sx={{
-          width: ["90%", "90%", "90%"],
+          width: "90%",
           mx: "auto",
           my: 3,
         }}

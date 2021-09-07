@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import { Link } from "gatsby"
-import { Button, jsx, Link as TLink, Themed } from "theme-ui"
+import { Button, jsx, Link as TLink } from "theme-ui"
 export const LinkAsA = ({ ...props }) => <TLink as={Link} {...props} />
-export const ButtonAsA = ({ ...props }) => <Button as={Themed.a} {...props} />
+export const ButtonAsA = ({ ...props }) => <Button as={TLink} {...props} />
 
 // export const IndexPageButton = ({ ...props }) => (
 //   <ButtonAsA

@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { useState } from "react"
-import { Flex, jsx, Themed } from "theme-ui"
+import { Flex, jsx, Heading } from "theme-ui"
 import { CrumbBuilderFactory } from "../services/crumb-builder"
 import Breadcrumb from "./breadcrumb"
 import { FlexFiller, LinkAsA } from "./composites"
@@ -27,7 +27,7 @@ const Posts = ({ location, posts, siteTitle, socialLinks }) => {
       <Breadcrumb crumbs={crumbs} />
 
       <Flex>
-        <Themed.h1> All posts </Themed.h1>
+        <Heading as="h1"> All posts </Heading>
         <FlexFiller></FlexFiller>
         <PostListViewButton
           preferredViewCallback={preferredViewCallback}

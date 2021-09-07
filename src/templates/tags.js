@@ -2,7 +2,7 @@
 import { graphql } from "gatsby"
 import PropTypes from "prop-types"
 import { useState } from "react"
-import { Flex, jsx, Themed } from "theme-ui"
+import { Flex, jsx, Heading } from "theme-ui"
 import Breadcrumb from "../components/breadcrumb"
 import { FlexFiller, LinkAsA } from "../components/composites"
 import Layout from "../components/layout"
@@ -31,7 +31,7 @@ const Tags = ({ pageContext, data }) => {
       <Breadcrumb crumbs={crumbs} />
 
       <Flex>
-        <Themed.h1> {tagHeader}</Themed.h1>
+        <Heading as="h1"> {tagHeader}</Heading>
         <FlexFiller></FlexFiller>
         <PostListViewButton
           preferredViewCallback={preferredViewCallback}

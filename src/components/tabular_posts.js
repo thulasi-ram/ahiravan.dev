@@ -1,30 +1,69 @@
+/** @jsx jsx */
 import React from "react"
-import { Text, Themed } from "theme-ui"
+import { jsx, Text } from "theme-ui"
 import { LinkAsA } from "./composites"
 
+const Table = ({ ...props }) => (
+  <table
+    sx={{
+      width: "100%",
+      my: 4,
+      borderCollapse: "separate",
+      borderSpacing: 0,
+    }}
+    {...props}
+  />
+)
+
+const Th = ({ ...props }) => (
+  <th
+    sx={{
+      textAlign: "left",
+      py: "4px",
+      pl: 0,
+      borderColor: "muted",
+      borderBottomStyle: "solid",
+      verticalAlign: "bottom",
+      borderBottomWidth: 2,
+    }}
+    {...props}
+  />
+)
+
+const Td = ({ ...props }) => (
+  <td
+    sx={{
+      textAlign: "left",
+      py: "4px",
+      pl: 0,
+      verticalAlign: "top",
+    }}
+    {...props}
+  />
+)
 
 export const TabularPosts = ({ posts, ...props }) => {
   return (
-    <Themed.table>
+    <Table>
       <thead>
         <tr>
-          <Themed.th>Post</Themed.th>
-          <Themed.th>Date</Themed.th>
-          <Themed.th>Tags</Themed.th>
+          <Th>Post</Th>
+          <Th>Date</Th>
+          <Th>Tags</Th>
         </tr>
       </thead>
       <tbody>
         {posts.map((node, i) => {
           return (
             <React.Fragment key={"pst1" + i}>
-              <Themed.tr sx={{ my: [10, 2, null] }}>
-                <Themed.td>
+              <tr sx={{ my: [10, 2, null] }}>
+                <Td>
                   <LinkAsA to={node.slug}>{node.title} </LinkAsA>
-                </Themed.td>
-                <Themed.td>
+                </Td>
+                <Td>
                   <Text variant="postmeta">{node.date}</Text>
-                </Themed.td>
-                <Themed.td>
+                </Td>
+                <Td>
                   {" "}
                   {node.tags.map((tag, j) => {
                     return (
@@ -36,12 +75,12 @@ export const TabularPosts = ({ posts, ...props }) => {
                       </React.Fragment>
                     )
                   })}
-                </Themed.td>
-              </Themed.tr>
+                </Td>
+              </tr>
             </React.Fragment>
           )
         })}
       </tbody>
-    </Themed.table>
+    </Table>
   )
 }

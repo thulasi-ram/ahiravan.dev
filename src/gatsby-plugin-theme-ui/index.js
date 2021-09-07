@@ -100,6 +100,13 @@ const theme = {
       variant: "text.postmeta",
       fontSize: 0,
     },
+    heading: {
+      fontFamily: 'heading',
+      fontWeight: 'heading',
+      lineHeight: 1,
+      my: 4,
+      fontSize: 7
+    }
   },
   links: {
     crumb: {
