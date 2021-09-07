@@ -59,9 +59,9 @@ const theme = {
     container: "768px",
   },
   fonts: {
-    body: '"Iosevka Etoile Web", "Verdana", sans-serif',
-    heading: `"Iosevka Aile Web", Monaco, monospace`,
-    monospace: '"Iosevka Aile Web", Courier, monospace',
+    body: '"Iosevka Etoile Optimized", "Verdana", sans-serif',
+    heading: `"Iosevka Aile Optimized", Monaco, monospace`,
+    monospace: '"Iosevka Aile Optimized", Courier, monospace',
   },
   fontSizes: [12, 14, 16, 19, 22, 25, 29, 33],
   fontWeights: {

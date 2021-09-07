@@ -144,6 +144,10 @@ module.exports = {
           {
             name: ["Iosevka Etoile Web"],
             file: "/fonts/webfont-iosevka-etoile-10.1.1/iosevka-etoile.css",
+          },
+          {
+            name: ["Iosevka Aile Optimized", "Iosevka Etoile Optimized"],
+            file: "/fonts/iosevka-optimized-10.1.1/font.css",
           }
         ],
       },
