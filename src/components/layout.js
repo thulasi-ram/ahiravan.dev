@@ -85,7 +85,7 @@ const Layout = ({ children }) => {
           pt: 2,
         }}
       >
-        {children}
+      {children}
       </main>
       <Footer />
     </Container>

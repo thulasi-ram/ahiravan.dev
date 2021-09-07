@@ -1,33 +1,39 @@
 /** @jsx jsx */
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import { jsx } from "theme-ui"
+import { jsx, ThemeProvider, useThemeUI } from "theme-ui"
 import { CrumbBuilderFactory } from "../services/crumb-builder"
 import Breadcrumb from "./breadcrumb"
 import Layout from "./layout"
 import PostFooter from "./post-footer"
 import PostHeader from "./post-header"
 import Seo from "./seo"
+import Prism from '@theme-ui/prism'
+import { Fragment } from "react"
 
-const Post = ({
-  post,
-  location,
-  previous,
-  next,
-}) => {
 
-  if (!post){
-    return (<div></div>)
+const components = {
+  pre: ({ children }) => <Fragment>{children}</Fragment>,
+  code: Prism,
+}
+
+const Post = ({ post, location, previous, next }) => {
+  const { theme } = useThemeUI()
+
+  if (!post) {
+    return <div></div>
   }
+
+
   const crumbs = new CrumbBuilderFactory()
-  .addCrumb("/", 'home')
-  .addCrumb("/blog", 'blog')
-  .addCrumb(
-    location.pathname, 
-    post.slug
-    .replace("/blog", '')
-    .replace("/", "")
-    .replace("/", "")
-  ).crumbs
+    .addCrumb("/", "home")
+    .addCrumb("/blog", "blog")
+    .addCrumb(
+      location.pathname,
+      post.slug
+        .replace("/blog", "")
+        .replace("/", "")
+        .replace("/", "")
+    ).crumbs
 
   return (
     <Layout>
@@ -44,16 +50,17 @@ const Post = ({
       />
       <Breadcrumb crumbs={crumbs} />
 
-
       <article>
         <PostHeader post={post}> </PostHeader>
         <section>
-          <MDXRenderer>{post.body}</MDXRenderer>
+          <ThemeProvider theme={theme} components={components}>
+            <MDXRenderer>{post.body}</MDXRenderer>
+          </ThemeProvider>
         </section>
         <PostFooter {...{ previous, next, post }} />
       </article>
     </Layout>
-  );
+  )
 }
 
 export default Post
