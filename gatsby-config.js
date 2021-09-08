@@ -137,14 +137,14 @@ module.exports = {
         mode: "async",
         enableListener: false,
         custom: [
-          {
-            name: ["Iosevka Aile Web"],
-            file: "/fonts/webfont-iosevka-aile-10.1.1/iosevka-aile.css",
-          },
-          {
-            name: ["Iosevka Etoile Web"],
-            file: "/fonts/webfont-iosevka-etoile-10.1.1/iosevka-etoile.css",
-          },
+          // {
+          //   name: ["Iosevka Aile Web"],
+          //   file: "/fonts/webfont-iosevka-aile-10.1.1/iosevka-aile.css",
+          // },
+          // {
+          //   name: ["Iosevka Etoile Web"],
+          //   file: "/fonts/webfont-iosevka-etoile-10.1.1/iosevka-etoile.css",
+          // },
           {
             name: ["Iosevka Aile Optimized", "Iosevka Etoile Optimized"],
             file: "/fonts/iosevka-optimized-10.1.1/font.css",
