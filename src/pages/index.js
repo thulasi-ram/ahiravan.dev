@@ -1,6 +1,17 @@
 /** @jsx jsx */
-import swal from "@sweetalert/with-react"
-import { Box, Button, Flex, Grid, Heading, jsx, Link as TLink, Text, Paragraph, useThemeUI } from "theme-ui"
+import {
+  Box,
+  Button,
+  Flex,
+  Grid,
+  Heading,
+  jsx,
+  Link as TLink,
+  Text,
+  Paragraph,
+  useThemeUI,
+  Close,
+} from "theme-ui"
 import { ButtonAsA, LinkAsA } from "../components/composites"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -9,7 +20,8 @@ import EmailSvg from "../svgs/mail.svg"
 import RetweetSvg from "../svgs/retweet.svg"
 import RightArrowSvg from "../svgs/right.svg"
 import VerticalMenuSvg from "../svgs/vertical_menu.svg"
-
+import { useState } from "react"
+import Modal from "react-modal"
 
 const IntroP = ({ ...props }) => (
   <Text variant="intro" as={Paragraph} {...props} />
@@ -18,16 +30,17 @@ const IntroA = ({ ...props }) => (
   <TLink rel="external" target="_blank" {...props}></TLink>
 )
 
-const IndexPage = () => {
-  const { theme } = useThemeUI()
+const getInTouchSVGSx = { width: "1.1em", verticalAlign: "middle" }
 
-  const GetInTouchButton = ({ children, ...props }) => (
+const GetInTouchButton = ({ children, theme, ...props }) => {
+  return (
     <Button
       sx={{
         mx: 3,
         cursor: "pointer",
         fontSize: 1,
         color: `${theme.colors.accent}`,
+        backgroundColor: `#e0e0e0`,
         "&:active": {
           boxShadow: "inset 0px 0px 100px rgba(0, 0, 0, 0.4);",
         },
@@ -40,39 +53,119 @@ const IndexPage = () => {
       <div sx={{ mx: "auto" }}>{children}</div>
     </Button>
   )
+}
+const GetInTouchIndexButton = ({ theme }) => {
+  const [modalIsOpen, setIsOpen] = useState(false)
 
-  const getInTouchSVGSx = { width: "1.1em", verticalAlign: "middle" }
-
-  const onGetInTouchClick = () => {
-    swal({
-      title: "Get In Touch",
-      buttons: false,
-      content: (
-        <Flex
-          sx={{
-            justifyContent: "center",
-            alignItems: "center",
-            flexDirection: "column",
-          }}
-        >
-          <GetInTouchButton href="mailto:me@ahiravan.dev">
-            <span sx={{ verticalAlign: "middle" }}>email</span>{" "}
-            <EmailSvg sx={getInTouchSVGSx} />
-          </GetInTouchButton>
-
-          <GetInTouchButton href="https://calendly.com/ahiravan">
-            <span sx={{ verticalAlign: "middle" }}>calendly</span>{" "}
-            <CalendarSvg sx={getInTouchSVGSx} />
-          </GetInTouchButton>
-
-          <GetInTouchButton href="https://twitter.com/ahiravan1">
-            <span sx={{ verticalAlign: "middle" }}>twitter</span>{" "}
-            <RetweetSvg sx={getInTouchSVGSx} />
-          </GetInTouchButton>
-        </Flex>
-      ),
-    })
+  function openModal() {
+    setIsOpen(true)
   }
+
+  function closeModal() {
+    setIsOpen(false)
+  }
+
+  return (
+    <div>
+      <ButtonAsA
+        sx={{
+          width: ["90%", "80%", "70%"],
+          minWidth: "200px",
+          maxWidth: "40%",
+        }}
+        variant="basic"
+        onClick={openModal}
+      >
+        <div sx={{ mx: "auto" }}>
+          <span
+            sx={{
+              verticalAlign: "middle",
+            }}
+          >
+            Get in Touch
+          </span>
+          <VerticalMenuSvg
+            sx={{
+              ml: 2,
+              verticalAlign: "middle",
+            }}
+          ></VerticalMenuSvg>
+        </div>
+      </ButtonAsA>
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        contentLabel="Get In Touch Modal"
+        ariaHideApp={false}
+        style={{
+          content: {
+            top: "50%",
+            left: "50%",
+            right: "auto",
+            bottom: "auto",
+            marginRight: "-50%",
+            padding: "10px",
+            transform: "translate(-50%, -50%)",
+            border: `1px solid ${theme.colors.primary}`,
+            backgroundColor: theme.colors.background,
+            borderRadius:"10px",
+          },
+        }}
+      >
+        <div>
+          <Flex>
+            <Close
+              onClick={closeModal}
+              sx={{
+                color: theme.colors.primary,
+                ml: "auto",
+                mr: 0,
+                mt: 0,
+                cursor: "pointer",
+              }}
+            />
+          </Flex>
+          <Flex>
+            <Heading as="h3" sx={{ mx: "auto", mt: 2 }}> Get In Touch </Heading>
+          </Flex>
+          <Flex
+            sx={{
+              justifyContent: "center",
+              alignItems: "center",
+              flexDirection: "column",
+              px: [4, 5, 6],
+              mb: 4,
+            }}
+          >
+            <GetInTouchButton href="mailto:me@ahiravan.dev" theme={theme}>
+              <span sx={{ verticalAlign: "middle" }}>email</span>{" "}
+              <EmailSvg sx={getInTouchSVGSx} />
+            </GetInTouchButton>
+
+            <GetInTouchButton
+              href="https://calendly.com/ahiravan"
+              theme={theme}
+            >
+              <span sx={{ verticalAlign: "middle" }}>calendly</span>{" "}
+              <CalendarSvg sx={getInTouchSVGSx} />
+            </GetInTouchButton>
+
+            <GetInTouchButton
+              href="https://twitter.com/ahiravan1"
+              theme={theme}
+            >
+              <span sx={{ verticalAlign: "middle" }}>twitter</span>{" "}
+              <RetweetSvg sx={getInTouchSVGSx} />
+            </GetInTouchButton>
+          </Flex>
+        </div>
+      </Modal>
+    </div>
+  )
+}
+
+const IndexPage = () => {
+  const { theme } = useThemeUI()
 
   return (
     <Layout>
@@ -109,31 +202,7 @@ const IndexPage = () => {
                 px: 2,
               }}
             >
-              <ButtonAsA
-                sx={{
-                  width: ["90%", "80%", "70%"],
-                  minWidth: "200px",
-                  maxWidth: "40%",
-                }}
-                variant="basic"
-                onClick={() => onGetInTouchClick()}
-              >
-                <div sx={{ mx: "auto" }}>
-                  <span
-                    sx={{
-                      verticalAlign: "middle",
-                    }}
-                  >
-                    Get in Touch
-                  </span>
-                  <VerticalMenuSvg
-                    sx={{
-                      ml: 2,
-                      verticalAlign: "middle",
-                    }}
-                  ></VerticalMenuSvg>
-                </div>
-              </ButtonAsA>
+              <GetInTouchIndexButton theme={theme}></GetInTouchIndexButton>
             </div>
 
             <div
