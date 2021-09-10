@@ -24,7 +24,7 @@ module.exports = {
     ],
   },
   plugins: [
-    `gatsby-plugin-preact`,
+    // `gatsby-plugin-preact`,
     {
       resolve: `gatsby-plugin-theme-ui`,
       options: {
@@ -134,7 +134,7 @@ module.exports = {
     {
       resolve: "gatsby-omni-font-loader",
       options: {
-        mode: "async",
+        mode: "render-blocking",
         enableListener: false,
         custom: [
           // {
