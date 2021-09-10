@@ -1,9 +1,9 @@
 /** @jsx jsx */
-import { useEffect, useState } from "react"
 import { Flex, jsx, useThemeUI } from "theme-ui"
 import DocListSvg from "../svgs/doc_list.svg"
 import ResponsiveSvg from "../svgs/responsive.svg"
 import TableSvg from "../svgs/table.svg"
+import { SetResponsiveLSVal } from "./responsive_posts"
 
 const PostLinkButton = ({ val, preferredView, ...props }) => {
   const { theme } = useThemeUI()
@@ -36,23 +36,10 @@ const PostLinkButton = ({ val, preferredView, ...props }) => {
 }
 
 export const PostListViewButton = ({ ...props }) => {
-  let [preferredView, setPreferredView] = useState()
-  const lsKeyName = "post_list_view"
-
-  useEffect(() => {
-    let lsVal = window.localStorage.getItem(lsKeyName)
-    lsVal = lsVal ? JSON.parse(lsVal) : "responsive"
-    props.preferredViewCallback(lsVal)
-    setPreferredView(lsVal)
-  }, [lsKeyName, props])
+  let { preferredView, setPreferredView } = props
 
   const buttonClick = val => {
-    if (val === "responsive") {
-      window.localStorage.removeItem(lsKeyName)
-    } else {
-      window.localStorage.setItem(lsKeyName, JSON.stringify(val))
-    }
-    props.preferredViewCallback(val)
+    SetResponsiveLSVal(val)
     setPreferredView(val)
   }
 
@@ -61,7 +48,13 @@ export const PostListViewButton = ({ ...props }) => {
   }
 
   return (
-    <Flex sx={{ alignItems: "center", borderRadius: "1em", verticalAlign: "middle" }}>
+    <Flex
+      sx={{
+        alignItems: "center",
+        borderRadius: "1em",
+        verticalAlign: "middle",
+      }}
+    >
       <PostLinkButton
         val="list"
         preferredView={preferredView}

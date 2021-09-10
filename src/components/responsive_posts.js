@@ -3,15 +3,40 @@ import { DivPosts } from "./div_posts"
 import { TabularPosts } from "./tabular_posts"
 import { useBreakpoint } from "gatsby-plugin-breakpoints"
 
+
+const lsKeyName = "post_list_view"
+
+export const GetResponsiveLSVal = () => {
+  let lsVal = window.localStorage.getItem(lsKeyName)
+  try {
+    lsVal =  JSON.parse(lsVal)
+  } catch(e) {
+    window.localStorage.removeItem(lsKeyName)
+    alert(e); // error in the above string (in this case, yes)!
+  }
+  return lsVal ? lsVal : "responsive"
+}
+
+export const SetResponsiveLSVal = (val) => {
+  if (val === "responsive") {
+    window.localStorage.removeItem(lsKeyName)
+  } else {
+    window.localStorage.setItem(lsKeyName, JSON.stringify(val))
+  }
+}
+
+
 export const ResponsivePosts = ({ ...props }) => {
   const breakpoints = useBreakpoint()
 
   const getComp = val => {
-    return val === "list" ? (
-      <DivPosts {...props} />
-    ) : (
-      <TabularPosts {...props} />
-    )
+    if (val === "list") {
+      return <DivPosts {...props} />
+    } else if (val === "table"){
+      return <TabularPosts {...props} />
+    } else {
+      return <></>
+    }
   }
 
   const getRespComp = () => {
@@ -19,7 +44,5 @@ export const ResponsivePosts = ({ ...props }) => {
     return getComp(val)
   }
 
-  return props.preferredView !== undefined && props.preferredView !== "responsive" 
-    ? getComp(props.preferredView)
-    : getRespComp()
+  return props.preferredView === "responsive" ? getRespComp() : getComp(props.preferredView)
 }

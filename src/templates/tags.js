@@ -1,12 +1,14 @@
 /** @jsx jsx */
 import { graphql } from "gatsby"
-import { useState } from "react"
-import { Flex, jsx, Heading } from "theme-ui"
+import { Fragment, useCallback, useEffect, useState } from "react"
+import { Flex, Heading, jsx } from "theme-ui"
 import Breadcrumb from "../components/breadcrumb"
 import { FlexFiller, LinkAsA } from "../components/composites"
 import Layout from "../components/layout"
 import { PostListViewButton } from "../components/post_list_buttons"
-import { ResponsivePosts } from "../components/responsive_posts"
+import {
+  GetResponsiveLSVal, ResponsivePosts
+} from "../components/responsive_posts"
 import { CrumbBuilderFactory } from "../services/crumb-builder"
 
 const Tags = ({ pageContext, data }) => {
@@ -20,12 +22,21 @@ const Tags = ({ pageContext, data }) => {
   // const { nodes, totalCount } = data.allBlogPost
   // const tagHeader = `#${tag} - ${totalCount} post${totalCount === 1 ? "" : "s"}`
 
-  const [preferredView, setPrefrredView] = useState()
-  const preferredViewCallback = val => {
-    setPrefrredView(val)
-  }
+  const [preferredView, setPreferredView] = useState()
 
-  return (
+  const pfCallBack = useCallback(
+    val => {
+      setPreferredView(val)
+    },
+    [setPreferredView]
+  )
+
+  useEffect(() => {
+    const val = GetResponsiveLSVal()
+    pfCallBack(val)
+  }, [pfCallBack])
+
+  return preferredView ? (
     <Layout>
       <Breadcrumb crumbs={crumbs} />
 
@@ -33,10 +44,14 @@ const Tags = ({ pageContext, data }) => {
         <Heading as="h1"> #{tag}</Heading>
         <FlexFiller></FlexFiller>
         <PostListViewButton
-          preferredViewCallback={preferredViewCallback}
+          preferredView={preferredView}
+          setPreferredView={setPreferredView}
         />
       </Flex>
-      <ResponsivePosts posts={data.allBlogPost.nodes} preferredView={preferredView} />
+      <ResponsivePosts
+        posts={data.allBlogPost.nodes}
+        preferredView={preferredView}
+      />
 
       <Flex>
         <FlexFiller></FlexFiller>
@@ -45,6 +60,8 @@ const Tags = ({ pageContext, data }) => {
         </LinkAsA>
       </Flex>
     </Layout>
+  ) : (
+    <Fragment></Fragment>
   )
 }
 

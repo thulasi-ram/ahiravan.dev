@@ -1,12 +1,12 @@
 /** @jsx jsx */
-import { useState } from "react"
+import { useState, Fragment, useEffect, useCallback } from "react"
 import { Flex, jsx, Heading } from "theme-ui"
 import { CrumbBuilderFactory } from "../services/crumb-builder"
 import Breadcrumb from "./breadcrumb"
 import { FlexFiller, LinkAsA } from "./composites"
 import Layout from "./layout"
 import { PostListViewButton } from "./post_list_buttons"
-import { ResponsivePosts } from "./responsive_posts"
+import { ResponsivePosts, GetResponsiveLSVal } from "./responsive_posts"
 import Seo from "./seo"
 
 
@@ -17,11 +17,17 @@ const Posts = ({ location, posts, siteTitle, socialLinks }) => {
     .addCrumb("/blog", "blog").crumbs
 
   const [preferredView, setPreferredView] = useState()
-  const preferredViewCallback = val => {
-    setPreferredView(val)
-  }
 
-  return (
+  const pfCallBack = useCallback((val) => {
+    setPreferredView(val)
+  }, [setPreferredView])
+
+  useEffect(() => {
+    const val = GetResponsiveLSVal()
+    pfCallBack(val)
+  }, [pfCallBack])
+
+  return preferredView ? (
     <Layout>
       <Seo title="Ahiravan's Blog" />
       <Breadcrumb crumbs={crumbs} />
@@ -29,9 +35,7 @@ const Posts = ({ location, posts, siteTitle, socialLinks }) => {
       <Flex>
         <Heading as="h1"> All posts </Heading>
         <FlexFiller></FlexFiller>
-        <PostListViewButton
-          preferredViewCallback={preferredViewCallback}
-        />
+        <PostListViewButton preferredView={preferredView} setPreferredView={setPreferredView}/>
       </Flex>
 
       <ResponsivePosts posts={posts} preferredView={preferredView} />
@@ -43,7 +47,7 @@ const Posts = ({ location, posts, siteTitle, socialLinks }) => {
         </LinkAsA>
       </Flex>
     </Layout>
-  )
+  ) : <Fragment></Fragment>
 }
 
 export default Posts
