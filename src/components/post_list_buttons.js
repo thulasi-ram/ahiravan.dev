@@ -61,7 +61,7 @@ export const PostListViewButton = ({ ...props }) => {
   }
 
   return (
-    <Flex sx={{ alignItems: "center", borderRadius: "1em" }}>
+    <Flex sx={{ alignItems: "center", borderRadius: "1em", verticalAlign: "middle" }}>
       <PostLinkButton
         val="list"
         preferredView={preferredView}

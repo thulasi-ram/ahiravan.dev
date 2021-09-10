@@ -221,7 +221,7 @@ const IndexPage = () => {
                 }}
                 variant="basic"
                 as={LinkAsA}
-                to="/blog"
+                to="/blog/"
               >
                 <div
                   sx={{

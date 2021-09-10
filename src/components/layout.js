@@ -1,6 +1,5 @@
 /** @jsx jsx */
-import { css, Global } from "@emotion/core"
-import PropTypes from "prop-types"
+import { css, Global } from "@emotion/react"
 import { Container, jsx, useThemeUI } from "theme-ui"
 import Footer from "./footer"
 import Header from "./header"
@@ -41,17 +40,6 @@ const Layout = ({ children }) => {
     visibility: visible;
     transform: scaleX(1);
     }
-    .swal-modal {
-      background-color: ${theme.colors.background};
-      animation: none !important;
-      border: 1px solid ${theme.colors.primary} !important;
-    }
-    .swal-title {
-      margin: 10px !important;
-      font-family: ${theme.fonts.heading};
-      color: ${theme.colors.primary};
-      font-weight: ${theme.fontWeights.heading};
-    }
     .cactus-login-form {
       background-color: ${theme.colors.background} !important;
       border: 1px solid ${theme.colors.primary} !important;
@@ -90,10 +78,6 @@ const Layout = ({ children }) => {
       <Footer />
     </Container>
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 export default Layout

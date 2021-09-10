@@ -6,8 +6,7 @@
  */
 
 import React from "react"
-import PropTypes from "prop-types"
-import Helmet from "react-helmet"
+import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
 function SEO({ description, lang, meta, title, keywords }) {
@@ -34,17 +33,19 @@ function SEO({ description, lang, meta, title, keywords }) {
   let twitterLink = ""
   let githubLink = ""
   try {
-    twitterLink = site.siteMetadata.social.filter(s => {return s.name.toLowerCase() === 'twitter'})[0].url
-  }
-  catch(err) {
+    twitterLink = site.siteMetadata.social.filter(s => {
+      return s.name.toLowerCase() === "twitter"
+    })[0].url
+  } catch (err) {
     console.log("Unable to parse twitter link", err)
     throw err
   }
 
   try {
-    githubLink = site.siteMetadata.social.filter(s => {return s.name.toLowerCase() === 'github'})[0].url
-  }
-  catch(err) {
+    githubLink = site.siteMetadata.social.filter(s => {
+      return s.name.toLowerCase() === "github"
+    })[0].url
+  } catch (err) {
     console.log("Unable to parse github link", err)
     throw err
   }
@@ -97,17 +98,16 @@ function SEO({ description, lang, meta, title, keywords }) {
       link={[
         {
           href: twitterLink,
-          rel: "me"
+          rel: "me",
         },
         {
           href: githubLink,
-          rel: "me"
+          rel: "me",
         },
         {
           href: "https://webmention.io/www.ahiravan.dev/webmention",
-          rel: "webmention"
+          rel: "webmention",
         },
-        
       ]}
     />
   )
@@ -117,13 +117,6 @@ SEO.defaultProps = {
   lang: `en`,
   meta: [],
   description: ``,
-}
-
-SEO.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
 }
 
 export default SEO

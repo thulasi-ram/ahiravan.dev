@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import React, { useEffect } from "react"
-import Helmet from "react-helmet"
+import { Helmet } from "react-helmet"
 import { Box, Flex, Heading, jsx } from "theme-ui"
 
 const loadCactusScript = callback => {
@@ -21,7 +21,6 @@ const CactusComment = ({ path }) => {
   let commentID = `${process.env.NODE_ENV}-${path}`
 
   useEffect(() => {
-
     loadCactusScript(() => {
       window.initComments({
         node: document.getElementById("comment-section"),

@@ -31,7 +31,6 @@ const Posts = ({ location, posts, siteTitle, socialLinks }) => {
         <FlexFiller></FlexFiller>
         <PostListViewButton
           preferredViewCallback={preferredViewCallback}
-          sx={{ verticalAlign: "middle" }}
         />
       </Flex>
 

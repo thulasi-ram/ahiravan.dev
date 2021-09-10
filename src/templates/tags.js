@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { graphql } from "gatsby"
-import PropTypes from "prop-types"
 import { useState } from "react"
 import { Flex, jsx, Heading } from "theme-ui"
 import Breadcrumb from "../components/breadcrumb"
@@ -18,10 +17,10 @@ const Tags = ({ pageContext, data }) => {
     .addCrumb("/tags", "tags")
     .addCrumb("/tags/" + tag, tag).crumbs
 
-  const { nodes, totalCount } = data.allBlogPost
-  const tagHeader = `#${tag} - ${totalCount} post${totalCount === 1 ? "" : "s"}`
+  // const { nodes, totalCount } = data.allBlogPost
+  // const tagHeader = `#${tag} - ${totalCount} post${totalCount === 1 ? "" : "s"}`
 
-  const [prefrredView, setPrefrredView] = useState()
+  const [preferredView, setPrefrredView] = useState()
   const preferredViewCallback = val => {
     setPrefrredView(val)
   }
@@ -31,14 +30,13 @@ const Tags = ({ pageContext, data }) => {
       <Breadcrumb crumbs={crumbs} />
 
       <Flex>
-        <Heading as="h1"> {tagHeader}</Heading>
+        <Heading as="h1"> #{tag}</Heading>
         <FlexFiller></FlexFiller>
         <PostListViewButton
           preferredViewCallback={preferredViewCallback}
-          sx={{ verticalAlign: "middle" }}
         />
       </Flex>
-      <ResponsivePosts posts={nodes} prefrredView={prefrredView} />
+      <ResponsivePosts posts={data.allBlogPost.nodes} preferredView={preferredView} />
 
       <Flex>
         <FlexFiller></FlexFiller>
@@ -49,28 +47,7 @@ const Tags = ({ pageContext, data }) => {
     </Layout>
   )
 }
-Tags.propTypes = {
-  pageContext: PropTypes.shape({
-    tag: PropTypes.string.isRequired,
-  }),
-  data: PropTypes.shape({
-    allMdx: PropTypes.shape({
-      totalCount: PropTypes.number.isRequired,
-      edges: PropTypes.arrayOf(
-        PropTypes.shape({
-          node: PropTypes.shape({
-            frontmatter: PropTypes.shape({
-              title: PropTypes.string.isRequired,
-            }),
-            fields: PropTypes.shape({
-              slug: PropTypes.string.isRequired,
-            }),
-          }),
-        }).isRequired
-      ),
-    }),
-  }),
-}
+
 export default Tags
 export const pageQuery = graphql`
   query($tag: String) {

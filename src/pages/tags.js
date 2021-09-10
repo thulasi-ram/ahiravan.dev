@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { graphql } from "gatsby"
-import PropTypes from "prop-types"
 import { Flex, jsx, Heading } from "theme-ui"
 import Breadcrumb from "../components/breadcrumb"
 import { FlexFiller, LinkAsA } from "../components/composites"
@@ -45,18 +44,7 @@ const TagsPage = ({
     </Layout>
   )
 }
-TagsPage.propTypes = {
-  data: PropTypes.shape({
-    allMdx: PropTypes.shape({
-      group: PropTypes.arrayOf(
-        PropTypes.shape({
-          fieldValue: PropTypes.string.isRequired,
-          totalCount: PropTypes.number.isRequired,
-        }).isRequired
-      ),
-    }),
-  }),
-}
+
 export default TagsPage
 export const pageQuery = graphql`
   query {
