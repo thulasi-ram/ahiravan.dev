@@ -35,17 +35,15 @@ const getInTouchSVGSx = { width: "1.1em", verticalAlign: "middle" }
 const GetInTouchButton = ({ children, theme, ...props }) => {
   return (
     <Button
+      variant="basic"
       sx={{
-        mx: 3,
-        cursor: "pointer",
-        fontSize: 1,
-        color: `${theme.colors.accent}`,
-        backgroundColor: `#e0e0e0`,
-        "&:active": {
-          boxShadow: "inset 0px 0px 100px rgba(0, 0, 0, 0.4);",
+        width: "100%",
+        my: 2,
+        "&:hover": {
+          color: "background",
+          bg: "primary",
+          transition: "all .5s ease",
         },
-        width: "9em",
-        my: 1,
       }}
       {...props}
       onClick={() => window.open(props.href, "_blank")}
@@ -108,7 +106,8 @@ const GetInTouchIndexButton = ({ theme }) => {
             transform: "translate(-50%, -50%)",
             border: `1px solid ${theme.colors.primary}`,
             backgroundColor: theme.colors.background,
-            borderRadius:"10px",
+            borderRadius: "10px",
+            transition: "all .5s ease",
           },
         }}
       >
@@ -126,7 +125,10 @@ const GetInTouchIndexButton = ({ theme }) => {
             />
           </Flex>
           <Flex>
-            <Heading as="h3" sx={{ mx: "auto", mt: 2 }}> Get In Touch </Heading>
+            <Heading as="h3" sx={{ mx: "auto", mt: 2 }}>
+              {" "}
+              Get In Touch{" "}
+            </Heading>
           </Flex>
           <Flex
             sx={{
