@@ -24,6 +24,7 @@ jobs:
       env:
         GA_TRACKING_ID: ${{ secrets.GA_TRACKING_ID }}
         GATSBY_CACTUS_CHAT_SITE_NAME: ${{ secrets.CACTUS_CHAT_SITE_NAME }}
+        SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
       run: npm run build-fresh
     - name: Setup AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
