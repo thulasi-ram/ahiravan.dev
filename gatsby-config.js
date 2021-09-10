@@ -134,8 +134,8 @@ module.exports = {
     {
       resolve: "gatsby-omni-font-loader",
       options: {
-        mode: "render-blocking",
-        enableListener: false,
+        // mode: "render-blocking",
+        // enableListener: false,
         custom: [
           // {
           //   name: ["Iosevka Aile Web"],
