@@ -102,7 +102,7 @@ module.exports = {
     // },
     "gatsby-plugin-robots-txt",
     "gatsby-plugin-sitemap",
-    "gatsby-plugin-emotion",
+    // "gatsby-plugin-emotion",
     {
       resolve: `gatsby-plugin-s3`,
       options: {
@@ -147,7 +147,7 @@ module.exports = {
           // },
           {
             name: ["Iosevka Aile Optimized", "Iosevka Etoile Optimized"],
-            file: "/fonts/iosevka-optimized-10.1.1/font.css",
+            file: "/fonts/iosevka-optimized-10.1.1/font.min.css",
           }
         ],
       },

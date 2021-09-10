@@ -5,9 +5,6 @@
   "version": "0.1.0",
   "author": "Thulasiram <thulasi503@gmail.com>",
   "dependencies": {
-    "@babel/core": "^7.15.4",
-    "@emotion/core": "^10.0.35",
-    "@emotion/styled": "^10.0.27",
     "@mdx-js/mdx": "^1.6.18",
     "@mdx-js/react": "^1.6.22",
     "@theme-ui/prism": "^0.11.1",
@@ -16,7 +13,6 @@
     "gatsby-plugin-breakpoints": "^1.3.3",
     "gatsby-plugin-brotli": "^2.0.0",
     "gatsby-plugin-canonical-urls": "^3.12.0",
-    "gatsby-plugin-emotion": "^6.13.0",
     "gatsby-plugin-google-analytics": "^3.13.0",
     "gatsby-plugin-image": "^1.13.0",
     "gatsby-plugin-manifest": "^3.13.0",
@@ -45,6 +41,7 @@
     "theme-ui": "^0.11.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.15.5",
     "@emotion/react": "^11.4.1",
     "babel-eslint": "^10.1.0",
     "gatsby-plugin-perf-budgets": "^0.0.18",
