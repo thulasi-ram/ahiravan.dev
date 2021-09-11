@@ -35,15 +35,10 @@ const getInTouchSVGSx = { width: "1.1em", verticalAlign: "middle" }
 const GetInTouchButton = ({ children, theme, ...props }) => {
   return (
     <Button
-      variant="basic"
+      variant="basic_thin"
       sx={{
         width: "100%",
         my: 2,
-        "&:hover": {
-          color: "background",
-          bg: "primary",
-          transition: "all .5s ease",
-        },
       }}
       {...props}
       onClick={() => window.open(props.href, "_blank")}

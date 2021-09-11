@@ -50,6 +50,25 @@ const theme = {
         outline: "none",
       },
     },
+    basic_thin: {
+      color: "text",
+      bg: "background",
+      borderColor: "primary",
+      borderStyle: "solid",
+      borderWidth: "1px",
+      "&:hover": {
+        cursor: "pointer",
+        color: "background",
+        bg: "primary",
+        transition: "all .5s ease",
+      },
+      "&:active": {
+        transform: "scale(0.98)",
+      },
+      "&:focus": {
+        outline: "none",
+      },
+    },
     link: {
       color: "text",
       bg: "background",

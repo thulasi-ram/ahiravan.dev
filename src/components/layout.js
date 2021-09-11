@@ -44,8 +44,29 @@ const Layout = ({ children }) => {
       background-color: ${theme.colors.background} !important;
       border: 1px solid ${theme.colors.primary} !important;
       width: 80%;
-      max-width: 300px;
+      border-radius: 10px !important;
+      max-width: 350px;
     }
+    .cactus-button {
+      color: ${theme.colors.text} !important;
+      background-color: ${theme.colors.background} !important;
+      border: 1px solid ${theme.colors.primary} !important;
+      border-radius: 4px !important;
+      padding-left: 2em !important;
+      padding-right: 2em !important;
+    }
+    .cactus-button:hover {
+      color: ${theme.colors.background} !important;
+      background-color: ${theme.colors.text} !important;
+      transition: "all .5s ease",
+    }
+    .cactus-button:disabled,
+    .cactus-button[disabled]{
+      color: ${theme.colors.gray} !important;
+      background-color: ${theme.colors.muted} !important;
+      border: 1px solid ${theme.colors.muted} !important;
+    }
+
   `
 
   return (
