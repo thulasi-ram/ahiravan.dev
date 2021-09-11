@@ -260,7 +260,7 @@ const IndexPage = () => {
             </Heading>
           </Flex>
           <IntroP>
-            <span>Programming in the large. Currently </span>
+            <span>Programming in the large. Currently {" "}
             <IntroA
               rel="external"
               target="_blank"
@@ -268,7 +268,7 @@ const IndexPage = () => {
             >
               @Simpl
             </IntroA>
-            <span> - Bengaluru, India.</span>
+            - Bengaluru, India.</span>
           </IntroP>
 
           <IntroP>
@@ -278,13 +278,13 @@ const IndexPage = () => {
           </IntroP>
 
           <IntroP>
-            <span>In leisure, I like to play </span>
+            <span>In leisure, I like to play{" "}
             <IntroA href="https://lichess.org/@/thulasi503">chess</IntroA>
-            <span>, swim, surf the web, </span>
+            , swim, surf the web,{" "}
             <IntroA href="https://www.goodreads.com/thulasi-ram">
-              read books
+            read books
             </IntroA>
-            <span> and listen to music.</span>
+            {" "}and listen to music.</span>
           </IntroP>
         </section>
 
@@ -306,12 +306,12 @@ const IndexPage = () => {
           </IntroP>
 
           <IntroP>
-            <span>OSS Contributions at </span>
+            <span>OSS Contributions at{" "}
             <IntroA href="https://github.com/thulasi-ram">Github</IntroA>
 
-            <span> and thoughts on </span>
-
+            {" "}and thoughts on{" "}
             <IntroA href="https://www.twitter.com/ahiravan1">Twitter</IntroA>
+            </span>
           </IntroP>
           <IntroP>
             I come with a hybrid background in both backend systems and frontend
