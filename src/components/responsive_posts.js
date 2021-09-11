@@ -8,12 +8,12 @@ const lsKeyName = "post_list_view"
 
 export const GetResponsiveLSVal = () => {
   let lsVal = window.localStorage.getItem(lsKeyName)
-  try {
+  // try {
     lsVal =  JSON.parse(lsVal)
-  } catch(e) {
-    window.localStorage.removeItem(lsKeyName)
-    alert(e); // error in the above string (in this case, yes)!
-  }
+  // } catch(e) {
+    // window.localStorage.removeItem(lsKeyName)
+    // alert(e); // error in the above string (in this case, yes)!
+  // }
   return lsVal ? lsVal : "responsive"
 }
 
