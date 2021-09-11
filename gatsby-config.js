@@ -5,9 +5,6 @@ console.log(`Using environment config: '${activeEnv}'`)
 require("dotenv").config({
   path: `.env.${activeEnv}`,
 })
-
-tracing = require("@sentry/tracing")
-
 module.exports = {
   siteMetadata: {
     title: `Ahiravan's Home`,
@@ -171,8 +168,7 @@ module.exports = {
     {
       resolve: "@sentry/gatsby",
       options: {
-        dsn: process.env.SENTRY_DSN,
-        integrations: [new tracing.Integrations.BrowserTracing()],
+        dsn: process.env.SENTRY_DSN
       },
     },
   ],
