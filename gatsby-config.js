@@ -157,7 +157,7 @@ let plugins = [
   // },
 ]
 
-if (process.env.CI !== "production") {
+if (!process.env.CI) {
   plugins.push( "gatsby-plugin-webpack-bundle-analyser-v2")
 }
 
