@@ -4,6 +4,8 @@ import DocListSvg from "../svgs/doc_list.svg"
 import ResponsiveSvg from "../svgs/responsive.svg"
 import TableSvg from "../svgs/table.svg"
 import { SetResponsiveLSVal } from "./responsive_posts"
+import toast, { Toaster } from 'react-hot-toast';
+
 
 const PostLinkButton = ({ val, preferredView, ...props }) => {
   const { theme } = useThemeUI()
@@ -41,6 +43,7 @@ export const PostListViewButton = ({ ...props }) => {
   const buttonClick = val => {
     SetResponsiveLSVal(val)
     setPreferredView(val)
+    toast(`${ val[0].toUpperCase() + val.slice(1)} view has been set`)
   }
 
   const svgSx = {
@@ -79,6 +82,7 @@ export const PostListViewButton = ({ ...props }) => {
         {/* <span>responsive</span> */}
         <ResponsiveSvg sx={svgSx} />
       </PostLinkButton>
+      <Toaster position="bottom-center"/>
     </Flex>
   )
 }
