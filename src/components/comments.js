@@ -28,7 +28,7 @@ const CactusComment = ({ path }) => {
     commentID = commentID.slice(0,-1)
   }
 
-  commentID = commentID.replaceAll("/", "-")
+  commentID = commentID.replace(/\//g, "-")
 
   if (process.env.NODE_ENV !== "production") {
     commentID = `${process.env.NODE_ENV}-${commentID}`
