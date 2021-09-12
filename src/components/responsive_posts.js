@@ -9,7 +9,6 @@ export const GetResponsiveLSVal = () => {
   let lsVal = window.localStorage.getItem(lsKeyName)
   try {
     lsVal = JSON.parse(lsVal)
-    throw "thulasi here"
   } catch (e) {
     lsVal = null
     window.localStorage.removeItem(lsKeyName)
