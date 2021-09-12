@@ -18,7 +18,21 @@ const loadCactusScript = callback => {
 }
 
 const CactusComment = ({ path }) => {
-  let commentID = `${process.env.NODE_ENV}-${path}`
+  let commentID = path
+
+  if (commentID.startsWith("/")) {
+    commentID = commentID.slice(1)
+  }
+
+  if (commentID.endsWith("/")) {
+    commentID = commentID.slice(0,-1)
+  }
+
+  commentID = commentID.replaceAll("/", "-")
+
+  if (process.env.NODE_ENV !== "production") {
+    commentID = `${process.env.NODE_ENV}-${commentID}`
+  }
 
   useEffect(() => {
     loadCactusScript(() => {
