@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "@theme-ui/core"
 import { Helmet } from "react-helmet"
-import { useEffect } from "react"
 //Gatsby sentry plugin increses bundle size
 // ref: https://github.com/getsentry/sentry-javascript/issues/2707#issuecomment-872796406
 
