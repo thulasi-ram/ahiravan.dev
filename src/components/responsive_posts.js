@@ -2,24 +2,23 @@ import React from "react"
 import { DivPosts } from "./div_posts"
 import { TabularPosts } from "./tabular_posts"
 import { useBreakpoint } from "gatsby-plugin-breakpoints"
-import * as Sentry from "@sentry/react";
-
 
 const lsKeyName = "post_list_view"
 
 export const GetResponsiveLSVal = () => {
   let lsVal = window.localStorage.getItem(lsKeyName)
   try {
-    lsVal =  JSON.parse(lsVal)
-  } catch(e) {
+    lsVal = JSON.parse(lsVal)
+    throw "thulasi here"
+  } catch (e) {
     lsVal = null
     window.localStorage.removeItem(lsKeyName)
-    Sentry.captureException(e);
+    throw e
   }
   return lsVal ? lsVal : "responsive"
 }
 
-export const SetResponsiveLSVal = (val) => {
+export const SetResponsiveLSVal = val => {
   if (val === "responsive") {
     window.localStorage.removeItem(lsKeyName)
   } else {
@@ -27,14 +26,13 @@ export const SetResponsiveLSVal = (val) => {
   }
 }
 
-
 export const ResponsivePosts = ({ ...props }) => {
   const breakpoints = useBreakpoint()
 
   const getComp = val => {
     if (val === "list") {
       return <DivPosts {...props} />
-    } else if (val === "table"){
+    } else if (val === "table") {
       return <TabularPosts {...props} />
     } else {
       return <></>
@@ -46,5 +44,7 @@ export const ResponsivePosts = ({ ...props }) => {
     return getComp(val)
   }
 
-  return props.preferredView === "responsive" ? getRespComp() : getComp(props.preferredView)
+  return props.preferredView === "responsive"
+    ? getRespComp()
+    : getComp(props.preferredView)
 }

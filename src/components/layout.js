@@ -3,6 +3,7 @@ import { css, Global } from "@emotion/react"
 import { Container, jsx, useThemeUI } from "theme-ui"
 import Footer from "./footer"
 import Header from "./header"
+import SentryHeader from "./sentry"
 
 const Layout = ({ children }) => {
   const { theme } = useThemeUI()
@@ -85,6 +86,7 @@ const Layout = ({ children }) => {
           ${bodyCss}
         `}
       />
+      <SentryHeader/>
       <Header />
       <main
         sx={{
