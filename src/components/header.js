@@ -59,7 +59,7 @@ const Header = () => {
             ml: "auto",
           }}
         >
-          <HeaderNavLink as={Link} to="/blog">
+          <HeaderNavLink as={Link} to="/blog/">
             blog
           </HeaderNavLink>
 

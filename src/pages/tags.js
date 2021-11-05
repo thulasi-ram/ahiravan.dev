@@ -16,7 +16,7 @@ const TagsPage = ({
 }) => {
   const crumbs = new CrumbBuilderFactory()
     .addCrumb("/", "home")
-    .addCrumb("/tags", "tags").crumbs
+    .addCrumb("/tags/", "tags").crumbs
 
   return (
     <Layout>

@@ -14,7 +14,7 @@ import Seo from "./seo"
 const Posts = ({ location, posts, siteTitle, socialLinks }) => {
   const crumbs = new CrumbBuilderFactory()
     .addCrumb("/", "home")
-    .addCrumb("/blog", "blog").crumbs
+    .addCrumb("/blog/", "blog").crumbs
 
   const [preferredView, setPreferredView] = useState()
 
@@ -42,7 +42,7 @@ const Posts = ({ location, posts, siteTitle, socialLinks }) => {
 
       <Flex>
         <FlexFiller></FlexFiller>
-        <LinkAsA variant="postmeta" to="/tags">
+        <LinkAsA variant="postmeta" to="/tags/">
           by tags
         </LinkAsA>
       </Flex>

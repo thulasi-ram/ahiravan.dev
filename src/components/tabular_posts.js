@@ -68,7 +68,7 @@ export const TabularPosts = ({ posts, ...props }) => {
                   {node.tags.map((tag, j) => {
                     return (
                       <React.Fragment key={"pst2" + j}>
-                        <LinkAsA variant="postmeta" to={"/tags/" + tag}>
+                        <LinkAsA variant="postmeta" to={"/tags/" + tag + "/"}>
                           #{tag}
                         </LinkAsA>
                         <span>{j < node.tags.length - 1 ? ", " : ""}</span>

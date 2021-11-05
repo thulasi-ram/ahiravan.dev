@@ -18,7 +18,7 @@ const PostMeta = ({ post }) => {
             <Fragment key={"pm" + index}>
               <LinkAsA
               variant="postmeta"
-              to={"/tags/" + tag}
+              to={"/tags/" + tag + "/"}
               sx={{ color: "inherit" }}
               >
                 #{tag}

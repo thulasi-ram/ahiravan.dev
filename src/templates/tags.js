@@ -17,7 +17,7 @@ const Tags = ({ pageContext, data }) => {
   const crumbs = new CrumbBuilderFactory()
     .addCrumb("/", "home")
     .addCrumb("/tags", "tags")
-    .addCrumb("/tags/" + tag, tag).crumbs
+    .addCrumb("/tags/" + tag + "/", tag).crumbs
 
   // const { nodes, totalCount } = data.allBlogPost
   // const tagHeader = `#${tag} - ${totalCount} post${totalCount === 1 ? "" : "s"}`
@@ -55,7 +55,7 @@ const Tags = ({ pageContext, data }) => {
 
       <Flex>
         <FlexFiller></FlexFiller>
-        <LinkAsA variant="postmeta" to="/blog">
+        <LinkAsA variant="postmeta" to="/blog/">
           all posts
         </LinkAsA>
       </Flex>

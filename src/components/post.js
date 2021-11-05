@@ -26,7 +26,7 @@ const Post = ({ post, location, previous, next }) => {
 
   const crumbs = new CrumbBuilderFactory()
     .addCrumb("/", "home")
-    .addCrumb("/blog", "blog")
+    .addCrumb("/blog/", "blog")
     .addCrumb(
       location.pathname,
       post.slug
