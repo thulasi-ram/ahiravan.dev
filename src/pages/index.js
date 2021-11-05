@@ -30,9 +30,7 @@ const IntroA = ({ ...props }) => (
   <TLink rel="external" target="_blank" {...props}></TLink>
 )
 
-const getInTouchSVGSx = { width: "1.1em", verticalAlign: "middle" }
-
-const GetInTouchButton = ({ children, theme, ...props }) => {
+const GetInTouchButton = ({ text, svgIcon, theme, ...props }) => {
   return (
     <Button
       variant="basic_thin"
@@ -43,11 +41,50 @@ const GetInTouchButton = ({ children, theme, ...props }) => {
       {...props}
       onClick={() => window.open(props.href, "_blank")}
     >
-      <div sx={{ mx: "auto" }}>{children}</div>
+      <div sx={{ mx: "auto", alignItems: "center", display: "inline-flex" }}>
+        <span sx={{ mx: 2 }}>{text}</span>
+        {svgIcon}
+      </div>
     </Button>
   )
 }
-const GetInTouchIndexButton = ({ theme }) => {
+
+const IndexButton = ({ text, buttonProps, svgIcon, children }) => {
+  return (
+    <div
+      sx={{
+        my: 2,
+        mx: "auto",
+        px: 2,
+      }}
+    >
+      <Button
+        sx={{
+          width: ["90%", "80%", "70%"],
+          minWidth: "200px",
+          maxWidth: "40%",
+        }}
+        variant="basic"
+        {...buttonProps}
+      >
+        <div
+          sx={{
+            mx: "auto",
+            alignItems: "center",
+            display: "inline-flex",
+          }}
+        >
+          <span sx={{ mr: 2 }}>{text}</span>
+          {svgIcon}
+        </div>
+      </Button>
+      {children}
+    </div>
+  )
+}
+
+const IndexPage = () => {
+  const { theme } = useThemeUI()
   const [modalIsOpen, setIsOpen] = useState(false)
 
   function openModal() {
@@ -57,112 +94,6 @@ const GetInTouchIndexButton = ({ theme }) => {
   function closeModal() {
     setIsOpen(false)
   }
-
-  return (
-    <div>
-      <ButtonAsA
-        sx={{
-          width: ["90%", "80%", "70%"],
-          minWidth: "200px",
-          maxWidth: "40%",
-        }}
-        variant="basic"
-        onClick={openModal}
-      >
-        <div sx={{ mx: "auto" }}>
-          <span
-            sx={{
-              verticalAlign: "middle",
-            }}
-          >
-            Get in Touch
-          </span>
-          <VerticalMenuSvg
-            sx={{
-              ml: 2,
-              verticalAlign: "middle",
-            }}
-          ></VerticalMenuSvg>
-        </div>
-      </ButtonAsA>
-      <Modal
-        isOpen={modalIsOpen}
-        onRequestClose={closeModal}
-        contentLabel="Get In Touch Modal"
-        ariaHideApp={false}
-        style={{
-          content: {
-            top: "50%",
-            left: "50%",
-            right: "auto",
-            bottom: "auto",
-            marginRight: "-50%",
-            padding: "10px",
-            transform: "translate(-50%, -50%)",
-            border: `1px solid ${theme.colors.primary}`,
-            backgroundColor: theme.colors.background,
-            borderRadius: "10px",
-            transition: "all .5s ease",
-          },
-        }}
-      >
-        <div>
-          <Flex>
-            <Close
-              onClick={closeModal}
-              sx={{
-                color: theme.colors.primary,
-                ml: "auto",
-                mr: 0,
-                mt: 0,
-                cursor: "pointer",
-              }}
-            />
-          </Flex>
-          <Flex>
-            <Heading as="h3" sx={{ mx: "auto", mt: 2 }}>
-              {" "}
-              Get In Touch{" "}
-            </Heading>
-          </Flex>
-          <Flex
-            sx={{
-              justifyContent: "center",
-              alignItems: "center",
-              flexDirection: "column",
-              px: [4, 5, 6],
-              mb: 4,
-            }}
-          >
-            <GetInTouchButton href="mailto:me@ahiravan.dev" theme={theme}>
-              <span sx={{ verticalAlign: "middle" }}>email</span>{" "}
-              <EmailSvg sx={getInTouchSVGSx} />
-            </GetInTouchButton>
-
-            <GetInTouchButton
-              href="https://calendly.com/ahiravan"
-              theme={theme}
-            >
-              <span sx={{ verticalAlign: "middle" }}>calendly</span>{" "}
-              <CalendarSvg sx={getInTouchSVGSx} />
-            </GetInTouchButton>
-
-            <GetInTouchButton
-              href="https://twitter.com/ahiravan1"
-              theme={theme}
-            >
-              <span sx={{ verticalAlign: "middle" }}>twitter</span>{" "}
-              <RetweetSvg sx={getInTouchSVGSx} />
-            </GetInTouchButton>
-          </Flex>
-        </div>
-      </Modal>
-    </div>
-  )
-}
-
-const IndexPage = () => {
-  const { theme } = useThemeUI()
 
   return (
     <Layout>
@@ -189,58 +120,100 @@ const IndexPage = () => {
               display: "flex",
               flexWrap: "wrap",
               alignItems: "center",
+              maxWidth: "500px",
+              mx: "auto"
             }}
           >
-            <div
-              sx={{
-                my: 1,
-                mr: ["auto", "auto", "3%"],
-                ml: "auto",
-                px: 2,
+            <IndexButton
+              text="Get in Touch"
+              svgIcon={<VerticalMenuSvg />}
+              buttonProps={{
+                as: ButtonAsA,
+                onClick: openModal,
               }}
-            >
-              <GetInTouchIndexButton theme={theme}></GetInTouchIndexButton>
-            </div>
+            />
 
-            <div
-              sx={{
-                ml: ["auto", "auto", "3%"],
-                my: 1,
-                mr: "auto",
-                px: 2,
+            <IndexButton
+              text="Vist My Blog"
+              svgIcon={<RightArrowSvg />}
+              buttonProps={{
+                as: LinkAsA,
+                to: "/blog/",
+              }}
+            />
+
+            <Modal
+              isOpen={modalIsOpen}
+              onRequestClose={closeModal}
+              contentLabel="Get In Touch Modal"
+              ariaHideApp={false}
+              style={{
+                content: {
+                  top: "50%",
+                  left: "50%",
+                  right: "auto",
+                  bottom: "auto",
+                  marginRight: "-50%",
+                  padding: "10px",
+                  transform: "translate(-50%, -50%)",
+                  border: `1px solid ${theme.colors.primary}`,
+                  backgroundColor: theme.colors.background,
+                  borderRadius: "10px",
+                  transition: "all .5s ease",
+                },
               }}
             >
-              <Button
-                sx={{
-                  width: ["90%", "80%", "70%"],
-                  minWidth: "200px",
-                  maxWidth: "40%",
-                }}
-                variant="basic"
-                as={LinkAsA}
-                to="/blog/"
-              >
-                <div
+              <div>
+                <Flex>
+                  <Close
+                    onClick={closeModal}
+                    sx={{
+                      color: theme.colors.primary,
+                      ml: "auto",
+                      mr: 0,
+                      mt: 0,
+                      cursor: "pointer",
+                    }}
+                  />
+                </Flex>
+                <Flex>
+                  <Heading as="h3" sx={{ mx: "auto", mt: 2 }}>
+                    {" "}
+                    Get In Touch{" "}
+                  </Heading>
+                </Flex>
+                <Flex
                   sx={{
-                    mx: "auto",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    flexDirection: "column",
+                    px: [4, 5, 6],
+                    mb: 4,
                   }}
                 >
-                  <span
-                    sx={{
-                      verticalAlign: "middle",
-                    }}
-                  >
-                    Vist My Blog
-                  </span>
-                  <RightArrowSvg
-                    sx={{
-                      ml: 2,
-                      verticalAlign: "middle",
-                    }}
-                  ></RightArrowSvg>
-                </div>
-              </Button>
-            </div>
+                  <GetInTouchButton
+                    href="mailto:me@ahiravan.dev"
+                    theme={theme}
+                    text="email"
+                    svgIcon={<EmailSvg />}
+                  />
+
+                  <GetInTouchButton
+                    href="https://calendly.com/ahiravan"
+                    theme={theme}
+                    text="calendly"
+                    svgIcon={<CalendarSvg />}
+                  />
+
+                  <GetInTouchButton
+                    href="https://twitter.com/ahiravan1"
+                    theme={theme}
+                    text="twitter"
+                    svgIcon={<RetweetSvg />}
+                  />
+                </Flex>
+              </div>
+            </Modal>
           </div>
         </Box>
       </Grid>
@@ -260,15 +233,17 @@ const IndexPage = () => {
             </Heading>
           </Flex>
           <IntroP>
-            <span>Programming in the large. Currently {" "}
-            <IntroA
-              rel="external"
-              target="_blank"
-              href="https://www.getsimpl.com/about-us/"
-            >
-              @Simpl
-            </IntroA>
-            - Bengaluru, India.</span>
+            <span>
+              Programming in the large. Currently{" "}
+              <IntroA
+                rel="external"
+                target="_blank"
+                href="https://www.getsimpl.com/about-us/"
+              >
+                @Simpl
+              </IntroA>
+              - Bengaluru, India.
+            </span>
           </IntroP>
 
           <IntroP>
@@ -278,13 +253,15 @@ const IndexPage = () => {
           </IntroP>
 
           <IntroP>
-            <span>In leisure, I like to play{" "}
-            <IntroA href="https://lichess.org/@/thulasi503">chess</IntroA>
-            , swim, surf the web,{" "}
-            <IntroA href="https://www.goodreads.com/thulasi-ram">
-            read books
-            </IntroA>
-            {" "}and listen to music.</span>
+            <span>
+              In leisure, I like to play{" "}
+              <IntroA href="https://lichess.org/@/thulasi503">chess</IntroA>,
+              swim, surf the web,{" "}
+              <IntroA href="https://www.goodreads.com/thulasi-ram">
+                read books
+              </IntroA>{" "}
+              and listen to music.
+            </span>
           </IntroP>
         </section>
 
@@ -306,11 +283,11 @@ const IndexPage = () => {
           </IntroP>
 
           <IntroP>
-            <span>OSS Contributions at{" "}
-            <IntroA href="https://github.com/thulasi-ram">Github</IntroA>
-
-            {" "}and thoughts on{" "}
-            <IntroA href="https://www.twitter.com/ahiravan1">Twitter</IntroA>
+            <span>
+              OSS Contributions at{" "}
+              <IntroA href="https://github.com/thulasi-ram">Github</IntroA> and
+              thoughts on{" "}
+              <IntroA href="https://www.twitter.com/ahiravan1">Twitter</IntroA>
             </span>
           </IntroP>
           <IntroP>
