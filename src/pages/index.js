@@ -30,7 +30,7 @@ const IntroA = ({ ...props }) => (
   <TLink rel="external" target="_blank" {...props}></TLink>
 )
 
-const GetInTouchButton = ({ text, svgIcon, theme, ...props }) => {
+const GetInTouchButton = ({ text, svgIcon, ...props }) => {
   return (
     <Button
       variant="basic_thin"
@@ -193,21 +193,18 @@ const IndexPage = () => {
                 >
                   <GetInTouchButton
                     href="mailto:me@ahiravan.dev"
-                    theme={theme}
                     text="email"
                     svgIcon={<EmailSvg />}
                   />
 
                   <GetInTouchButton
                     href="https://calendly.com/ahiravan"
-                    theme={theme}
                     text="calendly"
                     svgIcon={<CalendarSvg />}
                   />
 
                   <GetInTouchButton
                     href="https://twitter.com/ahiravan1"
-                    theme={theme}
                     text="twitter"
                     svgIcon={<RetweetSvg />}
                   />
