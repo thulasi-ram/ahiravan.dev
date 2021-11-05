@@ -19,11 +19,7 @@ const HeaderNavLink = ({ ...props }) => (
 const Header = () => {
 
   return (
-    <header
-      sx={{
-        bg: `background`,
-      }}
-    >
+    <header>
       <nav
         sx={{
           display: "flex",
