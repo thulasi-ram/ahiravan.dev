@@ -14,7 +14,7 @@ let plugins = [
   {
     resolve: `gatsby-theme-blog-core`,
     options: {
-      basePath: `/blog`,
+      basePath: `/blog/`,
     },
   },
   {
@@ -29,7 +29,7 @@ let plugins = [
     resolve: `gatsby-source-filesystem`,
     options: {
       name: `images`,
-      path: `${__dirname}/src/images`,
+      path: `${__dirname}/src/images/`,
     },
   },
   {
@@ -88,7 +88,7 @@ let plugins = [
       bucketName: "ahiravan.dev",
       acl: null,
       protocol: "https",
-      hostname: "www.ahiravan.dev",
+      hostname: "ahiravan.dev",
     },
   },
   {
@@ -135,7 +135,7 @@ let plugins = [
     // why this: https://github.com/jariz/gatsby-plugin-s3/blob/master/recipes/with-cloudfront.md
     resolve: `gatsby-plugin-canonical-urls`,
     options: {
-      siteUrl: "https://www.ahiravan.dev",
+      siteUrl: "https://ahiravan.dev",
     },
   },
   "gatsby-plugin-no-sourcemaps",

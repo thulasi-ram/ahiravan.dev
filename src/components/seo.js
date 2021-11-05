@@ -105,7 +105,7 @@ function SEO({ description, lang, meta, title, keywords }) {
           rel: "me",
         },
         {
-          href: "https://webmention.io/www.ahiravan.dev/webmention",
+          href: "https://webmention.io/ahiravan.dev/webmention",
           rel: "webmention",
         },
       ]}
