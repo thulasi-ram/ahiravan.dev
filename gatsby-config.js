@@ -9,12 +9,7 @@ require("dotenv").config({
 
 let plugins = [
   `gatsby-plugin-preact`,
-  {
-    resolve: `gatsby-plugin-theme-ui`,
-    options: {
-      // prismPreset: `night-owl`,
-    },
-  },
+  `gatsby-plugin-theme-ui`,
   `gatsby-plugin-react-helmet`,
   {
     resolve: `gatsby-theme-blog-core`,
@@ -50,8 +45,8 @@ let plugins = [
       defaultQuality: 50,
     },
   },
-  `gatsby-transformer-sharp`,
-  `gatsby-plugin-image`,
+  // `gatsby-transformer-sharp`,
+  // `gatsby-plugin-image`,
   {
     resolve: `gatsby-plugin-mdx`,
     options: {
@@ -143,8 +138,7 @@ let plugins = [
       siteUrl: "https://www.ahiravan.dev",
     },
   },
-  "gatsby-plugin-minify-html",
-  "gatsby-plugin-brotli",
+  "gatsby-plugin-no-sourcemaps",
   // ,
   // this (optional) plugin enables Progressive Web App + Offline functionality
   // To learn more, visit: https://gatsby.dev/offline
@@ -155,9 +149,18 @@ let plugins = [
   //     dsn: process.env.SENTRY_DSN
   //   },
   // },
+  "gatsby-plugin-brotli",
+
+  {
+    resolve: 'gatsby-plugin-zopfli',
+    options: {
+      extensions: ['css', 'html', 'js', 'svg']
+    }
+  }
 ]
 
 if (!process.env.CI) {
+  plugins.push( "gatsby-plugin-perf-budgets")
   plugins.push( "gatsby-plugin-webpack-bundle-analyser-v2")
 }
 
