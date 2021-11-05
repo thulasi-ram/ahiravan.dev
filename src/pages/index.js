@@ -30,6 +30,10 @@ const IntroA = ({ ...props }) => (
   <TLink rel="external" target="_blank" {...props}></TLink>
 )
 
+const BlockSpan = ({ ...props }) => (
+  <span sx={{ display: "block" }} {...props} />
+)
+
 const GetInTouchButton = ({ text, svgIcon, ...props }) => {
   return (
     <Button
@@ -121,7 +125,7 @@ const IndexPage = () => {
               flexWrap: "wrap",
               alignItems: "center",
               maxWidth: "500px",
-              mx: "auto"
+              mx: "auto",
             }}
           >
             <IndexButton
@@ -244,9 +248,9 @@ const IndexPage = () => {
           </IntroP>
 
           <IntroP>
-            Intrigued by design, armchair philosophy and anything CS. Fueled by
-            a passion for improving the QOL through the products I design and
-            create.
+            Intrigued by design, armchair philosophy and anything CS. I strive
+            for improving the QOL through the products I design and create and I
+            wish the world would become a gentler place.
           </IntroP>
 
           <IntroP>
@@ -270,11 +274,11 @@ const IndexPage = () => {
           </Flex>
           <IntroP>
             <span>Previously: </span>
-            <IntroA href="https://en.wikipedia.org/wiki/Treebo_Hotels">
+            <IntroA href="https://www.crunchbase.com/organization/treebo-hotels">
               @Treebo
             </IntroA>
             <span>, </span>
-            <IntroA href="https://en.wikipedia.org/wiki/Infosys">
+            <IntroA href="https://www.crunchbase.com/organization/infosys">
               @Infosys
             </IntroA>
           </IntroP>
@@ -289,11 +293,23 @@ const IndexPage = () => {
           </IntroP>
           <IntroP>
             I come with a hybrid background in both backend systems and frontend
-            technologies. Polyglot. Have extensive hands on experience in
-            Python, Go, Ruby, Java and Javascript. In my leisure you can find me
-            dabbling in less mainstream languages such as Rust, Clojure, Haskell
-            and Elixir. Ocassionally I also find my self squabbling with micro
-            css frameworks and other frontend developments.
+            technologies. Polyglot.
+            <p>
+              <BlockSpan>
+                Day to Day: Python, Go and Ruby
+              </BlockSpan>
+              <BlockSpan>
+                Occasionally: Javascript, misc frontend developments and Java.
+              </BlockSpan>
+              <BlockSpan>Renewed interest: Rust</BlockSpan>
+              <BlockSpan>
+                Piques interest: 
+                <ul sx={{mt: 0}}>
+                  <li>General(Hyped) FP languages(Haskell, Elixir)</li>
+                  <li>Various lisps(Clojure, Scheme, Racket and CL)</li>
+                </ul>
+              </BlockSpan>
+            </p>
           </IntroP>
         </section>
       </Grid>
