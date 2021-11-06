@@ -8,8 +8,8 @@ import SentryHeader from "./sentry"
 const Layout = ({ children }) => {
   const { theme } = useThemeUI()
   const bodyCss = `
-    body {
-      transition: background 0.1s ease;
+    html {
+      transition: background-color 0.3s ease;
     }
     
     a[target='_blank']:hover::after {
