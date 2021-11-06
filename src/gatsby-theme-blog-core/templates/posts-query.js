@@ -25,5 +25,17 @@ export const query = graphql`
         tags
       }
     }
+    allReadingTime {
+      edges {
+        node {
+          text
+          blogPostID
+          blogPostTitle
+          parent {
+            id
+          }
+        }
+      }
+    }
   }
 `

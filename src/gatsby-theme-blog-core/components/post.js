@@ -2,13 +2,16 @@ import React from "react"
 import Post from "../../components/post"
 
 const post = ({ location, data }) => {
-  const { blogPost, previous, next } = data
+  const postData = {
+    readingTime: data.readingTime,
+    ...data.blogPost
+  }
   return (
     <Post
-      post={blogPost} 
+      post={postData} 
       location={location}
-      previous={previous}
-      next={next}
+      previous={data.previous}
+      next={data.next}
     />
   )
 }

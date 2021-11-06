@@ -2,15 +2,13 @@
 import { Fragment } from "react"
 import { jsx, Text } from "theme-ui"
 import { LinkAsA } from "./composites"
-const readingTime = require("reading-time")
 
 const PostMeta = ({ post }) => {
-  const stats = readingTime(post.body)
   return (
     <Text variant="postmeta" sx={{ mt: 0 }}>
       <span>{post.date}</span>
       <span> • </span>
-      <span>{stats.text}</span>
+      <span>{post.readingTime.text}</span>
       <span> • </span>
       <span>
         {post.tags.map((tag, index) => {

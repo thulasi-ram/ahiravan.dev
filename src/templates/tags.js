@@ -13,6 +13,7 @@ import { CrumbBuilderFactory } from "../services/crumb-builder"
 
 const Tags = ({ pageContext, data }) => {
   const { tag } = pageContext
+  const {allBlogPost, allReadingTime} = data
 
   const crumbs = new CrumbBuilderFactory()
     .addCrumb("/", "home")
@@ -21,6 +22,15 @@ const Tags = ({ pageContext, data }) => {
 
   // const { nodes, totalCount } = data.allBlogPost
   // const tagHeader = `#${tag} - ${totalCount} post${totalCount === 1 ? "" : "s"}`
+
+  const postsWithReadingTime = allBlogPost.nodes.map((element) => {
+    const rTime =  allReadingTime.edges.find(rt => rt.node.parent.id === element.id);
+
+    return {
+      ...element,
+      readingTime: rTime.node
+    }
+  })
 
   const [preferredView, setPreferredView] = useState()
 
@@ -49,7 +59,7 @@ const Tags = ({ pageContext, data }) => {
         />
       </Flex>
       <ResponsivePosts
-        posts={data.allBlogPost.nodes}
+        posts={postsWithReadingTime}
         preferredView={preferredView}
       />
 
@@ -81,6 +91,18 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMM DD, YYYY")
         tags
+      }
+    }
+    allReadingTime {
+      edges {
+        node {
+          text
+          blogPostID
+          blogPostTitle
+          parent {
+            id
+          }
+        }
       }
     }
   }
