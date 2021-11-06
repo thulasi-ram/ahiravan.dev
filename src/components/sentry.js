@@ -10,7 +10,7 @@ const SentryHeader = () => {
     <Helmet>
       <script
         src="https://js.sentry-cdn.com/4af2c68a592849b58c97e46d52933c09.min.js"
-        crossorigin="anonymous"
+        crossOrigin="anonymous"
         // data-lazy="no" // https://docs.sentry.io/platforms/javascript/install/lazy-load-sentry/#load-timing
       ></script>
     </Helmet>
