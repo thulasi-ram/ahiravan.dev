@@ -1,27 +1,38 @@
 /** @jsx jsx */
 
 // courtesy of: https://jfelix.info/blog/using-react-spring-to-animate-svg-icons-dark-mode-toggle
-import { animated, useSpring } from 'react-spring';
-import { jsx, useColorMode } from "theme-ui";
-
+import { jsx, useColorMode } from "theme-ui"
 
 const properties = {
   sun: {
     r: 9,
+
     transform: "rotate(40deg)",
+    transformTransition: { transition: "transform 0.5s" },
+
     cx: 12,
     cy: 4,
+    centerTransition: { transition: "cx 0.5s, cy 0.5s" },
+
     opacity: 0,
+    opacityTransition: { transition: "opacity 0.1s" },
   },
+
   moon: {
     r: 5,
+
     transform: "rotate(90deg)",
+    transformTransition: { transition: "transform 0.8s" },
+
     cx: 30,
     cy: 0,
-    opacity: 1,
-  },
-  springConfig: { mass: 4, tension: 250, friction: 35 }
+    centerTransition: { transition: "cx 0.5s, cy 0.5s" },
 
+    opacity: 1,
+    opacityTransition: { transition: "opacity `0.5s" },
+  },
+
+  springConfig: { mass: 4, tension: 250, friction: 35 },
 }
 
 const DarkModeToggle = () => {
@@ -31,17 +42,24 @@ const DarkModeToggle = () => {
     setColorMode(colorMode === "default" ? "dark" : "default")
   }
 
-  const { r, transform, cx, cy, opacity } = properties[
-    colorMode === "dark" ? "moon" : "sun"
-  ]
+  const {
+    r,
+    transform,
+    transformTransition,
+    cx,
+    cy,
+    centerTransition,
+    opacity,
+    opacityTransition,
+  } = properties[colorMode === "dark" ? "moon" : "sun"]
 
-  const svgContainerProps = useSpring({ transform, config: properties.springConfig })
-  const centerCircleProps = useSpring({ r, config: properties.springConfig })
-  const maskedCircleProps = useSpring({ cx, cy, config: properties.springConfig })
-  const linesProps = useSpring({ opacity, config: properties.springConfig })
+  const svgContainerProps = { transform, ...transformTransition }
+  const centerCircleProps = { r }
+  const maskedCircleProps = { cx, cy, ...centerTransition }
+  const linesProps = { opacity, ...opacityTransition }
 
   return (
-    <animated.svg
+    <svg
       xmlns="http://www.w3.org/2000/svg"
       width="18"
       height="18"
@@ -59,17 +77,17 @@ const DarkModeToggle = () => {
     >
       <mask id="myMask2">
         <rect x="0" y="0" width="100%" height="100%" fill="white" />
-        <animated.circle style={maskedCircleProps} r="9" fill="black" />
+        <circle style={maskedCircleProps} r="9" fill="black" />
       </mask>
 
-      <animated.circle
+      <circle
         cx="12"
         cy="12"
         style={centerCircleProps}
         fill="black"
         mask="url(#myMask2)"
       />
-      <animated.g stroke="currentColor" style={linesProps}>
+      <g stroke="currentColor" style={linesProps}>
         <line x1="12" y1="1" x2="12" y2="3" />
         <line x1="12" y1="21" x2="12" y2="23" />
         <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
@@ -78,8 +96,8 @@ const DarkModeToggle = () => {
         <line x1="21" y1="12" x2="23" y2="12" />
         <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-      </animated.g>
-    </animated.svg>
+      </g>
+    </svg>
   )
 }
 
