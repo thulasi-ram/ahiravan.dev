@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { Button, Flex, jsx } from "theme-ui"
+import { Button, jsx } from "theme-ui"
 import { SetResponsiveLSVal } from "./responsive_posts"
 
 const displayVal = {

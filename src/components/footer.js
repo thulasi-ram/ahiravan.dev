@@ -1,10 +1,10 @@
 /** @jsx jsx */
 import { OutboundLink } from "gatsby-plugin-google-gtag"
-import { Flex, jsx, Text } from "theme-ui"
+import { jsx, Text } from "theme-ui"
+import { Flex } from "../components/composites"
 import GithubSvg from "../svgs/github.svg"
 import LinkedInSvg from "../svgs/linkedin.svg"
 import TwitterSvg from "../svgs/twitter.svg"
-
 
 const FooterSocial = ({ ...props }) => (
   <OutboundLink

@@ -1,8 +1,6 @@
 /** @jsx jsx */
 import {
-  Box,
   Button,
-  Flex,
   Grid,
   Heading,
   jsx,
@@ -12,7 +10,7 @@ import {
   useThemeUI,
   Close,
 } from "theme-ui"
-import { ButtonAsA, LinkAsA } from "../components/composites"
+import { LinkAsA, Flex } from "../components/composites"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import CalendarSvg from "../svgs/calendar.svg"
@@ -110,7 +108,7 @@ const IndexPage = () => {
           textAlign: "center",
         }}
       >
-        <Box>
+        <div>
           <Heading as="h1" sx={{ mb: 3, fontFamily: "body" }}>
             Hi, I'm Thulasi
           </Heading>
@@ -132,7 +130,7 @@ const IndexPage = () => {
               text="Get in Touch"
               svgIcon={<VerticalMenuSvg />}
               buttonProps={{
-                as: ButtonAsA,
+                as: TLink,
                 onClick: openModal,
               }}
             />
@@ -216,7 +214,7 @@ const IndexPage = () => {
               </div>
             </Modal>
           </div>
-        </Box>
+        </div>
       </Grid>
 
       <Grid

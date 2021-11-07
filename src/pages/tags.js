@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import { graphql } from "gatsby"
-import { Flex, jsx, Heading } from "theme-ui"
+import { jsx, Heading } from "theme-ui"
 import Breadcrumb from "../components/breadcrumb"
-import { LinkAsA } from "../components/composites"
+import { LinkAsA, Flex } from "../components/composites"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { CrumbBuilderFactory } from "../services/crumb-builder"

@@ -1,9 +1,9 @@
 /** @jsx jsx */
 import { useState, Fragment, useEffect, useCallback } from "react"
-import { Flex, jsx, Heading } from "theme-ui"
+import { jsx, Heading } from "theme-ui"
 import { CrumbBuilderFactory } from "../services/crumb-builder"
 import Breadcrumb from "./breadcrumb"
-import { LinkAsA } from "./composites"
+import { LinkAsA, Flex } from "./composites"
 import Layout from "./layout"
 import { PostListViewButton } from "./post_list_buttons"
 import { ResponsivePosts, GetResponsiveLSVal } from "./responsive_posts"

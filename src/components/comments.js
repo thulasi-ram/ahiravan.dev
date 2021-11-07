@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import React, { useEffect } from "react"
 import { Helmet } from "react-helmet"
-import { Box, Flex, Heading, jsx } from "theme-ui"
+import { Heading, jsx } from "theme-ui"
 
 const loadCactusScript = callback => {
   const existingScript = window.initComments
@@ -70,14 +70,14 @@ const CactusComment = ({ path }) => {
 
 export const CommentsComponent = ({ current_url }) => {
   return (
-    <Box>
-      <Flex>
+    <>
+      <div sx={{ display: "flex"}}>
         <Heading as="h3" variant="section" sx={{ my: 4 }}>
           {" "}
-          COMMENTS{" "}
+          <span>COMMENTS{" "}</span>
         </Heading>
-      </Flex>
+      </div>
       <CactusComment path={current_url} />
-    </Box>
+    </>
   )
 }

@@ -1,6 +1,7 @@
 /** @jsx jsx */
-import { Badge, Box, Flex, Heading, jsx, Text } from "theme-ui"
-import { LinkAsA } from "./composites"
+import {  jsx } from "theme-ui"
+import { Badge, Heading, Text } from "@theme-ui/components"
+import { LinkAsA, Flex } from "./composites"
 
 export const SimilarArticlesComponent = ({
   articles,
@@ -8,7 +9,7 @@ export const SimilarArticlesComponent = ({
   previousArticle,
 }) => {
   return (
-    <Box>
+    <div>
       <Flex>
         <Heading as="h3" variant="section"> RELATED POSTS </Heading>
       </Flex>
@@ -50,6 +51,6 @@ export const SimilarArticlesComponent = ({
           </ul>
         </div>
       )}
-    </Box>
+    </div>
   )
 }

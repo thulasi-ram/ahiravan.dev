@@ -1,9 +1,9 @@
 /** @jsx jsx */
 import { graphql } from "gatsby"
 import { Fragment, useCallback, useEffect, useState } from "react"
-import { Flex, Heading, jsx } from "theme-ui"
+import { Heading, jsx } from "theme-ui"
 import Breadcrumb from "../components/breadcrumb"
-import { LinkAsA } from "../components/composites"
+import { LinkAsA , Flex} from "../components/composites"
 import Layout from "../components/layout"
 import { PostListViewButton } from "../components/post_list_buttons"
 import {
