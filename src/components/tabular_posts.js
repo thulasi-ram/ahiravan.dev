@@ -1,8 +1,7 @@
 /** @jsx jsx */
-import { Text } from "@theme-ui/components"
 import React from "react"
 import { jsx } from "theme-ui"
-import { LinkAsA } from "./composites"
+import { LinkAsA, PostMetaText } from "./composites"
 
 const Table = ({ ...props }) => (
   <table
@@ -62,7 +61,7 @@ export const TabularPosts = ({ posts, ...props }) => {
                   <LinkAsA to={node.slug}>{node.title} </LinkAsA>
                 </Td>
                 <Td>
-                  <Text variant="postmeta">{node.date}</Text>
+                  <PostMetaText sx={{mt:1, mx:0, mb:0}}>{node.date}</PostMetaText>
                 </Td>
                 <Td>
                   {" "}

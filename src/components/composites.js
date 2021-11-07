@@ -6,6 +6,10 @@ export const LinkAsA = ({ ...props }) => <TLink as={Link} {...props} />
 export const Flex = ({ ...props }) => (
   <div sx={{ display: "flex" }} {...props} />
 )
+
+export const PostMetaText = ({ ...props }) => (
+  <p sx={{ fontSize: 1, color: "gray", fontFamily: "heading" }} {...props} />
+)
 // export const ButtonAsA = ({ ...props }) => <Button as={TLink} {...props} />
 
 // export const IndexPageButton = ({ ...props }) => (

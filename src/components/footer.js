@@ -1,5 +1,4 @@
 /** @jsx jsx */
-import { Text } from "@theme-ui/components"
 import { OutboundLink } from "gatsby-plugin-google-gtag"
 import { jsx } from "theme-ui"
 import { Flex } from "../components/composites"
@@ -76,15 +75,17 @@ const Footer = () => {
             ml: "auto",
           }}
         >
-          <Text
-            variant="footer"
+          <p
             sx={{
+              color: "gray",
+              fontSize: 1,
+              fontFamily: "body",
               pt: [2, 0, 0],
               my: "auto",
             }}
           >
             © Copyright {new Date().getFullYear()}, Ahiravan
-          </Text>
+          </p>
         </Flex>
       </div>
     </footer>

@@ -1,7 +1,7 @@
 /** @jsx jsx */
-import {  jsx } from "theme-ui"
-import { Badge, Heading, Text } from "@theme-ui/components"
-import { LinkAsA, Flex } from "./composites"
+import { Badge, Heading } from "@theme-ui/components"
+import { jsx } from "theme-ui"
+import { Flex, LinkAsA, PostMetaText } from "./composites"
 
 export const SimilarArticlesComponent = ({
   articles,
@@ -11,7 +11,10 @@ export const SimilarArticlesComponent = ({
   return (
     <div>
       <Flex>
-        <Heading as="h3" variant="section"> RELATED POSTS </Heading>
+        <Heading as="h3" variant="section">
+          {" "}
+          RELATED POSTS{" "}
+        </Heading>
       </Flex>
 
       <ul>
@@ -33,9 +36,7 @@ export const SimilarArticlesComponent = ({
       {articles && articles.length > 0 && (
         <div>
           <div sx={{ mx: 4 }}>
-            <Text variant="postmetasmall">
-              [similar articles]
-            </Text>
+            <PostMetaText sx={{ fontSize: 0 }}>[similar articles]</PostMetaText>
           </div>
 
           <ul sx={{ listStyleType: "square" }}>

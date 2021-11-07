@@ -1,12 +1,11 @@
 /** @jsx jsx */
-import { Text } from "@theme-ui/components"
 import { Fragment } from "react"
 import { jsx } from "theme-ui"
-import { LinkAsA } from "./composites"
+import { LinkAsA, PostMetaText } from "./composites"
 
 const PostMeta = ({ post }) => {
   return (
-    <Text variant="postmeta" sx={{ mt: 0 }}>
+    <PostMetaText sx={{ mt: 0 }}>
       <span>{post.date}</span>
       <span> • </span>
       <span>{post.readingTime.text}</span>
@@ -29,7 +28,7 @@ const PostMeta = ({ post }) => {
           )
         })}
       </span>
-    </Text>
+    </PostMetaText>
   )
 }
 
