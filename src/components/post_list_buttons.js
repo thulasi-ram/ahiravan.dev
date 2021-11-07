@@ -1,88 +1,53 @@
 /** @jsx jsx */
-import { Flex, jsx, useThemeUI } from "theme-ui"
-import DocListSvg from "../svgs/doc_list.svg"
-import ResponsiveSvg from "../svgs/responsive.svg"
-import TableSvg from "../svgs/table.svg"
+import { Button, Flex, jsx, useThemeUI } from "theme-ui"
 import { SetResponsiveLSVal } from "./responsive_posts"
-import toast, { Toaster } from 'react-hot-toast';
 
-
-const PostLinkButton = ({ val, preferredView, ...props }) => {
-  const { theme } = useThemeUI()
-
-  let sx = {
-    cursor: "pointer",
-    mx: 1,
-    py: 1,
-    alignItems: "center",
-    verticalAlign: "middle",
-    display: "flex",
-    color: theme.colors.gray,
-    border: 0,
-    backgroundColor: theme.colors.background,
-    borderRadius: "2px",
-  }
-
-  if (preferredView === val) {
-    sx["color"] = theme.colors.primary
-    sx["borderBottom"] = `2px solid  ${theme.colors.primary}`
-  }
-  return (
-    <button
-      {...props}
-      sx={sx}
-      aria-label={`${val} view`}
-      title={`${val} view`}
-    />
-  )
+const displayVal = {
+  responsive: "fluid",
+  list: "list",
+  table: "table",
 }
 
 export const PostListViewButton = ({ ...props }) => {
+  const { theme } = useThemeUI()
   let { preferredView, setPreferredView } = props
 
   const buttonClick = val => {
-    SetResponsiveLSVal(val)
-    setPreferredView(val)
-    toast(`${ val[0].toUpperCase() + val.slice(1)} view has been set`)
+    var v = ""
+    if (val === "responsive") {
+      v = "list"
+    } else if (val === "list") {
+      v = "table"
+    } else if (val === "table") {
+      v = "responsive"
+    } else {
+      throw console.error("xx")
+    }
+
+    SetResponsiveLSVal(v)
+    setPreferredView(v)
   }
 
-  const svgSx = {
-    width: "18px",
-  }
+  const dVal = displayVal[preferredView]
 
   return (
     <Flex
       sx={{
         alignItems: "center",
-        borderRadius: "1em",
-        verticalAlign: "middle",
       }}
     >
-      <PostLinkButton
-        val="list"
-        preferredView={preferredView}
-        onClick={() => buttonClick("list")}
+      <Button
+        variant="link"
+        sx={{
+          py: 0,
+          px: 1,
+        }}
+        onClick={() => buttonClick(preferredView)}
+        aria-label={`${dVal} view`}
+        title={`${dVal} view`}
       >
-        {/* <span>list</span> */}
-        <DocListSvg sx={svgSx} />
-      </PostLinkButton>
-      <PostLinkButton
-        val="table"
-        preferredView={preferredView}
-        onClick={() => buttonClick("table")}
-      >
-        {/* <span>table</span> */}
-        <TableSvg sx={svgSx} />
-      </PostLinkButton>
-      <PostLinkButton
-        val="responsive"
-        preferredView={preferredView}
-        onClick={() => buttonClick("responsive")}
-      >
-        {/* <span>responsive</span> */}
-        <ResponsiveSvg sx={svgSx} />
-      </PostLinkButton>
-      <Toaster position="bottom-center"/>
+        <span sx={{ fontFamily: "heading", fontSize: 0 }}>{dVal}</span>
+      </Button>
     </Flex>
   )
 }

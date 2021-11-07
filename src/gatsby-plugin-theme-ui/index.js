@@ -72,6 +72,10 @@ const theme = {
     link: {
       color: "text",
       bg: "background",
+      cursor: "pointer",
+      textDecoration: "underline",
+      "&:hover": {
+      },
     },
   },
   sizes: {
