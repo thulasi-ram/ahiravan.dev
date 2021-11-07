@@ -1,8 +1,11 @@
 /** @jsx jsx */
+import { Link as TLink } from "@theme-ui/components"
 import { Link } from "gatsby"
-import { jsx, Link as TLink } from "theme-ui"
+import { jsx } from "theme-ui"
 export const LinkAsA = ({ ...props }) => <TLink as={Link} {...props} />
-export const Flex = ({ ...props }) => <div sx={{display: "flex"}} {...props} />
+export const Flex = ({ ...props }) => (
+  <div sx={{ display: "flex" }} {...props} />
+)
 // export const ButtonAsA = ({ ...props }) => <Button as={TLink} {...props} />
 
 // export const IndexPageButton = ({ ...props }) => (
@@ -41,4 +44,3 @@ export const Flex = ({ ...props }) => <div sx={{display: "flex"}} {...props} />
 //     <span> {props.text} </span>
 //   </div>
 // )
-

@@ -1,7 +1,8 @@
 /** @jsx jsx */
 import React, { useEffect } from "react"
 import { Helmet } from "react-helmet"
-import { Heading, jsx } from "theme-ui"
+import { jsx } from "theme-ui"
+import { Heading } from "@theme-ui/components"
 
 const loadCactusScript = callback => {
   const existingScript = window.initComments
@@ -25,7 +26,7 @@ const CactusComment = ({ path }) => {
   }
 
   if (commentID.endsWith("/")) {
-    commentID = commentID.slice(0,-1)
+    commentID = commentID.slice(0, -1)
   }
 
   commentID = commentID.replace(/\//g, "-")
@@ -71,10 +72,10 @@ const CactusComment = ({ path }) => {
 export const CommentsComponent = ({ current_url }) => {
   return (
     <>
-      <div sx={{ display: "flex"}}>
+      <div sx={{ display: "flex" }}>
         <Heading as="h3" variant="section" sx={{ my: 4 }}>
           {" "}
-          <span>COMMENTS{" "}</span>
+          <span>COMMENTS </span>
         </Heading>
       </div>
       <CactusComment path={current_url} />

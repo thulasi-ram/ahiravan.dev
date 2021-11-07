@@ -1,5 +1,6 @@
 /** @jsx jsx */
-import { Button, jsx } from "theme-ui"
+import { Button } from "@theme-ui/components"
+import { jsx } from "theme-ui"
 import { SetResponsiveLSVal } from "./responsive_posts"
 
 const displayVal = {
@@ -30,20 +31,22 @@ export const PostListViewButton = ({ ...props }) => {
   const dVal = displayVal[preferredView]
 
   return (
-      <Button
-        variant="link"
-        sx={{
-          py: 0,
-          px: 1,
-          display: "flex",
-          height: "fit-content",
-          alignItems: "center",
-        }}
-        onClick={() => buttonClick(preferredView)}
-        aria-label={dVal}
-        title={dVal}
-      >
-        <span sx={{ fontFamily: "heading", fontSize: 0, fontStyle: "italic" }}>{dVal}</span>
-      </Button>
+    <Button
+      variant="link"
+      sx={{
+        py: 0,
+        px: 1,
+        display: "flex",
+        height: "fit-content",
+        alignItems: "center",
+      }}
+      onClick={() => buttonClick(preferredView)}
+      aria-label={dVal}
+      title={dVal}
+    >
+      <span sx={{ fontFamily: "heading", fontSize: 0, fontStyle: "italic" }}>
+        {dVal}
+      </span>
+    </Button>
   )
 }

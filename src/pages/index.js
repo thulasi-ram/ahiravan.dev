@@ -1,16 +1,14 @@
 /** @jsx jsx */
 import {
   Button,
-  Grid,
-  Heading,
-  jsx,
-  Link as TLink,
-  Text,
-  Paragraph,
-  useThemeUI,
   Close,
-} from "theme-ui"
-import { LinkAsA, Flex } from "../components/composites"
+  Heading,
+  Link as TLink,
+} from "@theme-ui/components"
+import { useState } from "react"
+import Modal from "react-modal"
+import { jsx, useThemeUI } from "theme-ui"
+import { Flex, LinkAsA } from "../components/composites"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import CalendarSvg from "../svgs/calendar.svg"
@@ -18,11 +16,9 @@ import EmailSvg from "../svgs/mail.svg"
 import RetweetSvg from "../svgs/retweet.svg"
 import RightArrowSvg from "../svgs/right.svg"
 import VerticalMenuSvg from "../svgs/vertical_menu.svg"
-import { useState } from "react"
-import Modal from "react-modal"
 
 const IntroP = ({ ...props }) => (
-  <Text variant="intro" as={Paragraph} {...props} />
+  <p sx={{ marginBlockStart: "1em", marginBlockEnd: "1em" }} {...props} />
 )
 const IntroA = ({ ...props }) => (
   <TLink rel="external" target="_blank" {...props}></TLink>
@@ -101,8 +97,9 @@ const IndexPage = () => {
     <Layout>
       <Seo title="Ahiravans' Home, Blog and Musings" />
 
-      <Grid
+      <div
         sx={{
+          display: "grid",
           mt: "5%",
           mb: ["20%", "15%", "10%"],
           textAlign: "center",
@@ -215,11 +212,12 @@ const IndexPage = () => {
             </Modal>
           </div>
         </div>
-      </Grid>
+      </div>
 
-      <Grid
+      <div
         columns={[1]}
         sx={{
+          display: "grid",
           width: "90%",
           mx: "auto",
           my: 3,
@@ -294,24 +292,22 @@ const IndexPage = () => {
             technologies. Polyglot.
           </IntroP>
 
-            <div>
-              <BlockSpan>
-                Day to Day: Python, Go and Ruby
-              </BlockSpan>
-              <BlockSpan>
-                Occasionally: Javascript, misc frontend developments and Java.
-              </BlockSpan>
-              <BlockSpan>Renewed interest: Rust</BlockSpan>
-              <BlockSpan>
-                Piques interest: 
-                <ul sx={{mt: 0}}>
-                  <li>General(Hyped) FP languages(Haskell, Elixir)</li>
-                  <li>Various lisps(Clojure, Scheme, Racket and CL)</li>
-                </ul>
-              </BlockSpan>
-            </div>
+          <div>
+            <BlockSpan>Day to Day: Python, Go and Ruby</BlockSpan>
+            <BlockSpan>
+              Occasionally: Javascript, misc frontend developments and Java.
+            </BlockSpan>
+            <BlockSpan>Renewed interest: Rust</BlockSpan>
+            <BlockSpan>
+              Piques interest:
+              <ul sx={{ mt: 0 }}>
+                <li>General(Hyped) FP languages(Haskell, Elixir)</li>
+                <li>Various lisps(Clojure, Scheme, Racket and CL)</li>
+              </ul>
+            </BlockSpan>
+          </div>
         </section>
-      </Grid>
+      </div>
     </Layout>
   )
 }

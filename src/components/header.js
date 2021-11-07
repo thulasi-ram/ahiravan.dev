@@ -1,6 +1,7 @@
 /** @jsx jsx */
+import { NavLink } from "@theme-ui/components"
 import { Link } from "gatsby"
-import { jsx, NavLink } from "theme-ui"
+import { jsx } from "theme-ui"
 import LogoSvg from "../svgs/logo.svg"
 import DarkModeToggle from "./dark_mode_toggle"
 
@@ -17,7 +18,6 @@ const HeaderNavLink = ({ ...props }) => (
 )
 
 const Header = () => {
-
   return (
     <header>
       <nav

@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import React from "react"
-import { jsx, Heading } from "theme-ui"
+import { jsx } from "theme-ui"
+import { Heading } from "@theme-ui/components"
 import { LinkAsA } from "./composites"
 import PostMeta from "./post-meta"
 

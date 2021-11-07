@@ -1,6 +1,7 @@
 /** @jsx jsx */
+import { Text } from "@theme-ui/components"
 import { OutboundLink } from "gatsby-plugin-google-gtag"
-import { jsx, Text } from "theme-ui"
+import { jsx } from "theme-ui"
 import { Flex } from "../components/composites"
 import GithubSvg from "../svgs/github.svg"
 import LinkedInSvg from "../svgs/linkedin.svg"

@@ -105,10 +105,6 @@ const theme = {
       fontFamily: "heading",
       letterSpacing: "0.1em",
     },
-    intro: {
-      marginBlockStart: "1em",
-      marginBlockEnd: "1em",
-    },
     footer: {
       color: "gray",
       fontSize: 1,

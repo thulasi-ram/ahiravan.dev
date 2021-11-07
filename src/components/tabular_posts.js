@@ -1,6 +1,7 @@
 /** @jsx jsx */
+import { Text } from "@theme-ui/components"
 import React from "react"
-import { jsx, Text } from "theme-ui"
+import { jsx } from "theme-ui"
 import { LinkAsA } from "./composites"
 
 const Table = ({ ...props }) => (

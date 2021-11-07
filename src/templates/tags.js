@@ -1,19 +1,21 @@
 /** @jsx jsx */
+import { Heading } from "@theme-ui/components"
 import { graphql } from "gatsby"
 import { Fragment, useCallback, useEffect, useState } from "react"
-import { Heading, jsx } from "theme-ui"
+import { jsx } from "theme-ui"
 import Breadcrumb from "../components/breadcrumb"
-import { LinkAsA , Flex} from "../components/composites"
+import { Flex, LinkAsA } from "../components/composites"
 import Layout from "../components/layout"
 import { PostListViewButton } from "../components/post_list_buttons"
 import {
-  GetResponsiveLSVal, ResponsivePosts
+  GetResponsiveLSVal,
+  ResponsivePosts,
 } from "../components/responsive_posts"
 import { CrumbBuilderFactory } from "../services/crumb-builder"
 
 const Tags = ({ pageContext, data }) => {
   const { tag } = pageContext
-  const {allBlogPost, allReadingTime} = data
+  const { allBlogPost, allReadingTime } = data
 
   const crumbs = new CrumbBuilderFactory()
     .addCrumb("/", "home")
@@ -23,12 +25,14 @@ const Tags = ({ pageContext, data }) => {
   // const { nodes, totalCount } = data.allBlogPost
   // const tagHeader = `#${tag} - ${totalCount} post${totalCount === 1 ? "" : "s"}`
 
-  const postsWithReadingTime = allBlogPost.nodes.map((element) => {
-    const rTime =  allReadingTime.edges.find(rt => rt.node.parent.id === element.id);
+  const postsWithReadingTime = allBlogPost.nodes.map(element => {
+    const rTime = allReadingTime.edges.find(
+      rt => rt.node.parent.id === element.id
+    )
 
     return {
       ...element,
-      readingTime: rTime.node
+      readingTime: rTime.node,
     }
   })
 
@@ -50,7 +54,7 @@ const Tags = ({ pageContext, data }) => {
     <Layout>
       <Breadcrumb crumbs={crumbs} />
 
-      <Flex sx={{justifyContent: "space-between", alignItems: "baseline"}}>
+      <Flex sx={{ justifyContent: "space-between", alignItems: "baseline" }}>
         <Heading as="h1"> #{tag}</Heading>
         <PostListViewButton
           preferredView={preferredView}
@@ -63,7 +67,7 @@ const Tags = ({ pageContext, data }) => {
       />
 
       <Flex>
-        <LinkAsA sx={{ml: "auto"}} variant="postmeta" to="/blog/">
+        <LinkAsA sx={{ ml: "auto" }} variant="postmeta" to="/blog/">
           all posts
         </LinkAsA>
       </Flex>

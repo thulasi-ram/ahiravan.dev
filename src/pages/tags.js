@@ -1,13 +1,12 @@
 /** @jsx jsx */
+import { Heading } from "@theme-ui/components"
 import { graphql } from "gatsby"
-import { jsx, Heading } from "theme-ui"
+import { jsx } from "theme-ui"
 import Breadcrumb from "../components/breadcrumb"
-import { LinkAsA, Flex } from "../components/composites"
+import { Flex, LinkAsA } from "../components/composites"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { CrumbBuilderFactory } from "../services/crumb-builder"
-
-
 
 const TagsPage = ({
   data: {
@@ -35,7 +34,7 @@ const TagsPage = ({
           ))}
         </ul>
         <Flex>
-          <LinkAsA sx={{ml: "auto"}} variant="postmeta" to="/blog">
+          <LinkAsA sx={{ ml: "auto" }} variant="postmeta" to="/blog">
             all posts
           </LinkAsA>
         </Flex>
