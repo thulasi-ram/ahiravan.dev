@@ -63,7 +63,7 @@ def main():
 
 
 if __name__ == '__main__':
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'vendorportal.config.settings')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'myapp.config.settings')
     django.setup()
     sys.exit(main() or 0)
 ```
@@ -105,7 +105,7 @@ def main():
 
 
 if __name__ == '__main__':
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'vendorportal.config.settings')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'myapp.config.settings')
     from flask import current_app
     rmq.init_app(current_app)
     sys.exit(main() or 0)
