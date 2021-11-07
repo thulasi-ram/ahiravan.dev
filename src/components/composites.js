@@ -7,8 +7,28 @@ export const Flex = ({ ...props }) => (
   <div sx={{ display: "flex" }} {...props} />
 )
 
+const postMetaSx = { fontSize: 1, color: "gray", fontFamily: "heading" }
 export const PostMetaText = ({ ...props }) => (
-  <p sx={{ fontSize: 1, color: "gray", fontFamily: "heading" }} {...props} />
+  <p sx={postMetaSx} {...props} />
+)
+
+export const PostMetaLinkAsA = ({ ...props }) => (
+  <LinkAsA sx={postMetaSx} {...props} />
+)
+
+export const SectionHeading = ({ ...props }) => (
+  <h3
+    sx={{
+      color: "background",
+      bg: "text",
+      p: 1,
+      my: 2,
+      fontSize: 2,
+      fontFamily: "heading",
+      letterSpacing: "0.1em",
+    }}
+    {...props}
+  />
 )
 // export const ButtonAsA = ({ ...props }) => <Button as={TLink} {...props} />
 

@@ -4,7 +4,7 @@ import { graphql } from "gatsby"
 import { Fragment, useCallback, useEffect, useState } from "react"
 import { jsx } from "theme-ui"
 import Breadcrumb from "../components/breadcrumb"
-import { Flex, LinkAsA } from "../components/composites"
+import { Flex, PostMetaLinkAsA } from "../components/composites"
 import Layout from "../components/layout"
 import { PostListViewButton } from "../components/post_list_buttons"
 import {
@@ -67,9 +67,9 @@ const Tags = ({ pageContext, data }) => {
       />
 
       <Flex>
-        <LinkAsA sx={{ ml: "auto" }} variant="postmeta" to="/blog/">
+        <PostMetaLinkAsA sx={{ ml: "auto" }} to="/blog/">
           all posts
-        </LinkAsA>
+        </PostMetaLinkAsA>
       </Flex>
     </Layout>
   ) : (

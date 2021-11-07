@@ -105,20 +105,6 @@ const theme = {
       fontFamily: "heading",
       letterSpacing: "0.1em",
     },
-    footer: {
-      color: "gray",
-      fontSize: 1,
-      fontFamily: "body",
-    },
-    postmeta: {
-      fontSize: 1,
-      color: "gray",
-      fontFamily: "heading",
-    },
-    postmetasmall: {
-      variant: "text.postmeta",
-      fontSize: 0,
-    },
     heading: {
       fontFamily: 'heading',
       fontWeight: 'heading',
@@ -140,9 +126,6 @@ const theme = {
       "&:hover": {
         fontWeight: "heading",
       },
-    },
-    postmeta: {
-      variant: "text.postmeta",
     },
     justmono: {
       variant: "styles.a",

@@ -3,7 +3,7 @@ import { Heading } from "@theme-ui/components"
 import { graphql } from "gatsby"
 import { jsx } from "theme-ui"
 import Breadcrumb from "../components/breadcrumb"
-import { Flex, LinkAsA } from "../components/composites"
+import { Flex, LinkAsA, PostMetaLinkAsA } from "../components/composites"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { CrumbBuilderFactory } from "../services/crumb-builder"
@@ -34,9 +34,9 @@ const TagsPage = ({
           ))}
         </ul>
         <Flex>
-          <LinkAsA sx={{ ml: "auto" }} variant="postmeta" to="/blog">
+          <PostMetaLinkAsA sx={{ ml: "auto" }} to="/blog">
             all posts
-          </LinkAsA>
+          </PostMetaLinkAsA>
         </Flex>
       </div>
     </Layout>

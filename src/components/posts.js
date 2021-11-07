@@ -4,7 +4,7 @@ import { Fragment, useCallback, useEffect, useState } from "react"
 import { jsx } from "theme-ui"
 import { CrumbBuilderFactory } from "../services/crumb-builder"
 import Breadcrumb from "./breadcrumb"
-import { Flex, LinkAsA } from "./composites"
+import { Flex, PostMetaLinkAsA } from "./composites"
 import Layout from "./layout"
 import { PostListViewButton } from "./post_list_buttons"
 import { GetResponsiveLSVal, ResponsivePosts } from "./responsive_posts"
@@ -46,9 +46,9 @@ const Posts = ({ location, posts, siteTitle, socialLinks }) => {
       <ResponsivePosts posts={posts} preferredView={preferredView} />
 
       <Flex>
-        <LinkAsA sx={{ ml: "auto" }} variant="postmeta" to="/tags/">
+        <PostMetaLinkAsA sx={{ ml: "auto" }} to="/tags/">
           by tags
-        </LinkAsA>
+        </PostMetaLinkAsA>
       </Flex>
     </Layout>
   ) : (

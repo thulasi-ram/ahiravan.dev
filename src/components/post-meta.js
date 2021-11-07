@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { Fragment } from "react"
 import { jsx } from "theme-ui"
-import { LinkAsA, PostMetaText } from "./composites"
+import { PostMetaLinkAsA, PostMetaText } from "./composites"
 
 const PostMeta = ({ post }) => {
   return (
@@ -14,13 +14,12 @@ const PostMeta = ({ post }) => {
         {post.tags.map((tag, index) => {
           return (
             <Fragment key={"pm" + index}>
-              <LinkAsA
-                variant="postmeta"
+              <PostMetaLinkAsA
                 to={"/tags/" + tag + "/"}
                 sx={{ color: "inherit" }}
               >
                 #{tag}
-              </LinkAsA>
+              </PostMetaLinkAsA>
               <span sx={{ color: "inherit" }}>
                 {index < post.tags.length - 1 ? ", " : ""}
               </span>

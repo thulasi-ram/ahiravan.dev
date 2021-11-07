@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import React from "react"
 import { jsx } from "theme-ui"
-import { LinkAsA, PostMetaText } from "./composites"
+import { LinkAsA, PostMetaText, PostMetaLinkAsA } from "./composites"
 
 const Table = ({ ...props }) => (
   <table
@@ -68,9 +68,9 @@ export const TabularPosts = ({ posts, ...props }) => {
                   {node.tags.map((tag, j) => {
                     return (
                       <React.Fragment key={"pst2" + j}>
-                        <LinkAsA variant="postmeta" to={"/tags/" + tag + "/"}>
+                        <PostMetaLinkAsA to={"/tags/" + tag + "/"}>
                           #{tag}
-                        </LinkAsA>
+                        </PostMetaLinkAsA>
                         <span>{j < node.tags.length - 1 ? ", " : ""}</span>
                       </React.Fragment>
                     )
