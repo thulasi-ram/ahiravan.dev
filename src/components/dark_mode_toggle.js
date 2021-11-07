@@ -77,7 +77,7 @@ const DarkModeToggle = () => {
     >
       <mask id="myMask2">
         <rect x="0" y="0" width="100%" height="100%" fill="white" />
-        <circle style={maskedCircleProps} r="9" fill="black" />
+        <circle style={maskedCircleProps} r="9" fill="currentColor" />
       </mask>
 
       <circle

@@ -294,7 +294,9 @@ const IndexPage = () => {
           <IntroP>
             I come with a hybrid background in both backend systems and frontend
             technologies. Polyglot.
-            <p>
+          </IntroP>
+
+            <div>
               <BlockSpan>
                 Day to Day: Python, Go and Ruby
               </BlockSpan>
@@ -309,8 +311,7 @@ const IndexPage = () => {
                   <li>Various lisps(Clojure, Scheme, Racket and CL)</li>
                 </ul>
               </BlockSpan>
-            </p>
-          </IntroP>
+            </div>
         </section>
       </Grid>
     </Layout>

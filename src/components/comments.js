@@ -55,7 +55,7 @@ const CactusComment = ({ path }) => {
           rel="preload"
           as="style"
           href="https://latest.cactus.chat/style.css"
-          onload="this.onload=null;this.rel='stylesheet'"
+          onLoad="this.onload=null;this.rel='stylesheet'"
         ></link>
         <noscript>
           {`<link rel="stylesheet" href="https://latest.cactus.chat/style.css"/>`}
