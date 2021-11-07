@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { OutboundLink } from "gatsby-plugin-google-analytics"
+import { OutboundLink } from "gatsby-plugin-google-gtag"
 import { Flex, jsx, Text } from "theme-ui"
 import GithubSvg from "../svgs/github.svg"
 import LinkedInSvg from "../svgs/linkedin.svg"
