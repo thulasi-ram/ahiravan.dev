@@ -14,9 +14,9 @@ export const ButtonAsA = ({ ...props }) => <Button as={TLink} {...props} />
 //     {...props}
 //   />
 // )
-export const FlexFiller = ({ ...props }) => (
-  <div sx={{ mx: "auto" }} {...props}></div>
-)
+// export const FlexFiller = ({ ...props }) => (
+//   <div sx={{ mx: "auto" }} {...props}></div>
+// )
 // export const DividerWithText = ({ ...props }) => (
 //   <div
 //     sx={{

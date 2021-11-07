@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import { Fragment, useCallback, useEffect, useState } from "react"
 import { Flex, Heading, jsx } from "theme-ui"
 import Breadcrumb from "../components/breadcrumb"
-import { FlexFiller, LinkAsA } from "../components/composites"
+import { LinkAsA } from "../components/composites"
 import Layout from "../components/layout"
 import { PostListViewButton } from "../components/post_list_buttons"
 import {
@@ -50,9 +50,8 @@ const Tags = ({ pageContext, data }) => {
     <Layout>
       <Breadcrumb crumbs={crumbs} />
 
-      <Flex>
+      <Flex sx={{justifyContent: "space-between", alignItems: "baseline"}}>
         <Heading as="h1"> #{tag}</Heading>
-        <FlexFiller></FlexFiller>
         <PostListViewButton
           preferredView={preferredView}
           setPreferredView={setPreferredView}
@@ -64,8 +63,7 @@ const Tags = ({ pageContext, data }) => {
       />
 
       <Flex>
-        <FlexFiller></FlexFiller>
-        <LinkAsA variant="postmeta" to="/blog/">
+        <LinkAsA sx={{ml: "auto"}} variant="postmeta" to="/blog/">
           all posts
         </LinkAsA>
       </Flex>

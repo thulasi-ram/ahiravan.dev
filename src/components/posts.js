@@ -3,7 +3,7 @@ import { useState, Fragment, useEffect, useCallback } from "react"
 import { Flex, jsx, Heading } from "theme-ui"
 import { CrumbBuilderFactory } from "../services/crumb-builder"
 import Breadcrumb from "./breadcrumb"
-import { FlexFiller, LinkAsA } from "./composites"
+import { LinkAsA } from "./composites"
 import Layout from "./layout"
 import { PostListViewButton } from "./post_list_buttons"
 import { ResponsivePosts, GetResponsiveLSVal } from "./responsive_posts"
@@ -32,17 +32,15 @@ const Posts = ({ location, posts, siteTitle, socialLinks }) => {
       <Seo title="Ahiravan's Blog" />
       <Breadcrumb crumbs={crumbs} />
 
-      <Flex>
+      <Flex sx={{justifyContent: "space-between", alignItems: "baseline"}}>
         <Heading as="h1"> All posts </Heading>
-        <FlexFiller></FlexFiller>
         <PostListViewButton preferredView={preferredView} setPreferredView={setPreferredView}/>
       </Flex>
 
       <ResponsivePosts posts={posts} preferredView={preferredView} />
 
       <Flex>
-        <FlexFiller></FlexFiller>
-        <LinkAsA variant="postmeta" to="/tags/">
+        <LinkAsA sx={{ml: "auto"}} variant="postmeta" to="/tags/">
           by tags
         </LinkAsA>
       </Flex>

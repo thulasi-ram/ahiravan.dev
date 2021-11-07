@@ -2,7 +2,7 @@
 import { graphql } from "gatsby"
 import { Flex, jsx, Heading } from "theme-ui"
 import Breadcrumb from "../components/breadcrumb"
-import { FlexFiller, LinkAsA } from "../components/composites"
+import { LinkAsA } from "../components/composites"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { CrumbBuilderFactory } from "../services/crumb-builder"
@@ -35,8 +35,7 @@ const TagsPage = ({
           ))}
         </ul>
         <Flex>
-          <FlexFiller></FlexFiller>
-          <LinkAsA variant="postmeta" to="/blog">
+          <LinkAsA sx={{ml: "auto"}} variant="postmeta" to="/blog">
             all posts
           </LinkAsA>
         </Flex>
