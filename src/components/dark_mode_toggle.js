@@ -84,7 +84,7 @@ const DarkModeToggle = () => {
         cx="12"
         cy="12"
         style={centerCircleProps}
-        fill="black"
+        fill="currentColor"
         mask="url(#myMask2)"
       />
       <g stroke="currentColor" style={linesProps}>
