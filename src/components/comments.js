@@ -52,15 +52,19 @@ const CactusComment = ({ path }) => {
   return (
     <React.Fragment>
       <Helmet>
-        <link
+        {/* <link
           rel="preload"
           as="style"
           href="https://latest.cactus.chat/style.css"
           onLoad="this.onload=null;this.rel='stylesheet'"
-        ></link>
-        <noscript>
+        ></link> */}
+        
+        {/* ref: https://stackoverflow.com/a/57659023 */}
+        <link rel="stylesheet" href="https://latest.cactus.chat/style.css" media="print" onload="this.media='all'; this.onload = null"/>
+
+        {/* <noscript>
           {`<link rel="stylesheet" href="https://latest.cactus.chat/style.css"/>`}
-        </noscript>
+        </noscript> */}
         {/* <script type="text/javascript" defer src="https://latest.cactus.chat/cactus.js"   onLoad={`console.log('HAAEHHHAHHEHHHA')`} */}
         {/* ></script> */}
       </Helmet>
