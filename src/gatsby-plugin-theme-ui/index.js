@@ -1,5 +1,3 @@
-import code_theme from "@theme-ui/prism/presets/night-owl.json"
-
 const theme = {
   colors: {
     text: "#000",
@@ -209,23 +207,20 @@ const theme = {
       //   color: "inherit",
       // },
     },
-    pre: {
-      fontFamily: "monospace"
-    },
+    // pre: {
+    //   fontFamily: "monospace"
+    // },
     code: {
-      ...code_theme,
-      p: 3,
-      my: 4,
-      overflow: "auto",
+      // fontFamily: "body",
       fontSize: [0, 1, 1],
     },
-    inlineCode: {
-      backgroundColor: "muted",
-      color: "text",
-      fontFamily: "body",
-      py:0,
-      px: 1,
-    },
+    // inlineCode: {
+    //   backgroundColor: "muted",
+    //   color: "text",
+    //   fontFamily: "body",
+    //   py:0,
+    //   px: 1,
+    // },
     ul: {
       listStyleType: "square",
     },

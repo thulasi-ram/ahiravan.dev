@@ -7,13 +7,11 @@ import Layout from "./layout"
 import PostFooter from "./post-footer"
 import PostHeader from "./post-header"
 import Seo from "./seo"
-import Prism from '@theme-ui/prism'
-import { Fragment } from "react"
-
+// import "prismjs/themes/prism-twilight.css";
+import "prism-theme-night-owl";
+import "../css/prism.css"
 
 const components = {
-  pre: ({ children }) => <Fragment>{children}</Fragment>,
-  code: Prism,
 }
 
 const Post = ({ post, location, previous, next }) => {
