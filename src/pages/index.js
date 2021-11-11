@@ -233,8 +233,6 @@ const IndexPage = () => {
             <span>
               Programming in the large. Currently{" "}
               <IntroA
-                rel="external"
-                target="_blank"
                 href="https://www.getsimpl.com/about-us/"
               >
                 @Simpl
