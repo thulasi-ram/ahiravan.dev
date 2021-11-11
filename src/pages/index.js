@@ -21,7 +21,7 @@ const IntroP = ({ ...props }) => (
   <p sx={{ marginBlockStart: "1em", marginBlockEnd: "1em" }} {...props} />
 )
 const IntroA = ({ ...props }) => (
-  <TLink rel="external" target="_blank" {...props}></TLink>
+  <TLink rel="noopener" target="_blank" {...props}></TLink>
 )
 
 const BlockSpan = ({ ...props }) => (
