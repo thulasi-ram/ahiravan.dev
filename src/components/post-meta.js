@@ -5,7 +5,7 @@ import { PostMetaLinkAsA, PostMetaText } from "./composites"
 
 const PostMeta = ({ post }) => {
   return (
-    <PostMetaText sx={{ mt: 0 }}>
+    <PostMetaText sx={{ mt: 1 }}>
       <span>{post.date}</span>
       <span> • </span>
       <span>{post.readingTime.text}</span>

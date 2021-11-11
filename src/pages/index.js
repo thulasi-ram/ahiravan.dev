@@ -218,7 +218,7 @@ const IndexPage = () => {
         columns={[1]}
         sx={{
           display: "grid",
-          width: "90%",
+          width: ["100%", "90%", "90%"],
           mx: "auto",
           my: 3,
         }}

@@ -11,7 +11,7 @@ export const DivPosts = ({ posts, ...props }) => {
       {posts.map((node, i) => {
         return (
           <React.Fragment key={"pst1" + i}>
-            <div sx={{ my: 4 }}>
+            <div sx={{ my: 0, minHeight: ["5em", "5em", "4em"] }}>
               <Heading as="h2" sx={{ mb: 2, fontSize: 4 }}>
                 <LinkAsA to={node.slug}>{node.title} </LinkAsA>
               </Heading>
