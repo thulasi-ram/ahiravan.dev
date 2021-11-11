@@ -3,7 +3,7 @@ import { jsx } from "theme-ui"
 import "../css/common.css"
 import Footer from "./footer"
 import Header from "./header"
-import SentryHeader from "./sentry"
+// import SentryHeader from "./sentry"
 
 const Layout = ({ children }) => {
 
@@ -20,7 +20,7 @@ const Layout = ({ children }) => {
         mx: "auto"
       }}
     >
-      <SentryHeader/>
+      {/* <SentryHeader/> */}
       <Header />
       <main
         sx={{
