@@ -106,10 +106,10 @@ const IndexPage = () => {
         }}
       >
         <div>
-          <Heading as="h1" sx={{ mb: 3, fontFamily: "body" }}>
+          <Heading as="h1" sx={{ mb: 3}}>
             Hi, I'm Thulasi
           </Heading>
-          <Heading as="h2" sx={{ mb: 4, fontFamily: "body", fontSize: 6 }}>
+          <Heading as="h2" sx={{ mb: 4, fontSize: 5 }}>
             I build for all things web.
           </Heading>
 
@@ -191,7 +191,7 @@ const IndexPage = () => {
                   }}
                 >
                   <GetInTouchButton
-                    href="mailto:me@ahiravan.dev"
+                    href="mailto:thulasi503@gmail.com"
                     text="email"
                     svgIcon={<EmailSvg />}
                   />
@@ -242,9 +242,9 @@ const IndexPage = () => {
           </IntroP>
 
           <IntroP>
-            Intrigued by design, armchair philosophy and anything CS. I strive
-            for improving the QOL through the products I design and create and I
-            wish the world would become a gentler place.
+            Intrigued by design, armchair philosophy and anything CS. I am driven by a strong sense of need
+            to improve the quality of life through the products I design and create. I also
+            wish the world would become a gentler place. 
           </IntroP>
 
           <IntroP>
@@ -291,16 +291,16 @@ const IndexPage = () => {
           </IntroP>
 
           <div>
-            <BlockSpan>Day to Day: Python, Go and Ruby</BlockSpan>
+            <BlockSpan><u>Day to Day</u>: Python, Go and Ruby</BlockSpan>
             <BlockSpan>
-              Occasionally: Javascript, misc frontend developments and Java.
+            <u>Occasionally</u>: Javascript, misc frontend developments and Java.
             </BlockSpan>
-            <BlockSpan>Renewed interest: Rust</BlockSpan>
+            <BlockSpan><u>Renewed interest</u>: Rust</BlockSpan>
             <BlockSpan>
-              Piques interest:
+              <u>Piques interest</u>:
               <ul sx={{ mt: 0 }}>
-                <li>General(Hyped) FP languages(Haskell, Elixir)</li>
-                <li>Various lisps(Clojure, Scheme, Racket and CL)</li>
+                <li>General(Hyped) Functional languages</li>
+                <li>Various lisps</li>
               </ul>
             </BlockSpan>
           </div>

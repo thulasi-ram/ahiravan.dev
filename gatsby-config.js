@@ -6,7 +6,6 @@ require("dotenv").config({
   path: `.env.${activeEnv}`,
 })
 
-
 let plugins = [
   `gatsby-plugin-preact`,
   `gatsby-plugin-theme-ui`,
@@ -54,10 +53,9 @@ let plugins = [
       gatsbyRemarkPlugins: [
         {
           resolve: `gatsby-remark-prismjs`,
-          options: {
-          }
-        }
-      ]
+          options: {},
+        },
+      ],
     },
   },
   {
@@ -101,10 +99,7 @@ let plugins = [
   {
     resolve: `gatsby-plugin-google-gtag`,
     options: {
-      trackingIds: [
-        process.env.GA_TRACKING_ID,
-        process.env.GTM_TRACKING_ID
-      ],
+      trackingIds: [process.env.GA_TRACKING_ID, process.env.GTM_TRACKING_ID],
     },
   },
   {
@@ -123,8 +118,9 @@ let plugins = [
   {
     resolve: "gatsby-omni-font-loader",
     options: {
-      // mode: "render-blocking",
-      // enableListener: false,
+      mode: "render-blocking",
+      enableListener: true,
+      preconnect: ["https://fonts.gstatic.com"],
       custom: [
         // {
         //   name: ["Iosevka Aile Web"],
@@ -134,10 +130,68 @@ let plugins = [
         //   name: ["Iosevka Etoile Web"],
         //   file: "/fonts/webfont-iosevka-etoile-10.1.1/iosevka-etoile.css",
         // },
+        // {
+        //   name: ["Iosevka Aile Optimized", "Iosevka Etoile Optimized"],
+        //   file: "/fonts/iosevka-optimized-10.1.1/font.min.css",
+        // },
+      ],
+      web: [
+        // {
+        //   name: "Poppins",
+        //   file: "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap",
+        // },
         {
-          name: ["Iosevka Aile Optimized", "Iosevka Etoile Optimized"],
-          file: "/fonts/iosevka-optimized-10.1.1/font.min.css",
-        }
+          name: "DM Sans",
+          file: "https://fonts.googleapis.com/css2?family=DM+Sans",
+        },
+        // {
+        //   name: "Roboto Mono",
+        //   file: "https://fonts.googleapis.com/css2?family=Roboto+Mono",
+        // },
+        // {
+        //   name: "DM Mono",
+        //   file: "https://fonts.googleapis.com/css2?family=DM+Mono",
+        // },
+        {
+          name: "JetBrains Mono",
+          file: "https://fonts.googleapis.com/css2?family=JetBrains+Mono",
+        },
+        // {
+        //   name: "Karla",
+        //   file: "https://fonts.googleapis.com/css2?family=Karla",
+        // },
+        // {
+        //   name: "Outfit",
+        //   file: "https://fonts.googleapis.com/css2?family=Outfit",
+        // },
+        // {
+        //   name: "Rokkitt",
+        //   file: "https://fonts.googleapis.com/css2?family=Rokkitt",
+        // },
+        // {
+        //   name: "Mulish",
+        //   file: "https://fonts.googleapis.com/css2?family=Mulish",
+        // },
+        // {
+        //   name: "Lora",
+        //   file: "https://fonts.googleapis.com/css2?family=Lora",
+        // },
+        // {
+        //   name: "Podkova",
+        //   file: "https://fonts.googleapis.com/css2?family=Podkova",
+        // },
+        // {
+        //   name: "Space Mono",
+        //   file: "https://fonts.googleapis.com/css2?family=Space+Mono",
+        // },
+        // {
+        //   name: "Noto Sans Mono",
+        //   file: "https://fonts.googleapis.com/css2?family=Noto+Sans+Mono",
+        // },
+        // {
+        //   name: "Sen",
+        //   file: "https://fonts.googleapis.com/css2?family=Sen",
+        // },
       ],
     },
   },
@@ -162,18 +216,17 @@ let plugins = [
   "gatsby-plugin-brotli",
 
   {
-    resolve: 'gatsby-plugin-zopfli',
+    resolve: "gatsby-plugin-zopfli",
     options: {
-      extensions: ['css', 'html', 'js', 'svg']
-    }
-  }
+      extensions: ["css", "html", "js", "svg"],
+    },
+  },
 ]
 
 if (!process.env.CI) {
-  plugins.push( "gatsby-plugin-perf-budgets")
-  plugins.push( "gatsby-plugin-webpack-bundle-analyser-v2")
+  plugins.push("gatsby-plugin-perf-budgets")
+  plugins.push("gatsby-plugin-webpack-bundle-analyser-v2")
 }
-
 
 module.exports = {
   siteMetadata: {

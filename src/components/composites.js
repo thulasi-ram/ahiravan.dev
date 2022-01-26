@@ -16,20 +16,20 @@ export const PostMetaLinkAsA = ({ ...props }) => (
   <LinkAsA sx={postMetaSx} {...props} />
 )
 
-export const SectionHeading = ({ ...props }) => (
-  <h3
-    sx={{
-      color: "background",
-      bg: "text",
-      p: 1,
-      my: 2,
-      fontSize: 2,
-      fontFamily: "heading",
-      letterSpacing: "0.1em",
-    }}
-    {...props}
-  />
-)
+// export const SectionHeading = ({ ...props }) => (
+//   <h3
+//     sx={{
+//       color: "background",
+//       bg: "text",
+//       p: 1,
+//       my: 2,
+//       fontSize: 2,
+//       fontFamily: "heading",
+//       letterSpacing: "1rem",
+//     }}
+//     {...props}
+//   />
+// )
 // export const ButtonAsA = ({ ...props }) => <Button as={TLink} {...props} />
 
 // export const IndexPageButton = ({ ...props }) => (

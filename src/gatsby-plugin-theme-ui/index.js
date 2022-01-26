@@ -80,14 +80,15 @@ const theme = {
     container: "768px",
   },
   fonts: {
-    body: '"Iosevka Etoile Optimized", "Verdana", sans-serif',
-    heading: `"Iosevka Aile Optimized", Monaco, monospace`,
-    monospace: '"Iosevka Aile Optimized", Courier, monospace',
+    body: '"DM Sans", system-ui, sans-serif',
+    heading: `"JetBrains Mono", Monaco, monospace`,
+    monospace: 'Courier, monospace',
   },
   fontSizes: [12, 14, 16, 19, 22, 25, 29, 33],
   fontWeights: {
     body: 400,
     heading: 500,
+    bold: 600,
   },
   lineHeights: {
     body: 1.75,
@@ -101,6 +102,7 @@ const theme = {
       my: 2,
       fontSize: 2,
       fontFamily: "heading",
+      fontWeight: 'bold',
       letterSpacing: "0.1em",
     },
     heading: {
