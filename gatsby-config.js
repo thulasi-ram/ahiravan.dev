@@ -118,7 +118,7 @@ let plugins = [
   {
     resolve: "gatsby-omni-font-loader",
     options: {
-      mode: "render-blocking",
+      // mode: "render-blocking",
       enableListener: true,
       preconnect: ["https://fonts.gstatic.com"],
       custom: [
