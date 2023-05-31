@@ -1,0 +1,420 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com?plugins=aspect-ratio,line-clamp"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        biege: '#efefb9',
+                        navblu: '#122ea7'
+                    },
+                    fontFamily: {
+                        mono: ['JetBrains Mono']
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer components {
+	     .page {
+	        width: 210mm;
+	        height: 297mm;
+	        border: 1px #D3D3D3 solid;
+	        border-radius: 5px;
+	        background: white;
+	        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+	    }
+
+	    .sec-heading {
+    		background-color: theme('colors.navblu');
+    		color: theme('colors.biege');
+    		margin: 1em 0em 1em 0em;
+    		padding: 4px 0px 3px 5px;
+    		font-family: theme('fontFamily.mono');
+    		font-size: theme('fontSize.sm');
+		}
+		.sec-heading-inv {
+    		background-color: theme('colors.biege');
+    		color: theme('colors.navblu');
+    		margin: 1em 0em 1em 0em;
+    		padding: 4px 0px 3px 5px;
+    		font-family: theme('fontFamily.mono');
+    		font-size: theme('fontSize.sm');
+
+		}
+		p {
+			font-size: theme('fontSize.xs');
+			font-family: theme('fontFamily.sans');
+			padding-top: 4px;
+			padding-bottom: 4px;
+		}
+		li {
+			font-size: theme('fontSize.xs');
+		}
+		a {
+			text-decoration: underline;
+		}
+		.ext-link::after {
+  			content: '↗';
+  			font-size: 0.5em;
+  			opacity: 0.5;
+		}
+		.skill {
+    		margin: 0px 0.5em 0px 0.5em;
+		}
+
+    }
+  </style>
+</head>
+
+<body>
+    <!-- <button onclick="getPDF()">download</button> -->
+    <div class="page grid grid-cols-3 mx-auto" id="res_content">
+        <div class="col-span-2 bg-biege p-10">
+            <h1 class="text-3xl font-mono text-navblu mb-10">
+                Damodharan Thulasiram
+            </h1>
+            <section aria-label="about me section">
+                <h2 class="sec-heading">ABOUT ME</h2>
+                <p>I build for all things web.</p>
+                <p>Intrigued by design, armchair philosophy and anything CS. I am driven by a strong sense of need to
+                    improve the quality of life through the products I design and create. </p>
+                <p>I come with a hybrid background in both backend systems and frontend technologies. Polyglot.</p>
+            </section>
+            <section aria-label="work experience section">
+                <h2 class="sec-heading">WORK EXPERIENCE</h2>
+                <div class="grid grid-flow-row auto-rows-max">
+                    <section class="grid grid-cols-3 my-2" aria-label="simpl work experience">
+                        <div>
+                            <h5 class="text-sm p-0 font-mono">Simpl</h5>
+                            <p class="text-xs p-0 font-mono text-gray-500">Bengaluru, India</p>
+                            <p class="text-xs p-0 font-mono text-gray-500 ">Sep,2020 - Now</p>
+                        </div>
+                        <div class="col-span-2">
+                            <section class="my-2">
+                                <h6 class="text-xs font-mono text-gray-700 font-semibold underline-offset-2 my-2">Senior Staff
+                                    & Staff Engineer</h6>
+                                <p class="p-0 "> Responsible for heading the Checkout offering of Simpl </p>
+                                <ul class="m-4  list-disc">
+                                    <li>Have developed and helped maintain the unified identity service and payment services for checkout</li>
+                                    <li>Identify bottlenecks with obersvability tools like NewRelic, Jaeger and Performance Insights</li>
+                                    <li>Have helped upkeep the test coverage and monitoring using sonarqube</li>
+                                    <li>Have driven sentry as the error monitoring tool across Simpl</li>
+                                    <li>Tooling to generate OAPI3 spec compatible api documentation in Python for the doc portal </li>
+                                    <li>Setup Cloudwatch Alerting Mechanism along with Prometheus to detect revenue drop for top merchants</li>
+                                </ul>
+                            </section>
+                            <section class="my-2">
+                                <h6 class="text-xs font-mono text-gray-700 font-semibold underline-offset-2 my-2">
+                                    Senior Software Engineer</h6>
+                                <p class="p-0 ">Worked as a team responsible for maintaining the Transaction Systems and
+                                    Core Ledger </p>
+                                <ul class="m-4  list-disc">
+                                    <li>Driven several best practices in golang especially wrt validations, errors and
+                                        logging</li>
+                                    <li>Responsible for setting up the observability using Prometheus, Cloudwatch and
+                                        Grafana</li>
+                                    <li>Built the docs platform which is currently the Doc Portal for Simpl</li>
+                                    <li>Headed the internal Python Community meetups</li>
+                                </ul>
+                            </section>
+                        </div>
+                    </section>
+                    <section class="grid grid-cols-3 my-2" aria-label="treebo work experience">
+                        <div>
+                            <h5 class="text-sm p-0 font-mono">Treebo</h5>
+                            <p class="text-xs p-0 font-mono text-gray-500">Bengaluru, India</p>
+                            <p class="text-xs p-0 font-mono text-gray-500">2016 - 2020</p>
+                        </div>
+                        <div class="col-span-2">
+                            <section class="my-2">
+                                <h6 class="text-xs font-mono text-gray-700 font-semibold underline-offset-2 my-2">
+                                    Principal Software Engineer</h6>
+                                <p class="p-0 ">Responsible for overseeing the performance and scaling of Revenue
+                                    Systems.</p>
+                                <ul class="m-4  list-disc">
+                                    <li>Re-architected the pricing system to be a partially event driven system</li>
+                                    <li>Scaled the couponing system which uses the Drools engine for rule evaluation
+                                    </li>
+                                    <li>Stabilized the inhouse catalog system and developed an comprehensive onboarding
+                                        system</li>
+                                    <li>Spent time partially standardizing jenikins pipelines, dockerizing projects and
+                                        cost cutting initiatives</li>
+                                    <li>Enhanced custom worker implementation that ensures unique id per message,
+                                        delayed retry mechanisms and dead-letter queues</li>
+                                </ul>
+                            </section>
+                            <section class="h-24 max-h-full hidden print:block"></section>
+                            <section class="my-2">
+                                <h6 class="text-xs font-mono text-gray-700 font-semibold underline-offset-2 my-2">Senior
+                                    Software Engineer</h6>
+                                <p class="p-0 ">Responsible for overseeing the stability and scalability of B2B
+                                    products.</p>
+                                <ul class="m-4  list-disc">
+                                    <li>Built inhouse invoicing solution partially inspired by DDD</li>
+                                    <li>Introduced easier process workflow using celery canvas</li>
+                                    <li>Built “gevent” based auto scalable custom worker for RabbitMQ</li>
+                                    <li>Used perf monitoring tools such as cprofile and NewRelic to identify bottlenecks
+                                    </li>
+                                </ul>
+                            </section>
+                            <section class="my-2">
+                                <h6 class="text-xs font-mono text-gray-700 font-semibold underline-offset-2 my-2">
+                                    Contractor(May 2014 - Feb 2016)</h6>
+                                <p class="mx-auto ">I was a contractor from Innoventes Technologies Ltd and worked in my
+                                    capacity as a Software Engineer </p>
+                            </section>
+                        </div>
+                    </section>
+                    <section class="grid grid-cols-3 my-2" aria-label="infosys work experience">
+                        <div>
+                            <h5 class="text-sm p-0 font-mono">Infosys</h5>
+                            <p class="text-xs p-0 font-mono text-gray-500">Chennai, India.</p>
+                            <p class="text-xs p-0 font-mono text-gray-500">2014 - 2016</p>
+                        </div>
+                        <div class="col-span-2">
+                            <section class="my-2">
+                                <h6 class="text-xs font-mono text-gray-700 font-semibold underline-offset-2 my-2">
+                                    Systems Engineer</h6>
+                                <p class="mx-auto ">I was actively involved in the transition of a more robust version
+                                    of Inventory Tracking and Reporting system. I have also contributed minor roles in
+                                    Credit Collection, Location, and General Ledger management systems for Finance
+                                    Planning and Accounting Division, FritoLay - NorthAmerica.</p>
+                            </section>
+                        </div>
+                    </section>
+                </div>
+            </section>
+            <section aria-label="education section">
+                <h2 class="sec-heading">EDUCATION</h2>
+                <div class="grid grid-cols-3">
+                    <div>
+                        <p class="p-0 text-xs font-mono">Bachelor of Engineering </p>
+                        <p class="p-0 text-xs font-mono text-gray-500">Mechanical </p>
+
+                        <p class="p-0 text-xs font-mono text-gray-500">2010-2014 </p>
+                    </div>
+                    <div class="col-span-2">
+                        <p class="font-mono">Hindustan University, Chennai, India.</p>
+                    </div>
+                </div>
+            </section>
+            <section aria-label="oss contributions section">
+                <h2 class="sec-heading">OSS CONTRIBTUIONS</h2>
+                <div class="grid grid-cols-3">
+                    <div>
+                        <p class="font-mono font-semibold text-gray-700">
+                            <a href="https://github.com/thulasi-ram/kombu-rabbitmq" target="_blank"
+                                class="ext-link">Kombu RabbitMQ</a>
+                        </p>
+                    </div>
+                    <div class="col-span-2">
+                        <p>A robust RabbitMQ consumer using Kombu</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-3">
+                    <div>
+                        <p class="font-mono font-semibold text-gray-700">
+                            <a href="https://github.com/thulasi-ram/diff-and-patch" target="_blank"
+                                class="ext-link">Diff and Patch</a>
+                        </p>
+                    </div>
+                    <div class="col-span-2">
+                        <p>A simple python package which serves as a framework for diffing and patching complex objects.
+                        </p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-3">
+                    <div>
+                        <p class="font-mono font-semibold text-gray-700">
+                            <a href="https://github.com/thulasi-ram/django-feature-toggle" target="_blank"
+                                class="ext-link">Feature Toggle</a>
+                        </p>
+                    </div>
+                    <div class="col-span-2">
+                        <p>A python package which can be hooked onto Django as an app. The app is based on behavioural
+                            design pattern “Feature toggle” by Martin Fowler. First hand experience in packaging a
+                            project and documentation with Sphinx</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="col-span-1 bg-navblu p-5">
+            <section aria-label="profile image section">
+                <img class="w-full" src="https://en.gravatar.com/avatar/2d563d56113181a94b184ef0f64a1edf">
+            </section>
+            <section aria-label="social icons section" class="flex flex-row mt-3">
+                <a href="https://github.com/thulasi-ram" target="_blank" class="basis-1/3 m-2">
+                    <svg width="20" height="20" viewBox="0 0 48 48" class="fill-biege"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_910_44)">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M24.0005 1C18.303 1.00296 12.7923 3.02092 8.45374 6.69305C4.11521 10.3652 1.23181 15.452 0.319089 21.044C-0.593628 26.636 0.523853 32.3684 3.47174 37.2164C6.41963 42.0643 11.0057 45.7115 16.4099 47.5059C17.6021 47.7272 18.0512 46.9883 18.0512 46.36C18.0512 45.7317 18.0273 43.91 18.0194 41.9184C11.3428 43.3608 9.93197 39.101 9.93197 39.101C8.84305 36.3349 7.26927 35.6078 7.26927 35.6078C5.09143 34.1299 7.43223 34.1576 7.43223 34.1576C9.84455 34.3275 11.1123 36.6194 11.1123 36.6194C13.2504 40.2667 16.7278 39.2116 18.0949 38.5952C18.3095 37.0501 18.9335 35.999 19.621 35.4023C14.2877 34.8017 8.68408 32.7548 8.68408 23.6108C8.65102 21.2394 9.53605 18.9461 11.156 17.2054C10.9096 16.6047 10.087 14.1785 11.3905 10.8829C11.3905 10.8829 13.4054 10.2427 17.9916 13.3289C21.9253 12.2592 26.0757 12.2592 30.0095 13.3289C34.5917 10.2427 36.6026 10.8829 36.6026 10.8829C37.9101 14.1706 37.0875 16.5968 36.8411 17.2054C38.4662 18.9464 39.353 21.2437 39.317 23.6187C39.317 32.7824 33.7015 34.8017 28.3602 35.3905C29.2186 36.1334 29.9856 37.5836 29.9856 39.8122C29.9856 43.0051 29.9578 45.5736 29.9578 46.36C29.9578 46.9962 30.391 47.7391 31.6071 47.5059C37.0119 45.7113 41.5984 42.0634 44.5462 37.2147C47.4941 32.3659 48.611 26.6326 47.6972 21.0401C46.7835 15.4476 43.8986 10.3607 39.5587 6.68921C35.2187 3.01771 29.7067 1.00108 24.0085 1H24.0005Z" />
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_910_44">
+                                <rect width="48" height="48" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/thulasi-ram/" class="basis-1/3 m-2">
+                    <svg width="20" height="20" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"
+                        class="fill-biege">
+                        <path
+                            d="M44.4469 0H3.54375C1.58437 0 0 1.54688 0 3.45938V44.5312C0 46.4437 1.58437 48 3.54375 48H44.4469C46.4062 48 48 46.4438 48 44.5406V3.45938C48 1.54688 46.4062 0 44.4469 0ZM14.2406 40.9031H7.11563V17.9906H14.2406V40.9031ZM10.6781 14.8688C8.39062 14.8688 6.54375 13.0219 6.54375 10.7437C6.54375 8.46562 8.39062 6.61875 10.6781 6.61875C12.9563 6.61875 14.8031 8.46562 14.8031 10.7437C14.8031 13.0125 12.9563 14.8688 10.6781 14.8688ZM40.9031 40.9031H33.7875V29.7656C33.7875 27.1125 33.7406 23.6906 30.0844 23.6906C26.3812 23.6906 25.8187 26.5875 25.8187 29.5781V40.9031H18.7125V17.9906H25.5375V21.1219H25.6312C26.5781 19.3219 28.9031 17.4188 32.3625 17.4188C39.5719 17.4188 40.9031 22.1625 40.9031 28.3313V40.9031Z" />
+                    </svg>
+                </a>
+                <a href="https://twitter.com/ahiravan1" class="basis-1 m-2">
+                    <svg width="20" height="20" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"
+                        class="fill-biege">
+                        <g clip-path="url(#clip0_17_80)">
+                            <path
+                                d="M15.1003 43.5C33.2091 43.5 43.1166 28.4935 43.1166 15.4838C43.1166 15.0619 43.1072 14.6307 43.0884 14.2088C45.0158 12.815 46.679 11.0886 48 9.11066C46.205 9.90926 44.2993 10.4308 42.3478 10.6575C44.4026 9.42588 45.9411 7.491 46.6781 5.21159C44.7451 6.35718 42.6312 7.16528 40.4269 7.60128C38.9417 6.02318 36.978 4.97829 34.8394 4.62816C32.7008 4.27803 30.5064 4.64216 28.5955 5.66425C26.6846 6.68635 25.1636 8.30947 24.2677 10.2827C23.3718 12.2559 23.1509 14.4693 23.6391 16.5807C19.725 16.3842 15.8959 15.3675 12.4 13.5963C8.90405 11.825 5.81939 9.33893 3.34594 6.29909C2.0888 8.46655 1.70411 11.0314 2.27006 13.4722C2.83601 15.9131 4.31013 18.047 6.39281 19.44C4.82926 19.3904 3.29995 18.9694 1.93125 18.2119V18.3338C1.92985 20.6084 2.7162 22.8132 4.15662 24.5736C5.59704 26.334 7.60265 27.5412 9.8325 27.99C8.38411 28.3863 6.86396 28.4441 5.38969 28.1588C6.01891 30.1149 7.24315 31.8258 8.89154 33.0527C10.5399 34.2796 12.5302 34.9613 14.5847 35.0025C11.0968 37.7423 6.78835 39.2283 2.35313 39.2213C1.56657 39.2201 0.780798 39.1719 0 39.0769C4.50571 41.9676 9.74706 43.5028 15.1003 43.5Z" />
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_17_80">
+                                <rect width="48" height="48" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+                </a>
+            </section>
+            <section aria-label="contact info section">
+                <h2 class="sec-heading-inv">CONTACT INFO</h2>
+                <p class="text-biege font-mono">Bengaluru, India</p>
+                <p class="text-biege font-mono">
+                    <a href="mailto:thulasi503@gmail.com">thulasi503@gmail.com</a>
+                </p>
+                <p class="text-biege font-mono">
+                    <a href="tel:+919840561688">+91 98405 61688</a>
+                </p>
+                <p class="text-biege font-mono">
+                    <a href="https://ahiravan.dev" class="ext-link" target="_blank">https://ahiravan.dev</a>
+                </p>
+            </section>
+            <section aria-label="skills section">
+                <h2 class="sec-heading-inv">SKILLS</h2>
+                <h6 class="text-xs text-gray-400 font-mono font-semibold my-3"> #languages</h6>
+                <div class="flex flex-wrap">
+                    <p class="text-biege skill"> Python </p>
+                    <p class="text-biege"> • </p>
+                    <p class="text-biege skill"> Go </p>
+                    <p class="text-biege"> • </p>
+                    <p class="text-biege skill"> Sql </p>
+                    <p class="text-biege"> • </p>
+                    <p class="text-biege skill"> Ruby </p>
+                    <p class="text-biege"> • </p>
+                    <p class="text-biege skill"> Javascript </p>
+                    <p class="text-biege"> • </p>
+                    <p class="text-biege skill"> Java </p>
+                    <p class="text-biege"> • </p>
+                    <p class="text-biege skill"> Clojure </p>
+                    <p class="text-biege"> • </p>
+                    <p class="text-biege skill"> A bit of Rust </p>
+                    <p class="text-biege"> • </p>
+                    <p class="text-biege skill"> A pinch of Various Lisps and General FP languages </p>
+                </div>
+                <h6 class="text-xs text-gray-400 font-mono font-semibold my-3"> #frameworks</h6>
+                <div class="flex flex-wrap">
+                    <p class="text-biege skill"> Django </p>
+                    <p class="text-biege"> • </p>
+                    <p class="text-biege skill"> Flask </p>
+                    <p class="text-biege"> • </p>
+                    <p class="text-biege skill"> Celery </p>
+                    <p class="text-biege"> • </p>
+                    <p class="text-biege skill"> SqlAlchemy </p>
+                    <p class="text-biege"> • </p>
+                    <p class="text-biege skill"> Sqlc </p>
+                    <p class="text-biege"> • </p>
+                    <p class="text-biege skill"> Gin </p>
+                    <p class="text-biege"> • </p>
+                    <p class="text-biege skill"> FastAPI </p>
+                    <p class="text-biege"> • </p>
+                    <p class="text-biege skill"> Axum </p>
+                </div>
+                <h6 class="text-xs text-gray-400 font-mono font-semibold my-3"> #infra</h6>
+                <div class="flex flex-wrap">
+                    <p class="text-biege skill"> AWS </p>
+                    <p class="text-biege"> • </p>
+                    <p class="text-biege skill"> Jenkins </p>
+                    <p class="text-biege"> • </p>
+                    <p class="text-biege skill"> CircleCI </p>
+                    <p class="text-biege"> • </p>
+                    <p class="text-biege skill"> GIT </p>
+                    <p class="text-biege"> • </p>
+                    <p class="text-biege skill"> RabbitMQ </p>
+                    <p class="text-biege"> • </p>
+                    <p class="text-biege skill"> Kafka </p>
+                    <p class="text-biege"> • </p>
+                    <p class="text-biege skill"> Docker </p>
+                    <p class="text-biege"> • </p>
+                    <p class="text-biege skill"> Prometheus </p>
+                    <p class="text-biege"> • </p>
+                    <p class="text-biege skill"> Grafana </p>
+                    <p class="text-biege"> • </p>
+                    <p class="text-biege skill"> Sonarqube </p>
+                    <p class="text-biege"> • </p>
+                    <p class="text-biege skill"> Sentry </p>
+                    <p class="text-biege"> • </p>
+                    <p class="text-biege skill"> HAProxy </p>
+                    <p class="text-biege"> • </p>
+                    <p class="text-biege skill"> Nginx </p>
+                    <p class="text-biege"> • </p>
+                    <p class="text-biege skill"> Caddy </p>
+                    <p class="text-biege"> • </p>
+                    <p class="text-biege skill"> Jaeger </p>
+                    <p class="text-biege"> • </p>
+                    <p class="text-biege skill"> NewRelic </p>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script> -->
+<!-- <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/polyfills.umd.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+    integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+    function getPDF() {
+
+        // const { jsPDF } = window.jspdf;
+        // const doc = new jsPDF('p', 'pt', 'a4');
+        // doc.html(document.getElementById('res_content'));
+        // doc.save("a4.pdf");
+
+        var opt = {
+            margin: 1,
+            filename: 'myfile.pdf',
+            image: {
+                type: 'jpeg',
+                quality: 0.98
+            },
+            html2canvas: {
+                scale: 2
+            },
+            jsPDF: {
+                unit: 'pt',
+                format: 'a4',
+                orientation: 'p'
+            }
+        };
+        var element = document.getElementById('res_content');
+        html2pdf().set(opt).from(element).save();
+
+    };
+</script>
+
+</html>

@@ -1,0 +1,84 @@
+---
+title: IDs and Prefixes
+tags: [uuids, perf]
+date: 2022-06-14
+---
+
+# IDs and Prefixes
+
+## Rationale
+
+* We have observed bad cache hit ratio in TS transactions table due to uuid v4s as primary identifiers
+  * the btree index takes a hit when range queries are done
+  * The inserts are slower because a different page has to be written
+  * And in general caused postgres to read many pages from disk
+  * <https://uuid6.github.io/uuid6-ietf-draft/> - IETF rationale for a new uuid v6 type
+  * <https://brandur.org/nanoglyphs/026-ids> - Comparisons of different types in a primary key
+  * <https://github.com/tvondra/sequential-uuids>
+
+
+* There are also cases where the ids different entities are swappable and do not contain any context leading to vague communication and manual errors. To prevent this we adopt a format popularized by stripe by prefixing ids
+  * <https://clerk.dev/blog/generating-sortable-stripe-like-ids-with-segment-ksuids>
+  * We also want to avoid confusion around new user_id being an uuid which can be confused for khata user_id and vice versa
+
+    \
+
+
+* Taking into consideration above, our ids can become more friendly to humans and caches alike by following format
+  * **<prefix>_<random string>**
+  * Examples:
+    * *ord_0ujsswThIGTUYm2K8FjOOfXtY1K*
+    * *pr_0ujsszwN8NRY24YaXiTIE2VWDTS*
+    * us_0ujsszgFvbiEr7CDgE3z8MAUPFt
+
+## Prefixes
+
+
+:::info
+The below prefixes are not finalized as of now and subject to change
+
+:::
+
+* `ord_` for oms orders
+* `ln_` for order line items
+* `rfo_` for refund orders /  returns
+* `us_` for new users store
+* `pa_` for payments
+* `sh_` for shipments
+* `pr_`for oms products
+* `ct_`for oms categories
+
+
+### Random String Considerations
+
+* The string must be random enough to prevent collisions
+* Use a library than rolling out your own
+* Make sure the string has a good cache locality
+* We prefer [KSUID](https://github.com/segmentio/ksuid) for now, [uuidv6/v7/v8](https://uuid6.github.io/uuid6-ietf-draft/) can also be used instead
+
+
+### Storage
+
+* Use varchar type in postgres
+  * <https://github.com/segmentio/ksuid/issues/23>
+  * Ideally the length will be within 30-40 chars but in postgres there’s no difference
+  * ref: <https://dba.stackexchange.com/a/126047/229241>
+* Postgres doesn’t seem to have an optimization of UUIDs
+  * <https://news.ycombinator.com/item?id=25595069>
+
+
+### Why not ULIDs
+
+* ULIDs have millisecond precision compared with Ksuid 1 second precision
+* Has compatibility with 16 bytes uuid vs 20 bytes ksuid
+* <https://news.ycombinator.com/item?id=25594657>
+* <https://news.ycombinator.com/item?id=24646018>
+* <https://github.com/segmentio/ksuid/issues/8>
+* In general UUID spec can be interpreted subjectively and has foot guns. ksuid spec seems to have been thought better
+
+
+### Other Reading
+
+* Deck for UUID v6 - <https://www.ietf.org/proceedings/107/slides/slides-107-dispatch-uuid-v6-slides-brad-peabody-00>
+
+
