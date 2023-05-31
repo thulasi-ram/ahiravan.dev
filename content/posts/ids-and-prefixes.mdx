@@ -8,7 +8,7 @@ date: 2022-06-14
 
 ## Rationale
 
-* We have observed bad cache hit ratio in TS transactions table due to uuid v4s as primary identifiers
+* We have observed bad cache hit ratio in transactions table due to uuid v4s as primary identifiers
   * the btree index takes a hit when range queries are done
   * The inserts are slower because a different page has to be written
   * And in general caused postgres to read many pages from disk
@@ -21,14 +21,12 @@ date: 2022-06-14
   * <https://clerk.dev/blog/generating-sortable-stripe-like-ids-with-segment-ksuids>
   * We also want to avoid confusion around new user_id being an uuid which can be confused for khata user_id and vice versa
 
-    \
-
 
 * Taking into consideration above, our ids can become more friendly to humans and caches alike by following format
   * **<prefix>_<random string>**
   * Examples:
-    * *ord_0ujsswThIGTUYm2K8FjOOfXtY1K*
-    * *pr_0ujsszwN8NRY24YaXiTIE2VWDTS*
+    * ord_0ujsswThIGTUYm2K8FjOOfXtY1K
+    * pr_0ujsszwN8NRY24YaXiTIE2VWDTS
     * us_0ujsszgFvbiEr7CDgE3z8MAUPFt
 
 ## Prefixes
@@ -39,14 +37,14 @@ The below prefixes are not finalized as of now and subject to change
 
 :::
 
-* `ord_` for oms orders
+* `ord_` for orders
 * `ln_` for order line items
 * `rfo_` for refund orders /  returns
 * `us_` for new users store
 * `pa_` for payments
 * `sh_` for shipments
-* `pr_`for oms products
-* `ct_`for oms categories
+* `pr_`for products
+* `ct_`for categories
 
 
 ### Random String Considerations
