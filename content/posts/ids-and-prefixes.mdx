@@ -4,8 +4,6 @@ tags: [uuids, perf]
 date: 2022-06-14
 ---
 
-# IDs and Prefixes
-
 ## Rationale
 
 * We have observed bad cache hit ratio in transactions table due to uuid v4s as primary identifiers
@@ -19,23 +17,16 @@ date: 2022-06-14
 
 * There are also cases where the ids different entities are swappable and do not contain any context leading to vague communication and manual errors. To prevent this we adopt a format popularized by stripe by prefixing ids
   * <https://clerk.dev/blog/generating-sortable-stripe-like-ids-with-segment-ksuids>
-  * We also want to avoid confusion around new user_id being an uuid which can be confused for khata user_id and vice versa
 
 
 * Taking into consideration above, our ids can become more friendly to humans and caches alike by following format
-  * **<prefix>_<random string>**
+  * ```<prefix>_<random string>```
   * Examples:
     * ord_0ujsswThIGTUYm2K8FjOOfXtY1K
     * pr_0ujsszwN8NRY24YaXiTIE2VWDTS
     * us_0ujsszgFvbiEr7CDgE3z8MAUPFt
 
 ## Prefixes
-
-
-:::info
-The below prefixes are not finalized as of now and subject to change
-
-:::
 
 * `ord_` for orders
 * `ln_` for order line items
@@ -58,7 +49,7 @@ The below prefixes are not finalized as of now and subject to change
 ### Storage
 
 * Use varchar type in postgres
-  * <https://github.com/segmentio/ksuid/issues/23>
+  * https://github.com/segmentio/ksuid/issues/23
   * Ideally the length will be within 30-40 chars but in postgres there’s no difference
   * ref: <https://dba.stackexchange.com/a/126047/229241>
 * Postgres doesn’t seem to have an optimization of UUIDs
