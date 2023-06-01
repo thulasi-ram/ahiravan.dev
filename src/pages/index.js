@@ -1,10 +1,5 @@
 /** @jsx jsx */
-import {
-  Button,
-  Close,
-  Heading,
-  Link as TLink,
-} from "@theme-ui/components"
+import { Button, Close, Heading, Link as TLink } from "@theme-ui/components"
 import { useState } from "react"
 import Modal from "react-modal"
 import { jsx, useThemeUI } from "theme-ui"
@@ -72,7 +67,18 @@ const IndexButton = ({ text, buttonProps, svgIcon, children }) => {
             display: "inline-flex",
           }}
         >
-          <span sx={{ mr: 2 }}>{text}</span>
+          <span
+            variant="heading"
+            sx={{
+              mr: 2,
+              fontFamily: "heading",
+              fontWeight: "900",
+              fontSize: 2,
+              // textShadow: "0px 0px 1px black",
+            }}
+          >
+            {text}
+          </span>
           {svgIcon}
         </div>
       </Button>
@@ -106,7 +112,7 @@ const IndexPage = () => {
         }}
       >
         <div>
-          <Heading as="h1" sx={{ mb: 3}}>
+          <Heading as="h1" sx={{ mb: 3 }}>
             Hi, I'm Thulasi
           </Heading>
           <Heading as="h2" sx={{ mb: 4, fontSize: 5 }}>
@@ -124,7 +130,7 @@ const IndexPage = () => {
             }}
           >
             <IndexButton
-              text="Get in Touch"
+              text="GET IN TOUCH"
               svgIcon={<VerticalMenuSvg />}
               buttonProps={{
                 as: TLink,
@@ -133,7 +139,7 @@ const IndexPage = () => {
             />
 
             <IndexButton
-              text="Vist My Blog"
+              text="VISIT MY BLOG"
               svgIcon={<RightArrowSvg />}
               buttonProps={{
                 as: LinkAsA,
@@ -232,19 +238,16 @@ const IndexPage = () => {
           <IntroP>
             <span>
               Programming in the large. Currently{" "}
-              <IntroA
-                href="https://www.getsimpl.com/about-us/"
-              >
-                @Simpl
-              </IntroA>
-              - Bengaluru, India.
+              <IntroA href="https://www.getsimpl.com/about-us/">@Simpl</IntroA>-
+              Bengaluru, India.
             </span>
           </IntroP>
 
           <IntroP>
-            Intrigued by design, armchair philosophy and anything CS. I am driven by a strong sense of need
-            to improve the quality of life through the products I design and create. I also
-            wish the world would become a gentler place. 
+            Intrigued by design, armchair philosophy and anything CS. I am
+            driven by a strong sense of need to improve the quality of life
+            through the products I design and create. I also wish the world
+            would become a gentler place.
           </IntroP>
 
           <IntroP>
@@ -291,11 +294,16 @@ const IndexPage = () => {
           </IntroP>
 
           <div>
-            <BlockSpan><u>Day to Day</u>: Python, Go and Ruby</BlockSpan>
             <BlockSpan>
-            <u>Occasionally</u>: Javascript, misc frontend developments and Java.
+              <u>Day to Day</u>: Python, Go and Ruby
             </BlockSpan>
-            <BlockSpan><u>Renewed interest</u>: Rust</BlockSpan>
+            <BlockSpan>
+              <u>Occasionally</u>: Javascript, misc frontend developments and
+              Java.
+            </BlockSpan>
+            <BlockSpan>
+              <u>Renewed interest</u>: Rust
+            </BlockSpan>
             <BlockSpan>
               <u>Piques interest</u>:
               <ul sx={{ mt: 0 }}>
