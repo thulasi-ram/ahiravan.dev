@@ -43,6 +43,10 @@
                 @apply print:text-base;
 
             }
+            h2 {
+                @apply text-sm;
+                @apply print:text-xl; 
+            }
             h5 {
                 @apply text-sm;
                 @apply print:text-2xl;
@@ -69,7 +73,8 @@
     		margin: 1em 0em 1em 0em;
     		padding: 4px 0px 3px 5px;
     		font-family: theme('fontFamily.mono');
-    		font-size: theme('fontSize.sm');
+            font-weight: 900;
+
 		}
 		.sec-heading-inv {
     		background-color: theme('colors.biege');
@@ -77,8 +82,7 @@
     		margin: 1em 0em 1em 0em;
     		padding: 4px 0px 3px 5px;
     		font-family: theme('fontFamily.mono');
-    		font-size: theme('fontSize.sm');
-
+            font-weight: 900;
 		}
 		p {
             font-family: theme('fontFamily.slab');
