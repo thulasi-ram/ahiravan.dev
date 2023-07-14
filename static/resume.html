@@ -125,9 +125,10 @@
   </style>
 </head>
 
-<body class="relative h-full min_width print:bg_split">
+<body class="relative h-full print:bg_split">
     <!-- <button onclick="getPDF()">download</button> -->
-    <div class="grid grid-cols-3 mx-auto w-7/12  print:w-full" id="res_content">
+    <div class="grid grid-cols-3 mx-auto w-7/12 min_width print:w-full" id="res_content">
+
         <div class="col-span-2 bg-biege p-2 sm:p-5">
             <h1 class="text-3xl font-mono text-navblu mb-10 print:text-5xl">
                 Damodharan Thulasiram
@@ -236,59 +237,7 @@
                     </section>
                 </div>
             </section>
-            <section aria-label="education section">
-                <h2 class="sec-heading">EDUCATION</h2>
-                <div class="grid grid-cols-3 p-1">
-                    <div>
-                        <h5 class="p-0 font-mono">B.Eng </h5>
-                        <small class="flex p-0 font-mono text-gray-500">Chennai, India </small>
-                        <small class="flex p-0 font-mono text-gray-500">2010-2014 </small>
-                    </div>
-                    <div class="col-span-2">
-                        <p class="font-mono">Mechanical, Hindustan University</p>
-                    </div>
-                </div>
-            </section>
-            <section aria-label="oss contributions section">
-                <h2 class="sec-heading">OSS CONTRIBTUIONS</h2>
-                <div class="p-1">
-                    <div class="grid grid-cols-3">
-                        <div>
-                            <p class="font-mono font-semibold text-gray-700">
-                                <a href="https://github.com/thulasi-ram/kombu-rabbitmq" target="_blank"
-                                    class="ext-link">Kombu RabbitMQ</a>
-                            </p>
-                        </div>
-                        <div class="col-span-2">
-                            <p>A robust RabbitMQ consumer using Kombu</p>
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-3">
-                        <div>
-                            <p class="font-mono font-semibold text-gray-700">
-                                <a href="https://github.com/thulasi-ram/diff-and-patch" target="_blank"
-                                    class="ext-link">Diff and Patch</a>
-                            </p>
-                        </div>
-                        <div class="col-span-2">
-                            <p>A simple python package which serves as a framework for diffing and patching complex objects.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-3">
-                        <div>
-                            <p class="font-mono font-semibold text-gray-700">
-                                <a href="https://github.com/thulasi-ram/django-feature-toggle" target="_blank"
-                                    class="ext-link">Feature Toggle</a>
-                            </p>
-                        </div>
-                        <div class="col-span-2">
-                            <p>A python package which can be hooked onto Django as an app. The app is based on behavioural
-                                design pattern “Feature toggle” by Martin Fowler.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
+           
         </div>
         <div class="col-span-1 bg-navblu p-2 sm:p-5">
             <section aria-label="profile image section">
@@ -332,7 +281,7 @@
                 </a>
             </section>
             <section aria-label="contact info section">
-                <h2 class="sec-heading-inv">CONTACT INFO</h2>
+                <h2 class="sec-heading-inv mt-5">CONTACT INFO</h2>
                 <div class="grid grid-rows-4">
                     <p class="text-biege font-mono">Bengaluru, India</p>
                     <p class="text-biege font-mono">
@@ -346,9 +295,60 @@
                     </p>
                 </div>
             </section>
-            <section aria-label="skills section">
-                <h2 class="sec-heading-inv">SKILLS</h2>
-                <h6 class="text-gray-400 font-mono font-semibold mt-5 mb-2"> #languages</h6>
+            <section aria-label="education section print_break_margin">
+                <h2 class="sec-heading-inv mt-5">EDUCATION</h2>
+                <div class="grid grid-cols-1 p-1">
+                    <div>
+                        <h6 class="p-0 font-mono text-biege">B.E Mech (2010-2014) </h6>
+                        <p class="text-biege"> Hindustan University, Chennai.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section aria-label="oss contributions section">
+                <h2 class="sec-heading-inv mt-6">OSS CONTRIBTUIONS</h2>
+                <div class="p-1">
+                    <div class="grid grid-cols-1 ">
+                        <div>
+                            <p class="font-mono font-semibold text-biege">
+                                <a href="https://github.com/thulasi-ram/kombu-rabbitmq" target="_blank"
+                                    class="ext-link">Kombu RabbitMQ</a>
+                            </p>
+                        </div>
+                        <div>
+                            <p class="text-gray-300">A robust RabbitMQ consumer using Kombu</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 mt-3">
+                        <div>
+                            <p class="font-mono font-semibold text-biege">
+                                <a href="https://github.com/thulasi-ram/diff-and-patch" target="_blank"
+                                    class="ext-link">Diff and Patch</a>
+                            </p>
+                        </div>
+                        <div>
+                            <p class="text-gray-300">A simple python package which serves as a framework for diffing and patching complex objects.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 mt-3">
+                        <div>
+                            <p class="font-mono font-semibold text-biege">
+                                <a href="https://github.com/thulasi-ram/django-feature-toggle" target="_blank"
+                                    class="ext-link">Feature Toggle</a>
+                            </p>
+                        </div>
+                        <div>
+                            <p class="text-gray-300">A python package which can be hooked onto Django as an app. The app is based on behavioural
+                                design pattern “Feature toggle” by Martin Fowler.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section  class="print_break_margin print:p-0" aria-label="skills section">
+                <h2 class="sec-heading-inv mt-5">SKILLS</h2>
+                <h6 class="text-gray-300 font-mono font-semibold mt-3 mb-3"> #languages</h6>
                 <div class="flex flex-wrap">
                     <p class="text-biege skill"> Python </p>
                     <p class="text-biege"> • </p>
@@ -368,7 +368,7 @@
                     <p class="text-biege"> • </p>
                     <p class="text-biege skill"> A pinch of Various Lisps and General FP languages </p>
                 </div>
-                <h6 class="text-gray-400 font-mono font-semibold mt-5 mb-2"> #frameworks</h6>
+                <h6 class="text-gray-300 font-mono font-semibold mt-6 mb-3"> #frameworks</h6>
                 <div class="flex flex-wrap">
                     <p class="text-biege skill"> Django </p>
                     <p class="text-biege"> • </p>
@@ -386,7 +386,7 @@
                     <p class="text-biege"> • </p>
                     <p class="text-biege skill"> Axum </p>
                 </div>
-                <h6 class="text-gray-400 font-mono font-semibold mt-5 mb-2"> #infra</h6>
+                <h6 class="text-gray-300 font-mono font-semibold mt-6 mb-3"> #infra</h6>
                 <div class="flex flex-wrap">
                     <p class="text-biege skill"> AWS </p>
                     <p class="text-biege"> • </p>
