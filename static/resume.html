@@ -108,6 +108,9 @@
             @apply break-before-page;
             @apply print:pt-5;
         }
+        .min_width {
+            min-width: 30rem;
+        }
 
     }
   </style>
@@ -115,21 +118,23 @@
 
 <body>
     <!-- <button onclick="getPDF()">download</button> -->
-    <div class="grid grid-cols-3 mx-auto w-7/12 print:w-full" id="res_content">
-        <div class="col-span-2 bg-biege p-10">
+    <div class="grid grid-cols-3 mx-auto w-7/12 min_width print:w-full" id="res_content">
+        <div class="col-span-2 bg-biege p-2 sm:p-5">
             <h1 class="text-3xl font-mono text-navblu mb-10">
                 Damodharan Thulasiram
             </h1>
             <section aria-label="about me section">
                 <h2 class="sec-heading">ABOUT ME</h2>
+                <div class="p-1">
                 <p>I build for all things web.</p>
                 <p>Intrigued by design, armchair philosophy and anything CS. I am driven by a strong sense of need to
                     improve the quality of life through the products I design and create. </p>
                 <p>I come with a hybrid background in both backend systems and frontend technologies. I am also a Programming languages enthusiast and dabble with Rust, Lisps and other FP languages in leisure in many miniature side projects.</p>
+                </div>
             </section>
             <section aria-label="work experience section">
                 <h2 class="sec-heading">WORK EXPERIENCE</h2>
-                <div class="grid grid-flow-row auto-rows-max">
+                <div class="grid grid-flow-row auto-rows-max p-1">
                     <section class="grid grid-cols-3 my-2" aria-label="simpl work experience">
                         <div>
                             <h5 class="p-0 font-mono">Simpl</h5>
@@ -224,7 +229,7 @@
             </section>
             <section aria-label="education section">
                 <h2 class="sec-heading">EDUCATION</h2>
-                <div class="grid grid-cols-3">
+                <div class="grid grid-cols-3 p-1">
                     <div>
                         <h5 class="p-0 font-mono">B.Eng </h5>
                         <small class="flex p-0 font-mono text-gray-500">Chennai, India </small>
@@ -237,44 +242,46 @@
             </section>
             <section aria-label="oss contributions section">
                 <h2 class="sec-heading">OSS CONTRIBTUIONS</h2>
-                <div class="grid grid-cols-3">
-                    <div>
-                        <p class="font-mono font-semibold text-gray-700">
-                            <a href="https://github.com/thulasi-ram/kombu-rabbitmq" target="_blank"
-                                class="ext-link">Kombu RabbitMQ</a>
-                        </p>
+                <div class="p-1">
+                    <div class="grid grid-cols-3">
+                        <div>
+                            <p class="font-mono font-semibold text-gray-700">
+                                <a href="https://github.com/thulasi-ram/kombu-rabbitmq" target="_blank"
+                                    class="ext-link">Kombu RabbitMQ</a>
+                            </p>
+                        </div>
+                        <div class="col-span-2">
+                            <p>A robust RabbitMQ consumer using Kombu</p>
+                        </div>
                     </div>
-                    <div class="col-span-2">
-                        <p>A robust RabbitMQ consumer using Kombu</p>
+                    <div class="grid grid-cols-3">
+                        <div>
+                            <p class="font-mono font-semibold text-gray-700">
+                                <a href="https://github.com/thulasi-ram/diff-and-patch" target="_blank"
+                                    class="ext-link">Diff and Patch</a>
+                            </p>
+                        </div>
+                        <div class="col-span-2">
+                            <p>A simple python package which serves as a framework for diffing and patching complex objects.
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="grid grid-cols-3">
-                    <div>
-                        <p class="font-mono font-semibold text-gray-700">
-                            <a href="https://github.com/thulasi-ram/diff-and-patch" target="_blank"
-                                class="ext-link">Diff and Patch</a>
-                        </p>
-                    </div>
-                    <div class="col-span-2">
-                        <p>A simple python package which serves as a framework for diffing and patching complex objects.
-                        </p>
-                    </div>
-                </div>
-                <div class="grid grid-cols-3">
-                    <div>
-                        <p class="font-mono font-semibold text-gray-700">
-                            <a href="https://github.com/thulasi-ram/django-feature-toggle" target="_blank"
-                                class="ext-link">Feature Toggle</a>
-                        </p>
-                    </div>
-                    <div class="col-span-2">
-                        <p>A python package which can be hooked onto Django as an app. The app is based on behavioural
-                            design pattern “Feature toggle” by Martin Fowler.</p>
+                    <div class="grid grid-cols-3">
+                        <div>
+                            <p class="font-mono font-semibold text-gray-700">
+                                <a href="https://github.com/thulasi-ram/django-feature-toggle" target="_blank"
+                                    class="ext-link">Feature Toggle</a>
+                            </p>
+                        </div>
+                        <div class="col-span-2">
+                            <p>A python package which can be hooked onto Django as an app. The app is based on behavioural
+                                design pattern “Feature toggle” by Martin Fowler.</p>
+                        </div>
                     </div>
                 </div>
             </section>
         </div>
-        <div class="col-span-1 bg-navblu p-5">
+        <div class="col-span-1 bg-navblu p-2 sm:p-5">
             <section aria-label="profile image section">
                 <img class="w-full" src="./profile.png">
             </section>
@@ -317,16 +324,18 @@
             </section>
             <section aria-label="contact info section">
                 <h2 class="sec-heading-inv">CONTACT INFO</h2>
-                <p class="text-biege font-mono">Bengaluru, India</p>
-                <p class="text-biege font-mono">
-                    <a href="mailto:thulasi503@gmail.com">thulasi503@gmail.com</a>
-                </p>
-                <p class="text-biege font-mono">
-                    <a href="tel:+919840561688">+91 98405 61688</a>
-                </p>
-                <p class="text-biege font-mono">
-                    <a href="https://ahiravan.dev" class="ext-link" target="_blank">https://ahiravan.dev</a>
-                </p>
+                <div class="grid grid-rows-4">
+                    <p class="text-biege font-mono">Bengaluru, India</p>
+                    <p class="text-biege font-mono">
+                        <a href="mailto:thulasi503@gmail.com">thulasi503@gmail.com</a>
+                    </p>
+                    <p class="text-biege font-mono">
+                        <a href="tel:+919840561688">+91 98405 61688</a>
+                    </p>
+                    <p class="text-biege font-mono">
+                        <a href="https://ahiravan.dev" class="ext-link" target="_blank">https://ahiravan.dev</a>
+                    </p>
+                </div>
             </section>
             <section aria-label="skills section">
                 <h2 class="sec-heading-inv">SKILLS</h2>
