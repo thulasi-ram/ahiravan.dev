@@ -111,14 +111,23 @@
         .min_width {
             min-width: 30rem;
         }
+        .bg_split {
+            background: linear-gradient(
+                to right,
+                theme('colors.biege') 0%,
+                theme('colors.biege') 66.66%,
+                theme('colors.navblu') 66.67%,
+                theme('colors.navblu') 100%
+            );
+        }
 
     }
   </style>
 </head>
 
-<body>
+<body class="relative h-full min_width print:bg_split">
     <!-- <button onclick="getPDF()">download</button> -->
-    <div class="grid grid-cols-3 mx-auto w-7/12 min_width print:w-full" id="res_content">
+    <div class="grid grid-cols-3 mx-auto w-7/12  print:w-full" id="res_content">
         <div class="col-span-2 bg-biege p-2 sm:p-5">
             <h1 class="text-3xl font-mono text-navblu mb-10 print:text-5xl">
                 Damodharan Thulasiram
@@ -339,7 +348,7 @@
             </section>
             <section aria-label="skills section">
                 <h2 class="sec-heading-inv">SKILLS</h2>
-                <h6 class="text-gray-400 font-mono font-semibold my-3"> #languages</h6>
+                <h6 class="text-gray-400 font-mono font-semibold mt-5 mb-2"> #languages</h6>
                 <div class="flex flex-wrap">
                     <p class="text-biege skill"> Python </p>
                     <p class="text-biege"> • </p>
@@ -359,7 +368,7 @@
                     <p class="text-biege"> • </p>
                     <p class="text-biege skill"> A pinch of Various Lisps and General FP languages </p>
                 </div>
-                <h6 class="text-gray-400 font-mono font-semibold my-3"> #frameworks</h6>
+                <h6 class="text-gray-400 font-mono font-semibold mt-5 mb-2"> #frameworks</h6>
                 <div class="flex flex-wrap">
                     <p class="text-biege skill"> Django </p>
                     <p class="text-biege"> • </p>
@@ -377,7 +386,7 @@
                     <p class="text-biege"> • </p>
                     <p class="text-biege skill"> Axum </p>
                 </div>
-                <h6 class="text-gray-400 font-mono font-semibold my-3"> #infra</h6>
+                <h6 class="text-gray-400 font-mono font-semibold mt-5 mb-2"> #infra</h6>
                 <div class="flex flex-wrap">
                     <p class="text-biege skill"> AWS </p>
                     <p class="text-biege"> • </p>
