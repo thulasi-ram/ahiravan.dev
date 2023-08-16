@@ -60,7 +60,11 @@ const Header = () => {
           }}
         >
           <HeaderNavLink as={Link} to="/blog/">
-            blog
+            /blog
+          </HeaderNavLink>
+
+          <HeaderNavLink as="a" href="/resume.html">
+            /resume
           </HeaderNavLink>
 
           <DarkModeToggle></DarkModeToggle>
