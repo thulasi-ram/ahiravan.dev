@@ -209,7 +209,7 @@ const IndexPage = () => {
                   />
 
                   <GetInTouchButton
-                    href="https://twitter.com/ahiravan1"
+                    href="https://twitter.com/0x12c_"
                     text="twitter"
                     svgIcon={<RetweetSvg />}
                   />
@@ -285,7 +285,7 @@ const IndexPage = () => {
               OSS Contributions at{" "}
               <IntroA href="https://github.com/thulasi-ram">Github</IntroA> and
               thoughts on{" "}
-              <IntroA href="https://www.twitter.com/ahiravan1">Twitter</IntroA>
+              <IntroA href="https://www.twitter.com/0x12c_">Twitter</IntroA>
             </span>
           </IntroP>
           <IntroP>

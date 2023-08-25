@@ -232,12 +232,12 @@ module.exports = {
   siteMetadata: {
     title: `Ahiravan's Home`,
     description: `Ahiravan's home, blog and musings.`,
-    author: `@ahiravan1`,
+    author: `@0x12c_`,
     siteUrl: "https://ahiravan.dev",
     social: [
       {
         name: `Twitter`,
-        url: `https://twitter.com/ahiravan1`,
+        url: `https://twitter.com/0x12c_`,
       },
       {
         name: `GitHub`,
