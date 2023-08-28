@@ -62,7 +62,7 @@ const Footer = () => {
           </FooterSocial>
 
           <FooterSocial
-            href="https://www.twitter.com/ahiravan1"
+            href="https://www.twitter.com/0x12c_"
             aria-label="twitter"
           >
             <TwitterSvg></TwitterSvg>
